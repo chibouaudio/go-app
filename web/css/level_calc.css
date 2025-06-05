@@ -1,0 +1,44 @@
+.hidden-radio {
+    display: none; /* ラジオボタン自体を非表示にする */
+}
+
+.nature-button {
+    display: inline-block; /* ボタンのように横並びにする */
+    padding: 8px 15px; /* パディング */
+    margin: 5px; /* ボタン間の余白 */
+    border: 1px solid #ccc; /* 枠線 */
+    border-radius: 5px; /* 角を丸くする */
+    cursor: pointer; /* マウスカーソルをポインターにする */
+    background-color: #f0f0f0; /* 背景色 */
+    color: #333; /* 文字色 */
+    text-align: center; /* 文字を中央揃え */
+    min-width: 80px; /* 最小幅を設定して、ボタンの大きさを揃える */
+    box-sizing: border-box; /* パディングとボーダーを幅に含める */
+}
+
+/* 選択されたボタンのスタイル */
+.hidden-radio:checked + .nature-button {
+    background-color: #007bff; /* 選択時の背景色 */
+    color: white; /* 選択時の文字色 */
+    border-color: #007bff; /* 選択時の枠線色 */
+}
+
+/* ホバー時のスタイル */
+.nature-button:hover {
+    background-color: #e9e9e9;
+}
+
+/* 選択されたボタンにホバーした時のスタイル */
+.hidden-radio:checked + .nature-button:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* 性格補正のオプションを囲むdivのスタイル */
+.nature-exp-options {
+    display: flex; /* ボタンをフレックスボックスで配置 */
+    gap: 10px; /* ボタン間のスペース */
+    flex-wrap: wrap; /* 必要に応じて折り返し */
+    justify-content: center; /* 中央寄せ */
+    margin-top: 10px;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>レベル計算ツール</title>
+    <link rel="stylesheet" href="/web/css/level_calc.css">
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+        }
+
+        label,
+        input,
+        button {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>レベル計算</h1>
+    <p>目標レベルアップまでに必要な経験値とアメを計算します。</p>
+
+    <form id="levelCalcForm">
+        <label for="currentLevel">現在のレベル</label>
+        <input type="number" id="currentLevel" name="currentLevel" min="1" max="65" required>
+        <label for="targetLevel">目標レベル</label>
+        <input type="number" id="targetLevel" name="targetLevel" min="2" max="65" required>
+        <p>性格補正</p>
+        <div class="nature-exp-options">
+            <input type="radio" id="natureDown" name="natureExp" value="down" class="hidden-radio">
+            <label for="natureDown" class="nature-button">↓</label>
+
+            <input type="radio" id="natureNone" name="natureExp" value="none" checked class="hidden-radio">
+            <label for="natureNone" class="nature-button">無補正</label>
+
+            <input type="radio" id="natureUp" name="natureExp" value="up" class="hidden-radio">
+            <label for="natureUp" class="nature-button">↑</label>
+        </div>
+    </form>
+
+    <div id="result">
+        <h2>計算結果:</h2>
+        <p>必要な合計経験値: <span id="requiredTotalExp"></span></p>
+        <p>必要な飴の数: <span id="requiredTotalCandy"></span></p>
+        <p>必要な合計ゆめのかけら: <span id="requiredTotalDreamShards"></span></p>
+        <p style="color: rgb(136, 135, 135);">注意: ゆめのかけらの必要数は、目安値です。</p>
+        <p class="error" id="errorMessage"></p>
+    </div>
+
+    <script src="/web/js/level_calc.js"></script>
+</body>
+
+</html>

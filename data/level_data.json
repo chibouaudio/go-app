@@ -1,0 +1,457 @@
+[
+    {
+        "level": 1,
+        "requiredExp": 0,
+        "accumulatedExp": 0,
+        "requiredDreamShards": 0,
+        "candyPerDreamShards": 0
+    },
+    {
+        "level": 2,
+        "requiredExp": 54,
+        "accumulatedExp": 54,
+        "requiredDreamShards": 42,
+        "candyPerDreamShards": 14
+    },
+    {
+        "level": 3,
+        "requiredExp": 71,
+        "accumulatedExp": 125,
+        "requiredDreamShards": 54,
+        "candyPerDreamShards": 18
+    },
+    {
+        "level": 4,
+        "requiredExp": 108,
+        "accumulatedExp": 233,
+        "requiredDreamShards": 110,
+        "candyPerDreamShards": 22
+    },
+    {
+        "level": 5,
+        "requiredExp": 128,
+        "accumulatedExp": 361,
+        "requiredDreamShards": 162,
+        "candyPerDreamShards": 27
+    },
+    {
+        "level": 6,
+        "requiredExp": 164,
+        "accumulatedExp": 525,
+        "requiredDreamShards": 210,
+        "candyPerDreamShards": 30
+    },
+    {
+        "level": 7,
+        "requiredExp": 202,
+        "accumulatedExp": 727,
+        "requiredDreamShards": 306,
+        "candyPerDreamShards": 34
+    },
+    {
+        "level": 8,
+        "requiredExp": 244,
+        "accumulatedExp": 971,
+        "requiredDreamShards": 390,
+        "candyPerDreamShards": 39
+    },
+    {
+        "level": 9,
+        "requiredExp": 274,
+        "accumulatedExp": 1245,
+        "requiredDreamShards": 484,
+        "candyPerDreamShards": 44
+    },
+    {
+        "level": 10,
+        "requiredExp": 315,
+        "accumulatedExp": 1560,
+        "requiredDreamShards": 624,
+        "candyPerDreamShards": 48
+    },
+    {
+        "level": 11,
+        "requiredExp": 345,
+        "accumulatedExp": 1905,
+        "requiredDreamShards": 700,
+        "candyPerDreamShards": 50
+    },
+    {
+        "level": 12,
+        "requiredExp": 376,
+        "accumulatedExp": 2281,
+        "requiredDreamShards": 832,
+        "candyPerDreamShards": 52
+    },
+    {
+        "level": 13,
+        "requiredExp": 407,
+        "accumulatedExp": 2688,
+        "requiredDreamShards": 901,
+        "candyPerDreamShards": 53
+    },
+    {
+        "level": 14,
+        "requiredExp": 419,
+        "accumulatedExp": 3107,
+        "requiredDreamShards": 952,
+        "candyPerDreamShards": 56
+    },
+    {
+        "level": 15,
+        "requiredExp": 429,
+        "accumulatedExp": 3536,
+        "requiredDreamShards": 1062,
+        "candyPerDreamShards": 59
+    },
+    {
+        "level": 16,
+        "requiredExp": 440,
+        "accumulatedExp": 3976,
+        "requiredDreamShards": 1116,
+        "candyPerDreamShards": 62
+    },
+    {
+        "level": 17,
+        "requiredExp": 454,
+        "accumulatedExp": 4430,
+        "requiredDreamShards": 1254,
+        "candyPerDreamShards": 66
+    },
+    {
+        "level": 18,
+        "requiredExp": 469,
+        "accumulatedExp": 4899,
+        "requiredDreamShards": 1292,
+        "candyPerDreamShards": 68
+    },
+    {
+        "level": 19,
+        "requiredExp": 483,
+        "accumulatedExp": 5382,
+        "requiredDreamShards": 1420,
+        "candyPerDreamShards": 71
+    },
+    {
+        "level": 20,
+        "requiredExp": 497,
+        "accumulatedExp": 5879,
+        "requiredDreamShards": 1480,
+        "candyPerDreamShards": 74
+    },
+    {
+        "level": 21,
+        "requiredExp": 515,
+        "accumulatedExp": 6394,
+        "requiredDreamShards": 1638,
+        "candyPerDreamShards": 78
+    },
+    {
+        "level": 22,
+        "requiredExp": 537,
+        "accumulatedExp": 6931,
+        "requiredDreamShards": 1782,
+        "candyPerDreamShards": 81
+    },
+    {
+        "level": 23,
+        "requiredExp": 558,
+        "accumulatedExp": 7489,
+        "requiredDreamShards": 1955,
+        "candyPerDreamShards": 85
+    },
+    {
+        "level": 24,
+        "requiredExp": 579,
+        "accumulatedExp": 8068,
+        "requiredDreamShards": 2112,
+        "candyPerDreamShards": 88
+    },
+    {
+        "level": 25,
+        "requiredExp": 600,
+        "accumulatedExp": 8668,
+        "requiredDreamShards": 2208,
+        "candyPerDreamShards": 92
+    },
+    {
+        "level": 26,
+        "requiredExp": 622,
+        "accumulatedExp": 9290,
+        "requiredDreamShards": 2375,
+        "candyPerDreamShards": 95
+    },
+    {
+        "level": 27,
+        "requiredExp": 643,
+        "accumulatedExp": 9933,
+        "requiredDreamShards": 2600,
+        "candyPerDreamShards": 100
+    },
+    {
+        "level": 28,
+        "requiredExp": 665,
+        "accumulatedExp": 10598,
+        "requiredDreamShards": 2835,
+        "candyPerDreamShards": 105
+    },
+    {
+        "level": 29,
+        "requiredExp": 686,
+        "accumulatedExp": 11284,
+        "requiredDreamShards": 3108,
+        "candyPerDreamShards": 111
+    },
+    {
+        "level": 30,
+        "requiredExp": 708,
+        "accumulatedExp": 11992,
+        "requiredDreamShards": 3393,
+        "candyPerDreamShards": 117
+    },
+    {
+        "level": 31,
+        "requiredExp": 729,
+        "accumulatedExp": 12721,
+        "requiredDreamShards": 3660,
+        "candyPerDreamShards": 122
+    },
+    {
+        "level": 32,
+        "requiredExp": 748,
+        "accumulatedExp": 13469,
+        "requiredDreamShards": 3780,
+        "candyPerDreamShards": 126
+    },
+    {
+        "level": 33,
+        "requiredExp": 766,
+        "accumulatedExp": 14235,
+        "requiredDreamShards": 4030,
+        "candyPerDreamShards": 130
+    },
+    {
+        "level": 34,
+        "requiredExp": 785,
+        "accumulatedExp": 15020,
+        "requiredDreamShards": 4352,
+        "candyPerDreamShards": 136
+    },
+    {
+        "level": 35,
+        "requiredExp": 803,
+        "accumulatedExp": 15823,
+        "requiredDreamShards": 4719,
+        "candyPerDreamShards": 143
+    },
+    {
+        "level": 36,
+        "requiredExp": 821,
+        "accumulatedExp": 16644,
+        "requiredDreamShards": 4983,
+        "candyPerDreamShards": 150
+    },
+    {
+        "level": 37,
+        "requiredExp": 839,
+        "accumulatedExp": 17483,
+        "requiredDreamShards": 5440,
+        "candyPerDreamShards": 160
+    },
+    {
+        "level": 38,
+        "requiredExp": 857,
+        "accumulatedExp": 18340,
+        "requiredDreamShards": 5845,
+        "candyPerDreamShards": 170
+    },
+    {
+        "level": 39,
+        "requiredExp": 875,
+        "accumulatedExp": 19215,
+        "requiredDreamShards": 6090,
+        "candyPerDreamShards": 174
+    },
+    {
+        "level": 40,
+        "requiredExp": 893,
+        "accumulatedExp": 20108,
+        "requiredDreamShards": 6624,
+        "candyPerDreamShards": 184
+    },
+    {
+        "level": 41,
+        "requiredExp": 910,
+        "accumulatedExp": 21018,
+        "requiredDreamShards": 7104,
+        "candyPerDreamShards": 192
+    },
+    {
+        "level": 42,
+        "requiredExp": 928,
+        "accumulatedExp": 21946,
+        "requiredDreamShards": 7638,
+        "candyPerDreamShards": 201
+    },
+    {
+        "level": 43,
+        "requiredExp": 945,
+        "accumulatedExp": 22891,
+        "requiredDreamShards": 8018,
+        "candyPerDreamShards": 211
+    },
+    {
+        "level": 44,
+        "requiredExp": 963,
+        "accumulatedExp": 23854,
+        "requiredDreamShards": 8619,
+        "candyPerDreamShards": 221
+    },
+    {
+        "level": 45,
+        "requiredExp": 980,
+        "accumulatedExp": 24834,
+        "requiredDreamShards": 9080,
+        "candyPerDreamShards": 227
+    },
+    {
+        "level": 46,
+        "requiredExp": 997,
+        "accumulatedExp": 25831,
+        "requiredDreamShards": 9440,
+        "candyPerDreamShards": 236
+    },
+    {
+        "level": 47,
+        "requiredExp": 1015,
+        "accumulatedExp": 26846,
+        "requiredDreamShards": 10250,
+        "candyPerDreamShards": 250
+    },
+    {
+        "level": 48,
+        "requiredExp": 1032,
+        "accumulatedExp": 27878,
+        "requiredDreamShards": 11088,
+        "candyPerDreamShards": 264
+    },
+    {
+        "level": 49,
+        "requiredExp": 1049,
+        "accumulatedExp": 28927,
+        "requiredDreamShards": 11718,
+        "candyPerDreamShards": 279
+    },
+    {
+        "level": 50,
+        "requiredExp": 1066,
+        "accumulatedExp": 29993,
+        "requiredDreamShards": 12685,
+        "candyPerDreamShards": 295
+    },
+    {
+        "level": 51,
+        "requiredExp": 1362,
+        "accumulatedExp": 31355,
+        "requiredDreamShards": 16995,
+        "candyPerDreamShards": 309
+    },
+    {
+        "level": 52,
+        "requiredExp": 1562,
+        "accumulatedExp": 32917,
+        "requiredDreamShards": 20349,
+        "candyPerDreamShards": 323
+    },
+    {
+        "level": 53,
+        "requiredExp": 1747,
+        "accumulatedExp": 34664,
+        "requiredDreamShards": 23660,
+        "candyPerDreamShards": 338
+    },
+    {
+        "level": 54,
+        "requiredExp": 1946,
+        "accumulatedExp": 36610,
+        "requiredDreamShards": 27768,
+        "candyPerDreamShards": 356
+    },
+    {
+        "level": 55,
+        "requiredExp": 2195,
+        "accumulatedExp": 38805,
+        "requiredDreamShards": 32736,
+        "candyPerDreamShards": 372
+    },
+    {
+        "level": 56,
+        "requiredExp": 2279,
+        "accumulatedExp": 41084,
+        "requiredDreamShards": 35972,
+        "candyPerDreamShards": 391
+    },
+    {
+        "level": 57,
+        "requiredExp": 2404,
+        "accumulatedExp": 43488,
+        "requiredDreamShards": 42389,
+        "candyPerDreamShards": 437
+    },
+    {
+        "level": 58,
+        "requiredExp": 2533,
+        "accumulatedExp": 46021,
+        "requiredDreamShards": 49572,
+        "candyPerDreamShards": 486
+    },
+    {
+        "level": 59,
+        "requiredExp": 2666,
+        "accumulatedExp": 48687,
+        "requiredDreamShards": 57566,
+        "candyPerDreamShards": 538
+    },
+    {
+        "level": 60,
+        "requiredExp": 2806,
+        "accumulatedExp": 51493,
+        "requiredDreamShards": 67009,
+        "candyPerDreamShards": 593
+    },
+    {
+        "level": 61,
+        "requiredExp": 2865,
+        "accumulatedExp": 54358,
+        "requiredDreamShards": 74865,
+        "candyPerDreamShards": 651
+    },
+    {
+        "level": 62,
+        "requiredExp": 2922,
+        "accumulatedExp": 57280,
+        "requiredDreamShards": 81666,
+        "candyPerDreamShards": 698
+    },
+    {
+        "level": 63,
+        "requiredExp": 2977,
+        "accumulatedExp": 60257,
+        "requiredDreamShards": 90000,
+        "candyPerDreamShards": 750
+    },
+    {
+        "level": 64,
+        "requiredExp": 3029,
+        "accumulatedExp": 63286,
+        "requiredDreamShards": 98088,
+        "candyPerDreamShards": 804
+    },
+    {
+        "level": 65,
+        "requiredExp": 3077,
+        "accumulatedExp": 66363,
+        "requiredDreamShards": 107384,
+        "candyPerDreamShards": 866
+    }
+]
