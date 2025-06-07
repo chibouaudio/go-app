@@ -24,10 +24,20 @@ document.addEventListener('DOMContentLoaded', function () {
     // イベントリスナー
     currentLevelInput.addEventListener('input', function() {
         currentLevelValue.textContent = currentLevelInput.value;
+        // 目標レベルが現在のレベル以下になっている場合、目標レベルを更新
+        if (parseInt(targetLevelInput.value) <= parseInt(currentLevelInput.value)) {
+            targetLevelInput.value = parseInt(currentLevelInput.value) + 1;
+            targetLevelValue.textContent = targetLevelInput.value;
+        }
         calcLevel();
     });
     targetLevelInput.addEventListener('input', function() {
         targetLevelValue.textContent = targetLevelInput.value;
+        // 目標レベルが現在のレベル以下になっている場合、現在のレベルを更新
+        if (parseInt(targetLevelInput.value) <= parseInt(currentLevelInput.value)) {
+            currentLevelInput.value = parseInt(targetLevelInput.value) - 1;
+            currentLevelValue.textContent = currentLevelInput.value;
+        }
         calcLevel();
     });
 
