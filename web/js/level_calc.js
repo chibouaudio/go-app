@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const requiredTotalDreamShardsSpan = document.getElementById('requiredTotalDreamShards');
     // エラーメッセージを表示する要素
     const errorMessageSpan = document.getElementById('errorMessage');
+    const errorCandyBoostMessage = document.getElementById('errorCandyBoostMessage');
 
     // イベントリスナー
     currentLevelInput.addEventListener('input', calcLevel);
@@ -30,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
         radio.addEventListener('change', calcLevel);
     });
 
+    // アメブーストのラジオボタンの変更を監視するイベントリスナー
     candyBoostRadios.forEach(radio => {
         radio.addEventListener('change', calcLevel);
     });
@@ -49,6 +51,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const selectedCandyBoostRadio = document.querySelector('input[name="candyBoost"]:checked');
         const candyBoost = selectedCandyBoostRadio ? selectedCandyBoostRadio.value : 'none';
 
+        const candyBoostDayLimit = 500; // アメブーストの一日当たりの使用量制限
+        const miniCandyBoostDayLimit = 50; // ミニアメブーストの一日当たりの使用量制限
+
         // 両方入力されていなければ何もしない
         if (isNaN(currentLevel) || isNaN(targetLevel)) {
             requiredTotalExpSpan.textContent = '';
@@ -65,6 +70,14 @@ document.addEventListener('DOMContentLoaded', function () {
             requiredTotalCandySpan.textContent = '';
             requiredTotalDreamShardsSpan.textContent = '';
             return;
+        }
+
+        if (candyBoost === 'mini') {
+            // アメブーストが選択されている場合のエラーメッセージ
+            errorCandyBoostMessage.textContent = `アメブーストに使えるアメは1日 ${ miniCandyBoostDayLimit } 個に制限されています。`;
+        } else if (candyBoost === 'normal') {
+            // アメブーストが選択されている場合のエラーメッセージ
+            errorCandyBoostMessage.textContent = `アメブーストに使えるアメは1日 ${ candyBoostDayLimit } 個に制限されています。`;
         }
 
         try {
