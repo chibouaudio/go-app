@@ -12,7 +12,7 @@
 
 <body>
     <div class="container">
-        <h1 class="text-center mb-4">レベル計算ツール</h1>
+        <h1 class="text-center mb-4">経験値計算ツール</h1>
         <p class="desc text-center">目標レベルアップまでに必要な経験値とアメを計算します。</p>
 
         <form id="levelCalcForm" class="mb-4">
@@ -89,16 +89,16 @@
         </form>
 
         <div id="result" class="result-card">
-            <h2 class="mb-3">計算結果</h2>
-            <p>必要な合計経験値: <span id="requiredTotalExp" class="text-danger"></span></p>
-            <p>必要な飴の数: <span id="requiredTotalCandy" class="text-danger"></span></p>
-            <p>必要な合計ゆめのかけら: <span id="requiredTotalDreamShards" class="text-danger"></span></p>
+            <h2 class="mb-3">経験値計算結果</h2>
+            <p>必要な合計経験値：<span id="requiredTotalExp" class="text-danger"></span></p>
+            <p>必要な飴の数：<span id="requiredTotalCandy" class="text-danger"></span></p>
+            <p>必要な合計ゆめのかけら：<span id="requiredTotalDreamShards" class="text-danger"></span></p>
             <p class="note">※ゆめのかけらの必要数は目安値です。</p>
             <p class="error" id="errorMessage"></p>
         </div>
 
         <form id|="candyCalcForm" class="mb-4">
-            <h2 class="mb-3">アメ計算</h2>
+            <h2 class="mb-3">アメ計算ツール</h2>
             <p class="desc">現在のアメの数から、目標レベルアップに必要なアメを計算します。</p>
             <div class="row">
                 <div class="col-3 mb-3">
@@ -122,11 +122,18 @@
                         required>
                 </div>
             </div>
-            <div>
-                <p id="candyCalcResult"></p>
-                <ul id="candyUsageResult" class="mt-2"></ul>
-            </div>
         </form>
+
+        <div id="result" class="result-card">
+            <h2 class="mb-3">アメ計算結果</h2>
+            <ul id="candyUsageResult" class="list-unstyled">
+                <li class="mt-2">使うポケモンのアメ：<strong>0</strong> 個</li>
+                <li class="mt-2">使うばんのうアメS：<strong>0</strong> 個</li>
+                <li class="mt-2">使うばんのうアメM：<strong>0</strong> 個</li>
+                <li class="mt-2">使うばんのうアメL：<strong>0</strong> 個</li>
+                <li class="mt-2 text-success"><span>足りています！</span></li>
+            </ul>
+        </div>
     </div>
 
     <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
