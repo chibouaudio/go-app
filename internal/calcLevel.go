@@ -10,9 +10,12 @@ import (
 
 var levelData map[int]LevelStatsJson
 
-const EXP_PER_CANDY = 25     // 飴1個あたりの獲得経験値量
-const EXP_Nature_UP = 1.18   // 性格補正: 上昇
-const EXP_Nature_DOWN = 0.82 // 性格補正: 下降
+const EXP_PER_CANDY = 25               // 飴1個あたりの獲得経験値量
+const EXP_Nature_UP = 1.18             // 性格補正: 上昇
+const EXP_Nature_DOWN = 0.82           // 性格補正: 下降
+const CANDY_BOOST_CANDY_MULTIPLIER = 2 // アメブーストのアメ倍率
+const CANDY_BOOST_MINI = 4             // ミニアメブーストのゆめのかけら消費倍率
+const CANDY_BOOST_NORMAL = 5           // 通常アメブーストのゆめのかけら消費倍率
 
 // LevelStatsJson は各レベルの経験値の情報を保持する構造体
 type LevelStatsJson struct {
@@ -29,6 +32,7 @@ type LevelCalcRequest struct {
 	TargetLevel  int    `json:"targetLevel"`
 	NatureExp    string `json:"natureExp"`
 	ExpType      int    `json:"expType"`
+	CandyBoost   string `json:"candyBoost"`
 }
 
 // LevelCalcResponse はレスポンスボディの構造体
@@ -75,20 +79,29 @@ func HandleLevelCalc(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// 性格補正を適用
+	//アメ1個あたりの獲得経験値
 	var expPerCandy float64 = EXP_PER_CANDY
+	// 補正後のアメ1個あたりの獲得経験値
+	var ceilExpPerCandy int = EXP_PER_CANDY
+
+	// 性格補正の適用
 	switch req.NatureExp {
 	case "up":
-		expPerCandy *= EXP_Nature_UP
+		ceilExpPerCandy = int(math.Ceil(expPerCandy * EXP_Nature_UP))
 	case "down":
-		expPerCandy *= EXP_Nature_DOWN
+		ceilExpPerCandy = int(math.Ceil(expPerCandy * EXP_Nature_DOWN))
 	}
 
-	// 経験値タイプの倍率計算
+	// 飴ブースト倍率の計算
+	if req.CandyBoost == "mini" || req.CandyBoost == "normal" {
+		ceilExpPerCandy *= CANDY_BOOST_CANDY_MULTIPLIER
+	}
+
+	// 経験値タイプの倍率
 	var expMultiplier float64 = float64(req.ExpType) / 600.0
 
 	// 経験値とアメの計算
-	totalExp, totalCandy, err := getRequiredExp(req.CurrentLevel, req.TargetLevel, expPerCandy, expMultiplier)
+	totalExp, totalCandy, err := getRequiredExp(req.CurrentLevel, req.TargetLevel, float64(ceilExpPerCandy), expMultiplier)
 	if err != nil {
 		resp := LevelCalcResponse{Error: err.Error()}
 		w.Header().Set("Content-Type", "application/json")
@@ -97,7 +110,7 @@ func HandleLevelCalc(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	// ゆめのかけらの計算
-	totalDreamShards, err := getRequiredDreamShards(req.CurrentLevel, req.TargetLevel, expPerCandy, expMultiplier)
+	totalDreamShards, err := getRequiredDreamShards(req.CurrentLevel, req.TargetLevel, float64(ceilExpPerCandy), expMultiplier, req.CandyBoost)
 	if err != nil {
 		resp := LevelCalcResponse{Error: err.Error()}
 		w.Header().Set("Content-Type", "application/json")
@@ -126,11 +139,6 @@ func HandleLevelCalc(w http.ResponseWriter, r *http.Request) {
 // expMultiplier: 経験値の倍率
 // 戻り値: 合計経験値, 必要なアメ数, エラー
 func getRequiredExp(currentLevel, targetLevel int, expPerCandy, expMultiplier float64) (int, int, error) {
-	// 入力レベルのバリデーション
-	if currentLevel >= targetLevel {
-		return 0, 0, fmt.Errorf("目標レベルは現在のレベルより大きい値を指定してください。")
-	}
-
 	// 目標レベルの累計経験値を取得
 	targetData, targetExists := levelData[targetLevel]
 	if !targetExists {
@@ -164,8 +172,9 @@ func getRequiredExp(currentLevel, targetLevel int, expPerCandy, expMultiplier fl
 // targetLevel: 目標レベル
 // expPerCandy: 飴1個あたりの経験値量
 // expMultiplier: 経験値の倍率
+// candyBoost: 飴ブーストの種類
 // 戻り値: 必要なゆめのかけらの数, エラー
-func getRequiredDreamShards(currentLevel, targetLevel int, expPerCandy, expMultiplier float64) (int, error) {
+func getRequiredDreamShards(currentLevel, targetLevel int, expPerCandy, expMultiplier float64, candyBoost string) (int, error) {
 	totalDreamShards := 0
 	for level := currentLevel + 1; level <= targetLevel; level++ {
 		data, exists := levelData[level]
@@ -177,8 +186,15 @@ func getRequiredDreamShards(currentLevel, targetLevel int, expPerCandy, expMulti
 		// 飴1個あたりのEXPで割って、必要な飴の数を計算
 		ceilExpPerCandy := math.Ceil(expPerCandy)
 		requiredCandy := int(math.Ceil(nextLevelExp / ceilExpPerCandy))
+		// 飴ブーストの適用
+		candyPerDreamShards := data.CandyPerDreamShards
+		if candyBoost == "mini" {
+			candyPerDreamShards *= CANDY_BOOST_MINI
+		} else if candyBoost == "normal" {
+			candyPerDreamShards *= CANDY_BOOST_NORMAL
+		}
 		// 次のレベルに上がるために必要なゆめのかけらを計算
-		requiredDreamShards := requiredCandy * data.CandyPerDreamShards
+		requiredDreamShards := requiredCandy * candyPerDreamShards
 		// 必要なゆめのかけらの合計を更新
 		totalDreamShards += requiredDreamShards
 	}

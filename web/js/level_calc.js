@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const natureExpRadios = document.querySelectorAll('input[name="natureExp"]');
     // 経験値タイプのラジオボタン
     const expTypeRadios = document.querySelectorAll('input[name="expType"]');
+    // アメブーストのラジオボタン
+    const candyBoostRadios = document.querySelectorAll('input[name="candyBoost"]');
     // 結果を表示する要素
     const requiredTotalExpSpan = document.getElementById('requiredTotalExp');
     const requiredTotalCandySpan = document.getElementById('requiredTotalCandy');
@@ -28,6 +30,10 @@ document.addEventListener('DOMContentLoaded', function () {
         radio.addEventListener('change', calcLevel);
     });
 
+    candyBoostRadios.forEach(radio => {
+        radio.addEventListener('change', calcLevel);
+    });
+
     async function calcLevel() {
         const currentLevel = parseInt(currentLevelInput.value);
         const targetLevel = parseInt(targetLevelInput.value);
@@ -38,6 +44,10 @@ document.addEventListener('DOMContentLoaded', function () {
         // 選択された経験値タイプを取得
         const selectedExpTypeRadio = document.querySelector('input[name="expType"]:checked');
         const expType = selectedExpTypeRadio ? parseInt(selectedExpTypeRadio.value) : 600;
+
+        // アメブーストの選択を取得
+        const selectedCandyBoostRadio = document.querySelector('input[name="candyBoost"]:checked');
+        const candyBoost = selectedCandyBoostRadio ? selectedCandyBoostRadio.value : 'none';
 
         // 両方入力されていなければ何もしない
         if (isNaN(currentLevel) || isNaN(targetLevel)) {
@@ -67,7 +77,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     currentLevel: currentLevel,
                     targetLevel: targetLevel,
                     natureExp: natureExp,
-                    expType: expType
+                    expType: expType,
+                    candyBoost: candyBoost
                 })
             });
 
