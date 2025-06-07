@@ -1,18 +1,30 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // 現在のレベル
     const currentLevelInput = document.getElementById('currentLevel');
+    // 目標レベル
     const targetLevelInput = document.getElementById('targetLevel');
+    // 性格補正のラジオボタン
+    const natureExpRadios = document.querySelectorAll('input[name="natureExp"]');
+    // 経験値タイプのラジオボタン
+    const expTypeRadios = document.querySelectorAll('input[name="expType"]');
+    // 結果を表示する要素
     const requiredTotalExpSpan = document.getElementById('requiredTotalExp');
     const requiredTotalCandySpan = document.getElementById('requiredTotalCandy');
     const requiredTotalDreamShardsSpan = document.getElementById('requiredTotalDreamShards');
-    const natureExpRadios = document.querySelectorAll('input[name="natureExp"]');
+    // エラーメッセージを表示する要素
     const errorMessageSpan = document.getElementById('errorMessage');
 
-    // イベントリスナーを追加
+    // イベントリスナー
     currentLevelInput.addEventListener('input', calcLevel);
     targetLevelInput.addEventListener('input', calcLevel);
 
-    // 性格補正ラジオボタンの変更を監視するイベントリスナーを追加
+    // 性格補正ラジオボタンの変更を監視するイベントリスナー
     natureExpRadios.forEach(radio => {
+        radio.addEventListener('change', calcLevel);
+    });
+
+    // 経験値タイプのラジオボタンの変更を監視するイベントリスナー
+    expTypeRadios.forEach(radio => {
         radio.addEventListener('change', calcLevel);
     });
 
@@ -22,6 +34,10 @@ document.addEventListener('DOMContentLoaded', function () {
         // 選択された性格を取得
         const selectedNatureRadio = document.querySelector('input[name="natureExp"]:checked');
         const natureExp = selectedNatureRadio ? selectedNatureRadio.value : 'none';
+
+        // 選択された経験値タイプを取得
+        const selectedExpTypeRadio = document.querySelector('input[name="expType"]:checked');
+        const expType = selectedExpTypeRadio ? parseInt(selectedExpTypeRadio.value) : 600;
 
         // 両方入力されていなければ何もしない
         if (isNaN(currentLevel) || isNaN(targetLevel)) {
@@ -50,7 +66,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 body: JSON.stringify({
                     currentLevel: currentLevel,
                     targetLevel: targetLevel,
-                    natureExp: natureExp
+                    natureExp: natureExp,
+                    expType: expType
                 })
             });
 

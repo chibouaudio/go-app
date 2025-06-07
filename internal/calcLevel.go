@@ -28,6 +28,7 @@ type LevelCalcRequest struct {
 	CurrentLevel int    `json:"currentLevel"`
 	TargetLevel  int    `json:"targetLevel"`
 	NatureExp    string `json:"natureExp"`
+	ExpType      int    `json:"expType"`
 }
 
 // LevelCalcResponse はレスポンスボディの構造体
@@ -83,8 +84,11 @@ func HandleLevelCalc(w http.ResponseWriter, r *http.Request) {
 		expPerCandy *= EXP_Nature_DOWN
 	}
 
+	// 経験値タイプの倍率計算
+	var expMultiplier float64 = float64(req.ExpType) / 600.0
+
 	// 経験値とアメの計算
-	totalExp, totalCandy, err := getRequiredExp(req.CurrentLevel, req.TargetLevel, expPerCandy)
+	totalExp, totalCandy, err := getRequiredExp(req.CurrentLevel, req.TargetLevel, expPerCandy, expMultiplier)
 	if err != nil {
 		resp := LevelCalcResponse{Error: err.Error()}
 		w.Header().Set("Content-Type", "application/json")
@@ -93,7 +97,7 @@ func HandleLevelCalc(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	// ゆめのかけらの計算
-	totalDreamShards, err := getRequiredDreamShards(req.CurrentLevel, req.TargetLevel, expPerCandy)
+	totalDreamShards, err := getRequiredDreamShards(req.CurrentLevel, req.TargetLevel, expPerCandy, expMultiplier)
 	if err != nil {
 		resp := LevelCalcResponse{Error: err.Error()}
 		w.Header().Set("Content-Type", "application/json")
@@ -119,8 +123,9 @@ func HandleLevelCalc(w http.ResponseWriter, r *http.Request) {
 // currentLevel: 現在のレベル
 // targetLevel: 目標レベル
 // expPerCandy: 飴1個あたりの経験値量
+// expMultiplier: 経験値の倍率
 // 戻り値: 合計経験値, 必要なアメ数, エラー
-func getRequiredExp(currentLevel, targetLevel int, expPerCandy float64) (int, int, error) {
+func getRequiredExp(currentLevel, targetLevel int, expPerCandy, expMultiplier float64) (int, int, error) {
 	// 入力レベルのバリデーション
 	if currentLevel >= targetLevel {
 		return 0, 0, fmt.Errorf("目標レベルは現在のレベルより大きい値を指定してください。")
@@ -145,8 +150,9 @@ func getRequiredExp(currentLevel, targetLevel int, expPerCandy float64) (int, in
 		currentAccumulatedExp = currentData.AccumulatedExp
 	}
 
-	// 合計経験値を計算
-	totalExp := targetData.AccumulatedExp - currentAccumulatedExp
+	// 経験値補正を入れた合計経験値を計算
+	// 四捨五入をする
+	totalExp := int(math.Round(float64(targetData.AccumulatedExp-currentAccumulatedExp) * expMultiplier))
 
 	// 合計経験値から必要なアメ数を計算
 	totalCandy := int(math.Ceil(float64(totalExp) / expPerCandy))
@@ -157,8 +163,9 @@ func getRequiredExp(currentLevel, targetLevel int, expPerCandy float64) (int, in
 // currentLevel: 現在のレベル
 // targetLevel: 目標レベル
 // expPerCandy: 飴1個あたりの経験値量
+// expMultiplier: 経験値の倍率
 // 戻り値: 必要なゆめのかけらの数, エラー
-func getRequiredDreamShards(currentLevel, targetLevel int, expPerCandy float64) (int, error) {
+func getRequiredDreamShards(currentLevel, targetLevel int, expPerCandy, expMultiplier float64) (int, error) {
 	totalDreamShards := 0
 	for level := currentLevel + 1; level <= targetLevel; level++ {
 		data, exists := levelData[level]
@@ -166,10 +173,10 @@ func getRequiredDreamShards(currentLevel, targetLevel int, expPerCandy float64) 
 			return 0, fmt.Errorf("レベル %d のデータが見つかりません。", level)
 		}
 		// 次のレベルに上がるためのEXPを取得
-		nextLevelExp := data.RequiredExp
+		nextLevelExp := math.Round(float64(data.RequiredExp) * expMultiplier)
 		// 飴1個あたりのEXPで割って、必要な飴の数を計算
 		ceilExpPerCandy := math.Ceil(expPerCandy)
-		requiredCandy := int(math.Ceil(float64(nextLevelExp) / ceilExpPerCandy))
+		requiredCandy := int(math.Ceil(nextLevelExp / ceilExpPerCandy))
 		// 次のレベルに上がるために必要なゆめのかけらを計算
 		requiredDreamShards := requiredCandy * data.CandyPerDreamShards
 		// 必要なゆめのかけらの合計を更新
