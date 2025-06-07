@@ -1,44 +1,87 @@
-.hidden-radio {
-    display: none; /* ラジオボタン自体を非表示にする */
+body {
+    background-color: #f8f9fa; /* Bootstrapのライトグレー背景 */
+    font-family: 'Segoe UI', 'Meiryo', sans-serif;
 }
 
-.nature-button {
-    display: inline-block; /* ボタンのように横並びにする */
-    padding: 8px 15px; /* パディング */
-    margin: 5px; /* ボタン間の余白 */
-    border: 1px solid #ccc; /* 枠線 */
-    border-radius: 5px; /* 角を丸くする */
-    cursor: pointer; /* マウスカーソルをポインターにする */
-    background-color: #f0f0f0; /* 背景色 */
-    color: #333; /* 文字色 */
-    text-align: center; /* 文字を中央揃え */
-    min-width: 80px; /* 最小幅を設定して、ボタンの大きさを揃える */
-    box-sizing: border-box; /* パディングとボーダーを幅に含める */
+.container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
 }
 
-/* 選択されたボタンのスタイル */
-.hidden-radio:checked + .nature-button {
-    background-color: #007bff; /* 選択時の背景色 */
-    color: white; /* 選択時の文字色 */
-    border-color: #007bff; /* 選択時の枠線色 */
+h1 {
+    color: #0d6efd; /* Bootstrapのprimaryカラー */
 }
 
-/* ホバー時のスタイル */
-.nature-button:hover {
-    background-color: #e9e9e9;
+.desc {
+    color: #6c757d; /* Bootstrapのsecondaryカラー */
 }
 
-/* 選択されたボタンにホバーした時のスタイル */
-.hidden-radio:checked + .nature-button:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
+.form-label {
+    font-weight: bold;
+    color: #343a40;
 }
 
-/* 性格補正のオプションを囲むdivのスタイル */
-.nature-exp-options {
-    display: flex; /* ボタンをフレックスボックスで配置 */
-    gap: 10px; /* ボタン間のスペース */
-    flex-wrap: wrap; /* 必要に応じて折り返し */
-    justify-content: center; /* 中央寄せ */
-    margin-top: 10px;
+.section {
+    margin-bottom: 25px;
+}
+
+.section span {
+    font-weight: bold;
+    color: #343a40;
+    display: block; /* ラベルのようにブロック要素にする */
+    margin-bottom: 10px; /* 下に少しスペース */
+}
+
+.nature-exp-options .btn,
+.exp-type-options .btn {
+    border-radius: .375rem !important; /* Bootstrapのデフォルトを適用 */
+}
+
+
+.result-card {
+    margin-top: 40px;
+    padding: 25px;
+    background-color: #e9ecef; /* Bootstrapのlightカラー */
+    border-radius: 10px;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03); /* 少し影を追加 */
+}
+
+.result-card h2 {
+    color: #0d6efd;
+}
+
+.result-card p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: #343a40;
+}
+
+.result-card p span {
+    font-weight: bold;
+    color: #dc3545; /* Bootstrapのdangerカラー */
+}
+
+.note {
+    font-size: 0.9em;
+    color: #6c757d;
+    margin-top: 20px;
+}
+
+.error {
+    color: #dc3545;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.hidden-radio, .btn-check {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
 }

@@ -5,64 +5,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>レベル計算ツール</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="/web/css/level_calc.css">
-    <style>
-        body {
-            font-family: sans-serif;
-            margin: 20px;
-        }
-
-        label,
-        input,
-        button {
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        #result {
-            margin-top: 20px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            background-color: #f9f9f9;
-        }
-
-        .error {
-            color: red;
-        }
-    </style>
 </head>
 
 <body>
-    <h1>レベル計算</h1>
-    <p>目標レベルアップまでに必要な経験値とアメを計算します。</p>
+    <div class="container">
+        <h1 class="text-center mb-4">レベル計算ツール</h1>
+        <p class="desc text-center">目標レベルアップまでに必要な経験値とアメを計算します。</p>
 
-    <form id="levelCalcForm">
-        <label for="currentLevel">現在のレベル</label>
-        <input type="number" id="currentLevel" name="currentLevel" min="1" max="65" required>
-        <label for="targetLevel">目標レベル</label>
-        <input type="number" id="targetLevel" name="targetLevel" min="2" max="65" required>
-        <p>性格補正</p>
-        <div class="nature-exp-options">
-            <input type="radio" id="natureDown" name="natureExp" value="down" class="hidden-radio">
-            <label for="natureDown" class="nature-button">↓</label>
+        <form id="levelCalcForm" class="mb-4">
+            <div class="mb-3">
+                <label for="currentLevel" class="form-label">現在のレベル</label>
+                <input type="number" class="form-control" id="currentLevel" name="currentLevel" value="1" min="1"
+                    max="65" required>
+            </div>
+            <div class="mb-3">
+                <label for="targetLevel" class="form-label">目標レベル</label>
+                <input type="number" class="form-control" id="targetLevel" name="targetLevel" value="2" min="2" max="65"
+                    required>
+            </div>
 
-            <input type="radio" id="natureNone" name="natureExp" value="none" checked class="hidden-radio">
-            <label for="natureNone" class="nature-button">無補正</label>
+            <div class="section">
+                <span>性格補正</span>
+                <div class="btn-group w-100" role="group" aria-label="性格補正オプション">
+                    <input type="radio" class="btn-check" id="natureDown" name="natureExp" value="down"
+                        autocomplete="off">
+                    <label class="btn btn-outline-primary" for="natureDown">↓</label>
 
-            <input type="radio" id="natureUp" name="natureExp" value="up" class="hidden-radio">
-            <label for="natureUp" class="nature-button">↑</label>
+                    <input type="radio" class="btn-check" id="natureNone" name="natureExp" value="none" checked
+                        autocomplete="off">
+                    <label class="btn btn-outline-primary" for="natureNone">無補正</label>
+
+                    <input type="radio" class="btn-check" id="natureUp" name="natureExp" value="up" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="natureUp">↑</label>
+                </div>
+            </div>
+
+            <div class="section">
+                <span>経験値タイプ</span>
+                <div class="btn-group w-100" role="group" aria-label="経験値タイプオプション">
+                    <input type="radio" class="btn-check" id="expTypeNormal" name="expType" value="normal" checked
+                        autocomplete="off">
+                    <label class="btn btn-outline-primary" for="expTypeNormal">通常</label>
+
+                    <input type="radio" class="btn-check" id="expType900" name="expType" value="900" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="expType900">900</label>
+
+                    <input type="radio" class="btn-check" id="expType1080" name="expType" value="1080"
+                        autocomplete="off">
+                    <label class="btn btn-outline-primary" for="expType1080">1080</label>
+
+                    <input type="radio" class="btn-check" id="expType1320" name="expType" value="1320"
+                        autocomplete="off">
+                    <label class="btn btn-outline-primary" for="expType1320">1320</label>
+                </div>
+            </div>
+        </form>
+
+        <div id="result" class="result-card">
+            <h2 class="mb-3">計算結果</h2>
+            <p>必要な合計経験値: <span id="requiredTotalExp" class="text-danger"></span></p>
+            <p>必要な飴の数: <span id="requiredTotalCandy" class="text-danger"></span></p>
+            <p>必要な合計ゆめのかけら: <span id="requiredTotalDreamShards" class="text-danger"></span></p>
+            <p class="note">※ゆめのかけらの必要数は目安値です。</p>
+            <p class="error" id="errorMessage"></p>
         </div>
-    </form>
-
-    <div id="result">
-        <h2>計算結果:</h2>
-        <p>必要な合計経験値: <span id="requiredTotalExp"></span></p>
-        <p>必要な飴の数: <span id="requiredTotalCandy"></span></p>
-        <p>必要な合計ゆめのかけら: <span id="requiredTotalDreamShards"></span></p>
-        <p style="color: rgb(136, 135, 135);">注意: ゆめのかけらの必要数は、目安値です。</p>
-        <p class="error" id="errorMessage"></p>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
     <script src="/web/js/level_calc.js"></script>
 </body>
 

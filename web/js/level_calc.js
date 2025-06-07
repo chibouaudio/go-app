@@ -75,4 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
             console.error('レベル計算APIの呼び出し中にエラーが発生しました:', error);
         }
     }
+
+    // 初期計算
+    calcLevel();
 });
