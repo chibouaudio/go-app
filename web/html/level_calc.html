@@ -18,13 +18,19 @@
         <form id="levelCalcForm" class="mb-4">
             <div class="mb-3">
                 <label for="currentLevel" class="form-label">現在のレベル</label>
-                <input type="number" class="form-control" id="currentLevel" name="currentLevel" value="1" min="1"
-                    max="65" required>
+                <div class="d-flex align-items-center gap-2">
+                    <input type="range" class="form-range" id="currentLevel" name="currentLevel" value="1" min="1"
+                        max="65" required>
+                    <span id="currentLevelValue">1</span>
+                </div>
             </div>
             <div class="mb-3">
                 <label for="targetLevel" class="form-label">目標レベル</label>
-                <input type="number" class="form-control" id="targetLevel" name="targetLevel" value="2" min="2" max="65"
-                    required>
+                <div class="d-flex align-items-center gap-2">
+                    <input type="range" class="form-range" id="targetLevel" name="targetLevel" value="2" min="2"
+                        max="65" required>
+                    <span id="targetLevelValue">2</span>
+                </div>
             </div>
 
             <div class="section">

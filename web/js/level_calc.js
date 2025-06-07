@@ -3,6 +3,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const currentLevelInput = document.getElementById('currentLevel');
     // 目標レベル
     const targetLevelInput = document.getElementById('targetLevel');
+    // 現在のレベル（表示用）
+    const currentLevelValue = document.getElementById('currentLevelValue');
+    // 目標レベル（表示用）
+    const targetLevelValue = document.getElementById('targetLevelValue');
     // 性格補正のラジオボタン
     const natureExpRadios = document.querySelectorAll('input[name="natureExp"]');
     // 経験値タイプのラジオボタン
@@ -18,8 +22,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const errorCandyBoostMessage = document.getElementById('errorCandyBoostMessage');
 
     // イベントリスナー
-    currentLevelInput.addEventListener('input', calcLevel);
-    targetLevelInput.addEventListener('input', calcLevel);
+    currentLevelInput.addEventListener('input', function() {
+        currentLevelValue.textContent = currentLevelInput.value;
+        calcLevel();
+    });
+    targetLevelInput.addEventListener('input', function() {
+        targetLevelValue.textContent = targetLevelInput.value;
+        calcLevel();
+    });
 
     // 性格補正ラジオボタンの変更を監視するイベントリスナー
     natureExpRadios.forEach(radio => {
