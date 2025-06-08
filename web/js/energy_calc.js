@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     async function loadFieldTypes() {
         try {
-            const response = await fetch('/api/getFieldData', {
+            const response = await fetch('/api/getFieldNames', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',

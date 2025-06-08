@@ -14,28 +14,44 @@ type EnergyEvaluation struct {
 	TotalEnergy  *int   `json:"total_energy"`
 }
 
-func GetFieldData(w http.ResponseWriter, r *http.Request) {
+type ResearchAreas struct {
+	ResearchAreas map[string][]EnergyEvaluation `json:"research_areas"`
+}
+
+func GetFieldNames(w http.ResponseWriter, r *http.Request) {
+	fieldData, err := loadFieldDataJson(w)
+	if err != nil {
+		return
+	}
+
+	var fieldNames []string
+	for k := range fieldData.ResearchAreas {
+		fieldNames = append(fieldNames, k)
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	if err := json.NewEncoder(w).Encode(fieldNames); err != nil {
+		http.Error(w, "JSONエンコード失敗: "+err.Error(), http.StatusInternalServerError)
+		return
+	}
+}
+
+// フィールドデータをJSONから取得する
+func loadFieldDataJson(w http.ResponseWriter) (ResearchAreas, error) {
 	jsonPath := filepath.Join(".", "data", "energy_evaluations.json")
 
 	f, err := os.Open(jsonPath)
 	if err != nil {
 		http.Error(w, "ファイルが開けません: "+err.Error(), http.StatusInternalServerError)
-		return
+		return ResearchAreas{}, err
 	}
 	defer f.Close()
 
-	// マップで受ける
-	var fieldData map[string][]EnergyEvaluation
-	if err := json.NewDecoder(f).Decode(&fieldData); err != nil {
+	var researchAreas ResearchAreas
+	if err := json.NewDecoder(f).Decode(&researchAreas); err != nil {
 		http.Error(w, "JSONデコード失敗: "+err.Error(), http.StatusInternalServerError)
-		return
+		return ResearchAreas{}, err
 	}
 
-	var fieldNames []string
-	for k := range fieldData {
-		fieldNames = append(fieldNames, k)
-	}
-
-	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(fieldNames)
+	return researchAreas, nil
 }

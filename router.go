@@ -47,7 +47,7 @@ func RouterSettings() *http.ServeMux {
 		tmpl.Execute(w, data)
 	})
 
-	mux.HandleFunc("/api/getFieldData", internal.GetFieldData)
+	mux.HandleFunc("/api/getFieldNames", internal.GetFieldNames)
 
 	return mux
 }
