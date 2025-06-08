@@ -41,20 +41,25 @@
                 <label for="recipeLevel" class="form-label mb-2">レシピレベル</label>
                 <select id="recipeLevel" class="form-select"></select>
             </div>
+            <div class="col-md-6 mb-3">
+                <label for="skillChance" class="form-label mb-2">料理チャンスのスキル発生回数</label>
+                <input id="skillChance" class="form-control" type="number" min="0" max="100" step="0.1"
+                    placeholder="%" />
+            </div>
         </div>
 
         <div class="row results">
             <div class="col-md-6 mb-3">
                 <label class="form-label mb-1">M20必要エナジー</label>
-                <p id="energyRequiredForM20" class="mb-0">0</p>
+                <p id="resultM20Energy" class="mb-0">0</p>
             </div>
             <div class="col-md-6 mb-3">
                 <label class="form-label mb-1">基礎料理エナジー</label>
-                <p id="baseRecipeEnergy" class="mb-0">0</p>
+                <p id="resultBaseRecipeEnergy" class="mb-0">0</p>
             </div>
             <div class="col-md-6 mb-3">
                 <label class="form-label mb-1">料理エナジー</label>
-                <p id="recipeEnergy" class="mb-0">0</p>
+                <p id="resultRecipeEnergy" class="mb-0">0</p>
             </div>
         </div>
     </div>

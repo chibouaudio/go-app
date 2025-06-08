@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     const recipeLevel = document.getElementById('recipeLevel');
 
     // 結果要素
-    const energyRequiredForM20 = document.getElementById('energyRequiredForM20');
-    const baseRecipeEnergy = document.getElementById('baseRecipeEnergy');
-    const recipeEnergy = document.getElementById('recipeEnergy');
+    const resultM20Energy = document.getElementById('resultM20Energy');
+    const resultBaseRecipeEnergy = document.getElementById('resultBaseRecipeEnergy');
+    const resultRecipeEnergy = document.getElementById('resultRecipeEnergy');
 
     const MAX_FIELD_BONUS = 75;
     const MAX_RECIPE_LEVEL = 65;
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // イベント: フィールド名変更
     selectFieldName.addEventListener('change', () => {
         const fieldName = selectFieldName.value;
-        energyRequiredForM20.textContent = '';
+        resultM20Energy.textContent = '';
         if (fieldName) calcM20Energy(fieldName);
     });
 
@@ -27,11 +27,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     recipesList.addEventListener('change', () => {
         const energy = getSelectedRecipeEnergy();
         if (energy) {
-            baseRecipeEnergy.textContent = Intl.NumberFormat('ja-JP').format(energy);
+            resultBaseRecipeEnergy.textContent = Intl.NumberFormat('ja-JP').format(energy);
             calcRecipeBonus(recipeLevel.value, energy);
         } else {
-            baseRecipeEnergy.textContent = '';
-            recipeEnergy.textContent = '';
+            resultBaseRecipeEnergy.textContent = '';
+            resultRecipeEnergy.textContent = '';
         }
     });
 
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (energy) {
             calcRecipeBonus(recipeLevel.value, energy);
         } else {
-            recipeEnergy.textContent = '';
+            resultRecipeEnergy.textContent = '';
         }
     });
 
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             });
             if (!response.ok) throw new Error('データ取得APIエラー');
             const data = await response.json();
-            energyRequiredForM20.textContent = Intl.NumberFormat('ja-JP').format(data.energyRequiredForM20);
+            resultM20Energy.textContent = Intl.NumberFormat('ja-JP').format(data.energyRequiredForM20);
         } catch (error) {
             console.error('データ取得エラー:', error);
         }
@@ -134,9 +134,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             const data = await response.json();
             const bonus = 1 + (data / 100);
             const result = Math.round(baseEnergy * bonus); // 四捨五入
-            recipeEnergy.textContent = Intl.NumberFormat('ja-JP').format(result);
+            resultRecipeEnergy.textContent = Intl.NumberFormat('ja-JP').format(result);
         } catch (error) {
-            recipeEnergy.textContent = '';
+            resultRecipeEnergy.textContent = '';
             console.error('レシピボーナス取得エラー:', error);
         }
     }
