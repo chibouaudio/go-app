@@ -248,11 +248,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const isEnough = remainingRequired <= 0;
 
         usageResult.innerHTML = `
-            <li class="mt-2">使うポケモンのアメ：<strong>${usePokemon}</strong> 個</li>
-            <li class="mt-2">使うばんのうアメS：<strong>${useS}</strong> 個</li>
-            <li class="mt-2">使うばんのうアメM：<strong>${useM}</strong> 個</li>
-            <li class="mt-2">使うばんのうアメL：<strong>${useL}</strong> 個</li>
-            <li class="mt-2">${isEnough ? `<span class="text-success">足りています！</span>` : `<span class="text-danger">あと${finalRemaining}個足りません</span>`}</li>
+            <li class="mt-3">使うポケモンのアメ：<strong>${usePokemon}</strong> 個</li>
+            <li class="mt-3">使うばんのうアメS：<strong>${useS}</strong> 個</li>
+            <li class="mt-3">使うばんのうアメM：<strong>${useM}</strong> 個</li>
+            <li class="mt-3">使うばんのうアメL：<strong>${useL}</strong> 個</li>
+            <li class="mt-3">${isEnough ? `<span class="text-success">足りています！</span>` : `<span class="text-danger">あと${finalRemaining}個足りません</span>`}</li>
         `;
     }
 

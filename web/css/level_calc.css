@@ -55,7 +55,7 @@ h1 {
     color: #0d6efd;
 }
 
-.result-card p {
+.result-card p, li {
     font-size: 1.1em;
     margin-bottom: 10px;
     color: #343a40;
