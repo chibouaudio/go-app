@@ -1,0 +1,398 @@
+[
+    {
+        "level": 0,
+        "bonus_percentage": 0,
+        "required_experience": 0,
+        "cumulative_experience": 0
+    },
+    {
+        "level": 1,
+        "bonus_percentage": 0,
+        "required_experience": 0,
+        "cumulative_experience": 0
+    },
+    {
+        "level": 2,
+        "bonus_percentage": 0,
+        "required_experience": 1080,
+        "cumulative_experience": 1080
+    },
+    {
+        "level": 3,
+        "bonus_percentage": 4,
+        "required_experience": 1244,
+        "cumulative_experience": 2324
+    },
+    {
+        "level": 4,
+        "bonus_percentage": 6,
+        "required_experience": 1612,
+        "cumulative_experience": 3936
+    },
+    {
+        "level": 5,
+        "bonus_percentage": 8,
+        "required_experience": 1609,
+        "cumulative_experience": 5545
+    },
+    {
+        "level": 6,
+        "bonus_percentage": 9,
+        "required_experience": 1796,
+        "cumulative_experience": 7341
+    },
+    {
+        "level": 7,
+        "bonus_percentage": 11,
+        "required_experience": 2371,
+        "cumulative_experience": 9712
+    },
+    {
+        "level": 8,
+        "bonus_percentage": 13,
+        "required_experience": 3048,
+        "cumulative_experience": 12760
+    },
+    {
+        "level": 9,
+        "bonus_percentage": 16,
+        "required_experience": 3666,
+        "cumulative_experience": 16426
+    },
+    {
+        "level": 10,
+        "bonus_percentage": 18,
+        "required_experience": 4365,
+        "cumulative_experience": 20791
+    },
+    {
+        "level": 11,
+        "bonus_percentage": 19,
+        "required_experience": 4848,
+        "cumulative_experience": 25639
+    },
+    {
+        "level": 12,
+        "bonus_percentage": 21,
+        "required_experience": 5272,
+        "cumulative_experience": 30911
+    },
+    {
+        "level": 13,
+        "bonus_percentage": 23,
+        "required_experience": 5710,
+        "cumulative_experience": 36621
+    },
+    {
+        "level": 14,
+        "bonus_percentage": 24,
+        "required_experience": 6301,
+        "cumulative_experience": 42922
+    },
+    {
+        "level": 15,
+        "bonus_percentage": 26,
+        "required_experience": 6960,
+        "cumulative_experience": 49882
+    },
+    {
+        "level": 16,
+        "bonus_percentage": 28,
+        "required_experience": 7669,
+        "cumulative_experience": 57551
+    },
+    {
+        "level": 17,
+        "bonus_percentage": 30,
+        "required_experience": 8450,
+        "cumulative_experience": 66001
+    },
+    {
+        "level": 18,
+        "bonus_percentage": 31,
+        "required_experience": 9130,
+        "cumulative_experience": 75131
+    },
+    {
+        "level": 19,
+        "bonus_percentage": 33,
+        "required_experience": 9850,
+        "cumulative_experience": 84981
+    },
+    {
+        "level": 20,
+        "bonus_percentage": 35,
+        "required_experience": 10661,
+        "cumulative_experience": 95642
+    },
+    {
+        "level": 21,
+        "bonus_percentage": 37,
+        "required_experience": 11517,
+        "cumulative_experience": 107159
+    },
+    {
+        "level": 22,
+        "bonus_percentage": 40,
+        "required_experience": 12417,
+        "cumulative_experience": 119576
+    },
+    {
+        "level": 23,
+        "bonus_percentage": 42,
+        "required_experience": 13362,
+        "cumulative_experience": 132938
+    },
+    {
+        "level": 24,
+        "bonus_percentage": 45,
+        "required_experience": 14371,
+        "cumulative_experience": 147309
+    },
+    {
+        "level": 25,
+        "bonus_percentage": 47,
+        "required_experience": 15312,
+        "cumulative_experience": 162621
+    },
+    {
+        "level": 26,
+        "bonus_percentage": 50,
+        "required_experience": 16308,
+        "cumulative_experience": 178929
+    },
+    {
+        "level": 27,
+        "bonus_percentage": 52,
+        "required_experience": 17634,
+        "cumulative_experience": 196563
+    },
+    {
+        "level": 28,
+        "bonus_percentage": 55,
+        "required_experience": 19042,
+        "cumulative_experience": 215605
+    },
+    {
+        "level": 29,
+        "bonus_percentage": 58,
+        "required_experience": 20544,
+        "cumulative_experience": 236149
+    },
+    {
+        "level": 30,
+        "bonus_percentage": 61,
+        "required_experience": 22150,
+        "cumulative_experience": 258299
+    },
+    {
+        "level": 31,
+        "bonus_percentage": 64,
+        "required_experience": 23656,
+        "cumulative_experience": 281955
+    },
+    {
+        "level": 32,
+        "bonus_percentage": 67,
+        "required_experience": 24804,
+        "cumulative_experience": 306759
+    },
+    {
+        "level": 33,
+        "bonus_percentage": 70,
+        "required_experience": 26010,
+        "cumulative_experience": 332769
+    },
+    {
+        "level": 34,
+        "bonus_percentage": 74,
+        "required_experience": 27700,
+        "cumulative_experience": 360469
+    },
+    {
+        "level": 35,
+        "bonus_percentage": 77,
+        "required_experience": 29474,
+        "cumulative_experience": 389943
+    },
+    {
+        "level": 36,
+        "bonus_percentage": 81,
+        "required_experience": 31578,
+        "cumulative_experience": 421521
+    },
+    {
+        "level": 37,
+        "bonus_percentage": 84,
+        "required_experience": 33859,
+        "cumulative_experience": 455380
+    },
+    {
+        "level": 38,
+        "bonus_percentage": 88,
+        "required_experience": 35675,
+        "cumulative_experience": 491055
+    },
+    {
+        "level": 39,
+        "bonus_percentage": 92,
+        "required_experience": 37608,
+        "cumulative_experience": 528663
+    },
+    {
+        "level": 40,
+        "bonus_percentage": 96,
+        "required_experience": 40255,
+        "cumulative_experience": 568918
+    },
+    {
+        "level": 41,
+        "bonus_percentage": 100,
+        "required_experience": 42623,
+        "cumulative_experience": 611541
+    },
+    {
+        "level": 42,
+        "bonus_percentage": 104,
+        "required_experience": 45105,
+        "cumulative_experience": 656646
+    },
+    {
+        "level": 43,
+        "bonus_percentage": 108,
+        "required_experience": 47698,
+        "cumulative_experience": 704344
+    },
+    {
+        "level": 44,
+        "bonus_percentage": 113,
+        "required_experience": 50404,
+        "cumulative_experience": 754748
+    },
+    {
+        "level": 45,
+        "bonus_percentage": 117,
+        "required_experience": 52436,
+        "cumulative_experience": 807184
+    },
+    {
+        "level": 46,
+        "bonus_percentage": 122,
+        "required_experience": 55021,
+        "cumulative_experience": 862205
+    },
+    {
+        "level": 47,
+        "bonus_percentage": 127,
+        "required_experience": 58731,
+        "cumulative_experience": 920936
+    },
+    {
+        "level": 48,
+        "bonus_percentage": 132,
+        "required_experience": 62654,
+        "cumulative_experience": 983590
+    },
+    {
+        "level": 49,
+        "bonus_percentage": 137,
+        "required_experience": 66801,
+        "cumulative_experience": 1050391
+    },
+    {
+        "level": 50,
+        "bonus_percentage": 142,
+        "required_experience": 71191,
+        "cumulative_experience": 1121582
+    },
+    {
+        "level": 51,
+        "bonus_percentage": 148,
+        "required_experience": 75105,
+        "cumulative_experience": 1196687
+    },
+    {
+        "level": 52,
+        "bonus_percentage": 153,
+        "required_experience": 122798,
+        "cumulative_experience": 1319485
+    },
+    {
+        "level": 53,
+        "bonus_percentage": 159,
+        "required_experience": 151878,
+        "cumulative_experience": 1471363
+    },
+    {
+        "level": 54,
+        "bonus_percentage": 165,
+        "required_experience": 201226,
+        "cumulative_experience": 1672589
+    },
+    {
+        "level": 55,
+        "bonus_percentage": 171,
+        "required_experience": 258289,
+        "cumulative_experience": 1930878
+    },
+    {
+        "level": 56,
+        "bonus_percentage": 177,
+        "required_experience": 300444,
+        "cumulative_experience": 2231322
+    },
+    {
+        "level": 57,
+        "bonus_percentage": 183,
+        "required_experience": 347990,
+        "cumulative_experience": 2579312
+    },
+    {
+        "level": 58,
+        "bonus_percentage": 190,
+        "required_experience": 398682,
+        "cumulative_experience": 2977994
+    },
+    {
+        "level": 59,
+        "bonus_percentage": 197,
+        "required_experience": 435126,
+        "cumulative_experience": 3413120
+    },
+    {
+        "level": 60,
+        "bonus_percentage": 203,
+        "required_experience": 478025,
+        "cumulative_experience": 3891145
+    },
+    {
+        "level": 61,
+        "bonus_percentage": 209,
+        "required_experience": 542412,
+        "cumulative_experience": 4433557
+    },
+    {
+        "level": 62,
+        "bonus_percentage": 215,
+        "required_experience": 621231,
+        "cumulative_experience": 5054788
+    },
+    {
+        "level": 63,
+        "bonus_percentage": 221,
+        "required_experience": 718231,
+        "cumulative_experience": 5773019
+    },
+    {
+        "level": 64,
+        "bonus_percentage": 227,
+        "required_experience": 833386,
+        "cumulative_experience": 6606405
+    },
+    {
+        "level": 65,
+        "bonus_percentage": 234,
+        "required_experience": 992698,
+        "cumulative_experience": 7599103
+    }
+]

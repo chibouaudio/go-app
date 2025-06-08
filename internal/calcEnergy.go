@@ -21,18 +21,39 @@ type ResearchArea struct {
 	Evaluations []EnergyEvaluationJson `json:"evaluations"`
 }
 
-// energy_evaluations.jsonの情報を保持する構造体
 type ResearchAreasJson struct {
-	ResearchAreas []ResearchArea `json:"research_areas"` // スライスのスライスに変更
+	ResearchAreas []ResearchArea `json:"research_areas"`
 }
 
 type EnergyCalcRequest struct {
-	FieldName string `json:"fieldName"`
+	FieldName  string `json:"fieldName"`
+	RankType   string `json:"rankType"`
+	RankNumber int    `json:"rankNumber"`
 }
 
 type EnergyCalcResponse struct {
 	EnergyRequiredForM20 int    `json:"energyRequiredForM20"`
 	Error                string `json:"error,omitempty"`
+}
+
+// フィールドデータをJSONから取得する
+func loadFieldDataJson(w http.ResponseWriter) (ResearchAreasJson, error) {
+	jsonPath := filepath.Join(".", "data", "energy_evaluations.json")
+
+	f, err := os.Open(jsonPath)
+	if err != nil {
+		http.Error(w, "ファイルが開けません: "+err.Error(), http.StatusInternalServerError)
+		return ResearchAreasJson{}, err
+	}
+	defer f.Close()
+
+	var researchAreas ResearchAreasJson
+	if err := json.NewDecoder(f).Decode(&researchAreas); err != nil {
+		http.Error(w, "JSONデコード失敗: "+err.Error(), http.StatusInternalServerError)
+		return ResearchAreasJson{}, err
+	}
+
+	return researchAreas, nil
 }
 
 func GetFieldNames(w http.ResponseWriter, r *http.Request) {
@@ -92,7 +113,7 @@ func CalcEnergy(w http.ResponseWriter, r *http.Request) {
 
 	// 取得した評価リスト (evaluations) をループしてM20のTotalEnergyを探す
 	for _, evaluation := range evaluations {
-		if evaluation.RankType == "マスター" && evaluation.RankNumber == 20 {
+		if evaluation.RankType == req.RankType && evaluation.RankNumber == req.RankNumber {
 			if evaluation.TotalEnergy != nil {
 				energyForM20 = *evaluation.TotalEnergy
 			}
@@ -110,24 +131,4 @@ func CalcEnergy(w http.ResponseWriter, r *http.Request) {
 	if err := json.NewEncoder(w).Encode(resp); err != nil {
 		http.Error(w, fmt.Sprintf("JSONのエンコードに失敗しました: %v", err), http.StatusInternalServerError)
 	}
-}
-
-// フィールドデータをJSONから取得する
-func loadFieldDataJson(w http.ResponseWriter) (ResearchAreasJson, error) {
-	jsonPath := filepath.Join(".", "data", "energy_evaluations.json")
-
-	f, err := os.Open(jsonPath)
-	if err != nil {
-		http.Error(w, "ファイルが開けません: "+err.Error(), http.StatusInternalServerError)
-		return ResearchAreasJson{}, err
-	}
-	defer f.Close()
-
-	var researchAreas ResearchAreasJson
-	if err := json.NewDecoder(f).Decode(&researchAreas); err != nil {
-		http.Error(w, "JSONデコード失敗: "+err.Error(), http.StatusInternalServerError)
-		return ResearchAreasJson{}, err
-	}
-
-	return researchAreas, nil
 }

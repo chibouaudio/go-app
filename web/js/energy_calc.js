@@ -27,8 +27,6 @@ document.addEventListener('DOMContentLoaded', async function () {
             defaultOption.textContent = '選択してください';
             selectFieldName.appendChild(defaultOption);
 
-            console.log(data);
-
             // データからoptionを追加
             data.forEach(type => {
                 const option = document.createElement('option');
@@ -47,14 +45,15 @@ document.addEventListener('DOMContentLoaded', async function () {
         }
 
         try {
-            console.log(fieldName)
             const response = await fetch(`/api/calcEnergy`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    fieldName: fieldName
+                    fieldName: fieldName,
+                    RankType: "マスター",
+                    RankNumber: 20
                 })
             });
 
