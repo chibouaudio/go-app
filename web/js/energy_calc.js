@@ -1,12 +1,19 @@
 document.addEventListener('DOMContentLoaded', async function () {
     const selectFieldName = document.getElementById('fieldName');
     const energyRequiredForM20 = document.getElementById('energyRequiredForM20');
+    const recipesList = document.getElementById('recipesList');
 
     selectFieldName.addEventListener('change', function () {
         const selectFieldName = this.value;
         calcEnergy(selectFieldName);
     })
 
+    async function loadData() {
+        await loadFieldNames()
+        await loadRecipes()
+    }
+
+    // フィールド名を取得する
     async function loadFieldNames() {
         try {
             const response = await fetch('/api/getFieldNames', {
@@ -34,6 +41,69 @@ document.addEventListener('DOMContentLoaded', async function () {
                 option.textContent = type;
                 selectFieldName.appendChild(option);
             });
+        } catch (error) {
+            console.error('ドロップダウン取得エラー:', error);
+        }
+    }
+
+    async function loadRecipes() {
+        try {
+            const response = await fetch('/api/getRecipes', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            });
+            if (!response.ok) {
+                console.error('API取得エラー');
+                return;
+            }
+            const data = await response.json();
+
+            recipesList.innerHTML = '';
+            const defaultOption = document.createElement('option');
+            defaultOption.value = '';
+            defaultOption.textContent = '選択してください';
+            recipesList.appendChild(defaultOption);
+
+            // データからoptionを追加
+            for (const category in data) {
+                const categoryOption = document.createElement('optgroup');
+                let categoryLabel;
+                switch (category) {
+                    case 'curry':
+                        categoryLabel = 'カレー';
+                        break;
+                    case 'salad':
+                        categoryLabel = 'サラダ';
+                        break;
+                    case 'dessert_drinks':
+                        categoryLabel = 'デザート・ドリンク';
+                        break;
+                }
+                categoryOption.label = categoryLabel;
+
+                const sortedRecipes = data[category].slice().sort((a, b) => {
+                    if (a.recipeEnergy == null) return 1;
+                    if (b.recipeEnergy == null) return -1;
+                    return b.recipeEnergy - a.recipeEnergy;
+                });
+
+                sortedRecipes.forEach(recipe => {
+                    const option = document.createElement('option');
+                    option.value = recipe.dishName;
+                    const energy = recipe.recipeEnergy != null
+                        ? Intl.NumberFormat('ja-JP').format(recipe.recipeEnergy)
+                        : '-';
+
+                    const maxNameLength = 16;
+                    const paddedName = recipe.dishName.padEnd(maxNameLength, '　');
+                    option.textContent = `${paddedName}${energy}`;
+                    categoryOption.appendChild(option);
+                });
+
+                recipesList.appendChild(categoryOption);
+            }
         } catch (error) {
             console.error('ドロップダウン取得エラー:', error);
         }
@@ -70,5 +140,5 @@ document.addEventListener('DOMContentLoaded', async function () {
         }
     }
 
-    await loadFieldNames();
+    await loadData();
 });
