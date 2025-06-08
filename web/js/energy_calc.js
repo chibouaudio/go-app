@@ -4,8 +4,10 @@ document.addEventListener('DOMContentLoaded', async function () {
     const recipesList = document.getElementById('recipesList');
     const baseRecipeEnergy = document.getElementById('baseRecipeEnergy');
     const fieldBonus = document.getElementById('fieldBonus');
+    const recipeLevel = document.getElementById('recipeLevel');
 
     const MAX_FIELD_BONUS = 75;
+    const MAX_RECIPE_LEVEL = 65;
 
     // フィールド名のドロップダウンの変更イベント
     selectFieldName.addEventListener('change', function () {
@@ -38,6 +40,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         await loadFieldNames()
         await loadRecipes()
         setFieldBonusOptions();
+        setRecipeLevel();
     }
 
     // フィールド名を取得する
@@ -163,6 +166,20 @@ document.addEventListener('DOMContentLoaded', async function () {
             }
         } catch (error) {
             console.error('ドロップダウン取得エラー:', error);
+        }
+    }
+
+    // レシピレベルの選択肢を設定する
+    function setRecipeLevel() {
+        recipeLevel.innerHTML = '';
+        for (let i = 0; i <= MAX_RECIPE_LEVEL; i += 5) {
+            const option = document.createElement('option');
+            option.value = i;
+            option.textContent = i;
+            if (i === 60) {
+                option.selected = true;
+            }
+            recipeLevel.appendChild(option);
         }
     }
 
