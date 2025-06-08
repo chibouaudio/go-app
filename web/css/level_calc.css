@@ -86,6 +86,30 @@ h1 {
     pointer-events: none;
 }
 
+/* つまみ（サム）を大きく */
+input[type="range"].form-range::-webkit-slider-thumb {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background: #4f8cff;
+    cursor: pointer;
+    margin-top: -0.55rem;
+}
+input[type="range"].form-range::-moz-range-thumb {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background: #4f8cff;
+    cursor: pointer;
+}
+input[type="range"].form-range::-ms-thumb {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background: #4f8cff;
+    cursor: pointer;
+}
+
 @media (max-width: 767.98px) {
     #expTypeButtonGroup {
         flex-wrap: wrap;
