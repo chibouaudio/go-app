@@ -8,7 +8,7 @@ import (
 
 // ルーティング設定を返す関数
 func RouterSettings() *http.ServeMux {
-    mux := http.NewServeMux()
+	mux := http.NewServeMux()
 	// 静的ファイルのハンドリング
 	mux.Handle("/web/", http.StripPrefix("/web/", http.FileServer(http.Dir("web"))))
 
@@ -17,11 +17,6 @@ func RouterSettings() *http.ServeMux {
 		http.ServeFile(w, r, "web/html/index.html")
 	})
 
-	// mux.HandleFunc("/level_calc", func(w http.ResponseWriter, r *http.Request) {
-	// 	http.ServeFile(w, r, "web/html/level_calc.html")
-	// })
-
-	// level_calc.htmlを表示する
 	mux.HandleFunc("/level_calc", func(w http.ResponseWriter, r *http.Request) {
 		tmpl, err := template.ParseFiles("web/html/level_calc.html")
 		if err != nil {
@@ -36,8 +31,23 @@ func RouterSettings() *http.ServeMux {
 		tmpl.Execute(w, data)
 	})
 
-    // 必要に応じて他のルートも追加
 	mux.HandleFunc("/api/level_calc", internal.HandleLevelCalc)
 
-    return mux
+	mux.HandleFunc("/energy_calc", func(w http.ResponseWriter, r *http.Request) {
+		tmpl, err := template.ParseFiles("web/html/energy_calc.html")
+		if err != nil {
+			http.Error(w, "テンプレートエラー", http.StatusInternalServerError)
+			return
+		}
+		data := struct {
+			Title string
+		}{
+			Title: "エナジー計算ページ",
+		}
+		tmpl.Execute(w, data)
+	})
+
+	mux.HandleFunc("/api/getFieldData", internal.GetFieldData)
+
+	return mux
 }

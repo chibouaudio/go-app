@@ -1,0 +1,1274 @@
+{
+  "ワカクサ本島": [
+    {
+      "rank_type": "ノーマル",
+      "rank_number": 1,
+      "energy_to_next_rank": 0,
+      "total_energy": null
+    },
+    {
+      "rank_type": "ノーマル",
+      "rank_number": 2,
+      "energy_to_next_rank": 3118,
+      "total_energy": 3118
+    },
+    {
+      "rank_type": "ノーマル",
+      "rank_number": 3,
+      "energy_to_next_rank": 4053,
+      "total_energy": 7171
+    },
+    {
+      "rank_type": "ノーマル",
+      "rank_number": 4,
+      "energy_to_next_rank": 4522,
+      "total_energy": 11693
+    },
+    {
+      "rank_type": "ノーマル",
+      "rank_number": 5,
+      "energy_to_next_rank": 5456,
+      "total_energy": 17149
+    },
+    {
+      "rank_type": "スーパー",
+      "rank_number": 1,
+      "energy_to_next_rank": 6236,
+      "total_energy": 23385
+    },
+    {
+      "rank_type": "スーパー",
+      "rank_number": 2,
+      "energy_to_next_rank": 8107,
+      "total_energy": 31492
+    },
+    {
+      "rank_type": "スーパー",
+      "rank_number": 3,
+      "energy_to_next_rank": 9822,
+      "total_energy": 41314
+    },
+    {
+      "rank_type": "スーパー",
+      "rank_number": 4,
+      "energy_to_next_rank": 11692,
+      "total_energy": 53006
+    },
+    {
+      "rank_type": "スーパー",
+      "rank_number": 5,
+      "energy_to_next_rank": 12628,
+      "total_energy": 65634
+    },
+    {
+      "rank_type": "ハイパー",
+      "rank_number": 1,
+      "energy_to_next_rank": 13563,
+      "total_energy": 79197
+    },
+    {
+      "rank_type": "ハイパー",
+      "rank_number": 2,
+      "energy_to_next_rank": 14343,
+      "total_energy": 93540
+    },
+    {
+      "rank_type": "ハイパー",
+      "rank_number": 3,
+      "energy_to_next_rank": 15590,
+      "total_energy": 109130
+    },
+    {
+      "rank_type": "ハイパー",
+      "rank_number": 4,
+      "energy_to_next_rank": 15902,
+      "total_energy": 125032
+    },
+    {
+      "rank_type": "ハイパー",
+      "rank_number": 5,
+      "energy_to_next_rank": 31089,
+      "total_energy": 156121
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 1,
+      "energy_to_next_rank": 31711,
+      "total_energy": 187832
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 2,
+      "energy_to_next_rank": 32345,
+      "total_energy": 220177
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 3,
+      "energy_to_next_rank": 32992,
+      "total_energy": 253169
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 4,
+      "energy_to_next_rank": 33652,
+      "total_energy": 286821
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 5,
+      "energy_to_next_rank": 34325,
+      "total_energy": 321146
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 6,
+      "energy_to_next_rank": 35012,
+      "total_energy": 356158
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 7,
+      "energy_to_next_rank": 35712,
+      "total_energy": 391870
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 8,
+      "energy_to_next_rank": 36426,
+      "total_energy": 428296
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 9,
+      "energy_to_next_rank": 37155,
+      "total_energy": 465451
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 10,
+      "energy_to_next_rank": 67256,
+      "total_energy": 532707
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 11,
+      "energy_to_next_rank": 68601,
+      "total_energy": 601308
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 12,
+      "energy_to_next_rank": 140748,
+      "total_energy": 742056
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 13,
+      "energy_to_next_rank": 143563,
+      "total_energy": 885619
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 14,
+      "energy_to_next_rank": 144081,
+      "total_energy": 1029700
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 15,
+      "energy_to_next_rank": 169806,
+      "total_energy": 1199506
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 16,
+      "energy_to_next_rank": 287294,
+      "total_energy": 1486800
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 17,
+      "energy_to_next_rank": 308252,
+      "total_energy": 1795052
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 18,
+      "energy_to_next_rank": 370489,
+      "total_energy": 2165541
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 19,
+      "energy_to_next_rank": 438739,
+      "total_energy": 2604280
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 20,
+      "energy_to_next_rank": 641515,
+      "total_energy": 3245795
+    }
+  ],
+  "シアンの砂浜": [
+    {
+      "rank_type": "ノーマル",
+      "rank_number": 1,
+      "energy_to_next_rank": 0,
+      "total_energy": null
+    },
+    {
+      "rank_type": "ノーマル",
+      "rank_number": 2,
+      "energy_to_next_rank": 4822,
+      "total_energy": 4822
+    },
+    {
+      "rank_type": "ノーマル",
+      "rank_number": 3,
+      "energy_to_next_rank": 6268,
+      "total_energy": 11090
+    },
+    {
+      "rank_type": "ノーマル",
+      "rank_number": 4,
+      "energy_to_next_rank": 6992,
+      "total_energy": 18082
+    },
+    {
+      "rank_type": "ノーマル",
+      "rank_number": 5,
+      "energy_to_next_rank": 8438,
+      "total_energy": 26520
+    },
+    {
+      "rank_type": "スーパー",
+      "rank_number": 1,
+      "energy_to_next_rank": 9644,
+      "total_energy": 36164
+    },
+    {
+      "rank_type": "スーパー",
+      "rank_number": 2,
+      "energy_to_next_rank": 12536,
+      "total_energy": 48700
+    },
+    {
+      "rank_type": "スーパー",
+      "rank_number": 3,
+      "energy_to_next_rank": 15189,
+      "total_energy": 63889
+    },
+    {
+      "rank_type": "スーパー",
+      "rank_number": 4,
+      "energy_to_next_rank": 18082,
+      "total_energy": 81971
+    },
+    {
+      "rank_type": "スーパー",
+      "rank_number": 5,
+      "energy_to_next_rank": 19528,
+      "total_energy": 101499
+    },
+    {
+      "rank_type": "ハイパー",
+      "rank_number": 1,
+      "energy_to_next_rank": 20975,
+      "total_energy": 122474
+    },
+    {
+      "rank_type": "ハイパー",
+      "rank_number": 2,
+      "energy_to_next_rank": 22180,
+      "total_energy": 144654
+    },
+    {
+      "rank_type": "ハイパー",
+      "rank_number": 3,
+      "energy_to_next_rank": 24109,
+      "total_energy": 168763
+    },
+    {
+      "rank_type": "ハイパー",
+      "rank_number": 4,
+      "energy_to_next_rank": 26520,
+      "total_energy": 195283
+    },
+    {
+      "rank_type": "ハイパー",
+      "rank_number": 5,
+      "energy_to_next_rank": 29172,
+      "total_energy": 224455
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 1,
+      "energy_to_next_rank": 32089,
+      "total_energy": 256544
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 2,
+      "energy_to_next_rank": 35298,
+      "total_energy": 291842
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 3,
+      "energy_to_next_rank": 38828,
+      "total_energy": 330670
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 4,
+      "energy_to_next_rank": 42711,
+      "total_energy": 373381
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 5,
+      "energy_to_next_rank": 46982,
+      "total_energy": 420363
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 6,
+      "energy_to_next_rank": 51680,
+      "total_energy": 472043
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 7,
+      "energy_to_next_rank": 56848,
+      "total_energy": 528891
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 8,
+      "energy_to_next_rank": 62533,
+      "total_energy": 591424
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 9,
+      "energy_to_next_rank": 68786,
+      "total_energy": 660210
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 10,
+      "energy_to_next_rank": 75665,
+      "total_energy": 735875
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 11,
+      "energy_to_next_rank": 83232,
+      "total_energy": 819107
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 12,
+      "energy_to_next_rank": 91555,
+      "total_energy": 910662
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 13,
+      "energy_to_next_rank": 107818,
+      "total_energy": 1018480
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 14,
+      "energy_to_next_rank": 165693,
+      "total_energy": 1184155
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 15,
+      "energy_to_next_rank": 195277,
+      "total_energy": 1379432
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 16,
+      "energy_to_next_rank": 330388,
+      "total_energy": 1709820
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 17,
+      "energy_to_next_rank": 354490,
+      "total_energy": 2064310
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 18,
+      "energy_to_next_rank": 426062,
+      "total_energy": 2490372
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 19,
+      "energy_to_next_rank": 504550,
+      "total_energy": 2994922
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 20,
+      "energy_to_next_rank": 737742,
+      "total_energy": 3732664
+    }
+  ],
+  "トープ洞窟": [
+    {
+      "rank_type": "ノーマル",
+      "rank_number": 1,
+      "energy_to_next_rank": 0,
+      "total_energy": null
+    },
+    {
+      "rank_type": "ノーマル",
+      "rank_number": 2,
+      "energy_to_next_rank": 6885,
+      "total_energy": 6885
+    },
+    {
+      "rank_type": "ノーマル",
+      "rank_number": 3,
+      "energy_to_next_rank": 8950,
+      "total_energy": 15835
+    },
+    {
+      "rank_type": "ノーマル",
+      "rank_number": 4,
+      "energy_to_next_rank": 9982,
+      "total_energy": 25817
+    },
+    {
+      "rank_type": "ノーマル",
+      "rank_number": 5,
+      "energy_to_next_rank": 12048,
+      "total_energy": 37865
+    },
+    {
+      "rank_type": "スーパー",
+      "rank_number": 1,
+      "energy_to_next_rank": 13770,
+      "total_energy": 51635
+    },
+    {
+      "rank_type": "スーパー",
+      "rank_number": 2,
+      "energy_to_next_rank": 17899,
+      "total_energy": 69534
+    },
+    {
+      "rank_type": "スーパー",
+      "rank_number": 3,
+      "energy_to_next_rank": 21687,
+      "total_energy": 91221
+    },
+    {
+      "rank_type": "スーパー",
+      "rank_number": 4,
+      "energy_to_next_rank": 25817,
+      "total_energy": 117038
+    },
+    {
+      "rank_type": "スーパー",
+      "rank_number": 5,
+      "energy_to_next_rank": 27883,
+      "total_energy": 144921
+    },
+    {
+      "rank_type": "ハイパー",
+      "rank_number": 1,
+      "energy_to_next_rank": 29948,
+      "total_energy": 174869
+    },
+    {
+      "rank_type": "ハイパー",
+      "rank_number": 2,
+      "energy_to_next_rank": 31669,
+      "total_energy": 206538
+    },
+    {
+      "rank_type": "ハイパー",
+      "rank_number": 3,
+      "energy_to_next_rank": 34423,
+      "total_energy": 240961
+    },
+    {
+      "rank_type": "ハイパー",
+      "rank_number": 4,
+      "energy_to_next_rank": 37865,
+      "total_energy": 278826
+    },
+    {
+      "rank_type": "ハイパー",
+      "rank_number": 5,
+      "energy_to_next_rank": 41652,
+      "total_energy": 320478
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 1,
+      "energy_to_next_rank": 45817,
+      "total_energy": 366295
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 2,
+      "energy_to_next_rank": 50399,
+      "total_energy": 416694
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 3,
+      "energy_to_next_rank": 55439,
+      "total_energy": 472133
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 4,
+      "energy_to_next_rank": 60983,
+      "total_energy": 533116
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 5,
+      "energy_to_next_rank": 67081,
+      "total_energy": 600197
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 6,
+      "energy_to_next_rank": 73789,
+      "total_energy": 673986
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 7,
+      "energy_to_next_rank": 81168,
+      "total_energy": 755154
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 8,
+      "energy_to_next_rank": 89285,
+      "total_energy": 844439
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 9,
+      "energy_to_next_rank": 98214,
+      "total_energy": 942653
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 10,
+      "energy_to_next_rank": 108035,
+      "total_energy": 1050688
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 11,
+      "energy_to_next_rank": 118839,
+      "total_energy": 1169527
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 12,
+      "energy_to_next_rank": 130723,
+      "total_energy": 1300250
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 13,
+      "energy_to_next_rank": 143795,
+      "total_energy": 1444045
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 14,
+      "energy_to_next_rank": 158175,
+      "total_energy": 1602220
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 15,
+      "energy_to_next_rank": 173993,
+      "total_energy": 1776213
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 16,
+      "energy_to_next_rank": 191392,
+      "total_energy": 1967605
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 17,
+      "energy_to_next_rank": 365963,
+      "total_energy": 2333568
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 18,
+      "energy_to_next_rank": 481635,
+      "total_energy": 2815203
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 19,
+      "energy_to_next_rank": 570361,
+      "total_energy": 3385564
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 20,
+      "energy_to_next_rank": 833970,
+      "total_energy": 4219534
+    }
+  ],
+  "ウノハナ雪原": [
+    {
+      "rank_type": "ノーマル",
+      "rank_number": 1,
+      "energy_to_next_rank": 0,
+      "total_energy": null
+    },
+    {
+      "rank_type": "ノーマル",
+      "rank_number": 2,
+      "energy_to_next_rank": 10486,
+      "total_energy": 10486
+    },
+    {
+      "rank_type": "ノーマル",
+      "rank_number": 3,
+      "energy_to_next_rank": 13632,
+      "total_energy": 24118
+    },
+    {
+      "rank_type": "ノーマル",
+      "rank_number": 4,
+      "energy_to_next_rank": 15205,
+      "total_energy": 39323
+    },
+    {
+      "rank_type": "ノーマル",
+      "rank_number": 5,
+      "energy_to_next_rank": 18350,
+      "total_energy": 57673
+    },
+    {
+      "rank_type": "スーパー",
+      "rank_number": 1,
+      "energy_to_next_rank": 20972,
+      "total_energy": 78645
+    },
+    {
+      "rank_type": "スーパー",
+      "rank_number": 2,
+      "energy_to_next_rank": 27264,
+      "total_energy": 105909
+    },
+    {
+      "rank_type": "スーパー",
+      "rank_number": 3,
+      "energy_to_next_rank": 33031,
+      "total_energy": 138940
+    },
+    {
+      "rank_type": "スーパー",
+      "rank_number": 4,
+      "energy_to_next_rank": 39322,
+      "total_energy": 178262
+    },
+    {
+      "rank_type": "スーパー",
+      "rank_number": 5,
+      "energy_to_next_rank": 42468,
+      "total_energy": 220730
+    },
+    {
+      "rank_type": "ハイパー",
+      "rank_number": 1,
+      "energy_to_next_rank": 45614,
+      "total_energy": 266344
+    },
+    {
+      "rank_type": "ハイパー",
+      "rank_number": 2,
+      "energy_to_next_rank": 48236,
+      "total_energy": 314580
+    },
+    {
+      "rank_type": "ハイパー",
+      "rank_number": 3,
+      "energy_to_next_rank": 52430,
+      "total_energy": 367010
+    },
+    {
+      "rank_type": "ハイパー",
+      "rank_number": 4,
+      "energy_to_next_rank": 57673,
+      "total_energy": 424683
+    },
+    {
+      "rank_type": "ハイパー",
+      "rank_number": 5,
+      "energy_to_next_rank": 63440,
+      "total_energy": 488123
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 1,
+      "energy_to_next_rank": 69784,
+      "total_energy": 557907
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 2,
+      "energy_to_next_rank": 76762,
+      "total_energy": 634669
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 3,
+      "energy_to_next_rank": 84438,
+      "total_energy": 719107
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 4,
+      "energy_to_next_rank": 92882,
+      "total_energy": 811989
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 5,
+      "energy_to_next_rank": 102170,
+      "total_energy": 914159
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 6,
+      "energy_to_next_rank": 112387,
+      "total_energy": 1026546
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 7,
+      "energy_to_next_rank": 123626,
+      "total_energy": 1150172
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 8,
+      "energy_to_next_rank": 135989,
+      "total_energy": 1286161
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 9,
+      "energy_to_next_rank": 149588,
+      "total_energy": 1435749
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 10,
+      "energy_to_next_rank": 164547,
+      "total_energy": 1600296
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 11,
+      "energy_to_next_rank": 181002,
+      "total_energy": 1781298
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 12,
+      "energy_to_next_rank": 199102,
+      "total_energy": 1980400
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 13,
+      "energy_to_next_rank": 219012,
+      "total_energy": 2199412
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 14,
+      "energy_to_next_rank": 240913,
+      "total_energy": 2440325
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 15,
+      "energy_to_next_rank": 265004,
+      "total_energy": 2705329
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 16,
+      "energy_to_next_rank": 291504,
+      "total_energy": 2996833
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 17,
+      "energy_to_next_rank": 320654,
+      "total_energy": 3317487
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 18,
+      "energy_to_next_rank": 352719,
+      "total_energy": 3670206
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 19,
+      "energy_to_next_rank": 387991,
+      "total_energy": 4058197
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 20,
+      "energy_to_next_rank": 648206,
+      "total_energy": 4706403
+    }
+  ],
+  "ラピスラズリ湖畔": [
+    {
+      "rank_type": "ノーマル",
+      "rank_number": 1,
+      "energy_to_next_rank": 0,
+      "total_energy": null
+    },
+    {
+      "rank_type": "ノーマル",
+      "rank_number": 2,
+      "energy_to_next_rank": 12938,
+      "total_energy": 12938
+    },
+    {
+      "rank_type": "ノーマル",
+      "rank_number": 3,
+      "energy_to_next_rank": 16818,
+      "total_energy": 29756
+    },
+    {
+      "rank_type": "ノーマル",
+      "rank_number": 4,
+      "energy_to_next_rank": 18759,
+      "total_energy": 48515
+    },
+    {
+      "rank_type": "ノーマル",
+      "rank_number": 5,
+      "energy_to_next_rank": 22641,
+      "total_energy": 71156
+    },
+    {
+      "rank_type": "スーパー",
+      "rank_number": 1,
+      "energy_to_next_rank": 25875,
+      "total_energy": 97031
+    },
+    {
+      "rank_type": "スーパー",
+      "rank_number": 2,
+      "energy_to_next_rank": 33637,
+      "total_energy": 130668
+    },
+    {
+      "rank_type": "スーパー",
+      "rank_number": 3,
+      "energy_to_next_rank": 40752,
+      "total_energy": 171420
+    },
+    {
+      "rank_type": "スーパー",
+      "rank_number": 4,
+      "energy_to_next_rank": 48516,
+      "total_energy": 219936
+    },
+    {
+      "rank_type": "スーパー",
+      "rank_number": 5,
+      "energy_to_next_rank": 52397,
+      "total_energy": 272333
+    },
+    {
+      "rank_type": "ハイパー",
+      "rank_number": 1,
+      "energy_to_next_rank": 56277,
+      "total_energy": 328610
+    },
+    {
+      "rank_type": "ハイパー",
+      "rank_number": 2,
+      "energy_to_next_rank": 59512,
+      "total_energy": 388122
+    },
+    {
+      "rank_type": "ハイパー",
+      "rank_number": 3,
+      "energy_to_next_rank": 64687,
+      "total_energy": 452809
+    },
+    {
+      "rank_type": "ハイパー",
+      "rank_number": 4,
+      "energy_to_next_rank": 69216,
+      "total_energy": 522025
+    },
+    {
+      "rank_type": "ハイパー",
+      "rank_number": 5,
+      "energy_to_next_rank": 74061,
+      "total_energy": 596086
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 1,
+      "energy_to_next_rank": 79244,
+      "total_energy": 675330
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 2,
+      "energy_to_next_rank": 84973,
+      "total_energy": 760123
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 3,
+      "energy_to_next_rank": 90728,
+      "total_energy": 850851
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 4,
+      "energy_to_next_rank": 107851,
+      "total_energy": 958702
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 5,
+      "energy_to_next_rank": 117007,
+      "total_energy": 1075709
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 6,
+      "energy_to_next_rank": 126887,
+      "total_energy": 1202596
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 7,
+      "energy_to_next_rank": 137547,
+      "total_energy": 1340143
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 8,
+      "energy_to_next_rank": 149047,
+      "total_energy": 1489190
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 9,
+      "energy_to_next_rank": 161455,
+      "total_energy": 1650645
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 10,
+      "energy_to_next_rank": 174838,
+      "total_energy": 1825483
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 11,
+      "energy_to_next_rank": 189275,
+      "total_energy": 2014758
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 12,
+      "energy_to_next_rank": 204845,
+      "total_energy": 2219603
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 13,
+      "energy_to_next_rank": 221640,
+      "total_energy": 2441243
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 14,
+      "energy_to_next_rank": 239750,
+      "total_energy": 2680993
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 15,
+      "energy_to_next_rank": 244581,
+      "total_energy": 2925574
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 16,
+      "energy_to_next_rank": 263156,
+      "total_energy": 3188730
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 17,
+      "energy_to_next_rank": 265847,
+      "total_energy": 3454577
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 18,
+      "energy_to_next_rank": 284456,
+      "total_energy": 3739033
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 19,
+      "energy_to_next_rank": 427815,
+      "total_energy": 4166848
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 20,
+      "energy_to_next_rank": 1026424,
+      "total_energy": 5193272
+    }
+  ],
+  "ゴールド旧発電所": [
+    {
+      "rank_type": "ノーマル",
+      "rank_number": 1,
+      "energy_to_next_rank": 0,
+      "total_energy": null
+    },
+    {
+      "rank_type": "ノーマル",
+      "rank_number": 2,
+      "energy_to_next_rank": 20142,
+      "total_energy": 20142
+    },
+    {
+      "rank_type": "ノーマル",
+      "rank_number": 3,
+      "energy_to_next_rank": 26184,
+      "total_energy": 46326
+    },
+    {
+      "rank_type": "ノーマル",
+      "rank_number": 4,
+      "energy_to_next_rank": 29205,
+      "total_energy": 75531
+    },
+    {
+      "rank_type": "ノーマル",
+      "rank_number": 5,
+      "energy_to_next_rank": 35248,
+      "total_energy": 110779
+    },
+    {
+      "rank_type": "スーパー",
+      "rank_number": 1,
+      "energy_to_next_rank": 40282,
+      "total_energy": 151061
+    },
+    {
+      "rank_type": "スーパー",
+      "rank_number": 2,
+      "energy_to_next_rank": 52368,
+      "total_energy": 203429
+    },
+    {
+      "rank_type": "スーパー",
+      "rank_number": 3,
+      "energy_to_next_rank": 63446,
+      "total_energy": 266875
+    },
+    {
+      "rank_type": "スーパー",
+      "rank_number": 4,
+      "energy_to_next_rank": 75531,
+      "total_energy": 342406
+    },
+    {
+      "rank_type": "スーパー",
+      "rank_number": 5,
+      "energy_to_next_rank": 81573,
+      "total_energy": 423979
+    },
+    {
+      "rank_type": "ハイパー",
+      "rank_number": 1,
+      "energy_to_next_rank": 87616,
+      "total_energy": 511595
+    },
+    {
+      "rank_type": "ハイパー",
+      "rank_number": 2,
+      "energy_to_next_rank": 92651,
+      "total_energy": 604246
+    },
+    {
+      "rank_type": "ハイパー",
+      "rank_number": 3,
+      "energy_to_next_rank": 100707,
+      "total_energy": 704953
+    },
+    {
+      "rank_type": "ハイパー",
+      "rank_number": 4,
+      "energy_to_next_rank": 105743,
+      "total_energy": 810696
+    },
+    {
+      "rank_type": "ハイパー",
+      "rank_number": 5,
+      "energy_to_next_rank": 111029,
+      "total_energy": 921725
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 1,
+      "energy_to_next_rank": 116581,
+      "total_energy": 1038306
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 2,
+      "energy_to_next_rank": 122411,
+      "total_energy": 1160717
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 3,
+      "energy_to_next_rank": 128531,
+      "total_energy": 1289248
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 4,
+      "energy_to_next_rank": 142454,
+      "total_energy": 1431702
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 5,
+      "energy_to_next_rank": 150693,
+      "total_energy": 1582395
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 6,
+      "energy_to_next_rank": 159382,
+      "total_energy": 1741777
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 7,
+      "energy_to_next_rank": 168544,
+      "total_energy": 1910321
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 8,
+      "energy_to_next_rank": 178206,
+      "total_energy": 2088527
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 9,
+      "energy_to_next_rank": 188394,
+      "total_energy": 2276921
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 10,
+      "energy_to_next_rank": 210464,
+      "total_energy": 2476059
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 11,
+      "energy_to_next_rank": 222409,
+      "total_energy": 2686523
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 12,
+      "energy_to_next_rank": 235003,
+      "total_energy": 2908932
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 13,
+      "energy_to_next_rank": 298911,
+      "total_energy": 3143935
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 14,
+      "energy_to_next_rank": 302108,
+      "total_energy": 3442846
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 15,
+      "energy_to_next_rank": 341521,
+      "total_energy": 3744954
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 16,
+      "energy_to_next_rank": 365439,
+      "total_energy": 4086475
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 17,
+      "energy_to_next_rank": 457159,
+      "total_energy": 4451914
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 18,
+      "energy_to_next_rank": 563720,
+      "total_energy": 4909073
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 19,
+      "energy_to_next_rank": 1201373,
+      "total_energy": 5472793
+    },
+    {
+      "rank_type": "マスター",
+      "rank_number": 20,
+      "energy_to_next_rank": null,
+      "total_energy": 6674166
+    }
+  ]
+}
