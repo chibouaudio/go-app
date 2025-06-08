@@ -33,11 +33,22 @@
                 </div>
                 <select id="recipesList" class="form-select"></select>
             </div>
+            <div class="col-md-6 mb-3">
+                <label for="fieldBonus" class="form-label mb-2">フィールドボーナス</label>
+                <select id="fieldBonus" class="form-select"></select>
+            </div>
         </div>
 
-        <div class="col-md-6 mb-3 d-flex flex-column justify-content-end">
-            <label class="form-label mb-1">M20必要エナジー</label>
-            <p id="energyRequiredForM20" class="mb-0"></p>
+        <div class="row results">
+            <div class="col-md-6 mb-3">
+                <label class="form-label mb-1">M20必要エナジー</label>
+                <p id="energyRequiredForM20" class="mb-0"></p>
+            </div>
+            <div class="col-md-6 mb-3">
+
+                <label class="form-label mb-1">基礎料理エナジー</label>
+                <p id="baseRecipeEnergy" class="mb-0"></p>
+            </div>
         </div>
     </div>
     <script src="/web/js/energy_calc.js"></script>
