@@ -4,9 +4,17 @@ document.addEventListener('DOMContentLoaded', async function () {
     const recipesList = document.getElementById('recipesList');
 
     selectFieldName.addEventListener('change', function () {
-        const selectFieldName = this.value;
-        calcEnergy(selectFieldName);
+        const fieldName = this.value;
+        if (!fieldName) {
+            energyRequiredForM20.textContent = "";
+            return;
+        }
+        calcEnergy(fieldName);
     })
+
+    document.getElementById('filterTop5').addEventListener('change', () => {
+        loadRecipes();
+    });
 
     async function loadData() {
         await loadFieldNames()
@@ -66,7 +74,6 @@ document.addEventListener('DOMContentLoaded', async function () {
             defaultOption.textContent = '選択してください';
             recipesList.appendChild(defaultOption);
 
-            // データからoptionを追加
             for (const category in data) {
                 const categoryOption = document.createElement('optgroup');
                 let categoryLabel;
@@ -83,22 +90,19 @@ document.addEventListener('DOMContentLoaded', async function () {
                 }
                 categoryOption.label = categoryLabel;
 
-                const sortedRecipes = data[category].slice().sort((a, b) => {
+                let sortedRecipes = data[category].slice().sort((a, b) => {
                     if (a.recipeEnergy == null) return 1;
                     if (b.recipeEnergy == null) return -1;
                     return b.recipeEnergy - a.recipeEnergy;
                 });
+                if (isTop5FilterOn()) {
+                    sortedRecipes = sortedRecipes.slice(0, 5);
+                }
 
                 sortedRecipes.forEach(recipe => {
                     const option = document.createElement('option');
                     option.value = recipe.dishName;
-                    const energy = recipe.recipeEnergy != null
-                        ? Intl.NumberFormat('ja-JP').format(recipe.recipeEnergy)
-                        : '-';
-
-                    const maxNameLength = 16;
-                    const paddedName = recipe.dishName.padEnd(maxNameLength, '　');
-                    option.textContent = `${paddedName}${energy}`;
+                    option.textContent = recipe.dishName;
                     categoryOption.appendChild(option);
                 });
 
@@ -138,6 +142,11 @@ document.addEventListener('DOMContentLoaded', async function () {
         } catch (error) {
             console.error('データ取得エラー:', error);
         }
+    }
+
+    // トップ5のみ表示するかどうか
+    function isTop5FilterOn() {
+        return document.getElementById('filterTop5').checked;
     }
 
     await loadData();

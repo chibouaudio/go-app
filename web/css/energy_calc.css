@@ -1,0 +1,17 @@
+/* 料理リストの高さ調整 */
+#recipesList {
+    min-height: 38px;
+}
+
+/* M20エナジー表示を目立たせる */
+#energyRequiredForM20 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #198754; /* Bootstrapのsuccess色 */
+    margin-bottom: 1rem;
+}
+
+/* チェックボックスのラベル間隔調整 */
+.form-check-label {
+    margin-right: 1.5rem;
+}
