@@ -1,0 +1,726 @@
+{
+    "curry": [
+        {
+            "ID": 1,
+            "dishName": "とくせんリンゴカレー",
+            "ingredients": [
+                "とくせんリンゴ×7"
+            ],
+            "totalIngredients": 7,
+            "recipeEnergy": null
+        },
+        {
+            "ID": 2,
+            "dishName": "あぷりテールカレー",
+            "ingredients": [
+                "おいしいシッポ×8",
+                "けきからハーブ×25"
+            ],
+            "totalIngredients": 33,
+            "recipeEnergy": 7483
+        },
+        {
+            "ID": 3,
+            "dishName": "サンポートマトンカレー",
+            "ingredients": [
+                "まんがトマト×10",
+                "けきからハーブ×5"
+            ],
+            "totalIngredients": 15,
+            "recipeEnergy": 2078
+        },
+        {
+            "ID": 4,
+            "dishName": "ぜったいねむりバターカレー",
+            "ingredients": [
+                "ほっこりポテト×18",
+                "リラックスカカオ×12",
+                "あんまんトマト×15",
+                "モーモーミルク×10"
+            ],
+            "totalIngredients": 55,
+            "recipeEnergy": 9010
+        },
+        {
+            "ID": 5,
+            "dishName": "からくちネギもりカレー",
+            "ingredients": [
+                "ふといながねぎ×14",
+                "あっかジンジャー×10",
+                "けきからハーブ×8"
+            ],
+            "totalIngredients": 32,
+            "recipeEnergy": 5900
+        },
+        {
+            "ID": 6,
+            "dishName": "キノコのほうしカレー",
+            "ingredients": [
+                "あじわいキノコ×14",
+                "ほっこりポテト×9"
+            ],
+            "totalIngredients": 23,
+            "recipeEnergy": 4162
+        },
+        {
+            "ID": 7,
+            "dishName": "おやこあいカレー",
+            "ingredients": [
+                "あまいミツ×12",
+                "とくせんエッグ×11",
+                "とくせんリンゴ×8",
+                "ほっこりポテト×4"
+            ],
+            "totalIngredients": 35,
+            "recipeEnergy": 4523
+        },
+        {
+            "ID": 8,
+            "dishName": "満腹チーズバーグカレー",
+            "ingredients": [
+                "モーモーミルク×8",
+                "マメミート×8"
+            ],
+            "totalIngredients": 16,
+            "recipeEnergy": 1910
+        },
+        {
+            "ID": 9,
+            "dishName": "ほっこりホワイトシチュー",
+            "ingredients": [
+                "モーモーミルク×10",
+                "ほっこりポテト×8",
+                "あじわいキノコ×4"
+            ],
+            "totalIngredients": 22,
+            "recipeEnergy": 3181
+        },
+        {
+            "ID": 10,
+            "dishName": "たんじゅんホワイトシチュー",
+            "ingredients": [
+                "モーモーミルク×7"
+            ],
+            "totalIngredients": 7,
+            "recipeEnergy": 814
+        },
+        {
+            "ID": 11,
+            "dishName": "マメバーグカレー",
+            "ingredients": [
+                "マメミート×7"
+            ],
+            "totalIngredients": 7,
+            "recipeEnergy": 856
+        },
+        {
+            "ID": 12,
+            "dishName": "ベイビイハニーカレー",
+            "ingredients": [
+                "あまいミツ×7"
+            ],
+            "totalIngredients": 7,
+            "recipeEnergy": 839
+        },
+        {
+            "ID": 13,
+            "dishName": "ニンジャカレー",
+            "ingredients": [
+                "ワカクサ大豆×24",
+                "ふといながねぎ×12",
+                "マメミート×9",
+                "あじわいキノコ×5"
+            ],
+            "totalIngredients": 50,
+            "recipeEnergy": 9445
+        },
+        {
+            "ID": 14,
+            "dishName": "ひでりカツレツカレー",
+            "ingredients": [
+                "マメミート×10",
+                "ピュアなオイル×5"
+            ],
+            "totalIngredients": 15,
+            "recipeEnergy": 1942
+        },
+        {
+            "ID": 15,
+            "dishName": "とけとけるオムカレー",
+            "ingredients": [
+                "とくせんエッグ×10",
+                "あんまんトマト×6"
+            ],
+            "totalIngredients": 16,
+            "recipeEnergy": 2150
+        },
+        {
+            "ID": 16,
+            "dishName": "ビルドアップマメカレー",
+            "ingredients": [
+                "ワカクサ大豆×12",
+                "マメミート×6",
+                "とくせんエッグ×4",
+                "けきからハーブ×4"
+            ],
+            "totalIngredients": 26,
+            "recipeEnergy": 3372
+        },
+        {
+            "ID": 17,
+            "dishName": "じゅうなんコーンシチュー",
+            "ingredients": [
+                "ワカクサコーン×14",
+                "モーモーミルク×8",
+                "ほっこりポテト×8"
+            ],
+            "totalIngredients": 30,
+            "recipeEnergy": 4670
+        },
+        {
+            "ID": 18,
+            "dishName": "れんごくコーンキーマカレー",
+            "ingredients": [
+                "けきからハーブ×27",
+                "マメミート×24",
+                "ワカクサコーン×14",
+                "あっかジンジャー×12"
+            ],
+            "totalIngredients": 77,
+            "recipeEnergy": 13690
+        },
+        {
+            "ID": 19,
+            "dishName": "めざめるパワーシチュー",
+            "ingredients": [
+                "ワカクサ大豆×28",
+                "あんまんトマト×25",
+                "あじわいキノコ×23",
+                "めざましハーブ×16"
+            ],
+            "totalIngredients": 92,
+            "recipeEnergy": 19061
+        },
+        {
+            "ID": 20,
+            "dishName": "ピヨピヨパンチ辛口カレー",
+            "ingredients": [
+                "めざましハーブ×11",
+                "けきからハーブ×11",
+                "あまいミツ×11"
+            ],
+            "totalIngredients": 33,
+            "recipeEnergy": 5702
+        }
+    ],
+    "salad": [
+        {
+            "ID": 1,
+            "dishName": "ヤドンテールのペッパーサラダ",
+            "ingredients": [
+                "けきからハーブ×10",
+                "ピュアなオイル×15",
+                "おいしいシッポ×10"
+            ],
+            "totalIngredients": 35,
+            "recipeEnergy": 8169
+        },
+        {
+            "ID": 2,
+            "dishName": "キノコのほうしサラダ",
+            "ingredients": [
+                "あじわいキノコ×17",
+                "ほっこりポテト×8",
+                "あんまんトマト×8"
+            ],
+            "totalIngredients": 33,
+            "recipeEnergy": 5859
+        },
+        {
+            "ID": 3,
+            "dishName": "ゆきかきシーザーサラダ",
+            "ingredients": [
+                "モーモーミルク×10",
+                "マメミート×6"
+            ],
+            "totalIngredients": 16,
+            "recipeEnergy": 1898
+        },
+        {
+            "ID": 4,
+            "dishName": "くいしんぼポテトサラダ",
+            "ingredients": [
+                "ほっこりポテト×14",
+                "とくせんエッグ×9",
+                "マメミート×7",
+                "とくせんリンゴ×6"
+            ],
+            "totalIngredients": 36,
+            "recipeEnergy": 5040
+        },
+        {
+            "ID": 5,
+            "dishName": "うるおいうふうサラダ",
+            "ingredients": [
+                "ワカクサ大豆×15",
+                "あんまんトマト×9"
+            ],
+            "totalIngredients": 24,
+            "recipeEnergy": 3113
+        },
+        {
+            "ID": 6,
+            "dishName": "ばかぢからワイルドサラダ",
+            "ingredients": [
+                "マメミート×9",
+                "あっかジンジャー×6",
+                "とくせんエッグ×5",
+                "ほっこりポテト×3"
+            ],
+            "totalIngredients": 23,
+            "recipeEnergy": 3046
+        },
+        {
+            "ID": 7,
+            "dishName": "マメハムサラダ",
+            "ingredients": [
+                "マメミート×8"
+            ],
+            "totalIngredients": 8,
+            "recipeEnergy": 978
+        },
+        {
+            "ID": 8,
+            "dishName": "あんまんトマトサラダ",
+            "ingredients": [
+                "あんまんトマト×8"
+            ],
+            "totalIngredients": 8,
+            "recipeEnergy": 1045
+        },
+        {
+            "ID": 9,
+            "dishName": "モーモーカプレーゼ",
+            "ingredients": [
+                "モーモーミルク×12",
+                "あんまんトマト×6",
+                "ピュアなオイル×5"
+            ],
+            "totalIngredients": 23,
+            "recipeEnergy": 2942
+        },
+        {
+            "ID": 10,
+            "dishName": "ムラっけチョコミートサラダ",
+            "ingredients": [
+                "リラックスカカオ×14",
+                "マメミート×9"
+            ],
+            "totalIngredients": 23,
+            "recipeEnergy": 3665
+        },
+        {
+            "ID": 11,
+            "dishName": "オーバーヒートミートサラダ",
+            "ingredients": [
+                "けきからハーブ×17",
+                "あっかジンジャー×10",
+                "マメミート×8"
+            ],
+            "totalIngredients": 35,
+            "recipeEnergy": 5225
+        },
+        {
+            "ID": 12,
+            "dishName": "とくせんリンゴサラダ",
+            "ingredients": [
+                "とくせんリンゴ×8"
+            ],
+            "totalIngredients": 8,
+            "recipeEnergy": 855
+        },
+        {
+            "ID": 13,
+            "dishName": "めんえきねぎサラダ",
+            "ingredients": [
+                "あっかジンジャー×5",
+                "ふといながねぎ×10"
+            ],
+            "totalIngredients": 15,
+            "recipeEnergy": 2845
+        },
+        {
+            "ID": 14,
+            "dishName": "メロメロりんごチーズサラダ",
+            "ingredients": [
+                "モーモーミルク×5",
+                "ピュアなオイル×3",
+                "とくせんリンゴ×15"
+            ],
+            "totalIngredients": 23,
+            "recipeEnergy": 2655
+        },
+        {
+            "ID": 15,
+            "dishName": "ニンジャサラダ",
+            "ingredients": [
+                "ワカクサ大豆×19",
+                "あじわいキノコ×12",
+                "ふといながねぎ×12",
+                "けきからハーブ×6",
+                "ワカクサ大豆×10"
+            ],
+            "totalIngredients": 57,
+            "recipeEnergy": 11659
+        },
+        {
+            "ID": 16,
+            "dishName": "ねっぷうとうふサラダ",
+            "ingredients": [
+                "ワカクサ大豆×10",
+                "ピュアなオイル×2",
+                "あっかジンジャー×4"
+            ],
+            "totalIngredients": 16,
+            "recipeEnergy": 2114
+        },
+        {
+            "ID": 17,
+            "dishName": "ワカクササラダ",
+            "ingredients": [
+                "ワカクサ大豆×14",
+                "ほっこりポテト×9"
+            ],
+            "totalIngredients": 62,
+            "recipeEnergy": 11393
+        },
+        {
+            "ID": 18,
+            "dishName": "めいそうスイートサラダ",
+            "ingredients": [
+                "とくせんリンゴ×21",
+                "あまいミツ×16",
+                "ワカクサコーン×12"
+            ],
+            "totalIngredients": 49,
+            "recipeEnergy": 7675
+        },
+        {
+            "ID": 19,
+            "dishName": "みだれづきコーンサラダ",
+            "ingredients": [
+                "ワカクサコーン×9",
+                "ピュアなオイル×8"
+            ],
+            "totalIngredients": 17,
+            "recipeEnergy": 2785
+        },
+        {
+            "ID": 20,
+            "dishName": "まけんきコーヒーサラダ",
+            "ingredients": [
+                "めざましハーブ×28",
+                "マメミート×28",
+                "ピュアなオイル×22",
+                "ほっこりポテト×22"
+            ],
+            "totalIngredients": 100,
+            "recipeEnergy": 20218
+        },
+        {
+            "ID": 21,
+            "dishName": "クロスチョップドサラダ",
+            "ingredients": [
+                "とくせんエッグ×20",
+                "マメミート×15",
+                "ワカクサコーン×11",
+                "あんまんトマト×10"
+            ],
+            "totalIngredients": 56,
+            "recipeEnergy": 8755
+        },
+        {
+            "ID": 22,
+            "dishName": "はなふきミモザサラダ",
+            "ingredients": [
+                "とくせんエッグ×25",
+                "ピュアなオイル×14",
+                "ほっこりポテト×15",
+                "マメミート×12"
+            ],
+            "totalIngredients": 69,
+            "recipeEnergy": 11881
+        },
+        {
+            "ID": 23,
+            "dishName": "りんごさんヨーグルトサラダ",
+            "ingredients": [
+                "とくせんエッグ×35",
+                "とくせんリンゴ×28",
+                "あんまんトマト×23",
+                "モーモーミルク×18"
+            ],
+            "totalIngredients": 104,
+            "recipeEnergy": 19293
+        }
+    ],
+    "dessert_drinks": [
+        {
+            "ID": 1,
+            "dishName": "じゅくせいスイートポテト",
+            "ingredients": [
+                "ほっこりポテト×9",
+                "あまいミツ×5"
+            ],
+            "totalIngredients": 14,
+            "recipeEnergy": 1907
+        },
+        {
+            "ID": 2,
+            "dishName": "ふくつのジンジャークッキー",
+            "ingredients": [
+                "あっかジンジャー×12",
+                "あまいミツ×19",
+                "とくせんエッグ×4"
+            ],
+            "totalIngredients": 35,
+            "recipeEnergy": 4921
+        },
+        {
+            "ID": 3,
+            "dishName": "とくせんリンゴジュース",
+            "ingredients": [
+                "とくせんリンゴ×8"
+            ],
+            "totalIngredients": 8,
+            "recipeEnergy": 855
+        },
+        {
+            "ID": 4,
+            "dishName": "クラフトサイコソーダ",
+            "ingredients": [
+                "あじわいキノコ×9"
+            ],
+            "totalIngredients": 9,
+            "recipeEnergy": 1079
+        },
+        {
+            "ID": 5,
+            "dishName": "ひのこジンジャーティー",
+            "ingredients": [
+                "あっかジンジャー×9",
+                "あまいミツ×7"
+            ],
+            "totalIngredients": 16,
+            "recipeEnergy": 1913
+        },
+        {
+            "ID": 6,
+            "dishName": "プリンのプリンアラモード",
+            "ingredients": [
+                "とくせんエッグ×20",
+                "あまいミツ×15",
+                "モーモーミルク×10",
+                "とくせんリンゴ×10"
+            ],
+            "totalIngredients": 55,
+            "recipeEnergy": 7594
+        },
+        {
+            "ID": 7,
+            "dishName": "あくまのキッズフルーツオレ",
+            "ingredients": [
+                "とくせんエッグ×11",
+                "あまいミツ×12",
+                "リラックスカカオ×8",
+                "とくせんリンゴ×4"
+            ],
+            "totalIngredients": 35,
+            "recipeEnergy": 4734
+        },
+        {
+            "ID": 8,
+            "dishName": "ねがいごとアップルパイ",
+            "ingredients": [
+                "とくせんリンゴ×12",
+                "モーモーミルク×4"
+            ],
+            "totalIngredients": 16,
+            "recipeEnergy": 1748
+        },
+        {
+            "ID": 9,
+            "dishName": "ネロリのデトックスティー",
+            "ingredients": [
+                "あっかジンジャー×11",
+                "とくせんリンゴ×15",
+                "あまいミツ×9"
+            ],
+            "totalIngredients": 35,
+            "recipeEnergy": 5065
+        },
+        {
+            "ID": 10,
+            "dishName": "あまいおかわりチョコケーキ",
+            "ingredients": [
+                "あまいミツ×9",
+                "リラックスカカオ×8",
+                "モーモーミルク×7"
+            ],
+            "totalIngredients": 24,
+            "recipeEnergy": 3378
+        },
+        {
+            "ID": 11,
+            "dishName": "モーモーホットミルク",
+            "ingredients": [
+                "モーモーミルク×7"
+            ],
+            "totalIngredients": 7,
+            "recipeEnergy": 814
+        },
+        {
+            "ID": 12,
+            "dishName": "かるわざソイケーキ",
+            "ingredients": [
+                "とくせんエッグ×8",
+                "ワカクサ大豆×7"
+            ],
+            "totalIngredients": 15,
+            "recipeEnergy": 1924
+        },
+        {
+            "ID": 13,
+            "dishName": "はりきりプロテインスムージー",
+            "ingredients": [
+                "リラックスカカオ×8",
+                "とくせんリンゴ×7",
+                "あまいミツ×8"
+            ],
+            "totalIngredients": 23,
+            "recipeEnergy": 3263
+        },
+        {
+            "ID": 14,
+            "dishName": "マイペースいやさいジュース",
+            "ingredients": [
+                "とくせんリンゴ×7",
+                "あんまんトマト×9"
+            ],
+            "totalIngredients": 16,
+            "recipeEnergy": 1924
+        },
+        {
+            "ID": 15,
+            "dishName": "おおきいマラサダ",
+            "ingredients": [
+                "ピュアなオイル×10",
+                "ワカクサコーン×7",
+                "あまいミツ×6"
+            ],
+            "totalIngredients": 23,
+            "recipeEnergy": 3015
+        },
+        {
+            "ID": 16,
+            "dishName": "ちからもちソイドーナツ",
+            "ingredients": [
+                "ピュアなオイル×12",
+                "あまいミツ×11",
+                "ワカクサ大豆×16"
+            ],
+            "totalIngredients": 39,
+            "recipeEnergy": 5547
+        },
+        {
+            "ID": 17,
+            "dishName": "だいはくばポップコーン",
+            "ingredients": [
+                "ワカクサコーン×15",
+                "ワカクサ大豆×14",
+                "モーモーミルク×7"
+            ],
+            "totalIngredients": 36,
+            "recipeEnergy": 6048
+        },
+        {
+            "ID": 18,
+            "dishName": "おちゃかいコーンスコーン",
+            "ingredients": [
+                "ワカクサコーン×20",
+                "あっかジンジャー×20",
+                "ワカクサコーン×18",
+                "モーモーミルク×9"
+            ],
+            "totalIngredients": 67,
+            "recipeEnergy": 10925
+        },
+        {
+            "ID": 19,
+            "dishName": "はなびらのまいチョコタルト",
+            "ingredients": [
+                "リラックスカカオ×11",
+                "とくせんエッグ×9",
+                "モーモーミルク×9"
+            ],
+            "totalIngredients": 29,
+            "recipeEnergy": 3314
+        },
+        {
+            "ID": 20,
+            "dishName": "フラワーギフトマカロン",
+            "ingredients": [
+                "リラックスカカオ×25",
+                "とくせんエッグ×17",
+                "モーモーミルク×10"
+            ],
+            "totalIngredients": 52,
+            "recipeEnergy": 13834
+        },
+        {
+            "ID": 21,
+            "dishName": "スパークススパイスコーラ",
+            "ingredients": [
+                "とくせんリンゴ×35",
+                "あっかジンジャー×20",
+                "ふといながねぎ×20",
+                "めざましハーブ×12"
+            ],
+            "totalIngredients": 87,
+            "recipeEnergy": 17494
+        },
+        {
+            "ID": 22,
+            "dishName": "はやおきコーヒーゼリー",
+            "ingredients": [
+                "めざましコーヒー×14",
+                "リラックスカカオ×14",
+                "あまいミツ×12"
+            ],
+            "totalIngredients": 40,
+            "recipeEnergy": 6793
+        },
+        {
+            "ID": 23,
+            "dishName": "かたやぶりコーンティラミス",
+            "ingredients": [
+                "めざましコーヒー×14",
+                "ワカクサコーン×14",
+                "モーモーミルク×12"
+            ],
+            "totalIngredients": 40,
+            "recipeEnergy": 7125
+        },
+        {
+            "ID": 24,
+            "dishName": "ドオーのエクレア",
+            "ingredients": [
+                "リラックスカカオ×30",
+                "とくせんエッグ×28",
+                "あまいミツ×22"
+            ],
+            "totalIngredients": 80,
+            "recipeEnergy": 20885
+        }
+    ]
+}
