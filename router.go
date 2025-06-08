@@ -48,6 +48,7 @@ func RouterSettings() *http.ServeMux {
 	})
 
 	mux.HandleFunc("/api/getFieldNames", internal.GetFieldNames)
+	mux.HandleFunc("/api/calcEnergy", internal.CalcEnergy)
 
 	return mux
 }
