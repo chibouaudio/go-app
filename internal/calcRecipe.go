@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+	"strconv"
 )
 
 // レシピボーナス情報を保持する
@@ -38,19 +39,19 @@ type RecipesDataJson struct {
 }
 
 // レシピボーナスを読み込む
-func loadRecipeLevelDataJson(w http.ResponseWriter) (RecipeLevelDataJson, error) {
-	jsonPath := filepath.Join(".", "data", "energy_evaluations.json")
+func loadRecipeLevelDataJson(w http.ResponseWriter) ([]RecipeLevelDataJson, error) {
+	jsonPath := filepath.Join(".", "data", "recipe_level.json")
 	f, err := os.Open(jsonPath)
 	if err != nil {
 		http.Error(w, "ファイルが開けません: "+err.Error(), http.StatusInternalServerError)
-		return RecipeLevelDataJson{}, err
+		return nil, err
 	}
 	defer f.Close()
 
-	var recipeDataJson RecipeLevelDataJson
+	var recipeDataJson []RecipeLevelDataJson
 	if err := json.NewDecoder(f).Decode(&recipeDataJson); err != nil {
 		http.Error(w, "JSONデコード失敗: "+err.Error(), http.StatusInternalServerError)
-		return RecipeLevelDataJson{}, err
+		return nil, err
 	}
 
 	return recipeDataJson, nil
@@ -87,6 +88,39 @@ func GetRecipes(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "JSONエンコード失敗: "+err.Error(), http.StatusInternalServerError)
 		return
 	}
+}
+
+// レシピボーナスを取得する
+func GetRecipeBonus(w http.ResponseWriter, r *http.Request) {
+	levelParam := r.URL.Query().Get("level")
+	if levelParam == "" {
+		http.Error(w, "levelパラメータが必要です", http.StatusBadRequest)
+		return
+	}
+
+	// 文字列をintに変換
+	level, err := strconv.Atoi(levelParam)
+	if err != nil {
+		http.Error(w, "levelパラメータは整数で指定してください", http.StatusBadRequest)
+		return
+	}
+
+	// レシピボーナスデータを読み込む
+	bonuses, err := loadRecipeLevelDataJson(w)
+	if err != nil {
+		return
+	}
+
+	// 指定レベルのボーナスを検索
+	for _, bonus := range bonuses {
+		if bonus.Level == level {
+			w.Header().Set("Content-Type", "application/json")
+			json.NewEncoder(w).Encode(bonus.BonusPercentage)
+			return
+		}
+	}
+
+	http.Error(w, "指定レベルのボーナスが見つかりません", http.StatusNotFound)
 }
 
 func CalcRecipeEnergy(w http.ResponseWriter, r *http.Request) {

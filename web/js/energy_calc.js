@@ -1,10 +1,13 @@
 document.addEventListener('DOMContentLoaded', async function () {
     const selectFieldName = document.getElementById('fieldName');
-    const energyRequiredForM20 = document.getElementById('energyRequiredForM20');
     const recipesList = document.getElementById('recipesList');
-    const baseRecipeEnergy = document.getElementById('baseRecipeEnergy');
     const fieldBonus = document.getElementById('fieldBonus');
     const recipeLevel = document.getElementById('recipeLevel');
+
+    // 結果要素
+    const energyRequiredForM20 = document.getElementById('energyRequiredForM20');
+    const baseRecipeEnergy = document.getElementById('baseRecipeEnergy');
+    const recipeEnergy = document.getElementById('recipeEnergy');
 
     const MAX_FIELD_BONUS = 75;
     const MAX_RECIPE_LEVEL = 65;
@@ -24,14 +27,28 @@ document.addEventListener('DOMContentLoaded', async function () {
         loadRecipes();
     });
 
-    // レシピのドロップダウンの変更イベント
+    // 料理選択のドロップダウンの変更イベント
     recipesList.addEventListener('change', function () {
         const selectedOption = this.selectedOptions[0];
         const energy = selectedOption ? selectedOption.getAttribute('data-energy') : '';
         if (energy) {
             baseRecipeEnergy.textContent = Intl.NumberFormat('ja-JP').format(energy);
+            // レシピレベルの現在値でボーナス計算も呼ぶ
+            calcRecipeBonus(recipeLevel.value, energy);
         } else {
             baseRecipeEnergy.textContent = '';
+            recipeEnergy.textContent = '';
+        }
+    });
+
+    // レシピレベルのドロップダウンの変更イベント
+    recipeLevel.addEventListener('change', function () {
+        const selectedOption = recipesList.selectedOptions[0];
+        const energy = selectedOption ? selectedOption.getAttribute('data-energy') : '';
+        if (energy) {
+            calcRecipeBonus(this.value, energy);
+        } else {
+            recipeEnergy.textContent = '';
         }
     });
 
@@ -41,6 +58,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         await loadRecipes()
         setFieldBonusOptions();
         setRecipeLevel();
+        calcRecipeBonus(recipeLevel.value, baseRecipeEnergy.textContent);
     }
 
     // フィールド名を取得する
@@ -166,6 +184,31 @@ document.addEventListener('DOMContentLoaded', async function () {
             }
         } catch (error) {
             console.error('ドロップダウン取得エラー:', error);
+        }
+    }
+
+    // レシピボーナスを取得する
+    async function calcRecipeBonus(level, baseEnergy) {
+        try {
+            const response = await fetch(`/api/getRecipeBonus?level=${encodeURIComponent(level)}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            });
+
+            if (!response.ok) {
+                console.error('レシピボーナス取得エラー:', response.statusText);
+                return;
+            }
+
+            const data = await response.json();
+            let bonus = 1 + (data / 100);
+            const result = Math.round(baseEnergy * bonus);
+            recipeEnergy.textContent = result;
+
+        } catch (error) {
+            console.error('レシピボーナス取得エラー:', error);
         }
     }
 
