@@ -18,24 +18,26 @@
 
         <div class="row mb-3">
             <div class="col-md-6 mb-3">
-                <label for="fieldName" class="form-label">フィールドを選択</label>
+                <label for="fieldName" class="form-label mb-2">フィールドを選択</label>
                 <select id="fieldName" class="form-select"></select>
             </div>
-            <div class="col-md-6 mb-3 d-flex flex-column justify-content-end">
-                <label class="form-label mb-1">M20必要エナジー</label>
-                <p id="energyRequiredForM20" class="mb-0"></p>
+            <div class="col-md-6 mb-3">
+                <div class="d-flex align-items-center justify-content-between">
+                    <label for="recipesList" class="form-label mb-2">料理を選択</label>
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" id="filterTop5" checked>
+                        <label class="form-check-label" for="filterTop5">
+                            トップ5のみ表示
+                        </label>
+                    </div>
+                </div>
+                <select id="recipesList" class="form-select"></select>
             </div>
         </div>
 
-        <div class="mb-3">
-            <label for="recipesList" class="form-label">料理を選択</label>
-            <div class="form-check mb-2">
-                <input class="form-check-input" type="checkbox" id="filterTop5" checked>
-                <label class="form-check-label" for="filterTop5">
-                    トップ5のみ表示
-                </label>
-            </div>
-            <select id="recipesList" class="form-select"></select>
+        <div class="col-md-6 mb-3 d-flex flex-column justify-content-end">
+            <label class="form-label mb-1">M20必要エナジー</label>
+            <p id="energyRequiredForM20" class="mb-0"></p>
         </div>
     </div>
     <script src="/web/js/energy_calc.js"></script>
