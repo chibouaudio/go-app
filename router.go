@@ -51,6 +51,7 @@ func RouterSettings() *http.ServeMux {
 	mux.HandleFunc("/api/calcEnergy", internal.CalcEnergy)
 	mux.HandleFunc("/api/getRecipes", internal.GetRecipes)
 	mux.HandleFunc("/api/getRecipeBonus", internal.GetRecipeBonus)
+	mux.HandleFunc("/api/calcWeeklyEnergy", internal.CalcWeeklyEnergy)
 
 	return mux
 }

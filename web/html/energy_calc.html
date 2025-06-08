@@ -42,9 +42,15 @@
                 <select id="recipeLevel" class="form-select"></select>
             </div>
             <div class="col-md-6 mb-3">
-                <label for="skillChance" class="form-label mb-2">料理チャンスのスキル発生回数</label>
-                <input id="skillChance" class="form-control" type="number" min="0" max="100" step="0.1"
-                    placeholder="%" />
+                <label for="skillChance" class="form-label mb-2">料理チャンスのスキル発生回数
+                    <span class="desc"> ※ 使用しない場合0を入力してください。</span>
+                </label>
+                <input id="skillChance" class="form-control" type="number" min="0" max="100" step="0.1" value="0"
+                    placeholder="回" />
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="skillLevel" class="form-label mb-2">料理チャンスのスキルレベル</label>
+                <select id="skillLevel" class="form-control"></select>
             </div>
         </div>
 
@@ -60,6 +66,10 @@
             <div class="col-md-6 mb-3">
                 <label class="form-label mb-1">料理エナジー</label>
                 <p id="resultRecipeEnergy" class="mb-0">0</p>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label class="form-label mb-1">週間合計料理エナジー</label>
+                <p id="resultWeeklyEnergy" class="mb-0">0</p>
             </div>
         </div>
     </div>
