@@ -32,7 +32,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     skillChance.addEventListener('input', debouncedUpdateRecipeEnergies);
 
     // イベントリスナー設定
-    selectFieldName.addEventListener('change', updateRecipeEnergies);
+    selectFieldName.addEventListener('change', async () => {
+        const m20Energy = await calcM20Energy(selectFieldName.value);
+        resultM20Energy.textContent = Intl.NumberFormat('ja-JP').format(m20Energy);
+        updateRecipeEnergies();
+    });
     recipesList.addEventListener('change', updateRecipeEnergies);
     recipeLevel.addEventListener('change', updateRecipeEnergies);
     skillLevel.addEventListener('change', updateRecipeEnergies);
@@ -50,8 +54,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // 料理・レシピレベル・スキル発生回数変更時の再計算
     async function updateRecipeEnergies() {
-        if (!selectFieldName.value || !recipesList.value) {
-            resultM20Energy.textContent = 0;
+        if (!recipesList.value) {
             resultBaseRecipeEnergy.textContent = 0;
             resultRecipeEnergy.textContent = 0;
             resultWeeklyEnergy.textContent = 0;
