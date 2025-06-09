@@ -1,0 +1,87 @@
+[
+    {
+        "id": 1,
+        "subskill": "睡眠EXPボーナス",
+        "color": "Gold"
+    },
+    {
+        "id": 2,
+        "subskill": "おてつだいボーナス",
+        "color": "Gold"
+    },
+    {
+        "id": 3,
+        "subskill": "げんき回復ボーナス",
+        "color": "Gold"
+    },
+    {
+        "id": 4,
+        "subskill": "ゆめのかけらボーナス",
+        "color": "Gold"
+    },
+    {
+        "id": 5,
+        "subskill": "リサーチEXPボーナス",
+        "color": "Gold"
+    },
+    {
+        "id": 6,
+        "subskill": "きのみの数S",
+        "color": "Gold"
+    },
+    {
+        "id": 7,
+        "subskill": "スキルレベルアップM",
+        "color": "Gold"
+    },
+    {
+        "id": 8,
+        "subskill": "スキルレベルアップS",
+        "color": "Blue"
+    },
+    {
+        "id": 9,
+        "subskill": "最大所持数アップL",
+        "color": "Blue"
+    },
+    {
+        "id": 10,
+        "subskill": "最大所持数アップM",
+        "color": "Blue"
+    },
+    {
+        "id": 11,
+        "subskill": "おてつだいスピードM",
+        "color": "Blue"
+    },
+    {
+        "id": 12,
+        "subskill": "食材確率アップM",
+        "color": "Blue"
+    },
+    {
+        "id": 13,
+        "subskill": "スキル確率アップM",
+        "color": "Blue"
+    },
+    {
+        "id": 14,
+        "subskill": "最大所持数アップS",
+        "color": "White"
+    },
+    {
+        "id": 15,
+        "subskill": "おてつだいスピードS",
+        "color": "White"
+    },
+    {
+        "id": 16,
+        "subskill": "食材確率アップS",
+        "color": "White"
+    },
+    {
+        "id": 17,
+        "subskill": "スキル確率アップS",
+        "color": "White"
+    }
+]

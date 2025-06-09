@@ -2,13 +2,17 @@ document.addEventListener("DOMContentLoaded", async function () {
 	const personality = document.getElementById("personality");
 	const resultSpeedOfHelp = document.getElementById("resultSpeedOfHelp");
 
+	const MAX_SUBSKILLS = 5;
+
 	// おやすみリボン構造体
 	type GoodNightRibbon = {
 		goodNightRibbonTime: number;
 		evolveCount: number;
 	}
 
+	// --- 初期化処理 ---
 	loadCalc();
+	getSubSkillOptions();
 
 	function loadCalc() {
 		if (!personality?.textContent || !resultSpeedOfHelp) return;
@@ -31,25 +35,25 @@ document.addEventListener("DOMContentLoaded", async function () {
 			evolveCount: 2
 		};
 
-		console.log("おてつだい時間計算開始");
-		console.log("基準おてつだい時間: " + baseSpeedOfHelp);
-		console.log("レベル: " + level);
-		console.log("性格: " + personality);
-		console.log("おてつだいスピードM: " + helpingSpeedM);
-		console.log("おてつだいスピードS: " + helpingSpeedS);
-		console.log("おてつだいボーナス: " + helpingBonus);
-		console.log("おやすみリボン時間: " + goodNightRibbon.goodNightRibbonTime);
-		console.log("おやすみリボン進化回数: " + goodNightRibbon.evolveCount);
-
 		const levelModifier: number = 1 - (level - 1) * 0.002; // レベルによる補正
 		const personalityModifier: number = getPersonalityModifier(personality); // 性格補正
 		const subSkillModifier: number = 1 - getSubSkillModifier(helpingSpeedM, helpingSpeedS, helpingBonus); // サブスキル補正
 		const goodNightRibbonModifier: number = 1 - getGoodNightRibbon(goodNightRibbon) // おやすみリボン補正
 
-		console.log("レベル補正: " + levelModifier);
-		console.log("性格補正: " + personalityModifier);
-		console.log("サブスキル補正: " + subSkillModifier);
-		console.log("おやすみリボン補正: " + goodNightRibbonModifier);
+		// console.log("おてつだい時間計算開始");
+		// console.log("基準おてつだい時間: " + baseSpeedOfHelp);
+		// console.log("レベル: " + level);
+		// console.log("性格: " + personality);
+		// console.log("おてつだいスピードM: " + helpingSpeedM);
+		// console.log("おてつだいスピードS: " + helpingSpeedS);
+		// console.log("おてつだいボーナス: " + helpingBonus);
+		// console.log("おやすみリボン時間: " + goodNightRibbon.goodNightRibbonTime);
+		// console.log("おやすみリボン進化回数: " + goodNightRibbon.evolveCount);
+		// console.log("レベル補正: " + levelModifier);
+		// console.log("性格補正: " + personalityModifier);
+		// console.log("サブスキル補正: " + subSkillModifier);
+		// console.log("おやすみリボン補正: " + goodNightRibbonModifier);
+
 		// 表示おてつだい時間 = Floor[ 基準おてつだい時間 × レベルによる補正 × おてつだいスピード性格補正 × サブスキル補正 × おやすみリボン補正 ]
 		const speedOfHelp = Math.floor(
 			baseSpeedOfHelp * levelModifier * personalityModifier * subSkillModifier * goodNightRibbonModifier
@@ -107,35 +111,88 @@ document.addEventListener("DOMContentLoaded", async function () {
 		return 0;
 	}
 
-	// 17個のボタンを生成
-	const subSkillButtons = document.getElementById("subSkillButtons");
-	if (!subSkillButtons) return;
-	for (let i = 1; i <= 17; i++) {
-		const btn = document.createElement("button");
-		btn.className = "btn btn-outline-primary flex-fill";
-		btn.textContent = `サブスキル${i}`;
-		btn.style.minWidth = "80px";
-		subSkillButtons.appendChild(btn);
-	}
+	function getSubSkillOptions() {
+		const subSkillButtons = document.getElementById("subSkillButtons");
+		const modal = document.getElementById("subSkillModal");
+		const openModalButton = document.getElementById("btnSubSkill");
+		const closeModalButton = document.getElementById("closeSubSkillModal");
 
-	// モーダル表示・非表示
-	const modal = document.getElementById("subSkillModal");
-	const openModalButton = document.getElementById("btnSubSkill");
-	const closeModalButton = document.getElementById("closeSubSkillModal");
-	if (!openModalButton || !closeModalButton || !modal) return;
-	openModalButton.onclick = () => {
-		modal.style.display = "block";
-		modal.classList.add("show");
-	};
-	closeModalButton.onclick = () => {
-		modal.style.display = "none";
-		modal.classList.remove("show");
-	};
-	// モーダル外クリックで閉じる
-	modal.onclick = (e) => {
-		if (e.target === modal) {
+		if (!subSkillButtons || !modal || !openModalButton || !closeModalButton) {
+			return;
+		}
+
+		let selectedSubSkills: any[] = [];
+
+		function updateButtonStates() {
+			if (!subSkillButtons) return;
+			const buttons = subSkillButtons.querySelectorAll("button");
+			buttons.forEach(btn => {
+				const subskill = btn.getAttribute("data-subskill");
+				if (selectedSubSkills.find(s => s.subskill === subskill)) {
+					btn.classList.add("selected");
+				} else {
+					btn.classList.remove("selected");
+				}
+			});
+		}
+
+		function updateSelectedDisplay() {
+			const btn = document.getElementById("btnSubSkill");
+			if (btn) {
+				btn.textContent = selectedSubSkills.map(s => s.subskill).join(" / ") || "サブスキルを選択";
+			}
+		}
+
+		fetch('/api/getSubSkills')
+			.then(response => response.json())
+			.then(data => {
+				subSkillButtons.innerHTML = "";
+				const buttonRow = document.createElement("div");
+				buttonRow.className = "row";
+				subSkillButtons.appendChild(buttonRow);
+
+				data.forEach((element: any) => {
+					const colDiv = document.createElement("div");
+					colDiv.className = "col-6 mb-2";
+					const button = document.createElement("button");
+					button.type = "button";
+					button.className = "subskill-btn btn btn-outline-secondary w-100";
+					button.classList.add(element.color + "-skill");
+					button.textContent = element.subskill;
+					button.setAttribute("data-subskill", element.subskill);
+					button.onclick = () => {
+						const idx = selectedSubSkills.findIndex(s => s.subskill === element.subskill);
+						if (idx >= 0) {
+							selectedSubSkills.splice(idx, 1);
+						} else {
+							if (selectedSubSkills.length < MAX_SUBSKILLS) {
+								selectedSubSkills.push(element);
+							}
+						}
+						updateButtonStates();
+						updateSelectedDisplay();
+					};
+					colDiv.appendChild(button);
+					buttonRow.appendChild(colDiv);
+				});
+			})
+			.catch(error => {
+				console.error('サブスキル取得エラー:', error);
+			});
+
+		openModalButton.onclick = () => {
+			modal.style.display = "block";
+			modal.classList.add("show");
+		};
+		closeModalButton.onclick = () => {
 			modal.style.display = "none";
 			modal.classList.remove("show");
-		}
-	};
+		};
+		modal.onclick = (e) => {
+			if (e.target === modal) {
+				modal.style.display = "none";
+				modal.classList.remove("show");
+			}
+		};
+	}
 });

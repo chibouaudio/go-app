@@ -67,5 +67,7 @@ func RouterSettings() *http.ServeMux {
 		tmpl.Execute(w, data)
 	})
 
+	mux.HandleFunc("/api/getSubSkills", internal.GetSubSkills)
+
 	return mux
 }

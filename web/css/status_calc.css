@@ -1,0 +1,29 @@
+.subskill-btn {
+    border: none;
+    border-radius: 8px;
+    padding: 0.5em 1.2em;
+    margin: 0.2em;
+    font-size: 1em;
+    background: #f0f0f0;
+    color: #333;
+    transition: box-shadow 0.2s, background 0.2s, color 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    cursor: pointer;
+}
+.subskill-btn.Gold-skill {
+    background-color: #ffc70dbd;
+}
+.subskill-btn.Blue-skill {
+    background-color: #429dff;
+}
+.subskill-btn.White-skill {
+    background-color: #d3d3d3;
+}
+.subskill-btn.selected {
+    background: #949494;
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(0,123,255,0.15);
+}
+.subskill-btn:hover:not(.selected) {
+    background: #e0e0e0;
+}
