@@ -37,8 +37,15 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // 料理・レシピレベル・スキル発生回数変更時の再計算
     async function updateRecipeEnergies() {
+        if (!selectFieldName.value || !recipesList.value) {
+            resultM20Energy.textContent = 0;
+            resultBaseRecipeEnergy.textContent = 0;
+            resultRecipeEnergy.textContent = 0;
+            resultWeeklyEnergy.textContent = 0;
+            resultIsEnergyRequirementMet.textContent = 0;
+            return;
+        }
         const m20Energy = await calcM20Energy(selectFieldName.value);
-
         const baseEnergy = getSelectedRecipeEnergy();
         const energy = await getDishEnergy(recipeLevel.value, baseEnergy);
         const weeklyEnergy = await getWeeklyDishEnergy(
