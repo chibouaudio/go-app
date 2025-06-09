@@ -16,9 +16,43 @@
         <h1 class="text-center mb-4">個体値計算</h1>
         <p class="desc text-center mb-4">個体値を計算します。</p>
         <div class="row mb-3">
-            <div class="mb-3">
+            <div class="col-md-6 mb-3">
                 <label for="pokemonName" class="form-label mb-2">ポケモンを選択</label>
                 <select id="pokemonName" class="form-select"></select>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="personality" class="form-label mb-2">性格を選択</label>
+                <select id="personality" class="form-select">
+                    <option value="up">上昇補正</option>
+                    <option value="normal" selected>無補正</option>
+                    <option value="down">下降補正</option>
+                </select>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="level" class="form-label mb-2">レベル</label>
+                <input type="number" id="level" class="form-control" value="60" min="1" max="65">
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="subSkill" class="form-label mb-2">サブスキル</label>
+                <button id="btnSubSkill" class="btn btn-secondary form-control">サブスキルを選択</button>
+            </div>
+            <div class="modal" tabindex="-1" id="subSkillModal">
+                <div class="modal-dialog modal-dialog-centered modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">サブスキル選択</h5>
+                            <button type="button" class="btn-close" id="closeSubSkillModal"></button>
+                        </div>
+                        <div class="modal-body d-flex flex-wrap gap-2" id="subSkillButtons">
+                            <!-- ボタンがここに追加されます -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-6 mb-3">
+                <p id="resultSpeedOfHelp"></p>
             </div>
         </div>
     </div>
