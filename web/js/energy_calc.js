@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const selectFieldName = document.getElementById('fieldName');
     const recipesList = document.getElementById('recipesList');
     const fieldBonus = document.getElementById('fieldBonus');
+    const filterEvent = document.getElementById('filterEvent');
     const recipeLevel = document.getElementById('recipeLevel');
     const skillChance = document.getElementById('skillChance');
     const skillLevel = document.getElementById('skillLevel');
@@ -27,6 +28,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     recipeLevel.addEventListener('change', updateRecipeEnergies);
     skillChance.addEventListener('input', updateRecipeEnergies);
     skillLevel.addEventListener('change', updateRecipeEnergies);
+    filterEvent.addEventListener('change', updateRecipeEnergies);
+
+    fieldBonus.addEventListener('change', () => {
+        const fieldName = selectFieldName.value;
+        if (fieldName) {
+            calcM20Energy(fieldName);
+        }
+        updateRecipeEnergies();
+    });
 
     // 初期化
     await loadFieldNames();
@@ -68,10 +78,27 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (energy !== 0) {
             resultRecipeEnergy.textContent = Intl.NumberFormat('ja-JP').format(energy);
         }
-        resultWeeklyEnergy.textContent = await calcWeeklyEnergy(energy, parseInt(skillLevel.value), parseFloat(skillChance.value));
+        const weeklyEnergy = await calcWeeklyEnergy(
+            energy,
+            parseInt(skillLevel.value),
+            parseFloat(skillChance.value),
+            parseFloat(fieldBonus.value),
+            filterEvent.checked
+        );
+        resultWeeklyEnergy.textContent = Intl.NumberFormat('ja-JP').format(weeklyEnergy);
     }
 
-    async function calcWeeklyEnergy(energy, skillLevel, skillActivationsPerDay) {
+    // 週エナジーをAPIから取得・表示
+    /**
+     * 週エナジーを計算する関数
+     * @param {number} energy - 料理エナジー
+     * @param {number} skillLevel - スキルレベル
+     * @param {number} skillActivationsPerDay - スキル発生回数/日
+     * @param {number} fieldBonus - フィールドボーナス
+     * @param {boolean} filterEvent - イベントフィルターの有無
+     * @returns {Promise<number>} 週エナジーの値
+     */
+    async function calcWeeklyEnergy(energy, skillLevel, skillActivationsPerDay, fieldBonus, filterEvent) {
         try {
             const response = await fetch(`/api/calcWeeklyEnergy`, {
                 method: 'POST',
@@ -80,6 +107,8 @@ document.addEventListener('DOMContentLoaded', async () => {
                     energy: energy,
                     skillLevel: skillLevel,
                     skillActivationsPerDay: skillActivationsPerDay,
+                    fieldBonus: fieldBonus,
+                    filterEvent: filterEvent
                 })
             });
             if (!response.ok) throw new Error('週エナジー計算APIエラー');

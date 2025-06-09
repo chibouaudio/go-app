@@ -140,6 +140,8 @@ type CalcWeeklyEnergyRequest struct {
 	Energy                 int     `json:"energy"`                 // 料理1回の基本エナジー
 	SkillLevel             int     `json:"skillLevel"`             // スキルレベル
 	SkillActivationsPerDay float64 `json:"skillActivationsPerDay"` // 1日あたりの平均スキル発動回数
+	FieldBonus             float64 `json:"fieldBonus"`             // フィールドボーナス
+	FilterEvent            bool    `json:"filterEvent"`            // イベントフィルターの有無
 }
 
 type CalcWeeklyEnergyResponse struct {
@@ -171,6 +173,12 @@ func CalcWeeklyEnergy(w http.ResponseWriter, r *http.Request) {
 	energy := float64(req.Energy)
 	skillLevel := req.SkillLevel
 	skillActivationsPerDay := req.SkillActivationsPerDay
+	fieldBonus := req.FieldBonus
+
+	var filterEvent float64 = 1.0
+	if req.FilterEvent {
+		filterEvent = 1.5
+	}
 
 	// スキル補正を取得
 	levelBonus := skillBonusMap[skillLevel]
@@ -181,12 +189,12 @@ func CalcWeeklyEnergy(w http.ResponseWriter, r *http.Request) {
 	// 月〜土
 	pWeekday := math.Min(0.10+skillBoostPerCook, 0.70)
 	weekdayMultiplier := 1 + pWeekday
-	weekdayEnergy := energy * weekdayMultiplier * 3 * 6
+	weekdayEnergy := energy * weekdayMultiplier * 3 * 6 * filterEvent * (1 + fieldBonus/100)
 
 	// 日曜
 	pSunday := math.Min(0.30+skillBoostPerCook, 0.70)
 	sundayMultiplier := 1 + 2*pSunday
-	sundayEnergy := energy * sundayMultiplier * 3
+	sundayEnergy := energy * sundayMultiplier * 3 * 1 * filterEvent * (1 + fieldBonus/100)
 
 	result := weekdayEnergy + sundayEnergy
 

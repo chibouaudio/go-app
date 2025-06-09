@@ -42,33 +42,51 @@
                 <select id="recipeLevel" class="form-select"></select>
             </div>
             <div class="col-md-6 mb-3">
-                <label for="skillChance" class="form-label mb-2">料理チャンスのスキル発生回数
-                    <span class="desc"> ※ 使用しない場合0を入力してください。</span>
-                </label>
-                <input id="skillChance" class="form-control" type="number" min="0" max="100" step="0.1" value="0"
+                <div class="row">
+                    <div class="col-12 col-sm-auto">
+                        <label for="skillChance" class="form-label mb-2 mb-sm-0">
+                            料理チャンスSの1日のスキル発生回数
+                        </label>
+                    </div>
+                    <div class="col-12 col-sm">
+                        <span class="desc ms-sm-2">※ 使用しない場合0を入力してください。</span>
+                    </div>
+                </div>
+                <input id="skillChance" class="form-control mt-2" type="number" min="0" max="100" step="0.1" value="0"
                     placeholder="回" />
             </div>
             <div class="col-md-6 mb-3">
                 <label for="skillLevel" class="form-label mb-2">料理チャンスのスキルレベル</label>
                 <select id="skillLevel" class="form-control"></select>
             </div>
+            <div class="col-md-6 my-3">
+                <div class="form-check mb-2 d-flex align-items-center">
+                    <input class="form-check-input" type="checkbox" id="filterEvent">
+                    <label class="form-check-label ms-2" for="filterEvent">
+                        イベントボーナス1.5倍を適用する
+                    </label>
+                </div>
+            </div>
         </div>
 
         <div class="row results">
-            <div class="col-md-6 mb-3">
+            <div class="mb-3">
                 <label class="form-label mb-1">M20必要エナジー</label>
                 <p id="resultM20Energy" class="mb-0">0</p>
             </div>
-            <div class="col-md-6 mb-3">
+            <div class="col-md-3 mb-3">
                 <label class="form-label mb-1">基礎料理エナジー</label>
+                <p class="desc">基礎料理エナジー</p>
                 <p id="resultBaseRecipeEnergy" class="mb-0">0</p>
             </div>
-            <div class="col-md-6 mb-3">
+            <div class="col-md-3 mb-3">
                 <label class="form-label mb-1">料理エナジー</label>
+                <p class="desc">レシピレベルが適用</p>
                 <p id="resultRecipeEnergy" class="mb-0">0</p>
             </div>
-            <div class="col-md-6 mb-3">
+            <div class="col-md-3 mb-3">
                 <label class="form-label mb-1">週間合計料理エナジー</label>
+                <p class="desc">FB、料理チャンスS、イベントボーナスが適用</p>
                 <p id="resultWeeklyEnergy" class="mb-0">0</p>
             </div>
         </div>
