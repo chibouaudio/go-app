@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const recipesList = document.getElementById('recipesList');
     const fieldBonus = document.getElementById('fieldBonus');
     const filterEvent = document.getElementById('filterEvent');
+    const filterTop5 = document.getElementById('filterTop5');
     const recipeLevel = document.getElementById('recipeLevel');
     const skillChance = document.getElementById('skillChance');
     const skillLevel = document.getElementById('skillLevel');
@@ -42,6 +43,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     skillLevel.addEventListener('change', updateRecipeEnergies);
     filterEvent.addEventListener('change', updateRecipeEnergies);
     fieldBonus.addEventListener('change', updateRecipeEnergies);
+
+    filterTop5.addEventListener('change', async () => {
+        await loadRecipes();
+    });
 
     // 初期化
     await loadFieldNames();
@@ -82,7 +87,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // 両方の値が取得できている場合のみ requiredM20Energy を実行
         if (m20Energy != null && weeklyEnergy != null && m20Energy !== '' && weeklyEnergy !== '') {
-            const diff = requiredM20Energy(m20Energy, weeklyEnergy);
+            const diff = calcRequiredM20Energy(m20Energy, weeklyEnergy);
             if (resultIsEnergyRequirementMet) {
                 resultIsEnergyRequirementMet.textContent = Intl.NumberFormat('ja-JP').format(diff);
                 if (diff < 0) {
@@ -187,6 +192,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // レシピ一覧をAPIから取得し、カテゴリごとに並べて表示
     async function loadRecipes() {
         try {
+            const prevValue = recipesList.value;
             const response = await fetch('/api/getRecipes');
             if (!response.ok) throw new Error('API取得エラー');
             const data = await response.json();
@@ -212,12 +218,18 @@ document.addEventListener('DOMContentLoaded', async () => {
                 });
                 recipesList.appendChild(categoryOption);
             }
+            if (prevValue && recipesList.querySelector(`option[value="${prevValue}"]`)) {
+                recipesList.value = prevValue;
+            } else {
+                recipesList.value = '';
+                updateRecipeEnergies();
+            }
         } catch (error) {
             console.error('ドロップダウン取得エラー:', error);
         }
     }
 
-    function requiredM20Energy(m20Energy, resultWeeklyEnergy) {
+    function calcRequiredM20Energy(m20Energy, resultWeeklyEnergy) {
         if (selectFieldName.value !== '' && resultWeeklyEnergy !== '') {
             const result = resultWeeklyEnergy - m20Energy;
             return Math.round(result * 100) / 100;
@@ -259,7 +271,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // トップ5フィルターがONかどうかを返す
     function isTop5FilterOn() {
-        return document.getElementById('filterTop5').checked;
+        return filterTop5.checked;
     }
 
     // option要素を生成
