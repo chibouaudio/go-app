@@ -11,32 +11,20 @@ document.addEventListener('DOMContentLoaded', async () => {
     const resultBaseRecipeEnergy = document.getElementById('resultBaseRecipeEnergy');
     const resultRecipeEnergy = document.getElementById('resultRecipeEnergy');
     const resultWeeklyEnergy = document.getElementById('resultWeeklyEnergy');
+    const resultIsEnergyRequirementMet = document.getElementById('resultIsEnergyRequirementMet');
 
     const MAX_FIELD_BONUS = 75;
     const MAX_RECIPE_LEVEL = 65;
     const MAX_SKILL_LEVEL = 6;
 
-    // フィールド名変更時：M20必要エナジーのみ再計算
-    selectFieldName.addEventListener('change', () => {
-        const fieldName = selectFieldName.value;
-        resultM20Energy.textContent = '';
-        if (fieldName) calcM20Energy(fieldName);
-    });
-
-    // 料理・レシピレベル・スキル発生回数変更時：基礎料理エナジーと料理エナジーを再計算
+    // イベントリスナー設定
+    selectFieldName.addEventListener('change', updateRecipeEnergies);
     recipesList.addEventListener('change', updateRecipeEnergies);
     recipeLevel.addEventListener('change', updateRecipeEnergies);
     skillChance.addEventListener('input', updateRecipeEnergies);
     skillLevel.addEventListener('change', updateRecipeEnergies);
     filterEvent.addEventListener('change', updateRecipeEnergies);
-
-    fieldBonus.addEventListener('change', () => {
-        const fieldName = selectFieldName.value;
-        if (fieldName) {
-            calcM20Energy(fieldName);
-        }
-        updateRecipeEnergies();
-    });
+    fieldBonus.addEventListener('change', updateRecipeEnergies);
 
     // 初期化
     await loadFieldNames();
@@ -44,48 +32,45 @@ document.addEventListener('DOMContentLoaded', async () => {
     setFieldBonusOptions();
     setRecipeLevel();
     setSkillLevel();
-    updateRecipeEnergies();
 
     // --- 関数定義 ---
 
-    // M20必要エナジーをAPIから取得・表示
-    async function calcM20Energy(fieldName) {
-        try {
-            const response = await fetch('/api/calcEnergy', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ fieldName, RankType: "マスター", RankNumber: 20 })
-            });
-            if (!response.ok) throw new Error('データ取得APIエラー');
-            const data = await response.json();
-            resultM20Energy.textContent = Intl.NumberFormat('ja-JP').format(data.energyRequiredForM20);
-        } catch (error) {
-            resultM20Energy.textContent = '';
-            console.error('データ取得エラー:', error);
-        }
-    }
-
     // 料理・レシピレベル・スキル発生回数変更時の再計算
     async function updateRecipeEnergies() {
+        const m20Energy = await calcM20Energy(selectFieldName.value);
+
         const baseEnergy = getSelectedRecipeEnergy();
-        if (baseEnergy) {
-            resultBaseRecipeEnergy.textContent = Intl.NumberFormat('ja-JP').format(baseEnergy);
-        } else {
-            resultBaseRecipeEnergy.textContent = '0';
-            resultRecipeEnergy.textContent = '0';
-        }
-        let energy = await calcRecipeBonus(recipeLevel.value, baseEnergy);
-        if (energy !== 0) {
-            resultRecipeEnergy.textContent = Intl.NumberFormat('ja-JP').format(energy);
-        }
-        const weeklyEnergy = await calcWeeklyEnergy(
+        const energy = await getDishEnergy(recipeLevel.value, baseEnergy);
+        const weeklyEnergy = await getWeeklyDishEnergy(
             energy,
             parseInt(skillLevel.value),
             parseFloat(skillChance.value),
             parseFloat(fieldBonus.value),
             filterEvent.checked
         );
+        if (weeklyEnergy === null) {
+            return;
+        }
+
+        resultM20Energy.textContent = Intl.NumberFormat('ja-JP').format(m20Energy);
+        resultBaseRecipeEnergy.textContent = Intl.NumberFormat('ja-JP').format(baseEnergy);
+        resultRecipeEnergy.textContent = Intl.NumberFormat('ja-JP').format(energy);
         resultWeeklyEnergy.textContent = Intl.NumberFormat('ja-JP').format(weeklyEnergy);
+
+        // 両方の値が取得できている場合のみ requiredM20Energy を実行
+        if (m20Energy != null && weeklyEnergy != null && m20Energy !== '' && weeklyEnergy !== '') {
+            const diff = requiredM20Energy(m20Energy, weeklyEnergy);
+            if (resultIsEnergyRequirementMet) {
+                resultIsEnergyRequirementMet.textContent = Intl.NumberFormat('ja-JP').format(diff);
+                if (diff < 0) {
+                    resultIsEnergyRequirementMet.classList.add('text-danger');
+                    resultIsEnergyRequirementMet.classList.remove('text-success');
+                } else {
+                    resultIsEnergyRequirementMet.classList.add('text-success');
+                    resultIsEnergyRequirementMet.classList.remove('text-danger');
+                }
+            }
+        }
     }
 
     // 週エナジーをAPIから取得・表示
@@ -98,7 +83,7 @@ document.addEventListener('DOMContentLoaded', async () => {
      * @param {boolean} filterEvent - イベントフィルターの有無
      * @returns {Promise<number>} 週エナジーの値
      */
-    async function calcWeeklyEnergy(energy, skillLevel, skillActivationsPerDay, fieldBonus, filterEvent) {
+    async function getWeeklyDishEnergy(energy, skillLevel, skillActivationsPerDay, fieldBonus, filterEvent) {
         try {
             const response = await fetch(`/api/calcWeeklyEnergy`, {
                 method: 'POST',
@@ -120,10 +105,30 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 
-    // レシピレベル・基礎エナジーから料理エナジーを計算し、値を返す
-    async function calcRecipeBonus(level, baseEnergy) {
+    // M20必要エナジーをAPIから取得・表示
+    async function calcM20Energy(fieldName) {
+        if (!fieldName) {
+            return 0;
+        }
         try {
-            const response = await fetch(`/api/getRecipeBonus?level=${encodeURIComponent(level)}`);
+            const response = await fetch('/api/calcEnergy', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ fieldName, RankType: "マスター", RankNumber: 20 })
+            });
+            if (!response.ok) throw new Error('エナジー計算APIエラー');
+            const data = await response.json();
+            return data.energyRequiredForM20;
+        } catch (error) {
+            console.error('エナジー計算APIエラー:', error);
+            return 0;
+        }
+    }
+
+    // レシピレベル・基礎エナジーから料理エナジーを計算し、値を返す
+    async function getDishEnergy(recipeLevel, baseEnergy) {
+        try {
+            const response = await fetch(`/api/getRecipeBonus?level=${encodeURIComponent(recipeLevel)}`);
             if (!response.ok) throw new Error('レシピボーナス取得エラー');
             const data = await response.json();
             let bonus = 1 + (data / 100);
@@ -186,6 +191,15 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
         } catch (error) {
             console.error('ドロップダウン取得エラー:', error);
+        }
+    }
+
+    function requiredM20Energy(m20Energy, resultWeeklyEnergy) {
+        if (selectFieldName.value !== '' && resultWeeklyEnergy !== '') {
+            const result = resultWeeklyEnergy - m20Energy;
+            return Math.round(result * 100) / 100;
+        } else {
+            return 0;
         }
     }
 
