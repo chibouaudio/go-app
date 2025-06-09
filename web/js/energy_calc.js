@@ -17,11 +17,24 @@ document.addEventListener('DOMContentLoaded', async () => {
     const MAX_RECIPE_LEVEL = 65;
     const MAX_SKILL_LEVEL = 6;
 
+    // --- デバウンス関数定義 ---
+    function debounce(func, delay) {
+        let timeoutId;
+        return function (...args) {
+            const context = this;
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => {
+                func.apply(context, args);
+            }, delay);
+        };
+    }
+    const debouncedUpdateRecipeEnergies = debounce(updateRecipeEnergies, 300);
+    skillChance.addEventListener('input', debouncedUpdateRecipeEnergies);
+
     // イベントリスナー設定
     selectFieldName.addEventListener('change', updateRecipeEnergies);
     recipesList.addEventListener('change', updateRecipeEnergies);
     recipeLevel.addEventListener('change', updateRecipeEnergies);
-    skillChance.addEventListener('input', updateRecipeEnergies);
     skillLevel.addEventListener('change', updateRecipeEnergies);
     filterEvent.addEventListener('change', updateRecipeEnergies);
     fieldBonus.addEventListener('change', updateRecipeEnergies);
