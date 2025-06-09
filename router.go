@@ -53,5 +53,19 @@ func RouterSettings() *http.ServeMux {
 	mux.HandleFunc("/api/getRecipeBonus", internal.GetRecipeBonus)
 	mux.HandleFunc("/api/calcWeeklyEnergy", internal.CalcWeeklyEnergy)
 
+	mux.HandleFunc("/status_calc", func(w http.ResponseWriter, r *http.Request) {
+		tmpl, err := template.ParseFiles("web/html/status_calc.html")
+		if err != nil {
+			http.Error(w, "テンプレートエラー", http.StatusInternalServerError)
+			return
+		}
+		data := struct {
+			Title string
+		}{
+			Title: "個体値計算ページ",
+		}
+		tmpl.Execute(w, data)
+	})
+
 	return mux
 }
