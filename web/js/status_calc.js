@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", async function () {
     const personality = document.getElementById("personality");
     const resultSpeedOfHelp = document.getElementById("resultSpeedOfHelp");
-    const MAX_SUBSKILLS = 5;
+    const MAX_SUB_SUBSKILLS = 5;
     // --- 初期化処理 ---
     loadCalc();
     getSubSkillOptions();
@@ -111,8 +111,19 @@ document.addEventListener("DOMContentLoaded", async function () {
             const buttons = subSkillButtons.querySelectorAll("button");
             buttons.forEach(btn => {
                 const subskill = btn.getAttribute("data-subskill");
-                if (selectedSubSkills.find(s => s.subskill === subskill)) {
+                const idx = selectedSubSkills.findIndex(s => s.subskill === subskill);
+                // 既存バッジを削除
+                const oldBadge = btn.querySelector('.subskill-badge');
+                if (oldBadge)
+                    oldBadge.remove();
+                if (idx >= 0) {
                     btn.classList.add("selected");
+                    // バッジ番号リスト
+                    const badgeNumbers = [10, 25, 50, 75, 100];
+                    const badge = document.createElement("span");
+                    badge.className = "subskill-badge";
+                    badge.textContent = badgeNumbers[idx]?.toString() ?? "";
+                    btn.prepend(badge);
                 }
                 else {
                     btn.classList.remove("selected");
@@ -134,7 +145,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             subSkillButtons.appendChild(buttonRow);
             data.forEach((element) => {
                 const colDiv = document.createElement("div");
-                colDiv.className = "col-6 mb-2";
+                colDiv.className = "col-12 col-md-6 mb-2"; // ←ここを修正
                 const button = document.createElement("button");
                 button.type = "button";
                 button.className = "subskill-btn btn btn-outline-secondary w-100";
@@ -147,7 +158,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                         selectedSubSkills.splice(idx, 1);
                     }
                     else {
-                        if (selectedSubSkills.length < MAX_SUBSKILLS) {
+                        if (selectedSubSkills.length < MAX_SUB_SUBSKILLS) {
                             selectedSubSkills.push(element);
                         }
                     }
