@@ -14,12 +14,17 @@ document.addEventListener("DOMContentLoaded", async function () {
     // --- 初期化 ---
     loadCalc();
     setsubSkillModal();
+    // --- イベントリスナー ---
+    personality?.addEventListener("change", loadCalc);
+    subSkillButtons?.addEventListener("click", loadCalc);
     // --- 計算・表示 ---
     function loadCalc() {
         if (!personality || !resultSpeedOfHelp)
             return;
-        const result = getSpeedOfHelp(personality.textContent || "");
-        resultSpeedOfHelp.textContent = result.toString();
+        const result = getSpeedOfHelp(personality.value || "");
+        const minutes = Math.floor(result / 60);
+        const seconds = result % 60;
+        resultSpeedOfHelp.textContent = `${minutes}分${seconds}秒`;
     }
     // おてつだいスピードを計算する関数
     function getSpeedOfHelp(personality) {
