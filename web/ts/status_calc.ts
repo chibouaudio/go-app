@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 	// --- 変数宣言 ---
 	const personality = document.getElementById("personality");
 	const resultSpeedOfHelp = document.getElementById("resultSpeedOfHelp");
+	const level = document.getElementById("level");
 	const subSkillButtons = document.getElementById("subSkillButtons");
 	const modal = document.getElementById("subSkillModal");
 	const openModalButton = document.getElementById("btnSubSkill");
@@ -12,6 +13,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 	const MAX_SUB_SUBSKILLS = 5;
 
 	let selectedSubSkills: any[] = [];
+	let helpingBonusCount = 0;
 
 	// --- 初期化 ---
 	loadCalc();
@@ -19,11 +21,14 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 	// --- イベントリスナー ---
 	personality?.addEventListener("change", loadCalc);
+	level?.addEventListener("change", loadCalc);
 	subSkillButtons?.addEventListener("click", loadCalc);
 
 	// --- 計算・表示 ---
 	function loadCalc() {
-		if (!personality || !resultSpeedOfHelp) return;
+		if (!resultSpeedOfHelp) return;
+
+		// おてつだい時間を表示する
 		const result = getSpeedOfHelp((personality as HTMLSelectElement).value || "");
 		const minutes = Math.floor(result / 60);
 		const seconds = result % 60;
@@ -33,13 +38,13 @@ document.addEventListener("DOMContentLoaded", async function () {
 	// おてつだいスピードを計算する関数
 	function getSpeedOfHelp(personality: string): number {
 		const baseSpeedOfHelp = 2200;
-		const level = 42;
-		const helpingSpeedM = true;
-		const helpingSpeedS = false;
-		const helpingBonus = 1;
+		const pokemonlevel = parseInt((level as HTMLInputElement).value, 10) || 1;
+		const helpingSpeedM = selectedSubSkills.some(s => s.subskill === "おてつだいスピードM");
+		const helpingSpeedS = selectedSubSkills.some(s => s.subskill === "おてつだいスピードS");
+		const helpingBonus = countHelpingBonus();
 		const goodNightRibbon = { goodNightRibbonTime: 0, evolveCount: 2 };
 
-		const levelModifier = 1 - (level - 1) * 0.002;
+		const levelModifier = 1 - (pokemonlevel - 1) * 0.002;
 		const personalityModifier = getPersonalityModifier(personality);
 		const subSkillModifier = 1 - getSubSkillModifier(helpingSpeedM, helpingSpeedS, helpingBonus);
 		const goodNightRibbonModifier = 1 - getGoodNightRibbon(goodNightRibbon);
@@ -83,6 +88,12 @@ document.addEventListener("DOMContentLoaded", async function () {
 			if (sleepTime === 500) return 0.11;
 		}
 		return 0;
+	}
+
+	// おてつだいボーナスをカウントする
+	function countHelpingBonus(): number {
+		let helpingBonusCount = selectedSubSkills.filter(s => s.subskill.startsWith("おてつだいボーナス")).length;
+		return helpingBonusCount > 5 ? 5 : helpingBonusCount;
 	}
 
 	// --- サブスキルモーダル ---

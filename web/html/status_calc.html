@@ -30,7 +30,9 @@
             </div>
             <div class="col-md-6 mb-3">
                 <label for="level" class="form-label mb-2">レベル</label>
-                <input type="number" id="level" class="form-control" value="60" min="1" max="65">
+                <input type="range" id="level" class="form-range" value="60" min="1" max="65" step="1"
+                    oninput="levelValue.textContent = this.value">
+                <span id="levelValue" class="ms-2">60</span>
             </div>
             <div class="col-md-6 mb-3">
                 <label for="subSkill" class="form-label mb-2">サブスキル</label>
@@ -58,6 +60,7 @@
         </div>
         <div class="row mb-3">
             <div class="col-md-6 mb-3">
+                <p>おてつだい時間</p>
                 <p id="resultSpeedOfHelp"></p>
             </div>
         </div>
