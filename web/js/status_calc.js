@@ -9,26 +9,30 @@ document.addEventListener("DOMContentLoaded", async function () {
     const openModalButton = document.getElementById("btnSubSkill");
     const closeModalButton = document.getElementById("closeSubSkillModal");
     const selectedSubSkilllabel = document.getElementById("selectedSubSkilllabel");
+    const resultHelpingCount = document.getElementById("resultHelpingCount");
     const badgeNumbers = [10, 25, 50, 75, 100];
     const MAX_SUB_SUBSKILLS = 5;
     let selectedSubSkills = [];
-    let helpingBonusCount = 0;
     // --- 初期化 ---
-    loadCalc();
+    await loadCalc();
     setsubSkillModal();
     // --- イベントリスナー ---
     personality?.addEventListener("change", loadCalc);
     level?.addEventListener("change", loadCalc);
     subSkillButtons?.addEventListener("click", loadCalc);
     // --- 計算・表示 ---
-    function loadCalc() {
-        if (!resultSpeedOfHelp)
+    async function loadCalc() {
+        if (!resultSpeedOfHelp || !resultHelpingCount)
             return;
+        console.log("計算を開始します...");
         // おてつだい時間を表示する
-        const result = getSpeedOfHelp(personality.value || "");
-        const minutes = Math.floor(result / 60);
-        const seconds = result % 60;
-        resultSpeedOfHelp.textContent = `${minutes}分${seconds}秒`;
+        const speedOfHelping = getSpeedOfHelp(personality.value || "");
+        const minutes = Math.floor(speedOfHelping / 60);
+        const seconds = speedOfHelping % 60;
+        const helpingCount = await getHelpingCount(100, speedOfHelping);
+        // 結果を表示
+        resultSpeedOfHelp.textContent = `${speedOfHelping} : ${minutes}分${seconds}秒`;
+        resultHelpingCount.textContent = helpingCount.toString();
     }
     // おてつだいスピードを計算する関数
     function getSpeedOfHelp(personality) {
@@ -42,6 +46,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         const personalityModifier = getPersonalityModifier(personality);
         const subSkillModifier = 1 - getSubSkillModifier(helpingSpeedM, helpingSpeedS, helpingBonus);
         const goodNightRibbonModifier = 1 - getGoodNightRibbon(goodNightRibbon);
+        // console.log(`Base Speed: ${baseSpeedOfHelp}, Level Modifier: ${levelModifier}, Personality Modifier: ${personalityModifier}, Sub Skill Modifier: ${subSkillModifier}, Good Night Ribbon Modifier: ${goodNightRibbonModifier}`);
         return Math.floor(baseSpeedOfHelp * levelModifier * personalityModifier * subSkillModifier * goodNightRibbonModifier);
     }
     // 性格の補正値を取得
@@ -90,6 +95,32 @@ document.addEventListener("DOMContentLoaded", async function () {
     function countHelpingBonus() {
         let helpingBonusCount = selectedSubSkills.filter(s => s.subskill.startsWith("おてつだいボーナス")).length;
         return helpingBonusCount > 5 ? 5 : helpingBonusCount;
+    }
+    // おてつだい回数を計算する
+    async function getHelpingCount(genki, speed) {
+        if (!genki || !speed)
+            return 0;
+        console.log(`おてつだい回数計算: genki=${genki}, speed=${speed}`);
+        try {
+            const response = await fetch('/api/calcHelpingCount', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    maxGenki: genki,
+                    helpingSpeed: speed
+                })
+            });
+            console.log(response);
+            const data = await response.json();
+            console.log('おてつだい回数取得:', data);
+            return Math.round(data.helpingCount * 100) / 100; // 小数点以下2桁まで
+        }
+        catch (error) {
+            console.error('おてつだい回数取得エラー:', error);
+            return 0;
+        }
     }
     // --- サブスキルモーダル ---
     async function setsubSkillModal() {

@@ -68,6 +68,7 @@ func RouterSettings() *http.ServeMux {
 	})
 
 	mux.HandleFunc("/api/getSubSkills", internal.GetSubSkills)
+	mux.HandleFunc("/api/calcHelpingCount", internal.CalcHelpingCount)
 
 	return mux
 }
