@@ -11,15 +11,7 @@
     cursor: pointer;
     position: relative; /* バッジのために追加 */
 }
-.subskill-btn.Gold-skill {
-    background-color: #ffc70dbd;
-}
-.subskill-btn.Blue-skill {
-    background-color: #429dff;
-}
-.subskill-btn.White-skill {
-    background-color: #d3d3d3;
-}
+
 .subskill-btn.selected {
     background: #949494;
     color: #fff;
@@ -28,6 +20,12 @@
 .subskill-btn:hover:not(.selected) {
     background: #e0e0e0;
 }
+
+.selected-subskill-item {
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
 .subskill-badge {
     position: absolute;
     top: -8px;
@@ -44,4 +42,14 @@
     box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     z-index: 2;
     border: 2px solid #fff;
+}
+
+.Gold-skill {
+    background-color: #ffc70dbd;
+}
+.Blue-skill {
+    background-color: #429dff;
+}
+.White-skill {
+    background-color: #d3d3d3;
 }

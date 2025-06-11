@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", async function () {
 	const personality = document.getElementById("personality");
 	const resultSpeedOfHelp = document.getElementById("resultSpeedOfHelp");
+	const btnSelectedSubSkill = document.getElementById("btnSubSkill");
 
 	const MAX_SUB_SUBSKILLS = 5;
 
@@ -111,49 +112,18 @@ document.addEventListener("DOMContentLoaded", async function () {
 		return 0;
 	}
 
-	function getSubSkillOptions() {
+	function getSubSkillOptions(): any[] {
 		const subSkillButtons = document.getElementById("subSkillButtons");
 		const modal = document.getElementById("subSkillModal");
 		const openModalButton = document.getElementById("btnSubSkill");
 		const closeModalButton = document.getElementById("closeSubSkillModal");
+		const badgeNumbers = [10, 25, 50, 75, 100];
 
 		if (!subSkillButtons || !modal || !openModalButton || !closeModalButton) {
-			return;
+			return [];
 		}
 
 		let selectedSubSkills: any[] = [];
-
-		function updateButtonStates() {
-			if (!subSkillButtons) return;
-			const buttons = subSkillButtons.querySelectorAll("button");
-			buttons.forEach(btn => {
-				const subskill = btn.getAttribute("data-subskill");
-				const idx = selectedSubSkills.findIndex(s => s.subskill === subskill);
-
-				// 既存バッジを削除
-				const oldBadge = btn.querySelector('.subskill-badge');
-				if (oldBadge) oldBadge.remove();
-
-				if (idx >= 0) {
-					btn.classList.add("selected");
-					// バッジ番号リスト
-					const badgeNumbers = [10, 25, 50, 75, 100];
-					const badge = document.createElement("span");
-					badge.className = "subskill-badge";
-					badge.textContent = badgeNumbers[idx]?.toString() ?? "";
-					btn.prepend(badge);
-				} else {
-					btn.classList.remove("selected");
-				}
-			});
-		}
-
-		function updateSelectedDisplay() {
-			const btn = document.getElementById("btnSubSkill");
-			if (btn) {
-				btn.textContent = selectedSubSkills.map(s => s.subskill).join(" / ") || "サブスキルを選択";
-			}
-		}
 
 		fetch('/api/getSubSkills')
 			.then(response => response.json())
@@ -165,7 +135,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 				data.forEach((element: any) => {
 					const colDiv = document.createElement("div");
-					colDiv.className = "col-12 col-md-6 mb-2"; // ←ここを修正
+					colDiv.className = "col-12 col-md-6 mb-2";
 					const button = document.createElement("button");
 					button.type = "button";
 					button.className = "subskill-btn btn btn-outline-secondary w-100";
@@ -181,7 +151,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 								selectedSubSkills.push(element);
 							}
 						}
-						updateButtonStates();
+						updateButtonStates(badgeNumbers);
 						updateSelectedDisplay();
 					};
 					colDiv.appendChild(button);
@@ -199,12 +169,56 @@ document.addEventListener("DOMContentLoaded", async function () {
 		closeModalButton.onclick = () => {
 			modal.style.display = "none";
 			modal.classList.remove("show");
+			loadCalc();
 		};
 		modal.onclick = (e) => {
 			if (e.target === modal) {
 				modal.style.display = "none";
 				modal.classList.remove("show");
+				loadCalc();
 			}
 		};
+
+		return selectedSubSkills;
+
+		function updateButtonStates(badgeNumbers: number[]) {
+			if (!subSkillButtons) return;
+			const buttons = subSkillButtons.querySelectorAll("button");
+			buttons.forEach(btn => {
+				const subskill = btn.getAttribute("data-subskill");
+				const idx = selectedSubSkills.findIndex(s => s.subskill === subskill);
+
+				// 既存バッジを削除
+				const oldBadge = btn.querySelector('.subskill-badge');
+				if (oldBadge) oldBadge.remove();
+
+				if (idx >= 0) {
+					btn.classList.add("selected");
+					// バッジ番号リスト
+					const badge = document.createElement("span");
+					badge.className = "subskill-badge";
+					badge.textContent = badgeNumbers[idx]?.toString() ?? "";
+					btn.prepend(badge);
+				} else {
+					btn.classList.remove("selected");
+				}
+			});
+		}
+
+		function updateSelectedDisplay() {
+			const selectedSubSkillsId = document.getElementById("selectedSubSkills");
+			if (selectedSubSkillsId) {
+				selectedSubSkillsId.innerHTML = "";
+				selectedSubSkills.forEach((s) => {
+					const div = document.createElement("div");
+					div.className = "col-12 col-md-6 mb-3 selected-subskill-item";
+					const p = document.createElement("p");
+					p.className = s.color + "-skill mb-0 py-2 px-3 rounded";
+					p.textContent = s.subskill;
+					div.appendChild(p);
+					selectedSubSkillsId.appendChild(div);
+				});
+			}
+		}
 	}
 });
