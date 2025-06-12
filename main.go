@@ -7,10 +7,12 @@ import (
 	"os"
 	"os/exec"
 	"time"
+
+	"github.com/joho/godotenv"
 )
 
 func startTypeScriptWatcher(ctx context.Context) error {
-	cmd := exec.CommandContext(ctx, "npx", "tsc", "--outDir", "web/js", "--rootDir", "web/ts", "--watch")
+	cmd := exec.CommandContext(ctx, "npx", "tsc", "--outDir", "static/js", "--rootDir", "static/ts", "--watch")
 
 	// コマンドの標準出力と標準エラー出力をGoプログラムのコンソールにリダイレクト
 	cmd.Stdout = os.Stdout
@@ -35,23 +37,33 @@ func startTypeScriptWatcher(ctx context.Context) error {
 }
 
 func main() {
-	// ウォッチモード用のコンテキストを作成
-	ctx, cancel := context.WithCancel(context.Background())
-	defer cancel()
-
-	// TypeScriptのウォッチモードを開始
-	err := startTypeScriptWatcher(ctx)
-	if err != nil {
-		fmt.Println(err)
-		return
+	// .envファイルを読み込む
+	if err := godotenv.Load(); err != nil {
+		fmt.Println("警告: .envファイルが見つかりません")
 	}
-	time.Sleep(2 * time.Second)
+
+	// 開発モードの場合のみTypeScriptウォッチャーを起動
+	if os.Getenv("DEV_MODE") == "1" {
+		ctx, cancel := context.WithCancel(context.Background())
+		defer cancel()
+		err := startTypeScriptWatcher(ctx)
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+		time.Sleep(2 * time.Second)
+		fmt.Println("TypeScriptのウォッチモードが起動しました。")
+		fmt.Println("変更を保存すると自動的に再コンパイルされます。")
+	}
 
 	router := RouterSettings()
-	fmt.Println("System Message: Server started at http://localhost:8080")
-	fmt.Println("変更を保存するとTypeScriptが自動的に再コンパイルされます。")
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
 
-	err = http.ListenAndServe("0.0.0.0:8080", router)
+	fmt.Printf("サーバーを起動します: http://localhost:%s\n", port)
+	err := http.ListenAndServe(":"+port, router)
 	if err != nil {
 		fmt.Printf("サーバーの起動に失敗しました: %v\n", err)
 	}

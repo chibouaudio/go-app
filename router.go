@@ -10,15 +10,15 @@ import (
 func RouterSettings() *http.ServeMux {
 	mux := http.NewServeMux()
 	// 静的ファイルのハンドリング
-	mux.Handle("/web/", http.StripPrefix("/web/", http.FileServer(http.Dir("web"))))
+	mux.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 
 	// index.htmlを表示する
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		http.ServeFile(w, r, "web/html/index.html")
+		http.ServeFile(w, r, "static/html/index.html")
 	})
 
 	mux.HandleFunc("/level_calc", func(w http.ResponseWriter, r *http.Request) {
-		tmpl, err := template.ParseFiles("web/html/level_calc.html")
+		tmpl, err := template.ParseFiles("static/html/level_calc.html")
 		if err != nil {
 			http.Error(w, "テンプレートエラー", http.StatusInternalServerError)
 			return
@@ -34,7 +34,7 @@ func RouterSettings() *http.ServeMux {
 	mux.HandleFunc("/api/level_calc", internal.HandleLevelCalc)
 
 	mux.HandleFunc("/energy_calc", func(w http.ResponseWriter, r *http.Request) {
-		tmpl, err := template.ParseFiles("web/html/energy_calc.html")
+		tmpl, err := template.ParseFiles("static/html/energy_calc.html")
 		if err != nil {
 			http.Error(w, "テンプレートエラー", http.StatusInternalServerError)
 			return
@@ -54,7 +54,7 @@ func RouterSettings() *http.ServeMux {
 	mux.HandleFunc("/api/calcWeeklyEnergy", internal.CalcWeeklyEnergy)
 
 	mux.HandleFunc("/status_calc", func(w http.ResponseWriter, r *http.Request) {
-		tmpl, err := template.ParseFiles("web/html/status_calc.html")
+		tmpl, err := template.ParseFiles("static/html/status_calc.html")
 		if err != nil {
 			http.Error(w, "テンプレートエラー", http.StatusInternalServerError)
 			return

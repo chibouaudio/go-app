@@ -71,9 +71,6 @@ func CalcHelpingCount(w http.ResponseWriter, r *http.Request) {
 		genki -= 1
 	}
 
-	fmt.Println("resultSeconds:", resultSeconds)
-	fmt.Println("helpingSpeed:", helpingSpeed)
-
 	helpingCount := resultSeconds * 60 / helpingSpeed
 
 	resp := HelpingCountResponse{
