@@ -17,18 +17,18 @@ type RecipeLevelDataJson struct {
 }
 
 // 食材の種類と数量を保持する
-type Ingredient struct {
+type RecipeIngredient struct {
 	Name     string
 	Quantity int
 }
 
 // 料理の情報を保持する
 type DishDataJson struct {
-	ID               int          `json:"ID"`
-	DishName         string       `json:"dishName"`
-	Ingredients      []Ingredient `json:"ingredients"`
-	TotalIngredients int          `json:"totalIngredients"`
-	RecipeEnergy     int          `json:"recipeEnergy"`
+	ID               int                `json:"ID"`
+	DishName         string             `json:"dishName"`
+	Ingredients      []RecipeIngredient `json:"ingredients"`
+	TotalIngredients int                `json:"totalIngredients"`
+	RecipeEnergy     int                `json:"recipeEnergy"`
 }
 
 // 料理のカテゴリーを保持する

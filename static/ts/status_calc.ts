@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", async function () {
 	// --- 変数宣言 ---
+	const selectPokemonName = document.getElementById("selectPokemonName");
 	const personality = document.getElementById("personality");
 	const resultSpeedOfHelp = document.getElementById("resultSpeedOfHelp");
 	const level = document.getElementById("level");
@@ -16,13 +17,44 @@ document.addEventListener("DOMContentLoaded", async function () {
 	let selectedSubSkills: any[] = [];
 
 	// --- 初期化 ---
+	await setPokemonData();
 	await loadCalc();
 	setsubSkillModal();
 
 	// --- イベントリスナー ---
+	selectPokemonName?.addEventListener("change", loadCalc);
 	personality?.addEventListener("change", loadCalc);
 	level?.addEventListener("change", loadCalc);
 	subSkillButtons?.addEventListener("click", loadCalc);
+
+	// 初期化時にポケモンのデータを取得
+	async function setPokemonData() {
+		let Pokemon;
+		try {
+			const response = await fetch('/api/getPokemonNames', {
+				method: 'GET',
+				headers: {
+					'Content-Type': 'application/json'
+				}
+			});
+			if (!response.ok) throw new Error("ポケモン名取得失敗");
+			const data = await response.json();
+			Pokemon = data;
+		} catch (error) {
+			console.error('ポケモン名取得エラー:', error);
+			return null;
+		}
+
+		if (Pokemon && selectPokemonName) {
+			selectPokemonName.innerHTML = "";
+			Pokemon.forEach((pokemon: { ID: number; No: number; Name: string }) => {
+				const option = document.createElement("option");
+				option.value = pokemon.No.toString();
+				option.textContent = pokemon.Name;
+				selectPokemonName.appendChild(option);
+			});
+		}
+	}
 
 	// --- 計算・表示 ---
 	async function loadCalc() {
@@ -30,7 +62,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 		console.log("計算を開始します...");
 
 		// おてつだい時間を表示する
-		const speedOfHelping = getSpeedOfHelp((personality as HTMLSelectElement).value || "");
+		const speedOfHelping = await getSpeedOfHelp((personality as HTMLSelectElement).value || "");
 		const minutes = Math.floor(speedOfHelping / 60);
 		const seconds = speedOfHelping % 60;
 		const helpingCount = await getHelpingCount(100, speedOfHelping);
@@ -40,8 +72,10 @@ document.addEventListener("DOMContentLoaded", async function () {
 	}
 
 	// おてつだいスピードを計算する関数
-	function getSpeedOfHelp(personality: string): number {
-		const baseSpeedOfHelp = 2200;
+	async function getSpeedOfHelp(personality: string): Promise<number> {
+		const pokemonNo = (selectPokemonName as HTMLSelectElement).value;
+
+		const baseSpeedOfHelp = await getSelectedPokemonSpeed(parseInt(pokemonNo));
 		const pokemonlevel = parseInt((level as HTMLInputElement).value, 10) || 1;
 		const helpingSpeedM = selectedSubSkills.some(s => s.subskill === "おてつだいスピードM");
 		const helpingSpeedS = selectedSubSkills.some(s => s.subskill === "おてつだいスピードS");
@@ -58,6 +92,27 @@ document.addEventListener("DOMContentLoaded", async function () {
 		return Math.floor(
 			baseSpeedOfHelp * levelModifier * personalityModifier * subSkillModifier * goodNightRibbonModifier
 		);
+	}
+
+	async function getSelectedPokemonSpeed(pokemonNo: number): Promise<number> {
+		try {
+			const response = await fetch('/api/getPokemonFieldValue', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({
+					No: pokemonNo,
+					field: 'SpeedOfHelp'
+				})
+			});
+			if (!response.ok) throw new Error("ポケモンスピード取得失敗");
+			const data = await response.json();
+			return data.value;
+		} catch (error) {
+			console.error('ポケモンスピード取得エラー:', error);
+			return 0;
+		}
 	}
 
 	// 性格の補正値を取得
@@ -105,7 +160,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 	// おてつだい回数を計算する
 	async function getHelpingCount(genki: number, speed: number): Promise<number> {
 		if (!genki || !speed) return 0;
-		console.log(`おてつだい回数計算: genki=${genki}, speed=${speed}`);
 		try {
 			const response = await fetch('/api/calcHelpingCount', {
 				method: 'POST',
@@ -114,13 +168,14 @@ document.addEventListener("DOMContentLoaded", async function () {
 				},
 				body: JSON.stringify({
 					maxGenki: genki,
-					helpingSpeed: speed
+					helpingSpeed: speed,
+					breakfast: 9.0,
+					lunch: 12.0,
+					dinner: 19.0,
 				})
 			})
 
-			console.log(response);
 			const data = await response.json();
-			console.log('おてつだい回数取得:', data);
 
 			return Math.round(data.helpingCount * 100) / 100; // 小数点以下2桁まで
 		} catch (error) {
