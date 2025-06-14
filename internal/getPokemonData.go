@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
-	"reflect"
 )
 
 type Ingredient struct {
@@ -58,18 +57,12 @@ func GetPokemonNames(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(names)
 }
 
-type FieldRequest struct {
-	No    int    `json:"no"`
-	Field string `json:"field"`
+type PokemonNoRequest struct {
+	No int `json:"no"`
 }
 
-type FieldResponse struct {
-	Value any    `json:"value,omitempty"`
-	Error string `json:"error,omitempty"`
-}
-
-func GetPokemonFieldValue(w http.ResponseWriter, r *http.Request) {
-	var req FieldRequest
+func GetPokemonData(w http.ResponseWriter, r *http.Request) {
+	var req PokemonNoRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
 		http.Error(w, fmt.Sprintf("リクエストデコード失敗: %v", err), http.StatusBadRequest)
 		return
@@ -80,26 +73,14 @@ func GetPokemonFieldValue(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, fmt.Sprintf("ポケモンデータ読み込み失敗: %v", err), http.StatusInternalServerError)
 		return
 	}
-	var found any
+
 	for _, p := range pokemons {
 		if p.No == req.No {
-			val := reflect.ValueOf(p)
-			fieldVal := val.FieldByName(req.Field)
-			if fieldVal.IsValid() {
-				found = fieldVal.Interface()
-			} else {
-				http.Error(w, "指定フィールドが存在しません", http.StatusBadRequest)
-				return
-			}
-			break
+			w.Header().Set("Content-Type", "application/json")
+			json.NewEncoder(w).Encode(p)
+			return
 		}
 	}
-	if found == nil {
-		http.Error(w, "該当するポケモンが見つかりません", http.StatusNotFound)
-		return
-	}
 
-	resp := FieldResponse{Value: found}
-	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(resp)
+	http.Error(w, "該当するポケモンが見つかりません", http.StatusNotFound)
 }

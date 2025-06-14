@@ -59,10 +59,13 @@ document.addEventListener("DOMContentLoaded", async function () {
 	// --- 計算・表示 ---
 	async function loadCalc() {
 		if (!resultSpeedOfHelp || !resultHelpingCount) return;
+		const pokemonNo = parseInt((selectPokemonName as HTMLSelectElement).value);
+		const pokemonData = await getSelectedPokemonData(pokemonNo)
 		console.log("計算を開始します...");
 
+		const personalityValue = (personality as HTMLSelectElement).value;
 		// おてつだい時間を表示する
-		const speedOfHelping = await getSpeedOfHelp((personality as HTMLSelectElement).value || "");
+		const speedOfHelping = await getSpeedOfHelp(pokemonData, personalityValue);
 		const minutes = Math.floor(speedOfHelping / 60);
 		const seconds = speedOfHelping % 60;
 		const helpingCount = await getHelpingCount(100, speedOfHelping);
@@ -72,10 +75,10 @@ document.addEventListener("DOMContentLoaded", async function () {
 	}
 
 	// おてつだいスピードを計算する関数
-	async function getSpeedOfHelp(personality: string): Promise<number> {
-		const pokemonNo = (selectPokemonName as HTMLSelectElement).value;
+	async function getSpeedOfHelp(pokemonData: any, personality: string): Promise<number> {
 
-		const baseSpeedOfHelp = await getSelectedPokemonSpeed(parseInt(pokemonNo));
+
+		const baseSpeedOfHelp = parseInt(pokemonData.SpeedOfHelp);
 		const pokemonlevel = parseInt((level as HTMLInputElement).value, 10) || 1;
 		const helpingSpeedM = selectedSubSkills.some(s => s.subskill === "おてつだいスピードM");
 		const helpingSpeedS = selectedSubSkills.some(s => s.subskill === "おてつだいスピードS");
@@ -94,24 +97,24 @@ document.addEventListener("DOMContentLoaded", async function () {
 		);
 	}
 
-	async function getSelectedPokemonSpeed(pokemonNo: number): Promise<number> {
+	// 選択されたポケモンのデータを取得
+	async function getSelectedPokemonData(pokemonNo: number): Promise<any> {
 		try {
-			const response = await fetch('/api/getPokemonFieldValue', {
+			const response = await fetch('/api/getPokemonData', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
 				},
 				body: JSON.stringify({
-					No: pokemonNo,
-					field: 'SpeedOfHelp'
+					No: pokemonNo
 				})
 			});
 			if (!response.ok) throw new Error("ポケモンスピード取得失敗");
 			const data = await response.json();
-			return data.value;
+			return data;
 		} catch (error) {
 			console.error('ポケモンスピード取得エラー:', error);
-			return 0;
+			return {};
 		}
 	}
 

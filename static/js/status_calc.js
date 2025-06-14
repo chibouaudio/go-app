@@ -56,9 +56,12 @@ document.addEventListener("DOMContentLoaded", async function () {
     async function loadCalc() {
         if (!resultSpeedOfHelp || !resultHelpingCount)
             return;
+        const pokemonNo = parseInt(selectPokemonName.value);
+        const pokemonData = await getSelectedPokemonData(pokemonNo);
         console.log("計算を開始します...");
+        const personalityValue = personality.value;
         // おてつだい時間を表示する
-        const speedOfHelping = await getSpeedOfHelp(personality.value || "");
+        const speedOfHelping = await getSpeedOfHelp(pokemonData, personalityValue);
         const minutes = Math.floor(speedOfHelping / 60);
         const seconds = speedOfHelping % 60;
         const helpingCount = await getHelpingCount(100, speedOfHelping);
@@ -67,9 +70,8 @@ document.addEventListener("DOMContentLoaded", async function () {
         resultHelpingCount.textContent = helpingCount.toString();
     }
     // おてつだいスピードを計算する関数
-    async function getSpeedOfHelp(personality) {
-        const pokemonNo = selectPokemonName.value;
-        const baseSpeedOfHelp = await getSelectedPokemonSpeed(parseInt(pokemonNo));
+    async function getSpeedOfHelp(pokemonData, personality) {
+        const baseSpeedOfHelp = parseInt(pokemonData.SpeedOfHelp);
         const pokemonlevel = parseInt(level.value, 10) || 1;
         const helpingSpeedM = selectedSubSkills.some(s => s.subskill === "おてつだいスピードM");
         const helpingSpeedS = selectedSubSkills.some(s => s.subskill === "おてつだいスピードS");
@@ -82,26 +84,26 @@ document.addEventListener("DOMContentLoaded", async function () {
         // console.log(`Base Speed: ${baseSpeedOfHelp}, Level Modifier: ${levelModifier}, Personality Modifier: ${personalityModifier}, Sub Skill Modifier: ${subSkillModifier}, Good Night Ribbon Modifier: ${goodNightRibbonModifier}`);
         return Math.floor(baseSpeedOfHelp * levelModifier * personalityModifier * subSkillModifier * goodNightRibbonModifier);
     }
-    async function getSelectedPokemonSpeed(pokemonNo) {
+    // 選択されたポケモンのデータを取得
+    async function getSelectedPokemonData(pokemonNo) {
         try {
-            const response = await fetch('/api/getPokemonFieldValue', {
+            const response = await fetch('/api/getPokemonData', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    No: pokemonNo,
-                    field: 'SpeedOfHelp'
+                    No: pokemonNo
                 })
             });
             if (!response.ok)
                 throw new Error("ポケモンスピード取得失敗");
             const data = await response.json();
-            return data.value;
+            return data;
         }
         catch (error) {
             console.error('ポケモンスピード取得エラー:', error);
-            return 0;
+            return {};
         }
     }
     // 性格の補正値を取得
