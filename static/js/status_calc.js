@@ -1,6 +1,10 @@
 "use strict";
+/**
+ * ポケモンのステータス計算・表示ロジック
+ * 各関数・変数には説明コメントを付与
+ */
 document.addEventListener("DOMContentLoaded", async function () {
-    // --- 変数宣言 ---
+    // --- DOM要素取得 ---
     const selectPokemonName = document.getElementById("selectPokemonName");
     const personality = document.getElementById("personality");
     const resultSpeedOfHelp = document.getElementById("resultSpeedOfHelp");
@@ -13,129 +17,270 @@ document.addEventListener("DOMContentLoaded", async function () {
     const selectIngredientA = document.getElementById("selectIngredientA");
     const selectIngredientB = document.getElementById("selectIngredientB");
     const selectIngredientC = document.getElementById("selectIngredientC");
-    const selectIngredientAValue = document.getElementById("selectIngredientAValue");
-    const selectIngredientBValue = document.getElementById("selectIngredientBValue");
-    const selectIngredientCValue = document.getElementById("selectIngredientCValue");
     const resultHelpingCount = document.getElementById("resultHelpingCount");
+    const resultIngredientsCount = document.getElementById("resultIngredientsCount");
     const resultNumberOfIngredients = document.getElementById("resultNumberOfIngredients");
-    const badgeNumbers = [10, 25, 50, 75, 100];
-    const MAX_SUB_SUBSKILLS = 5;
-    let selectedSubSkills = [];
-    // --- 初期化 ---
+    const resultSkillCount = document.getElementById("resultSkillCount");
+    // --- 定数 ---
+    const badgeNumbers = [10, 25, 50, 75, 100]; // サブスキル選択時のバッジ番号
+    const MAX_SUB_SUBSKILLS = 5; // サブスキル最大数
+    class PokemonStatusClass {
+        constructor() {
+            this.selectedPokemonNo = 1;
+            this.selectedPokemonName = "";
+            this.pokemonData = {};
+            this.level = 1;
+            this.personality = "normal";
+            this.selectedIngredientA = "";
+            this.ingredientAValue = 0;
+            this.selectedIngredientB = "";
+            this.ingredientBValue = 0;
+            this.selectedIngredientC = "";
+            this.ingredientCValue = 0;
+            this.selectedSubSkills = [];
+            this.speedOfHelping = 0;
+            this.helpingCount = 0;
+        }
+        reset() {
+            this.selectedPokemonNo = 1;
+            this.selectedPokemonName = "";
+            this.pokemonData = {};
+            this.level = 1;
+            this.personality = "normal";
+            this.selectedIngredientA = "";
+            this.ingredientAValue = 0;
+            this.selectedIngredientB = "";
+            this.ingredientBValue = 0;
+            this.selectedIngredientC = "";
+            this.ingredientCValue = 0;
+            this.selectedSubSkills = [];
+            this.speedOfHelping = 0;
+            this.helpingCount = 0;
+        }
+    }
+    // --- 初期化処理 ---
+    const pokemonStatus = new PokemonStatusClass();
+    // ポケモンのデータ一覧を設定
     await setPokemonData();
-    await loadCalc();
-    setsubSkillModal();
-    // --- イベントリスナー ---
-    selectPokemonName?.addEventListener("change", loadCalc);
-    personality?.addEventListener("change", loadCalc);
-    level?.addEventListener("change", loadCalc);
-    subSkillButtons?.addEventListener("click", loadCalc);
-    selectIngredientA?.addEventListener("change", loadCalc);
-    // 初期化時にポケモンのデータを取得
+    // 選択されたポケモンのIDからNoを取得
+    pokemonStatus.selectedPokemonNo = parseInt(selectPokemonName.value);
+    // ポケモンのデータを取得
+    pokemonStatus.pokemonData = await getSelectedPokemonData();
+    // 食材構成を設定
+    setIngredientOptions();
+    // サブスキル選択モーダルを初期化
+    setSubSkillModal();
+    // 選択されたポケモンの情報を取得
+    await loadStatus();
+    // --- イベントリスナー登録 ---
+    selectPokemonName?.addEventListener("change", async () => {
+        // 選択されたポケモンの食材構成を設定
+        setIngredientOptions();
+        loadStatus();
+    });
+    personality?.addEventListener("change", loadStatus);
+    level?.addEventListener("change", loadStatus);
+    subSkillButtons?.addEventListener("click", loadStatus);
+    selectIngredientA?.addEventListener("change", loadStatus);
+    selectIngredientB?.addEventListener("change", loadStatus);
+    selectIngredientC?.addEventListener("change", loadStatus);
+    /**
+     * ポケモン名取得APIをAPIから取得し、セレクトボックスに反映
+     */
     async function setPokemonData() {
-        let Pokemon;
         try {
             const response = await fetch('/api/getPokemonNames', {
                 method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json'
-                }
+                headers: { 'Content-Type': 'application/json' }
             });
             if (!response.ok)
                 throw new Error("ポケモン名取得失敗");
-            const data = await response.json();
-            Pokemon = data;
+            const pokemonList = await response.json();
+            if (selectPokemonName) {
+                selectPokemonName.innerHTML = "";
+                pokemonList.forEach((pokemon) => {
+                    const option = document.createElement("option");
+                    option.value = pokemon.No.toString();
+                    option.textContent = pokemon.Name;
+                    selectPokemonName.appendChild(option);
+                });
+            }
         }
         catch (error) {
             console.error('ポケモン名取得エラー:', error);
-            return null;
-        }
-        if (Pokemon && selectPokemonName) {
-            selectPokemonName.innerHTML = "";
-            Pokemon.forEach((pokemon) => {
-                const option = document.createElement("option");
-                option.value = pokemon.No.toString();
-                option.textContent = pokemon.Name;
-                selectPokemonName.appendChild(option);
-            });
         }
     }
-    // --- 計算・表示 ---
-    async function loadCalc() {
-        if (!resultSpeedOfHelp || !resultHelpingCount || !resultNumberOfIngredients)
+    /**
+     * ステータス計算＆画面表示
+     */
+    async function loadStatus() {
+        if (!resultSpeedOfHelp || !resultHelpingCount || !resultNumberOfIngredients || !resultIngredientsCount || !resultSkillCount)
             return;
-        const pokemonNo = parseInt(selectPokemonName.value);
-        const pokemonData = await getSelectedPokemonData(pokemonNo);
-        console.log("計算を開始します...");
-        setIngredient(pokemonData);
-        const personalityValue = personality.value;
-        // おてつだい時間を表示する
-        const speedOfHelping = await getSpeedOfHelp(pokemonData, personalityValue);
-        const minutes = Math.floor(speedOfHelping / 60);
-        const seconds = speedOfHelping % 60;
-        const helpingCount = await getHelpingCount(100, speedOfHelping);
-        const numberOfIngredients = getNumberOfIngredients(helpingCount, pokemonData);
-        // 結果を表示
-        resultSpeedOfHelp.textContent = `${speedOfHelping} : ${minutes}分${seconds}秒`;
-        resultHelpingCount.textContent = helpingCount.toString();
+        // 選択されたポケモンのIDからNoを取得
+        pokemonStatus.selectedPokemonNo = parseInt(selectPokemonName.value);
+        // ポケモンのデータを取得
+        pokemonStatus.pokemonData = await getSelectedPokemonData();
+        // 選択されたポケモンの食材構成を設定
+        // setIngredientOptions();
+        // 選択されたポケモン名を保存
+        pokemonStatus.selectedPokemonName = pokemonStatus.pokemonData.Name;
+        // ポケモンのレベルを取得
+        pokemonStatus.level = parseInt(level.value, 10) || 1;
+        // ポケモンの性格を取得
+        pokemonStatus.personality = personality.value;
+        // 選択された食材を取得
+        pokemonStatus.selectedIngredientA = selectIngredientA.value;
+        pokemonStatus.selectedIngredientB = selectIngredientB.value;
+        pokemonStatus.selectedIngredientC = selectIngredientC.value;
+        // 食材の個数を取得
+        getIngredientAmount();
+        // おてつだいスピードを取得
+        pokemonStatus.speedOfHelping = await getSpeedOfHelp();
+        // おてつだい回数を取得
+        pokemonStatus.helpingCount = await getHelpingCount(100);
+        // 食材獲得量を計算
+        const numberOfIngredients = getNumberOfIngredients();
+        // 食材獲得回数を計算
+        const ingredientCount = pokemonStatus.pokemonData.FoodDropRate * pokemonStatus.helpingCount;
+        const skillCount = Math.round(pokemonStatus.pokemonData.SkillRate * pokemonStatus.helpingCount * 100) / 100;
+        // 表示する時間をフォーマット
+        const minutes = Math.floor(pokemonStatus.speedOfHelping / 60);
+        const seconds = pokemonStatus.speedOfHelping % 60;
+        resultSpeedOfHelp.textContent = `${pokemonStatus.speedOfHelping} : ${minutes}分${seconds}秒`;
+        resultHelpingCount.textContent = pokemonStatus.helpingCount.toString();
         resultNumberOfIngredients.textContent = numberOfIngredients.toString();
+        resultIngredientsCount.textContent = ingredientCount.toString();
+        resultSkillCount.textContent = skillCount.toString();
     }
-    // おてつだいスピードを計算する関数
-    async function getSpeedOfHelp(pokemonData, personality) {
-        const baseSpeedOfHelp = parseInt(pokemonData.SpeedOfHelp);
-        const pokemonlevel = parseInt(level.value, 10) || 1;
-        const helpingSpeedM = selectedSubSkills.some(s => s.subskill === "おてつだいスピードM");
-        const helpingSpeedS = selectedSubSkills.some(s => s.subskill === "おてつだいスピードS");
-        const helpingBonus = countHelpingBonus();
-        const goodNightRibbon = { goodNightRibbonTime: 0, evolveCount: 2 };
-        const levelModifier = 1 - (pokemonlevel - 1) * 0.002;
-        const personalityModifier = getPersonalityModifier(personality);
-        const subSkillModifier = 1 - getSubSkillModifier(helpingSpeedM, helpingSpeedS, helpingBonus);
-        const goodNightRibbonModifier = 1 - getGoodNightRibbon(goodNightRibbon);
-        // console.log(`Base Speed: ${baseSpeedOfHelp}, Level Modifier: ${levelModifier}, Personality Modifier: ${personalityModifier}, Sub Skill Modifier: ${subSkillModifier}, Good Night Ribbon Modifier: ${goodNightRibbonModifier}`);
-        return Math.floor(baseSpeedOfHelp * levelModifier * personalityModifier * subSkillModifier * goodNightRibbonModifier);
-    }
-    // 選択されたポケモンのデータを取得
-    async function getSelectedPokemonData(pokemonNo) {
+    /**
+     * 選択中ポケモンの詳細データをAPIから取得
+     */
+    async function getSelectedPokemonData() {
         try {
             const response = await fetch('/api/getPokemonData', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    No: pokemonNo
-                })
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ No: pokemonStatus.selectedPokemonNo })
             });
             if (!response.ok)
                 throw new Error("ポケモンスピード取得失敗");
-            const data = await response.json();
-            return data;
+            return await response.json();
         }
         catch (error) {
             console.error('ポケモンスピード取得エラー:', error);
             return {};
         }
     }
-    function getNumberOfIngredients(helpingCount, pokemonData) {
-        const foodRating = pokemonData.FoodDropRate;
-        let ingredientsA = pokemonData.IngredientsA;
-        let ingredientsB = pokemonData.IngredientsB;
-        let ingredientsC = pokemonData.IngredientsC;
-        if (!helpingCount || !foodRating)
-            return 0;
-        if (helpingCount < 0 || foodRating < 0)
-            return 0;
-        console.log("ingredientsA:", ingredientsA);
-        console.log("ingredientsB:", ingredientsB);
-        console.log("ingredientsC:", ingredientsC);
-        console.log("selectIngredientAValue:", selectIngredientAValue?.textContent);
-        console.log("selectIngredientBValue:", selectIngredientBValue?.textContent);
-        console.log("selectIngredientCValue:", selectIngredientCValue?.textContent);
-        const foodDropCount = helpingCount * foodRating;
-        return 0;
+    /**
+     * おてつだいスピード（秒）を計算
+     */
+    async function getSpeedOfHelp() {
+        const baseSpeedOfHelp = pokemonStatus.pokemonData.SpeedOfHelp;
+        const pokemonLevel = pokemonStatus.level;
+        const helpingSpeedM = pokemonStatus.selectedSubSkills.some(s => s.subskill === "おてつだいスピードM");
+        const helpingSpeedS = pokemonStatus.selectedSubSkills.some(s => s.subskill === "おてつだいスピードS");
+        const helpingBonus = countHelpingBonus();
+        const goodNightRibbon = { goodNightRibbonTime: 0, evolveCount: 2 };
+        const levelModifier = 1 - (pokemonLevel - 1) * 0.002;
+        const personalityModifier = getPersonalityModifier(pokemonStatus.personality);
+        const subSkillModifier = 1 - getSubSkillModifier(helpingSpeedM, helpingSpeedS, helpingBonus);
+        const goodNightRibbonModifier = 1 - getGoodNightRibbon(goodNightRibbon);
+        return Math.floor(baseSpeedOfHelp * levelModifier * personalityModifier * subSkillModifier * goodNightRibbonModifier);
     }
-    // 性格の補正値を取得
+    /**
+     * おてつだい回数をAPIで計算
+     */
+    async function getHelpingCount(genki) {
+        if (!genki)
+            return 0;
+        try {
+            const response = await fetch('/api/calcHelpingCount', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    maxGenki: genki,
+                    helpingSpeed: pokemonStatus.speedOfHelping,
+                    breakfast: 9.0,
+                    lunch: 13.0,
+                    dinner: 19.0,
+                })
+            });
+            const data = await response.json();
+            return Math.round(data.helpingCount * 100) / 100;
+        }
+        catch (error) {
+            console.error('おてつだい回数取得エラー:', error);
+            return 0;
+        }
+    }
+    /**
+     * 選択された食材の個数を取得
+     */
+    function getIngredientAmount() {
+        const ingredientsA = pokemonStatus.pokemonData.IngredientsA;
+        const ingredientsB = pokemonStatus.pokemonData.IngredientsB;
+        const ingredientsC = pokemonStatus.pokemonData.IngredientsC;
+        if (!ingredientsA || !ingredientsB || !ingredientsC)
+            return [];
+        ingredientsA.forEach((ingredient) => {
+            if (ingredient.name === pokemonStatus.selectedIngredientA) {
+                pokemonStatus.ingredientAValue = ingredient.value;
+            }
+        });
+        ingredientsB.forEach((ingredient) => {
+            if (ingredient.name === pokemonStatus.selectedIngredientB) {
+                pokemonStatus.ingredientBValue = ingredient.value;
+            }
+        });
+        ingredientsC.forEach((ingredient) => {
+            if (ingredient.name === pokemonStatus.selectedIngredientC) {
+                pokemonStatus.ingredientCValue = ingredient.value;
+            }
+        });
+    }
+    /**
+     * 獲得食材数を計算
+     */
+    function getNumberOfIngredients() {
+        const ingredientValues = {};
+        let selectedIngredients = [];
+        if (pokemonStatus.level < 30) {
+            selectedIngredients = [
+                { name: pokemonStatus.selectedIngredientA, value: pokemonStatus.ingredientAValue }
+            ];
+        }
+        else if (pokemonStatus.level < 60) {
+            selectedIngredients = [
+                { name: pokemonStatus.selectedIngredientA, value: pokemonStatus.ingredientAValue },
+                { name: pokemonStatus.selectedIngredientB, value: pokemonStatus.ingredientBValue }
+            ];
+        }
+        else {
+            selectedIngredients = [
+                { name: pokemonStatus.selectedIngredientA, value: pokemonStatus.ingredientAValue },
+                { name: pokemonStatus.selectedIngredientB, value: pokemonStatus.ingredientBValue },
+                { name: pokemonStatus.selectedIngredientC, value: pokemonStatus.ingredientCValue }
+            ];
+        }
+        // 選択した食材のnameとvalueを配列でまとめる
+        selectedIngredients.forEach(({ name, value }) => {
+            if (!ingredientValues[name]) {
+                ingredientValues[name] = [];
+            }
+            ingredientValues[name].push(value);
+        });
+        // nameごとにvalueの平均を計算し、2次元配列で返す
+        const resultArr = Object.entries(ingredientValues).map(([name, values]) => {
+            const dividedValues = values.map(v => v / 3);
+            const resultAmounts = dividedValues.map(v => pokemonStatus.helpingCount * pokemonStatus.pokemonData.FoodDropRate * v);
+            const resultAmount = resultAmounts.reduce((sum, val) => sum + val, 0);
+            return [name, Math.round(resultAmount * 10) / 10];
+        });
+        return resultArr;
+    }
+    /**
+     * 性格による補正値を取得
+     */
     function getPersonalityModifier(personality) {
         switch (personality) {
             case "normal": return 1;
@@ -144,7 +289,9 @@ document.addEventListener("DOMContentLoaded", async function () {
             default: return 1;
         }
     }
-    // サブスキルの補正値を取得
+    /**
+     * サブスキルによる補正値を取得
+     */
     function getSubSkillModifier(helpingSpeedM, helpingSpeedS, helpingBonus) {
         let totalModifier = 0;
         if (helpingSpeedM)
@@ -153,14 +300,13 @@ document.addEventListener("DOMContentLoaded", async function () {
             totalModifier += 0.07;
         for (let i = 0; i < helpingBonus; i++)
             totalModifier += 0.05;
-        if (totalModifier >= 0.35)
-            totalModifier = 0.35;
-        return totalModifier;
+        return Math.min(totalModifier, 0.35);
     }
-    // おやすみリボンの補正値を取得
+    /**
+     * おやすみリボンによる補正値を取得
+     */
     function getGoodNightRibbon(goodNightRibbon) {
-        const sleepTime = goodNightRibbon.goodNightRibbonTime;
-        const evolveCount = goodNightRibbon.evolveCount;
+        const { goodNightRibbonTime: sleepTime, evolveCount } = goodNightRibbon;
         if (evolveCount === 2)
             return 0;
         if (evolveCount === 1) {
@@ -177,39 +323,55 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
         return 0;
     }
-    // おてつだいボーナスをカウントする
+    /**
+     * おてつだいボーナスサブスキル数をカウント
+     */
     function countHelpingBonus() {
-        let helpingBonusCount = selectedSubSkills.filter(s => s.subskill.startsWith("おてつだいボーナス")).length;
-        return helpingBonusCount > 5 ? 5 : helpingBonusCount;
+        const count = pokemonStatus.selectedSubSkills.filter(s => s.subskill.startsWith("おてつだいボーナス")).length;
+        return Math.min(count, 5);
     }
-    // おてつだい回数を計算する
-    async function getHelpingCount(genki, speed) {
-        if (!genki || !speed)
-            return 0;
-        try {
-            const response = await fetch('/api/calcHelpingCount', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    maxGenki: genki,
-                    helpingSpeed: speed,
-                    breakfast: 9.0,
-                    lunch: 12.0,
-                    dinner: 19.0,
-                })
+    /**
+     * 食材セレクトボックスをポケモンデータから生成
+     */
+    function setIngredientOptions() {
+        if (!selectIngredientA || !selectIngredientB || !selectIngredientC)
+            return;
+        const ingredientsA = pokemonStatus.pokemonData.IngredientsA;
+        const ingredientsB = pokemonStatus.pokemonData.IngredientsB;
+        const ingredientsC = pokemonStatus.pokemonData.IngredientsC;
+        const composition = ["A", "B", "C"];
+        selectIngredientA.innerHTML = "";
+        if (ingredientsA) {
+            ingredientsA.forEach((ingredient, i) => {
+                const option = document.createElement("option");
+                option.value = ingredient.name.toString();
+                option.textContent = composition[i] + " : " + ingredient.name + " ( " + ingredient.value + " )";
+                selectIngredientA.appendChild(option);
             });
-            const data = await response.json();
-            return Math.round(data.helpingCount * 100) / 100; // 小数点以下2桁まで
         }
-        catch (error) {
-            console.error('おてつだい回数取得エラー:', error);
-            return 0;
+        selectIngredientB.innerHTML = "";
+        if (ingredientsB) {
+            ingredientsB.forEach((ingredient, i) => {
+                const option = document.createElement("option");
+                option.value = ingredient.name.toString();
+                option.textContent = composition[i] + " : " + ingredient.name + " ( " + ingredient.value + " )";
+                selectIngredientB.appendChild(option);
+            });
+        }
+        selectIngredientC.innerHTML = "";
+        if (ingredientsC) {
+            ingredientsC.forEach((ingredient, i) => {
+                const option = document.createElement("option");
+                option.value = ingredient.name.toString();
+                option.textContent = composition[i] + " : " + ingredient.name + " ( " + ingredient.value + " )";
+                selectIngredientC.appendChild(option);
+            });
         }
     }
-    // --- サブスキルモーダル ---
-    async function setsubSkillModal() {
+    /**
+     * サブスキル選択モーダルの初期化
+     */
+    async function setSubSkillModal() {
         if (!subSkillButtons || !modal || !openModalButton || !closeModalButton)
             return;
         const data = await getSubSkills();
@@ -229,14 +391,12 @@ document.addEventListener("DOMContentLoaded", async function () {
             button.textContent = element.subskill;
             button.setAttribute("data-subskill", element.subskill);
             button.onclick = () => {
-                const idx = selectedSubSkills.findIndex(s => s.subskill === element.subskill);
+                const idx = pokemonStatus.selectedSubSkills.findIndex(s => s.subskill === element.subskill);
                 if (idx >= 0) {
-                    selectedSubSkills.splice(idx, 1);
+                    pokemonStatus.selectedSubSkills.splice(idx, 1);
                 }
-                else {
-                    if (selectedSubSkills.length < MAX_SUB_SUBSKILLS) {
-                        selectedSubSkills.push(element);
-                    }
+                else if (pokemonStatus.selectedSubSkills.length < MAX_SUB_SUBSKILLS) {
+                    pokemonStatus.selectedSubSkills.push(element);
                 }
                 updateButtonStates();
                 updateSelectedDisplay();
@@ -251,45 +411,47 @@ document.addEventListener("DOMContentLoaded", async function () {
         closeModalButton.onclick = () => {
             modal.style.display = "none";
             modal.classList.remove("show");
-            loadCalc();
+            loadStatus();
         };
         modal.onclick = (e) => {
             if (e.target === modal) {
                 modal.style.display = "none";
                 modal.classList.remove("show");
-                loadCalc();
+                loadStatus();
             }
         };
     }
-    // --- サブスキル取得 ---
+    /**
+     * サブスキル一覧をAPIから取得
+     */
     async function getSubSkills() {
         try {
             const response = await fetch('/api/getSubSkills');
             if (!response.ok)
                 throw new Error("サブスキル取得失敗");
-            const data = await response.json();
-            return data;
+            return await response.json();
         }
         catch (error) {
             console.error('サブスキル取得エラー:', error);
             return undefined;
         }
     }
-    // --- ボタン状態更新 ---
+    /**
+     * サブスキルボタンの状態を更新
+     */
     function updateButtonStates() {
         if (!subSkillButtons)
             return;
         const buttons = subSkillButtons.querySelectorAll("button");
         buttons.forEach(btn => {
             const subskill = btn.getAttribute("data-subskill");
-            const idx = selectedSubSkills.findIndex(s => s.subskill === subskill);
-            // 既存バッジを削除（不要なら削除してOK）
+            const idx = pokemonStatus.selectedSubSkills.findIndex(s => s.subskill === subskill);
+            // 既存バッジを削除
             const oldBadge = btn.querySelector('.subskill-badge');
             if (oldBadge)
                 oldBadge.remove();
             if (idx >= 0) {
                 btn.classList.add("selected");
-                // バッジ番号リスト
                 const badge = document.createElement("span");
                 badge.className = "subskill-badge";
                 badge.textContent = badgeNumbers[idx]?.toString() ?? "";
@@ -300,12 +462,14 @@ document.addEventListener("DOMContentLoaded", async function () {
             }
         });
     }
-    // --- 選択サブスキル表示 ---
+    /**
+     * 選択中サブスキルの表示を更新
+     */
     function updateSelectedDisplay() {
         if (!selectedSubSkilllabel)
             return;
         selectedSubSkilllabel.innerHTML = "";
-        selectedSubSkills.forEach((s) => {
+        pokemonStatus.selectedSubSkills.forEach((s) => {
             const div = document.createElement("div");
             div.className = "col-12 col-md-6 mb-2 selected-subskill-item";
             const p = document.createElement("p");
@@ -314,39 +478,5 @@ document.addEventListener("DOMContentLoaded", async function () {
             div.appendChild(p);
             selectedSubSkilllabel.appendChild(div);
         });
-    }
-    function setIngredient(pokemonData) {
-        if (!selectIngredientA || !selectIngredientB || !selectIngredientC)
-            return;
-        if (!selectIngredientAValue || !selectIngredientBValue || !selectIngredientCValue)
-            return;
-        const ingredientsA = pokemonData.IngredientsA;
-        const ingredientsB = pokemonData.IngredientsB;
-        const ingredientsC = pokemonData.IngredientsC;
-        const composition = ["A", "B", "C"];
-        selectIngredientA.innerHTML = "";
-        if (ingredientsA) {
-            ingredientsA.forEach((ingredient, i) => {
-                const option = document.createElement("option");
-                option.textContent = composition[i] + " : " + ingredient.name;
-                selectIngredientA.appendChild(option);
-            });
-        }
-        selectIngredientB.innerHTML = "";
-        if (ingredientsB) {
-            ingredientsB.forEach((ingredient, i) => {
-                const option = document.createElement("option");
-                option.textContent = composition[i] + " : " + ingredient.name;
-                selectIngredientB.appendChild(option);
-            });
-        }
-        selectIngredientC.innerHTML = "";
-        if (ingredientsC) {
-            ingredientsC.forEach((ingredient, i) => {
-                const option = document.createElement("option");
-                option.textContent = composition[i] + " : " + ingredient.name;
-                selectIngredientC.appendChild(option);
-            });
-        }
     }
 });
