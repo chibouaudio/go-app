@@ -3,5652 +3,7380 @@
     "ID": 1,
     "No": 1,
     "Name": "フシギダネ",
-    "FoodDropRate": 0.257,
-    "SkillRate": 0.019,
+    "FoodDropRate": 0.0025700000000000002,
+    "SkillRate": 0.00018999999999999998,
     "MainSkill": "食材ゲットS",
     "Type": "食材",
     "SpeedOfHelp": 4400,
     "Berries": "くさ",
-    "IngredientsA": {
-      "name": "みつ",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "トマト",
-      "values": [
-        4,
-        7
-      ]
-    },
-    "IngredientsC": {
-      "name": "ポテト",
-      "values": [
-        6
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "みつ",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "みつ",
+        "value": 5
+      },
+      {
+        "name": "トマト",
+        "value": 4
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "みつ",
+        "value": 7
+      },
+      {
+        "name": "トマト",
+        "value": 7
+      },
+      {
+        "name": "ポテト",
+        "value": 6
+      }
+    ]
   },
   {
     "ID": 2,
     "No": 2,
     "Name": "フシギソウ",
-    "FoodDropRate": 0.255,
-    "SkillRate": 0.019,
+    "FoodDropRate": 0.00255,
+    "SkillRate": 0.00018999999999999998,
     "MainSkill": "食材ゲットS",
     "Type": "食材",
     "SpeedOfHelp": 3300,
     "Berries": "くさ",
-    "IngredientsA": {
-      "name": "みつ",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "トマト",
-      "values": [
-        4,
-        7
-      ]
-    },
-    "IngredientsC": {
-      "name": "ポテト",
-      "values": [
-        6
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "みつ",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "みつ",
+        "value": 5
+      },
+      {
+        "name": "トマト",
+        "value": 4
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "みつ",
+        "value": 7
+      },
+      {
+        "name": "トマト",
+        "value": 7
+      },
+      {
+        "name": "ポテト",
+        "value": 6
+      }
+    ]
   },
   {
     "ID": 3,
     "No": 3,
     "Name": "フシギバナ",
-    "FoodDropRate": 0.266,
-    "SkillRate": 0.021,
+    "FoodDropRate": 0.00266,
+    "SkillRate": 0.00021,
     "MainSkill": "食材ゲットS",
     "Type": "食材",
     "SpeedOfHelp": 2800,
     "Berries": "くさ",
-    "IngredientsA": {
-      "name": "みつ",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "トマト",
-      "values": [
-        4,
-        7
-      ]
-    },
-    "IngredientsC": {
-      "name": "ポテト",
-      "values": [
-        6
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "みつ",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "みつ",
+        "value": 5
+      },
+      {
+        "name": "トマト",
+        "value": 4
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "みつ",
+        "value": 7
+      },
+      {
+        "name": "トマト",
+        "value": 7
+      },
+      {
+        "name": "ポテト",
+        "value": 6
+      }
+    ]
   },
   {
     "ID": 4,
     "No": 4,
     "Name": "ヒトカゲ",
-    "FoodDropRate": 0.201,
-    "SkillRate": 0.011,
+    "FoodDropRate": 0.00201,
+    "SkillRate": 0.00010999999999999999,
     "MainSkill": "食材ゲットS",
     "Type": "食材",
     "SpeedOfHelp": 3500,
     "Berries": "ほのお",
-    "IngredientsA": {
-      "name": "ミート",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "ジンジャー",
-      "values": [
-        4,
-        7
-      ]
-    },
-    "IngredientsC": {
-      "name": "ハーブ",
-      "values": [
-        6
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミート",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミート",
+        "value": 5
+      },
+      {
+        "name": "ジンジャー",
+        "value": 4
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミート",
+        "value": 7
+      },
+      {
+        "name": "ジンジャー",
+        "value": 7
+      },
+      {
+        "name": "ハーブ",
+        "value": 6
+      }
+    ]
   },
   {
     "ID": 5,
     "No": 5,
     "Name": "リザード",
-    "FoodDropRate": 0.227,
-    "SkillRate": 0.016,
+    "FoodDropRate": 0.00227,
+    "SkillRate": 0.00016,
     "MainSkill": "食材ゲットS",
     "Type": "食材",
     "SpeedOfHelp": 3000,
     "Berries": "ほのお",
-    "IngredientsA": {
-      "name": "ミート",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "ジンジャー",
-      "values": [
-        4,
-        7
-      ]
-    },
-    "IngredientsC": {
-      "name": "ハーブ",
-      "values": [
-        6
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミート",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミート",
+        "value": 5
+      },
+      {
+        "name": "ジンジャー",
+        "value": 4
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミート",
+        "value": 7
+      },
+      {
+        "name": "ジンジャー",
+        "value": 7
+      },
+      {
+        "name": "ハーブ",
+        "value": 6
+      }
+    ]
   },
   {
     "ID": 6,
     "No": 6,
     "Name": "リザードン",
-    "FoodDropRate": 0.224,
-    "SkillRate": 0.016,
+    "FoodDropRate": 0.0022400000000000002,
+    "SkillRate": 0.00016,
     "MainSkill": "食材ゲットS",
     "Type": "食材",
     "SpeedOfHelp": 2400,
     "Berries": "ほのお",
-    "IngredientsA": {
-      "name": "ミート",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "ジンジャー",
-      "values": [
-        4,
-        7
-      ]
-    },
-    "IngredientsC": {
-      "name": "ハーブ",
-      "values": [
-        6
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミート",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミート",
+        "value": 5
+      },
+      {
+        "name": "ジンジャー",
+        "value": 4
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミート",
+        "value": 7
+      },
+      {
+        "name": "ジンジャー",
+        "value": 7
+      },
+      {
+        "name": "ハーブ",
+        "value": 6
+      }
+    ]
   },
   {
     "ID": 7,
     "No": 7,
     "Name": "ゼニガメ",
-    "FoodDropRate": 0.271,
-    "SkillRate": 0.02,
+    "FoodDropRate": 0.00271,
+    "SkillRate": 0.0002,
     "MainSkill": "食材ゲットS",
     "Type": "食材",
     "SpeedOfHelp": 4500,
     "Berries": "みず",
-    "IngredientsA": {
-      "name": "ミルク",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "カカオ",
-      "values": [
-        3,
-        5
-      ]
-    },
-    "IngredientsC": {
-      "name": "ミート",
-      "values": [
-        7
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミルク",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミルク",
+        "value": 5
+      },
+      {
+        "name": "カカオ",
+        "value": 3
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミルク",
+        "value": 7
+      },
+      {
+        "name": "カカオ",
+        "value": 5
+      },
+      {
+        "name": "ミート",
+        "value": 7
+      }
+    ]
   },
   {
     "ID": 8,
     "No": 8,
     "Name": "カメール",
-    "FoodDropRate": 0.271,
-    "SkillRate": 0.02,
+    "FoodDropRate": 0.00271,
+    "SkillRate": 0.0002,
     "MainSkill": "食材ゲットS",
     "Type": "食材",
     "SpeedOfHelp": 3400,
     "Berries": "みず",
-    "IngredientsA": {
-      "name": "ミルク",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "カカオ",
-      "values": [
-        3,
-        5
-      ]
-    },
-    "IngredientsC": {
-      "name": "ミート",
-      "values": [
-        7
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミルク",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミルク",
+        "value": 5
+      },
+      {
+        "name": "カカオ",
+        "value": 3
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミルク",
+        "value": 7
+      },
+      {
+        "name": "カカオ",
+        "value": 5
+      },
+      {
+        "name": "ミート",
+        "value": 7
+      }
+    ]
   },
   {
     "ID": 9,
     "No": 9,
     "Name": "カメックス",
-    "FoodDropRate": 0.275,
-    "SkillRate": 0.021,
+    "FoodDropRate": 0.0027500000000000003,
+    "SkillRate": 0.00021,
     "MainSkill": "食材ゲットS",
     "Type": "食材",
     "SpeedOfHelp": 2800,
     "Berries": "みず",
-    "IngredientsA": {
-      "name": "ミルク",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "カカオ",
-      "values": [
-        3,
-        5
-      ]
-    },
-    "IngredientsC": {
-      "name": "ミート",
-      "values": [
-        7
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミルク",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミルク",
+        "value": 5
+      },
+      {
+        "name": "カカオ",
+        "value": 3
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミルク",
+        "value": 7
+      },
+      {
+        "name": "カカオ",
+        "value": 5
+      },
+      {
+        "name": "ミート",
+        "value": 7
+      }
+    ]
   },
   {
     "ID": 10,
     "No": 10,
     "Name": "キャタピー",
-    "FoodDropRate": 0.179,
-    "SkillRate": 0.008,
+    "FoodDropRate": 0.00179,
+    "SkillRate": 0.00008,
     "MainSkill": "食材ゲットS",
     "Type": "きのみ",
     "SpeedOfHelp": 4400,
     "Berries": "むし",
-    "IngredientsA": {
-      "name": "ミツ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "トマト",
-      "values": [
-        2,
-        3
-      ]
-    },
-    "IngredientsC": {
-      "name": "大豆",
-      "values": [
-        4
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミツ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミツ",
+        "value": 2
+      },
+      {
+        "name": "トマト",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミツ",
+        "value": 4
+      },
+      {
+        "name": "トマト",
+        "value": 3
+      },
+      {
+        "name": "大豆",
+        "value": 4
+      }
+    ]
   },
   {
     "ID": 11,
     "No": 11,
     "Name": "トランセル",
-    "FoodDropRate": 0.208,
-    "SkillRate": 0.018,
+    "FoodDropRate": 0.00208,
+    "SkillRate": 0.00017999999999999998,
     "MainSkill": "食材ゲットS",
     "Type": "きのみ",
     "SpeedOfHelp": 4200,
     "Berries": "むし",
-    "IngredientsA": {
-      "name": "ミツ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "トマト",
-      "values": [
-        2,
-        3
-      ]
-    },
-    "IngredientsC": {
-      "name": "大豆",
-      "values": [
-        4
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミツ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミツ",
+        "value": 2
+      },
+      {
+        "name": "トマト",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミツ",
+        "value": 4
+      },
+      {
+        "name": "トマト",
+        "value": 3
+      },
+      {
+        "name": "大豆",
+        "value": 4
+      }
+    ]
   },
   {
     "ID": 12,
     "No": 12,
     "Name": "バタフリー",
-    "FoodDropRate": 0.197,
-    "SkillRate": 0.014,
+    "FoodDropRate": 0.00197,
+    "SkillRate": 0.00014000000000000001,
     "MainSkill": "食材ゲットS",
     "Type": "きのみ",
     "SpeedOfHelp": 2500,
     "Berries": "むし",
-    "IngredientsA": {
-      "name": "ミツ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "トマト",
-      "values": [
-        2,
-        3
-      ]
-    },
-    "IngredientsC": {
-      "name": "大豆",
-      "values": [
-        4
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミツ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミツ",
+        "value": 2
+      },
+      {
+        "name": "トマト",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミツ",
+        "value": 4
+      },
+      {
+        "name": "トマト",
+        "value": 3
+      },
+      {
+        "name": "大豆",
+        "value": 4
+      }
+    ]
   },
   {
     "ID": 13,
     "No": 19,
     "Name": "コラッタ",
-    "FoodDropRate": 0.237,
-    "SkillRate": 0.03,
+    "FoodDropRate": 0.0023699999999999997,
+    "SkillRate": 0.0003,
     "MainSkill": "げんきチャージS",
     "Type": "きのみ",
     "SpeedOfHelp": 4900,
     "Berries": "ノーマル",
-    "IngredientsA": {
-      "name": "リンゴ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "大豆",
-      "values": [
-        2,
-        3
-      ]
-    },
-    "IngredientsC": {
-      "name": "ミート",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "リンゴ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "リンゴ",
+        "value": 2
+      },
+      {
+        "name": "大豆",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "リンゴ",
+        "value": 4
+      },
+      {
+        "name": "大豆",
+        "value": 3
+      },
+      {
+        "name": "ミート",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 14,
     "No": 20,
     "Name": "ラッタ",
-    "FoodDropRate": 0.237,
-    "SkillRate": 0.03,
+    "FoodDropRate": 0.0023699999999999997,
+    "SkillRate": 0.0003,
     "MainSkill": "げんきチャージS",
     "Type": "きのみ",
     "SpeedOfHelp": 2950,
     "Berries": "ノーマル",
-    "IngredientsA": {
-      "name": "リンゴ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "大豆",
-      "values": [
-        2,
-        3
-      ]
-    },
-    "IngredientsC": {
-      "name": "ミート",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "リンゴ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "リンゴ",
+        "value": 2
+      },
+      {
+        "name": "大豆",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "リンゴ",
+        "value": 4
+      },
+      {
+        "name": "大豆",
+        "value": 3
+      },
+      {
+        "name": "ミート",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 15,
     "No": 23,
     "Name": "アーボ",
-    "FoodDropRate": 0.235,
-    "SkillRate": 0.033,
+    "FoodDropRate": 0.0023499999999999997,
+    "SkillRate": 0.00033,
     "MainSkill": "げんきチャージS",
     "Type": "きのみ",
     "SpeedOfHelp": 5000,
     "Berries": "どく",
-    "IngredientsA": {
-      "name": "ミート",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "タマゴ",
-      "values": [
-        2,
-        3
-      ]
-    },
-    "IngredientsC": {
-      "name": "ハーブ",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミート",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミート",
+        "value": 2
+      },
+      {
+        "name": "タマゴ",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミート",
+        "value": 4
+      },
+      {
+        "name": "タマゴ",
+        "value": 3
+      },
+      {
+        "name": "ハーブ",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 16,
     "No": 24,
     "Name": "アーボック",
-    "FoodDropRate": 0.264,
-    "SkillRate": 0.057,
+    "FoodDropRate": 0.00264,
+    "SkillRate": 0.00057,
     "MainSkill": "げんきチャージS",
     "Type": "きのみ",
     "SpeedOfHelp": 3400,
     "Berries": "どく",
-    "IngredientsA": {
-      "name": "ミート",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "タマゴ",
-      "values": [
-        2,
-        3
-      ]
-    },
-    "IngredientsC": {
-      "name": "ハーブ",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミート",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミート",
+        "value": 2
+      },
+      {
+        "name": "タマゴ",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミート",
+        "value": 4
+      },
+      {
+        "name": "タマゴ",
+        "value": 3
+      },
+      {
+        "name": "ハーブ",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 17,
     "No": 25,
     "Name": "ピカチュウ",
-    "FoodDropRate": 0.207,
-    "SkillRate": 0.021,
+    "FoodDropRate": 0.00207,
+    "SkillRate": 0.00021,
     "MainSkill": "エナジーチャージS",
     "Type": "きのみ",
     "SpeedOfHelp": 2700,
     "Berries": "でんき",
-    "IngredientsA": {
-      "name": "リンゴ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ジンジャー",
-      "values": [
-        2,
-        3
-      ]
-    },
-    "IngredientsC": {
-      "name": "タマゴ",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "リンゴ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "リンゴ",
+        "value": 2
+      },
+      {
+        "name": "ジンジャー",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "リンゴ",
+        "value": 4
+      },
+      {
+        "name": "ジンジャー",
+        "value": 3
+      },
+      {
+        "name": "タマゴ",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 18,
     "No": 25,
     "Name": "ピカチュウ\n(ハロウィン)",
-    "FoodDropRate": 0.218,
-    "SkillRate": 0.028,
+    "FoodDropRate": 0.00218,
+    "SkillRate": 0.00028000000000000003,
     "MainSkill": "エナジーチャージS\n(ランダム)",
     "Type": "きのみ",
     "SpeedOfHelp": 2500,
     "Berries": "でんき",
-    "IngredientsA": {
-      "name": "リンゴ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ジンジャー",
-      "values": [
-        2,
-        3
-      ]
-    },
-    "IngredientsC": {
-      "name": "タマゴ",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "リンゴ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "リンゴ",
+        "value": 2
+      },
+      {
+        "name": "ジンジャー",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "リンゴ",
+        "value": 4
+      },
+      {
+        "name": "ジンジャー",
+        "value": 3
+      },
+      {
+        "name": "タマゴ",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 19,
     "No": 25,
     "Name": "ピカチュウ\n(ホリデー)",
-    "FoodDropRate": 0.131,
-    "SkillRate": 0.042,
+    "FoodDropRate": 0.00131,
+    "SkillRate": 0.00042,
     "MainSkill": "ゆめのかけらゲットS",
     "Type": "スキル",
     "SpeedOfHelp": 2500,
     "Berries": "でんき",
-    "IngredientsA": {
-      "name": "リンゴ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ジンジャー",
-      "values": [
-        2,
-        3
-      ]
-    },
-    "IngredientsC": {
-      "name": "タマゴ",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "リンゴ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "リンゴ",
+        "value": 2
+      },
+      {
+        "name": "ジンジャー",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "リンゴ",
+        "value": 4
+      },
+      {
+        "name": "ジンジャー",
+        "value": 3
+      },
+      {
+        "name": "タマゴ",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 20,
     "No": 26,
     "Name": "ライチュウ",
-    "FoodDropRate": 0.224,
-    "SkillRate": 0.032,
+    "FoodDropRate": 0.0022400000000000002,
+    "SkillRate": 0.00032,
     "MainSkill": "エナジーチャージS",
     "Type": "きのみ",
     "SpeedOfHelp": 2200,
     "Berries": "でんき",
-    "IngredientsA": {
-      "name": "リンゴ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ジンジャー",
-      "values": [
-        2,
-        3
-      ]
-    },
-    "IngredientsC": {
-      "name": "タマゴ",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "リンゴ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "リンゴ",
+        "value": 2
+      },
+      {
+        "name": "ジンジャー",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "リンゴ",
+        "value": 4
+      },
+      {
+        "name": "ジンジャー",
+        "value": 3
+      },
+      {
+        "name": "タマゴ",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 21,
     "No": 35,
     "Name": "ピッピ",
-    "FoodDropRate": 0.168,
-    "SkillRate": 0.036,
+    "FoodDropRate": 0.00168,
+    "SkillRate": 0.00035999999999999997,
     "MainSkill": "ゆびをふる",
     "Type": "きのみ",
     "SpeedOfHelp": 4000,
     "Berries": "フェアリー",
-    "IngredientsA": {
-      "name": "リンゴ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ミツ",
-      "values": [
-        2,
-        3
-      ]
-    },
-    "IngredientsC": {
-      "name": "大豆",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "リンゴ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "リンゴ",
+        "value": 2
+      },
+      {
+        "name": "ミツ",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "リンゴ",
+        "value": 4
+      },
+      {
+        "name": "ミツ",
+        "value": 3
+      },
+      {
+        "name": "大豆",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 22,
     "No": 36,
     "Name": "ピクシー",
-    "FoodDropRate": 0.168,
-    "SkillRate": 0.036,
+    "FoodDropRate": 0.00168,
+    "SkillRate": 0.00035999999999999997,
     "MainSkill": "ゆびをふる",
     "Type": "きのみ",
     "SpeedOfHelp": 2800,
     "Berries": "フェアリー",
-    "IngredientsA": {
-      "name": "リンゴ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ミツ",
-      "values": [
-        2,
-        3
-      ]
-    },
-    "IngredientsC": {
-      "name": "大豆",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "リンゴ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "リンゴ",
+        "value": 2
+      },
+      {
+        "name": "ミツ",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "リンゴ",
+        "value": 4
+      },
+      {
+        "name": "ミツ",
+        "value": 3
+      },
+      {
+        "name": "大豆",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 23,
     "No": 37,
     "Name": "ロコン",
-    "FoodDropRate": 0.168,
-    "SkillRate": 0.027,
+    "FoodDropRate": 0.00168,
+    "SkillRate": 0.00027,
     "MainSkill": "げんきエールS",
     "Type": "きのみ",
     "SpeedOfHelp": 4700,
     "Berries": "ほのお",
-    "IngredientsA": {
-      "name": "大豆",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "コーン",
-      "values": [
-        2,
-        3
-      ]
-    },
-    "IngredientsC": {
-      "name": "ポテト",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "大豆",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "大豆",
+        "value": 2
+      },
+      {
+        "name": "コーン",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "大豆",
+        "value": 4
+      },
+      {
+        "name": "コーン",
+        "value": 3
+      },
+      {
+        "name": "ポテト",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 24,
     "No": 38,
     "Name": "キュウコン",
-    "FoodDropRate": 0.164,
-    "SkillRate": 0.025,
+    "FoodDropRate": 0.00164,
+    "SkillRate": 0.00025,
     "MainSkill": "げんきエールS",
     "Type": "きのみ",
     "SpeedOfHelp": 2600,
     "Berries": "ほのお",
-    "IngredientsA": {
-      "name": "大豆",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "コーン",
-      "values": [
-        2,
-        3
-      ]
-    },
-    "IngredientsC": {
-      "name": "ポテト",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "大豆",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "大豆",
+        "value": 2
+      },
+      {
+        "name": "コーン",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "大豆",
+        "value": 4
+      },
+      {
+        "name": "コーン",
+        "value": 3
+      },
+      {
+        "name": "ポテト",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 25,
     "No": 37,
     "Name": "ロコン\n(アローラ)",
-    "FoodDropRate": 0.23,
-    "SkillRate": 0.028,
+    "FoodDropRate": 0.0023,
+    "SkillRate": 0.00028000000000000003,
     "MainSkill": "おてつだいサポートS",
     "Type": "きのみ",
     "SpeedOfHelp": 5600,
     "Berries": "こおり",
-    "IngredientsA": {
-      "name": "大豆",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "コーン",
-      "values": [
-        2,
-        3
-      ]
-    },
-    "IngredientsC": {
-      "name": "ポテト",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "大豆",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "大豆",
+        "value": 2
+      },
+      {
+        "name": "コーン",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "大豆",
+        "value": 4
+      },
+      {
+        "name": "コーン",
+        "value": 3
+      },
+      {
+        "name": "ポテト",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 26,
     "No": 38,
     "Name": "キュウコン\n(アローラ)",
-    "FoodDropRate": 0.232,
-    "SkillRate": 0.028,
+    "FoodDropRate": 0.00232,
+    "SkillRate": 0.00028000000000000003,
     "MainSkill": "おてつだいサポートS",
     "Type": "きのみ",
     "SpeedOfHelp": 2900,
     "Berries": "こおり",
-    "IngredientsA": {
-      "name": "大豆",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "コーン",
-      "values": [
-        2,
-        3
-      ]
-    },
-    "IngredientsC": {
-      "name": "ポテト",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "大豆",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "大豆",
+        "value": 2
+      },
+      {
+        "name": "コーン",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "大豆",
+        "value": 4
+      },
+      {
+        "name": "コーン",
+        "value": 3
+      },
+      {
+        "name": "ポテト",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 27,
     "No": 39,
     "Name": "プリン",
-    "FoodDropRate": 0.182,
-    "SkillRate": 0.043,
+    "FoodDropRate": 0.00182,
+    "SkillRate": 0.00043,
     "MainSkill": "げんきオールS",
     "Type": "スキル",
     "SpeedOfHelp": 3900,
     "Berries": "フェアリー",
-    "IngredientsA": {
-      "name": "ミツ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "オイル",
-      "values": [
-        2,
-        3
-      ]
-    },
-    "IngredientsC": {
-      "name": "カカオ",
-      "values": [
-        2
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミツ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミツ",
+        "value": 2
+      },
+      {
+        "name": "オイル",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミツ",
+        "value": 4
+      },
+      {
+        "name": "オイル",
+        "value": 3
+      },
+      {
+        "name": "カカオ",
+        "value": 2
+      }
+    ]
   },
   {
     "ID": 28,
     "No": 40,
     "Name": "プクリン",
-    "FoodDropRate": 0.174,
-    "SkillRate": 0.04,
+    "FoodDropRate": 0.0017399999999999998,
+    "SkillRate": 0.0004,
     "MainSkill": "げんきオールS",
     "Type": "スキル",
     "SpeedOfHelp": 2900,
     "Berries": "フェアリー",
-    "IngredientsA": {
-      "name": "ミツ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "オイル",
-      "values": [
-        2,
-        3
-      ]
-    },
-    "IngredientsC": {
-      "name": "カカオ",
-      "values": [
-        2
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミツ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミツ",
+        "value": 2
+      },
+      {
+        "name": "オイル",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミツ",
+        "value": 4
+      },
+      {
+        "name": "オイル",
+        "value": 3
+      },
+      {
+        "name": "カカオ",
+        "value": 2
+      }
+    ]
   },
   {
     "ID": 29,
     "No": 50,
     "Name": "ディグダ",
-    "FoodDropRate": 0.192,
-    "SkillRate": 0.021,
+    "FoodDropRate": 0.00192,
+    "SkillRate": 0.00021,
     "MainSkill": "エナジーチャージS",
     "Type": "食材",
     "SpeedOfHelp": 4300,
     "Berries": "じめん",
-    "IngredientsA": {
-      "name": "トマト",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "ネギ",
-      "values": [
-        3,
-        4
-      ]
-    },
-    "IngredientsC": {
-      "name": "大豆",
-      "values": [
-        8
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "トマト",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "トマト",
+        "value": 5
+      },
+      {
+        "name": "ネギ",
+        "value": 3
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "トマト",
+        "value": 7
+      },
+      {
+        "name": "ネギ",
+        "value": 4
+      },
+      {
+        "name": "大豆",
+        "value": 8
+      }
+    ]
   },
   {
     "ID": 30,
     "No": 51,
     "Name": "ダグトリオ",
-    "FoodDropRate": 0.19,
-    "SkillRate": 0.02,
+    "FoodDropRate": 0.0019,
+    "SkillRate": 0.0002,
     "MainSkill": "エナジーチャージS",
     "Type": "食材",
     "SpeedOfHelp": 2800,
     "Berries": "じめん",
-    "IngredientsA": {
-      "name": "トマト",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "ネギ",
-      "values": [
-        3,
-        4
-      ]
-    },
-    "IngredientsC": {
-      "name": "大豆",
-      "values": [
-        8
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "トマト",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "トマト",
+        "value": 5
+      },
+      {
+        "name": "ネギ",
+        "value": 3
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "トマト",
+        "value": 7
+      },
+      {
+        "name": "ネギ",
+        "value": 4
+      },
+      {
+        "name": "大豆",
+        "value": 8
+      }
+    ]
   },
   {
     "ID": 31,
     "No": 52,
     "Name": "ニャース",
-    "FoodDropRate": 0.163,
-    "SkillRate": 0.042,
+    "FoodDropRate": 0.0016300000000000002,
+    "SkillRate": 0.00042,
     "MainSkill": "ゆめのかけらゲットS",
     "Type": "スキル",
     "SpeedOfHelp": 4400,
     "Berries": "ノーマル",
-    "IngredientsA": {
-      "name": "ミルク",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ミート",
-      "values": [
-        2,
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミルク",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミルク",
+        "value": 2
+      },
+      {
+        "name": "ミート",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミルク",
+        "value": 4
+      },
+      {
+        "name": "ミート",
+        "value": 3
+      },
+      {
+        "name": "",
+        "value": 0
+      }
+    ]
   },
   {
     "ID": 32,
     "No": 53,
     "Name": "ペルシアン",
-    "FoodDropRate": 0.169,
-    "SkillRate": 0.044,
+    "FoodDropRate": 0.00169,
+    "SkillRate": 0.00043999999999999996,
     "MainSkill": "ゆめのかけらゲットS",
     "Type": "スキル",
     "SpeedOfHelp": 2800,
     "Berries": "ノーマル",
-    "IngredientsA": {
-      "name": "ミルク",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ミート",
-      "values": [
-        2,
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミルク",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミルク",
+        "value": 2
+      },
+      {
+        "name": "ミート",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミルク",
+        "value": 4
+      },
+      {
+        "name": "ミート",
+        "value": 3
+      },
+      {
+        "name": "",
+        "value": 0
+      }
+    ]
   },
   {
     "ID": 33,
     "No": 54,
     "Name": "コダック",
-    "FoodDropRate": 0.136,
-    "SkillRate": 0.126,
+    "FoodDropRate": 0.00136,
+    "SkillRate": 0.00126,
     "MainSkill": "エナジーチャージS\n(ランダム)",
     "Type": "スキル",
     "SpeedOfHelp": 5400,
     "Berries": "みず",
-    "IngredientsA": {
-      "name": "カカオ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "リンゴ",
-      "values": [
-        4,
-        6
-      ]
-    },
-    "IngredientsC": {
-      "name": "ミート",
-      "values": [
-        5
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "カカオ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "カカオ",
+        "value": 2
+      },
+      {
+        "name": "リンゴ",
+        "value": 4
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "カカオ",
+        "value": 4
+      },
+      {
+        "name": "リンゴ",
+        "value": 6
+      },
+      {
+        "name": "ミート",
+        "value": 5
+      }
+    ]
   },
   {
     "ID": 34,
     "No": 55,
     "Name": "ゴルダック",
-    "FoodDropRate": 0.162,
-    "SkillRate": 0.125,
+    "FoodDropRate": 0.0016200000000000001,
+    "SkillRate": 0.00125,
     "MainSkill": "エナジーチャージS\n(ランダム)",
     "Type": "スキル",
     "SpeedOfHelp": 3400,
     "Berries": "みず",
-    "IngredientsA": {
-      "name": "カカオ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "リンゴ",
-      "values": [
-        4,
-        6
-      ]
-    },
-    "IngredientsC": {
-      "name": "ミート",
-      "values": [
-        5
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "カカオ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "カカオ",
+        "value": 2
+      },
+      {
+        "name": "リンゴ",
+        "value": 4
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "カカオ",
+        "value": 4
+      },
+      {
+        "name": "リンゴ",
+        "value": 6
+      },
+      {
+        "name": "ミート",
+        "value": 5
+      }
+    ]
   },
   {
     "ID": 35,
     "No": 56,
     "Name": "マンキー",
-    "FoodDropRate": 0.197,
-    "SkillRate": 0.022,
+    "FoodDropRate": 0.00197,
+    "SkillRate": 0.00021999999999999998,
     "MainSkill": "エナジーチャージS\n(ランダム)",
     "Type": "きのみ",
     "SpeedOfHelp": 4200,
     "Berries": "かくとう",
-    "IngredientsA": {
-      "name": "ミート",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "キノコ",
-      "values": [
-        1,
-        2
-      ]
-    },
-    "IngredientsC": {
-      "name": "ミツ",
-      "values": [
-        4
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミート",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミート",
+        "value": 2
+      },
+      {
+        "name": "キノコ",
+        "value": 1
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミート",
+        "value": 4
+      },
+      {
+        "name": "キノコ",
+        "value": 2
+      },
+      {
+        "name": "ミツ",
+        "value": 4
+      }
+    ]
   },
   {
     "ID": 36,
     "No": 57,
     "Name": "オコリザル",
-    "FoodDropRate": 0.2,
-    "SkillRate": 0.024,
+    "FoodDropRate": 0.002,
+    "SkillRate": 0.00024,
     "MainSkill": "エナジーチャージS\n(ランダム)",
     "Type": "きのみ",
     "SpeedOfHelp": 2800,
     "Berries": "かくとう",
-    "IngredientsA": {
-      "name": "ミート",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "キノコ",
-      "values": [
-        1,
-        2
-      ]
-    },
-    "IngredientsC": {
-      "name": "ミツ",
-      "values": [
-        4
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミート",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミート",
+        "value": 2
+      },
+      {
+        "name": "キノコ",
+        "value": 1
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミート",
+        "value": 4
+      },
+      {
+        "name": "キノコ",
+        "value": 2
+      },
+      {
+        "name": "ミツ",
+        "value": 4
+      }
+    ]
   },
   {
     "ID": 37,
     "No": 58,
     "Name": "ガーディ",
-    "FoodDropRate": 0.138,
-    "SkillRate": 0.05,
+    "FoodDropRate": 0.0013800000000000002,
+    "SkillRate": 0.0005,
     "MainSkill": "おてつだいサポートS",
     "Type": "スキル",
     "SpeedOfHelp": 4300,
     "Berries": "ほのお",
-    "IngredientsA": {
-      "name": "ハーブ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ミート",
-      "values": [
-        3,
-        5
-      ]
-    },
-    "IngredientsC": {
-      "name": "ミルク",
-      "values": [
-        5
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ハーブ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ハーブ",
+        "value": 2
+      },
+      {
+        "name": "ミート",
+        "value": 3
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ハーブ",
+        "value": 4
+      },
+      {
+        "name": "ミート",
+        "value": 5
+      },
+      {
+        "name": "ミルク",
+        "value": 5
+      }
+    ]
   },
   {
     "ID": 38,
     "No": 59,
     "Name": "ウインディ",
-    "FoodDropRate": 0.136,
-    "SkillRate": 0.049,
+    "FoodDropRate": 0.00136,
+    "SkillRate": 0.00049,
     "MainSkill": "おてつだいサポートS",
     "Type": "スキル",
     "SpeedOfHelp": 2500,
     "Berries": "ほのお",
-    "IngredientsA": {
-      "name": "ハーブ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ミート",
-      "values": [
-        3,
-        5
-      ]
-    },
-    "IngredientsC": {
-      "name": "ミルク",
-      "values": [
-        5
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ハーブ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ハーブ",
+        "value": 2
+      },
+      {
+        "name": "ミート",
+        "value": 3
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ハーブ",
+        "value": 4
+      },
+      {
+        "name": "ミート",
+        "value": 5
+      },
+      {
+        "name": "ミルク",
+        "value": 5
+      }
+    ]
   },
   {
     "ID": 39,
     "No": 69,
     "Name": "マダツボミ",
-    "FoodDropRate": 0.233,
-    "SkillRate": 0.039,
+    "FoodDropRate": 0.00233,
+    "SkillRate": 0.00039,
     "MainSkill": "げんきチャージS",
     "Type": "食材",
     "SpeedOfHelp": 5200,
     "Berries": "くさ",
-    "IngredientsA": {
-      "name": "トマト",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "ポテト",
-      "values": [
-        4,
-        6
-      ]
-    },
-    "IngredientsC": {
-      "name": "ネギ",
-      "values": [
-        4
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "トマト",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "トマト",
+        "value": 5
+      },
+      {
+        "name": "ポテト",
+        "value": 4
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "トマト",
+        "value": 7
+      },
+      {
+        "name": "ポテト",
+        "value": 6
+      },
+      {
+        "name": "ネギ",
+        "value": 4
+      }
+    ]
   },
   {
     "ID": 40,
     "No": 70,
     "Name": "ウツドン",
-    "FoodDropRate": 0.235,
-    "SkillRate": 0.04,
+    "FoodDropRate": 0.0023499999999999997,
+    "SkillRate": 0.0004,
     "MainSkill": "げんきチャージS",
     "Type": "食材",
     "SpeedOfHelp": 3800,
     "Berries": "くさ",
-    "IngredientsA": {
-      "name": "トマト",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "ポテト",
-      "values": [
-        4,
-        6
-      ]
-    },
-    "IngredientsC": {
-      "name": "ネギ",
-      "values": [
-        4
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "トマト",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "トマト",
+        "value": 5
+      },
+      {
+        "name": "ポテト",
+        "value": 4
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "トマト",
+        "value": 7
+      },
+      {
+        "name": "ポテト",
+        "value": 6
+      },
+      {
+        "name": "ネギ",
+        "value": 4
+      }
+    ]
   },
   {
     "ID": 41,
     "No": 71,
     "Name": "ウツボット",
-    "FoodDropRate": 0.233,
-    "SkillRate": 0.039,
+    "FoodDropRate": 0.00233,
+    "SkillRate": 0.00039,
     "MainSkill": "げんきチャージS",
     "Type": "食材",
     "SpeedOfHelp": 2800,
     "Berries": "くさ",
-    "IngredientsA": {
-      "name": "トマト",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "ポテト",
-      "values": [
-        4,
-        6
-      ]
-    },
-    "IngredientsC": {
-      "name": "ネギ",
-      "values": [
-        4
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "トマト",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "トマト",
+        "value": 5
+      },
+      {
+        "name": "ポテト",
+        "value": 4
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "トマト",
+        "value": 7
+      },
+      {
+        "name": "ポテト",
+        "value": 6
+      },
+      {
+        "name": "ネギ",
+        "value": 4
+      }
+    ]
   },
   {
     "ID": 42,
     "No": 74,
     "Name": "イシツブテ",
-    "FoodDropRate": 0.281,
-    "SkillRate": 0.052,
+    "FoodDropRate": 0.0028100000000000004,
+    "SkillRate": 0.00052,
     "MainSkill": "エナジーチャージS\n(ランダム)",
     "Type": "食材",
     "SpeedOfHelp": 5700,
     "Berries": "いわ",
-    "IngredientsA": {
-      "name": "大豆",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "ポテト",
-      "values": [
-        4,
-        6
-      ]
-    },
-    "IngredientsC": {
-      "name": "キノコ",
-      "values": [
-        4
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "大豆",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "大豆",
+        "value": 5
+      },
+      {
+        "name": "ポテト",
+        "value": 4
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "大豆",
+        "value": 7
+      },
+      {
+        "name": "ポテト",
+        "value": 6
+      },
+      {
+        "name": "キノコ",
+        "value": 4
+      }
+    ]
   },
   {
     "ID": 43,
     "No": 75,
     "Name": "ゴローン",
-    "FoodDropRate": 0.272,
-    "SkillRate": 0.048,
+    "FoodDropRate": 0.00272,
+    "SkillRate": 0.00048,
     "MainSkill": "エナジーチャージS\n(ランダム)",
     "Type": "食材",
     "SpeedOfHelp": 4000,
     "Berries": "いわ",
-    "IngredientsA": {
-      "name": "大豆",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "ポテト",
-      "values": [
-        4,
-        6
-      ]
-    },
-    "IngredientsC": {
-      "name": "キノコ",
-      "values": [
-        4
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "大豆",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "大豆",
+        "value": 5
+      },
+      {
+        "name": "ポテト",
+        "value": 4
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "大豆",
+        "value": 7
+      },
+      {
+        "name": "ポテト",
+        "value": 6
+      },
+      {
+        "name": "キノコ",
+        "value": 4
+      }
+    ]
   },
   {
     "ID": 44,
     "No": 78,
     "Name": "ゴローニャ",
-    "FoodDropRate": 0.28,
-    "SkillRate": 0.052,
+    "FoodDropRate": 0.0028000000000000004,
+    "SkillRate": 0.00052,
     "MainSkill": "エナジーチャージS\n(ランダム)",
     "Type": "食材",
     "SpeedOfHelp": 3100,
     "Berries": "いわ",
-    "IngredientsA": {
-      "name": "大豆",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "ポテト",
-      "values": [
-        4,
-        6
-      ]
-    },
-    "IngredientsC": {
-      "name": "キノコ",
-      "values": [
-        4
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "大豆",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "大豆",
+        "value": 5
+      },
+      {
+        "name": "ポテト",
+        "value": 4
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "大豆",
+        "value": 7
+      },
+      {
+        "name": "ポテト",
+        "value": 6
+      },
+      {
+        "name": "キノコ",
+        "value": 4
+      }
+    ]
   },
   {
     "ID": 45,
     "No": 79,
     "Name": "ヤドン",
-    "FoodDropRate": 0.151,
-    "SkillRate": 0.067,
+    "FoodDropRate": 0.00151,
+    "SkillRate": 0.00067,
     "MainSkill": "げんきエールS",
     "Type": "スキル",
     "SpeedOfHelp": 5700,
     "Berries": "みず",
-    "IngredientsA": {
-      "name": "カカオ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "シッポ",
-      "values": [
-        1,
-        2
-      ]
-    },
-    "IngredientsC": {
-      "name": "トマト",
-      "values": [
-        5
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "カカオ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "カカオ",
+        "value": 2
+      },
+      {
+        "name": "シッポ",
+        "value": 1
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "カカオ",
+        "value": 4
+      },
+      {
+        "name": "シッポ",
+        "value": 2
+      },
+      {
+        "name": "トマト",
+        "value": 5
+      }
+    ]
   },
   {
     "ID": 46,
     "No": 80,
     "Name": "ヤドラン",
-    "FoodDropRate": 0.197,
-    "SkillRate": 0.068,
+    "FoodDropRate": 0.00197,
+    "SkillRate": 0.00068,
     "MainSkill": "げんきエールS",
     "Type": "スキル",
     "SpeedOfHelp": 3800,
     "Berries": "みず",
-    "IngredientsA": {
-      "name": "カカオ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "シッポ",
-      "values": [
-        1,
-        2
-      ]
-    },
-    "IngredientsC": {
-      "name": "トマト",
-      "values": [
-        5
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "カカオ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "カカオ",
+        "value": 2
+      },
+      {
+        "name": "シッポ",
+        "value": 1
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "カカオ",
+        "value": 4
+      },
+      {
+        "name": "シッポ",
+        "value": 2
+      },
+      {
+        "name": "トマト",
+        "value": 5
+      }
+    ]
   },
   {
     "ID": 47,
     "No": 81,
     "Name": "コイル",
-    "FoodDropRate": 0.182,
-    "SkillRate": 0.064,
+    "FoodDropRate": 0.00182,
+    "SkillRate": 0.00064,
     "MainSkill": "料理パワーアップS",
     "Type": "スキル",
     "SpeedOfHelp": 5800,
     "Berries": "はがね",
-    "IngredientsA": {
-      "name": "オイル",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ハーブ",
-      "values": [
-        2,
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "オイル",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "オイル",
+        "value": 2
+      },
+      {
+        "name": "ハーブ",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "オイル",
+        "value": 4
+      },
+      {
+        "name": "ハーブ",
+        "value": 3
+      },
+      {
+        "name": "",
+        "value": 0
+      }
+    ]
   },
   {
     "ID": 48,
     "No": 82,
     "Name": "レアコイル",
-    "FoodDropRate": 0.182,
-    "SkillRate": 0.063,
+    "FoodDropRate": 0.00182,
+    "SkillRate": 0.00063,
     "MainSkill": "料理パワーアップS",
     "Type": "スキル",
     "SpeedOfHelp": 4000,
     "Berries": "はがね",
-    "IngredientsA": {
-      "name": "オイル",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ハーブ",
-      "values": [
-        2,
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "オイル",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "オイル",
+        "value": 2
+      },
+      {
+        "name": "ハーブ",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "オイル",
+        "value": 4
+      },
+      {
+        "name": "ハーブ",
+        "value": 3
+      },
+      {
+        "name": "",
+        "value": 0
+      }
+    ]
   },
   {
     "ID": 49,
     "No": 84,
     "Name": "ドードー",
-    "FoodDropRate": 0.184,
-    "SkillRate": 0.02,
+    "FoodDropRate": 0.00184,
+    "SkillRate": 0.0002,
     "MainSkill": "げんきチャージS",
     "Type": "きのみ",
     "SpeedOfHelp": 3800,
     "Berries": "ひこう",
-    "IngredientsA": {
-      "name": "大豆",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "カカオ",
-      "values": [
-        1,
-        2
-      ]
-    },
-    "IngredientsC": {
-      "name": "ミート",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "大豆",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "大豆",
+        "value": 2
+      },
+      {
+        "name": "カカオ",
+        "value": 1
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "大豆",
+        "value": 4
+      },
+      {
+        "name": "カカオ",
+        "value": 2
+      },
+      {
+        "name": "ミート",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 50,
     "No": 85,
     "Name": "ドードリオ",
-    "FoodDropRate": 0.184,
-    "SkillRate": 0.02,
+    "FoodDropRate": 0.00184,
+    "SkillRate": 0.0002,
     "MainSkill": "げんきチャージS",
     "Type": "きのみ",
     "SpeedOfHelp": 2300,
     "Berries": "ひこう",
-    "IngredientsA": {
-      "name": "大豆",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "カカオ",
-      "values": [
-        1,
-        2
-      ]
-    },
-    "IngredientsC": {
-      "name": "ミート",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "大豆",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "大豆",
+        "value": 2
+      },
+      {
+        "name": "カカオ",
+        "value": 1
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "大豆",
+        "value": 4
+      },
+      {
+        "name": "カカオ",
+        "value": 2
+      },
+      {
+        "name": "ミート",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 51,
     "No": 92,
     "Name": "ゴース",
-    "FoodDropRate": 0.144,
-    "SkillRate": 0.015,
+    "FoodDropRate": 0.0014399999999999999,
+    "SkillRate": 0.00015,
     "MainSkill": "エナジーチャージS\n(ランダム)",
     "Type": "食材",
     "SpeedOfHelp": 3800,
     "Berries": "ゴースト",
-    "IngredientsA": {
-      "name": "ハーブ",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "キノコ",
-      "values": [
-        4,
-        6
-      ]
-    },
-    "IngredientsC": {
-      "name": "オイル",
-      "values": [
-        8
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ハーブ",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ハーブ",
+        "value": 5
+      },
+      {
+        "name": "キノコ",
+        "value": 4
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ハーブ",
+        "value": 7
+      },
+      {
+        "name": "キノコ",
+        "value": 6
+      },
+      {
+        "name": "オイル",
+        "value": 8
+      }
+    ]
   },
   {
     "ID": 52,
     "No": 93,
     "Name": "ゴースト",
-    "FoodDropRate": 0.157,
-    "SkillRate": 0.022,
+    "FoodDropRate": 0.00157,
+    "SkillRate": 0.00021999999999999998,
     "MainSkill": "エナジーチャージS\n(ランダム)",
     "Type": "食材",
     "SpeedOfHelp": 3000,
     "Berries": "ゴースト",
-    "IngredientsA": {
-      "name": "ハーブ",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "キノコ",
-      "values": [
-        4,
-        6
-      ]
-    },
-    "IngredientsC": {
-      "name": "オイル",
-      "values": [
-        8
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ハーブ",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ハーブ",
+        "value": 5
+      },
+      {
+        "name": "キノコ",
+        "value": 4
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ハーブ",
+        "value": 7
+      },
+      {
+        "name": "キノコ",
+        "value": 6
+      },
+      {
+        "name": "オイル",
+        "value": 8
+      }
+    ]
   },
   {
     "ID": 53,
     "No": 94,
     "Name": "ゲンガー",
-    "FoodDropRate": 0.161,
-    "SkillRate": 0.024,
+    "FoodDropRate": 0.00161,
+    "SkillRate": 0.00024,
     "MainSkill": "エナジーチャージS\n(ランダム)",
     "Type": "食材",
     "SpeedOfHelp": 2200,
     "Berries": "ゴースト",
-    "IngredientsA": {
-      "name": "ハーブ",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "キノコ",
-      "values": [
-        4,
-        6
-      ]
-    },
-    "IngredientsC": {
-      "name": "オイル",
-      "values": [
-        8
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ハーブ",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ハーブ",
+        "value": 5
+      },
+      {
+        "name": "キノコ",
+        "value": 4
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ハーブ",
+        "value": 7
+      },
+      {
+        "name": "キノコ",
+        "value": 6
+      },
+      {
+        "name": "オイル",
+        "value": 8
+      }
+    ]
   },
   {
     "ID": 54,
     "No": 95,
     "Name": "イワーク",
-    "FoodDropRate": 0.132,
-    "SkillRate": 0.023,
+    "FoodDropRate": 0.00132,
+    "SkillRate": 0.00023,
     "MainSkill": "食材ゲットS",
     "Type": "きのみ",
     "SpeedOfHelp": 3100,
     "Berries": "いわ",
-    "IngredientsA": {
-      "name": "トマト",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ミート",
-      "values": [
-        2,
-        4
-      ]
-    },
-    "IngredientsC": {
-      "name": "ポテト",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "トマト",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "トマト",
+        "value": 2
+      },
+      {
+        "name": "ミート",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "トマト",
+        "value": 4
+      },
+      {
+        "name": "ミート",
+        "value": 4
+      },
+      {
+        "name": "ポテト",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 55,
     "No": 104,
     "Name": "カラカラ",
-    "FoodDropRate": 0.223,
-    "SkillRate": 0.044,
+    "FoodDropRate": 0.00223,
+    "SkillRate": 0.00043999999999999996,
     "MainSkill": "げんきチャージS",
     "Type": "きのみ",
     "SpeedOfHelp": 4800,
     "Berries": "じめん",
-    "IngredientsA": {
-      "name": "ジンジャー",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "カカオ",
-      "values": [
-        2,
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ジンジャー",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ジンジャー",
+        "value": 2
+      },
+      {
+        "name": "カカオ",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ジンジャー",
+        "value": 4
+      },
+      {
+        "name": "カカオ",
+        "value": 3
+      },
+      {
+        "name": "",
+        "value": 0
+      }
+    ]
   },
   {
     "ID": 56,
     "No": 105,
     "Name": "ガラガラ",
-    "FoodDropRate": 0.225,
-    "SkillRate": 0.045,
+    "FoodDropRate": 0.0022500000000000003,
+    "SkillRate": 0.00045,
     "MainSkill": "げんきチャージS",
     "Type": "きのみ",
     "SpeedOfHelp": 3500,
     "Berries": "じめん",
-    "IngredientsA": {
-      "name": "ジンジャー",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "カカオ",
-      "values": [
-        2,
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ジンジャー",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ジンジャー",
+        "value": 2
+      },
+      {
+        "name": "カカオ",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ジンジャー",
+        "value": 4
+      },
+      {
+        "name": "カカオ",
+        "value": 3
+      },
+      {
+        "name": "",
+        "value": 0
+      }
+    ]
   },
   {
     "ID": 57,
     "No": 113,
     "Name": "ラッキー",
-    "FoodDropRate": 0.236,
-    "SkillRate": 0.023,
+    "FoodDropRate": 0.0023599999999999997,
+    "SkillRate": 0.00023,
     "MainSkill": "げんきオールS",
     "Type": "食材",
     "SpeedOfHelp": 3300,
     "Berries": "ノーマル",
-    "IngredientsA": {
-      "name": "タマゴ",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "ポテト",
-      "values": [
-        4,
-        7
-      ]
-    },
-    "IngredientsC": {
-      "name": "ミツ",
-      "values": [
-        8
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "タマゴ",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "タマゴ",
+        "value": 5
+      },
+      {
+        "name": "ポテト",
+        "value": 4
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "タマゴ",
+        "value": 7
+      },
+      {
+        "name": "ポテト",
+        "value": 7
+      },
+      {
+        "name": "ミツ",
+        "value": 8
+      }
+    ]
   },
   {
     "ID": 58,
     "No": 115,
     "Name": "ガルーラ",
-    "FoodDropRate": 0.222,
-    "SkillRate": 0.017,
+    "FoodDropRate": 0.00222,
+    "SkillRate": 0.00017,
     "MainSkill": "食材ゲットS",
     "Type": "食材",
     "SpeedOfHelp": 2650,
     "Berries": "ノーマル",
-    "IngredientsA": {
-      "name": "ジンジャー",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "ポテト",
-      "values": [
-        4,
-        6
-      ]
-    },
-    "IngredientsC": {
-      "name": "大豆",
-      "values": [
-        8
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ジンジャー",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ジンジャー",
+        "value": 5
+      },
+      {
+        "name": "ポテト",
+        "value": 4
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ジンジャー",
+        "value": 7
+      },
+      {
+        "name": "ポテト",
+        "value": 6
+      },
+      {
+        "name": "大豆",
+        "value": 8
+      }
+    ]
   },
   {
     "ID": 59,
     "No": 122,
     "Name": "バリヤード",
-    "FoodDropRate": 0.216,
-    "SkillRate": 0.039,
+    "FoodDropRate": 0.00216,
+    "SkillRate": 0.00039,
     "MainSkill": "ものまね\n(スキルコピー)",
     "Type": "食材",
     "SpeedOfHelp": 2800,
     "Berries": "エスパー",
-    "IngredientsA": {
-      "name": "トマト",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "ポテト",
-      "values": [
-        4,
-        6
-      ]
-    },
-    "IngredientsC": {
-      "name": "ネギ",
-      "values": [
-        4
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "トマト",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "トマト",
+        "value": 5
+      },
+      {
+        "name": "ポテト",
+        "value": 4
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "トマト",
+        "value": 7
+      },
+      {
+        "name": "ポテト",
+        "value": 6
+      },
+      {
+        "name": "ネギ",
+        "value": 4
+      }
+    ]
   },
   {
     "ID": 60,
     "No": 127,
     "Name": "カイロス",
-    "FoodDropRate": 0.216,
-    "SkillRate": 0.031,
+    "FoodDropRate": 0.00216,
+    "SkillRate": 0.00031,
     "MainSkill": "エナジーチャージS",
     "Type": "食材",
     "SpeedOfHelp": 2400,
     "Berries": "むし",
-    "IngredientsA": {
-      "name": "ミツ",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "リンゴ",
-      "values": [
-        5,
-        8
-      ]
-    },
-    "IngredientsC": {
-      "name": "ミート",
-      "values": [
-        7
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミツ",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミツ",
+        "value": 5
+      },
+      {
+        "name": "リンゴ",
+        "value": 5
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミツ",
+        "value": 7
+      },
+      {
+        "name": "リンゴ",
+        "value": 8
+      },
+      {
+        "name": "ミート",
+        "value": 7
+      }
+    ]
   },
   {
     "ID": 61,
     "No": 132,
     "Name": "メタモン",
-    "FoodDropRate": 0.201,
-    "SkillRate": 0.036,
+    "FoodDropRate": 0.00201,
+    "SkillRate": 0.00035999999999999997,
     "MainSkill": "へんしん\n(スキルコピー)",
     "Type": "食材",
     "SpeedOfHelp": 3500,
     "Berries": "ノーマル",
-    "IngredientsA": {
-      "name": "オイル",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "ネギ",
-      "values": [
-        3,
-        5
-      ]
-    },
-    "IngredientsC": {
-      "name": "シッポ",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "オイル",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "オイル",
+        "value": 5
+      },
+      {
+        "name": "ネギ",
+        "value": 3
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "オイル",
+        "value": 7
+      },
+      {
+        "name": "ネギ",
+        "value": 5
+      },
+      {
+        "name": "シッポ",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 62,
     "No": 133,
     "Name": "イーブイ",
-    "FoodDropRate": 0.192,
-    "SkillRate": 0.055,
+    "FoodDropRate": 0.00192,
+    "SkillRate": 0.00055,
     "MainSkill": "食材ゲットS",
     "Type": "スキル",
     "SpeedOfHelp": 3700,
     "Berries": "ノーマル",
-    "IngredientsA": {
-      "name": "ミルク",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "カカオ",
-      "values": [
-        1,
-        2
-      ]
-    },
-    "IngredientsC": {
-      "name": "ミート",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミルク",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミルク",
+        "value": 2
+      },
+      {
+        "name": "カカオ",
+        "value": 1
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミルク",
+        "value": 4
+      },
+      {
+        "name": "カカオ",
+        "value": 2
+      },
+      {
+        "name": "ミート",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 63,
     "No": 133,
     "Name": "イーブイ\n(ホリデー)",
-    "FoodDropRate": 0.156,
-    "SkillRate": 0.032,
+    "FoodDropRate": 0.00156,
+    "SkillRate": 0.00032,
     "MainSkill": "ゆめのかけらゲットS",
     "Type": "きのみ",
     "SpeedOfHelp": 3100,
     "Berries": "ノーマル",
-    "IngredientsA": {
-      "name": "ミルク",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "カカオ",
-      "values": [
-        1,
-        2
-      ]
-    },
-    "IngredientsC": {
-      "name": "ミート",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミルク",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミルク",
+        "value": 2
+      },
+      {
+        "name": "カカオ",
+        "value": 1
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミルク",
+        "value": 4
+      },
+      {
+        "name": "カカオ",
+        "value": 2
+      },
+      {
+        "name": "ミート",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 64,
     "No": 134,
     "Name": "シャワーズ",
-    "FoodDropRate": 0.212,
-    "SkillRate": 0.061,
+    "FoodDropRate": 0.00212,
+    "SkillRate": 0.00061,
     "MainSkill": "食材ゲットS",
     "Type": "スキル",
     "SpeedOfHelp": 3100,
     "Berries": "みず",
-    "IngredientsA": {
-      "name": "ミルク",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "カカオ",
-      "values": [
-        1,
-        2
-      ]
-    },
-    "IngredientsC": {
-      "name": "ミート",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミルク",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミルク",
+        "value": 2
+      },
+      {
+        "name": "カカオ",
+        "value": 1
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミルク",
+        "value": 4
+      },
+      {
+        "name": "カカオ",
+        "value": 2
+      },
+      {
+        "name": "ミート",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 65,
     "No": 135,
     "Name": "サンダース",
-    "FoodDropRate": 0.151,
-    "SkillRate": 0.039,
+    "FoodDropRate": 0.00151,
+    "SkillRate": 0.00039,
     "MainSkill": "おてつだいサポートS",
     "Type": "スキル",
     "SpeedOfHelp": 2200,
     "Berries": "でんき",
-    "IngredientsA": {
-      "name": "ミルク",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "カカオ",
-      "values": [
-        1,
-        2
-      ]
-    },
-    "IngredientsC": {
-      "name": "ミート",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミルク",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミルク",
+        "value": 2
+      },
+      {
+        "name": "カカオ",
+        "value": 1
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミルク",
+        "value": 4
+      },
+      {
+        "name": "カカオ",
+        "value": 2
+      },
+      {
+        "name": "ミート",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 66,
     "No": 136,
     "Name": "ブースター",
-    "FoodDropRate": 0.185,
-    "SkillRate": 0.052,
+    "FoodDropRate": 0.00185,
+    "SkillRate": 0.00052,
     "MainSkill": "料理パワーアップS",
     "Type": "スキル",
     "SpeedOfHelp": 2700,
     "Berries": "ほのお",
-    "IngredientsA": {
-      "name": "ミルク",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "カカオ",
-      "values": [
-        1,
-        2
-      ]
-    },
-    "IngredientsC": {
-      "name": "ミート",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミルク",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミルク",
+        "value": 2
+      },
+      {
+        "name": "カカオ",
+        "value": 1
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミルク",
+        "value": 4
+      },
+      {
+        "name": "カカオ",
+        "value": 2
+      },
+      {
+        "name": "ミート",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 67,
     "No": 147,
     "Name": "ミニリュウ",
-    "FoodDropRate": 0.25,
-    "SkillRate": 0.02,
+    "FoodDropRate": 0.0025,
+    "SkillRate": 0.0002,
     "MainSkill": "げんきチャージS",
     "Type": "食材",
     "SpeedOfHelp": 5000,
     "Berries": "ドラゴン",
-    "IngredientsA": {
-      "name": "ハーブ",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "コーン",
-      "values": [
-        4,
-        7
-      ]
-    },
-    "IngredientsC": {
-      "name": "オイル",
-      "values": [
-        8
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ハーブ",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ハーブ",
+        "value": 5
+      },
+      {
+        "name": "コーン",
+        "value": 4
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ハーブ",
+        "value": 7
+      },
+      {
+        "name": "コーン",
+        "value": 7
+      },
+      {
+        "name": "オイル",
+        "value": 8
+      }
+    ]
   },
   {
     "ID": 68,
     "No": 148,
     "Name": "ハクリュー",
-    "FoodDropRate": 0.262,
-    "SkillRate": 0.025,
+    "FoodDropRate": 0.00262,
+    "SkillRate": 0.00025,
     "MainSkill": "げんきチャージS",
     "Type": "食材",
     "SpeedOfHelp": 3800,
     "Berries": "ドラゴン",
-    "IngredientsA": {
-      "name": "ハーブ",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "コーン",
-      "values": [
-        4,
-        7
-      ]
-    },
-    "IngredientsC": {
-      "name": "オイル",
-      "values": [
-        8
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ハーブ",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ハーブ",
+        "value": 5
+      },
+      {
+        "name": "コーン",
+        "value": 4
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ハーブ",
+        "value": 7
+      },
+      {
+        "name": "コーン",
+        "value": 7
+      },
+      {
+        "name": "オイル",
+        "value": 8
+      }
+    ]
   },
   {
     "ID": 69,
     "No": 149,
     "Name": "カイリュー",
-    "FoodDropRate": 0.264,
-    "SkillRate": 0.026,
+    "FoodDropRate": 0.00264,
+    "SkillRate": 0.00026,
     "MainSkill": "げんきチャージS",
     "Type": "食材",
     "SpeedOfHelp": 2600,
     "Berries": "ドラゴン",
-    "IngredientsA": {
-      "name": "ハーブ",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "コーン",
-      "values": [
-        4,
-        7
-      ]
-    },
-    "IngredientsC": {
-      "name": "オイル",
-      "values": [
-        8
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ハーブ",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ハーブ",
+        "value": 5
+      },
+      {
+        "name": "コーン",
+        "value": 4
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ハーブ",
+        "value": 7
+      },
+      {
+        "name": "コーン",
+        "value": 7
+      },
+      {
+        "name": "オイル",
+        "value": 8
+      }
+    ]
   },
   {
     "ID": 70,
     "No": 152,
     "Name": "チコリータ",
-    "FoodDropRate": 0.169,
-    "SkillRate": 0.039,
+    "FoodDropRate": 0.00169,
+    "SkillRate": 0.00039,
     "MainSkill": "エナジーチャージS\n(ランダム)",
     "Type": "きのみ",
     "SpeedOfHelp": 4400,
     "Berries": "くさ",
-    "IngredientsA": {
-      "name": "カカオ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ミツ",
-      "values": [
-        3,
-        5
-      ]
-    },
-    "IngredientsC": {
-      "name": "ネギ",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "カカオ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "カカオ",
+        "value": 2
+      },
+      {
+        "name": "ミツ",
+        "value": 3
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "カカオ",
+        "value": 4
+      },
+      {
+        "name": "ミツ",
+        "value": 5
+      },
+      {
+        "name": "ネギ",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 71,
     "No": 153,
     "Name": "ベイリーフ",
-    "FoodDropRate": 0.168,
-    "SkillRate": 0.038,
+    "FoodDropRate": 0.00168,
+    "SkillRate": 0.00037999999999999997,
     "MainSkill": "エナジーチャージS\n(ランダム)",
     "Type": "きのみ",
     "SpeedOfHelp": 3300,
     "Berries": "くさ",
-    "IngredientsA": {
-      "name": "カカオ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ミツ",
-      "values": [
-        3,
-        5
-      ]
-    },
-    "IngredientsC": {
-      "name": "ネギ",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "カカオ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "カカオ",
+        "value": 2
+      },
+      {
+        "name": "ミツ",
+        "value": 3
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "カカオ",
+        "value": 4
+      },
+      {
+        "name": "ミツ",
+        "value": 5
+      },
+      {
+        "name": "ネギ",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 72,
     "No": 154,
     "Name": "メガニウム",
-    "FoodDropRate": 0.175,
-    "SkillRate": 0.046,
+    "FoodDropRate": 0.0017499999999999998,
+    "SkillRate": 0.00046,
     "MainSkill": "エナジーチャージS\n(ランダム)",
     "Type": "きのみ",
     "SpeedOfHelp": 2800,
     "Berries": "くさ",
-    "IngredientsA": {
-      "name": "カカオ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ミツ",
-      "values": [
-        3,
-        5
-      ]
-    },
-    "IngredientsC": {
-      "name": "ネギ",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "カカオ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "カカオ",
+        "value": 2
+      },
+      {
+        "name": "ミツ",
+        "value": 3
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "カカオ",
+        "value": 4
+      },
+      {
+        "name": "ミツ",
+        "value": 5
+      },
+      {
+        "name": "ネギ",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 73,
     "No": 155,
     "Name": "ヒノアラシ",
-    "FoodDropRate": 0.186,
-    "SkillRate": 0.021,
+    "FoodDropRate": 0.0018599999999999999,
+    "SkillRate": 0.00021,
     "MainSkill": "エナジーチャージS\n(ランダム)",
     "Type": "きのみ",
     "SpeedOfHelp": 3500,
     "Berries": "ほのお",
-    "IngredientsA": {
-      "name": "ジンジャー",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ハーブ",
-      "values": [
-        2,
-        3
-      ]
-    },
-    "IngredientsC": {
-      "name": "オイル",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ジンジャー",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ジンジャー",
+        "value": 2
+      },
+      {
+        "name": "ハーブ",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ジンジャー",
+        "value": 4
+      },
+      {
+        "name": "ハーブ",
+        "value": 3
+      },
+      {
+        "name": "オイル",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 74,
     "No": 156,
     "Name": "マグマラシ",
-    "FoodDropRate": 0.211,
-    "SkillRate": 0.041,
+    "FoodDropRate": 0.00211,
+    "SkillRate": 0.00041,
     "MainSkill": "エナジーチャージS\n(ランダム)",
     "Type": "きのみ",
     "SpeedOfHelp": 3000,
     "Berries": "ほのお",
-    "IngredientsA": {
-      "name": "ジンジャー",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ハーブ",
-      "values": [
-        2,
-        3
-      ]
-    },
-    "IngredientsC": {
-      "name": "オイル",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ジンジャー",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ジンジャー",
+        "value": 2
+      },
+      {
+        "name": "ハーブ",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ジンジャー",
+        "value": 4
+      },
+      {
+        "name": "ハーブ",
+        "value": 3
+      },
+      {
+        "name": "オイル",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 75,
     "No": 157,
     "Name": "バクフーン",
-    "FoodDropRate": 0.208,
-    "SkillRate": 0.039,
+    "FoodDropRate": 0.00208,
+    "SkillRate": 0.00039,
     "MainSkill": "エナジーチャージS\n(ランダム)",
     "Type": "きのみ",
     "SpeedOfHelp": 2400,
     "Berries": "ほのお",
-    "IngredientsA": {
-      "name": "ジンジャー",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ハーブ",
-      "values": [
-        2,
-        3
-      ]
-    },
-    "IngredientsC": {
-      "name": "オイル",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ジンジャー",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ジンジャー",
+        "value": 2
+      },
+      {
+        "name": "ハーブ",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ジンジャー",
+        "value": 4
+      },
+      {
+        "name": "ハーブ",
+        "value": 3
+      },
+      {
+        "name": "オイル",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 76,
     "No": 158,
     "Name": "ワニノコ",
-    "FoodDropRate": 0.253,
-    "SkillRate": 0.052,
+    "FoodDropRate": 0.00253,
+    "SkillRate": 0.00052,
     "MainSkill": "エナジーチャージS\n(ランダム)",
     "Type": "きのみ",
     "SpeedOfHelp": 4500,
     "Berries": "みず",
-    "IngredientsA": {
-      "name": "ミート",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "オイル",
-      "values": [
-        2,
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミート",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミート",
+        "value": 2
+      },
+      {
+        "name": "オイル",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミート",
+        "value": 4
+      },
+      {
+        "name": "オイル",
+        "value": 3
+      },
+      {
+        "name": "",
+        "value": 0
+      }
+    ]
   },
   {
     "ID": 77,
     "No": 159,
     "Name": "アリゲイツ",
-    "FoodDropRate": 0.253,
-    "SkillRate": 0.052,
+    "FoodDropRate": 0.00253,
+    "SkillRate": 0.00052,
     "MainSkill": "エナジーチャージS\n(ランダム)",
     "Type": "きのみ",
     "SpeedOfHelp": 3400,
     "Berries": "みず",
-    "IngredientsA": {
-      "name": "ミート",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "オイル",
-      "values": [
-        2,
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミート",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミート",
+        "value": 2
+      },
+      {
+        "name": "オイル",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミート",
+        "value": 4
+      },
+      {
+        "name": "オイル",
+        "value": 3
+      },
+      {
+        "name": "",
+        "value": 0
+      }
+    ]
   },
   {
     "ID": 78,
     "No": 160,
     "Name": "オーダイル",
-    "FoodDropRate": 0.257,
-    "SkillRate": 0.055,
+    "FoodDropRate": 0.0025700000000000002,
+    "SkillRate": 0.00055,
     "MainSkill": "エナジーチャージS\n(ランダム)",
     "Type": "きのみ",
     "SpeedOfHelp": 2800,
     "Berries": "みず",
-    "IngredientsA": {
-      "name": "ミート",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "オイル",
-      "values": [
-        2,
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミート",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミート",
+        "value": 2
+      },
+      {
+        "name": "オイル",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミート",
+        "value": 4
+      },
+      {
+        "name": "オイル",
+        "value": 3
+      },
+      {
+        "name": "",
+        "value": 0
+      }
+    ]
   },
   {
     "ID": 79,
     "No": 172,
     "Name": "ピチュー",
-    "FoodDropRate": 0.21,
-    "SkillRate": 0.023,
+    "FoodDropRate": 0.0021,
+    "SkillRate": 0.00023,
     "MainSkill": "エナジーチャージS",
     "Type": "きのみ",
     "SpeedOfHelp": 4300,
     "Berries": "でんき",
-    "IngredientsA": {
-      "name": "リンゴ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ジンジャー",
-      "values": [
-        2,
-        3
-      ]
-    },
-    "IngredientsC": {
-      "name": "タマゴ",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "リンゴ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "リンゴ",
+        "value": 2
+      },
+      {
+        "name": "ジンジャー",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "リンゴ",
+        "value": 4
+      },
+      {
+        "name": "ジンジャー",
+        "value": 3
+      },
+      {
+        "name": "タマゴ",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 80,
     "No": 173,
     "Name": "ピィ",
-    "FoodDropRate": 0.164,
-    "SkillRate": 0.034,
+    "FoodDropRate": 0.00164,
+    "SkillRate": 0.00034,
     "MainSkill": "ゆびをふる",
     "Type": "きのみ",
     "SpeedOfHelp": 5600,
     "Berries": "フェアリー",
-    "IngredientsA": {
-      "name": "リンゴ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ミツ",
-      "values": [
-        2,
-        3
-      ]
-    },
-    "IngredientsC": {
-      "name": "大豆",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "リンゴ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "リンゴ",
+        "value": 2
+      },
+      {
+        "name": "ミツ",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "リンゴ",
+        "value": 4
+      },
+      {
+        "name": "ミツ",
+        "value": 3
+      },
+      {
+        "name": "大豆",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 81,
     "No": 174,
     "Name": "ププリン",
-    "FoodDropRate": 0.17,
-    "SkillRate": 0.038,
+    "FoodDropRate": 0.0017000000000000001,
+    "SkillRate": 0.00037999999999999997,
     "MainSkill": "げんきオールS",
     "Type": "スキル",
     "SpeedOfHelp": 5200,
     "Berries": "フェアリー",
-    "IngredientsA": {
-      "name": "ミツ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "オイル",
-      "values": [
-        2,
-        3
-      ]
-    },
-    "IngredientsC": {
-      "name": "カカオ",
-      "values": [
-        2
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミツ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミツ",
+        "value": 2
+      },
+      {
+        "name": "オイル",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミツ",
+        "value": 4
+      },
+      {
+        "name": "オイル",
+        "value": 3
+      },
+      {
+        "name": "カカオ",
+        "value": 2
+      }
+    ]
   },
   {
     "ID": 82,
     "No": 175,
     "Name": "トゲピー",
-    "FoodDropRate": 0.151,
-    "SkillRate": 0.049,
+    "FoodDropRate": 0.00151,
+    "SkillRate": 0.00049,
     "MainSkill": "ゆびをふる",
     "Type": "スキル",
     "SpeedOfHelp": 4800,
     "Berries": "フェアリー",
-    "IngredientsA": {
-      "name": "タマゴ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ジンジャー",
-      "values": [
-        2,
-        4
-      ]
-    },
-    "IngredientsC": {
-      "name": "カカオ",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "タマゴ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "タマゴ",
+        "value": 2
+      },
+      {
+        "name": "ジンジャー",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "タマゴ",
+        "value": 4
+      },
+      {
+        "name": "ジンジャー",
+        "value": 4
+      },
+      {
+        "name": "カカオ",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 83,
     "No": 176,
     "Name": "トゲチック",
-    "FoodDropRate": 0.163,
-    "SkillRate": 0.056,
+    "FoodDropRate": 0.0016300000000000002,
+    "SkillRate": 0.0005600000000000001,
     "MainSkill": "ゆびをふる",
     "Type": "スキル",
     "SpeedOfHelp": 3800,
     "Berries": "フェアリー",
-    "IngredientsA": {
-      "name": "タマゴ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ジンジャー",
-      "values": [
-        2,
-        4
-      ]
-    },
-    "IngredientsC": {
-      "name": "カカオ",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "タマゴ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "タマゴ",
+        "value": 2
+      },
+      {
+        "name": "ジンジャー",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "タマゴ",
+        "value": 4
+      },
+      {
+        "name": "ジンジャー",
+        "value": 4
+      },
+      {
+        "name": "カカオ",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 84,
     "No": 179,
     "Name": "メリープ",
-    "FoodDropRate": 0.128,
-    "SkillRate": 0.047,
+    "FoodDropRate": 0.00128,
+    "SkillRate": 0.00047,
     "MainSkill": "エナジーチャージM",
     "Type": "スキル",
     "SpeedOfHelp": 4600,
     "Berries": "でんき",
-    "IngredientsA": {
-      "name": "ハーブ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "タマゴ",
-      "values": [
-        3,
-        4
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ハーブ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ハーブ",
+        "value": 2
+      },
+      {
+        "name": "タマゴ",
+        "value": 3
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ハーブ",
+        "value": 4
+      },
+      {
+        "name": "タマゴ",
+        "value": 4
+      },
+      {
+        "name": "",
+        "value": 0
+      }
+    ]
   },
   {
     "ID": 85,
     "No": 180,
     "Name": "モココ",
-    "FoodDropRate": 0.127,
-    "SkillRate": 0.046,
+    "FoodDropRate": 0.00127,
+    "SkillRate": 0.00046,
     "MainSkill": "エナジーチャージM",
     "Type": "スキル",
     "SpeedOfHelp": 3300,
     "Berries": "でんき",
-    "IngredientsA": {
-      "name": "ハーブ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "タマゴ",
-      "values": [
-        3,
-        4
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ハーブ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ハーブ",
+        "value": 2
+      },
+      {
+        "name": "タマゴ",
+        "value": 3
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ハーブ",
+        "value": 4
+      },
+      {
+        "name": "タマゴ",
+        "value": 4
+      },
+      {
+        "name": "",
+        "value": 0
+      }
+    ]
   },
   {
     "ID": 86,
     "No": 181,
     "Name": "デンリュウ",
-    "FoodDropRate": 0.13,
-    "SkillRate": 0.047,
+    "FoodDropRate": 0.0013,
+    "SkillRate": 0.00047,
     "MainSkill": "エナジーチャージM",
     "Type": "スキル",
     "SpeedOfHelp": 2500,
     "Berries": "でんき",
-    "IngredientsA": {
-      "name": "ハーブ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "タマゴ",
-      "values": [
-        3,
-        4
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ハーブ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ハーブ",
+        "value": 2
+      },
+      {
+        "name": "タマゴ",
+        "value": 3
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ハーブ",
+        "value": 4
+      },
+      {
+        "name": "タマゴ",
+        "value": 4
+      },
+      {
+        "name": "",
+        "value": 0
+      }
+    ]
   },
   {
     "ID": 87,
     "No": 185,
     "Name": "ウソッキー",
-    "FoodDropRate": 0.217,
-    "SkillRate": 0.072,
+    "FoodDropRate": 0.00217,
+    "SkillRate": 0.0007199999999999999,
     "MainSkill": "エナジーチャージM",
     "Type": "スキル",
     "SpeedOfHelp": 4000,
     "Berries": "いわ",
-    "IngredientsA": {
-      "name": "トマト",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "大豆",
-      "values": [
-        2,
-        4
-      ]
-    },
-    "IngredientsC": {
-      "name": "キノコ",
-      "values": [
-        2
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "トマト",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "トマト",
+        "value": 2
+      },
+      {
+        "name": "大豆",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "トマト",
+        "value": 4
+      },
+      {
+        "name": "大豆",
+        "value": 4
+      },
+      {
+        "name": "キノコ",
+        "value": 2
+      }
+    ]
   },
   {
     "ID": 88,
     "No": 194,
     "Name": "ウパー",
-    "FoodDropRate": 0.201,
-    "SkillRate": 0.038,
+    "FoodDropRate": 0.00201,
+    "SkillRate": 0.00037999999999999997,
     "MainSkill": "げんきチャージS",
     "Type": "食材",
     "SpeedOfHelp": 5900,
     "Berries": "みず",
-    "IngredientsA": {
-      "name": "キノコ",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "ポテト",
-      "values": [
-        6,
-        10
-      ]
-    },
-    "IngredientsC": {
-      "name": "ミート",
-      "values": [
-        12
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "キノコ",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "キノコ",
+        "value": 5
+      },
+      {
+        "name": "ポテト",
+        "value": 6
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "キノコ",
+        "value": 7
+      },
+      {
+        "name": "ポテト",
+        "value": 10
+      },
+      {
+        "name": "ミート",
+        "value": 12
+      }
+    ]
   },
   {
     "ID": 89,
     "No": 194,
     "Name": "ウパー\n(パルデア)",
-    "FoodDropRate": 0.209,
-    "SkillRate": 0.056,
+    "FoodDropRate": 0.00209,
+    "SkillRate": 0.0005600000000000001,
     "MainSkill": "げんきチャージS",
     "Type": "食材",
     "SpeedOfHelp": 6400,
     "Berries": "いわ",
-    "IngredientsA": {
-      "name": "カカオ",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "コーヒー",
-      "values": [
-        4,
-        7
-      ]
-    },
-    "IngredientsC": {
-      "name": "ポテト",
-      "values": [
-        9
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "カカオ",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "カカオ",
+        "value": 5
+      },
+      {
+        "name": "コーヒー",
+        "value": 4
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "カカオ",
+        "value": 7
+      },
+      {
+        "name": "コーヒー",
+        "value": 7
+      },
+      {
+        "name": "ポテト",
+        "value": 9
+      }
+    ]
   },
   {
     "ID": 90,
     "No": 195,
     "Name": "ヌオー",
-    "FoodDropRate": 0.19,
-    "SkillRate": 0.032,
+    "FoodDropRate": 0.0019,
+    "SkillRate": 0.00032,
     "MainSkill": "げんきチャージS",
     "Type": "食材",
     "SpeedOfHelp": 3400,
     "Berries": "みず",
-    "IngredientsA": {
-      "name": "キノコ",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "ポテト",
-      "values": [
-        6,
-        10
-      ]
-    },
-    "IngredientsC": {
-      "name": "ミート",
-      "values": [
-        12
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "キノコ",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "キノコ",
+        "value": 5
+      },
+      {
+        "name": "ポテト",
+        "value": 6
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "キノコ",
+        "value": 7
+      },
+      {
+        "name": "ポテト",
+        "value": 10
+      },
+      {
+        "name": "ミート",
+        "value": 12
+      }
+    ]
   },
   {
     "ID": 91,
     "No": 196,
     "Name": "エーフィ",
-    "FoodDropRate": 0.164,
-    "SkillRate": 0.044,
+    "FoodDropRate": 0.00164,
+    "SkillRate": 0.00043999999999999996,
     "MainSkill": "エナジーチャージM",
     "Type": "スキル",
     "SpeedOfHelp": 2400,
     "Berries": "エスパー",
-    "IngredientsA": {
-      "name": "ミルク",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "カカオ",
-      "values": [
-        1,
-        2
-      ]
-    },
-    "IngredientsC": {
-      "name": "ミート",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミルク",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミルク",
+        "value": 2
+      },
+      {
+        "name": "カカオ",
+        "value": 1
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミルク",
+        "value": 4
+      },
+      {
+        "name": "カカオ",
+        "value": 2
+      },
+      {
+        "name": "ミート",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 92,
     "No": 197,
     "Name": "ブラッキー",
-    "FoodDropRate": 0.219,
-    "SkillRate": 0.101,
+    "FoodDropRate": 0.00219,
+    "SkillRate": 0.00101,
     "MainSkill": "つきのひかり\n(げんきチャージS)",
     "Type": "スキル",
     "SpeedOfHelp": 3200,
     "Berries": "あく",
-    "IngredientsA": {
-      "name": "ミルク",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "カカオ",
-      "values": [
-        1,
-        2
-      ]
-    },
-    "IngredientsC": {
-      "name": "ミート",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミルク",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミルク",
+        "value": 2
+      },
+      {
+        "name": "カカオ",
+        "value": 1
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミルク",
+        "value": 4
+      },
+      {
+        "name": "カカオ",
+        "value": 2
+      },
+      {
+        "name": "ミート",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 93,
     "No": 198,
     "Name": "ヤミカラス",
-    "FoodDropRate": 0.141,
-    "SkillRate": 0.062,
+    "FoodDropRate": 0.0014099999999999998,
+    "SkillRate": 0.00062,
     "MainSkill": "きょううん\n(食材セレクトS)",
     "Type": "スキル",
     "SpeedOfHelp": 3600,
     "Berries": "あく",
-    "IngredientsA": {
-      "name": "コーヒー",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "大豆",
-      "values": [
-        3,
-        6
-      ]
-    },
-    "IngredientsC": {
-      "name": "ハーブ",
-      "values": [
-        4
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "コーヒー",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "コーヒー",
+        "value": 2
+      },
+      {
+        "name": "大豆",
+        "value": 3
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "コーヒー",
+        "value": 4
+      },
+      {
+        "name": "大豆",
+        "value": 6
+      },
+      {
+        "name": "ハーブ",
+        "value": 4
+      }
+    ]
   },
   {
     "ID": 94,
     "No": 199,
     "Name": "ヤドキング",
-    "FoodDropRate": 0.166,
-    "SkillRate": 0.074,
+    "FoodDropRate": 0.00166,
+    "SkillRate": 0.00074,
     "MainSkill": "げんきエールS",
     "Type": "スキル",
     "SpeedOfHelp": 3400,
     "Berries": "みず",
-    "IngredientsA": {
-      "name": "カカオ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "シッポ",
-      "values": [
-        1,
-        2
-      ]
-    },
-    "IngredientsC": {
-      "name": "トマト",
-      "values": [
-        5
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "カカオ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "カカオ",
+        "value": 2
+      },
+      {
+        "name": "シッポ",
+        "value": 1
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "カカオ",
+        "value": 4
+      },
+      {
+        "name": "シッポ",
+        "value": 2
+      },
+      {
+        "name": "トマト",
+        "value": 5
+      }
+    ]
   },
   {
     "ID": 95,
     "No": 202,
     "Name": "ソーナンス",
-    "FoodDropRate": 0.211,
-    "SkillRate": 0.07,
+    "FoodDropRate": 0.00211,
+    "SkillRate": 0.0007000000000000001,
     "MainSkill": "げんきエールS",
     "Type": "スキル",
     "SpeedOfHelp": 3500,
     "Berries": "エスパー",
-    "IngredientsA": {
-      "name": "リンゴ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "キノコ",
-      "values": [
-        1,
-        2
-      ]
-    },
-    "IngredientsC": {
-      "name": "オイル",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "リンゴ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "リンゴ",
+        "value": 2
+      },
+      {
+        "name": "キノコ",
+        "value": 1
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "リンゴ",
+        "value": 4
+      },
+      {
+        "name": "キノコ",
+        "value": 2
+      },
+      {
+        "name": "オイル",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 96,
     "No": 208,
     "Name": "ハガネール",
-    "FoodDropRate": 0.154,
-    "SkillRate": 0.032,
+    "FoodDropRate": 0.00154,
+    "SkillRate": 0.00032,
     "MainSkill": "食材ゲットS",
     "Type": "きのみ",
     "SpeedOfHelp": 3000,
     "Berries": "はがね",
-    "IngredientsA": {
-      "name": "トマト",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ミート",
-      "values": [
-        2,
-        4
-      ]
-    },
-    "IngredientsC": {
-      "name": "ポテト",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "トマト",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "トマト",
+        "value": 2
+      },
+      {
+        "name": "ミート",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "トマト",
+        "value": 4
+      },
+      {
+        "name": "ミート",
+        "value": 4
+      },
+      {
+        "name": "ポテト",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 97,
     "No": 214,
     "Name": "ヘラクロス",
-    "FoodDropRate": 0.158,
-    "SkillRate": 0.047,
+    "FoodDropRate": 0.00158,
+    "SkillRate": 0.00047,
     "MainSkill": "食材ゲットS",
     "Type": "スキル",
     "SpeedOfHelp": 2300,
     "Berries": "むし",
-    "IngredientsA": {
-      "name": "ミツ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "キノコ",
-      "values": [
-        1,
-        2
-      ]
-    },
-    "IngredientsC": {
-      "name": "ミート",
-      "values": [
-        4
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミツ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミツ",
+        "value": 2
+      },
+      {
+        "name": "キノコ",
+        "value": 1
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミツ",
+        "value": 4
+      },
+      {
+        "name": "キノコ",
+        "value": 2
+      },
+      {
+        "name": "ミート",
+        "value": 4
+      }
+    ]
   },
   {
     "ID": 98,
     "No": 215,
     "Name": "ニューラ",
-    "FoodDropRate": 0.255,
-    "SkillRate": 0.019,
+    "FoodDropRate": 0.00255,
+    "SkillRate": 0.00018999999999999998,
     "MainSkill": "料理チャンスS",
     "Type": "きのみ",
     "SpeedOfHelp": 3200,
     "Berries": "あく",
-    "IngredientsA": {
-      "name": "ミート",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "タマゴ",
-      "values": [
-        2,
-        3
-      ]
-    },
-    "IngredientsC": {
-      "name": "大豆",
-      "values": [
-        4
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミート",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミート",
+        "value": 2
+      },
+      {
+        "name": "タマゴ",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミート",
+        "value": 4
+      },
+      {
+        "name": "タマゴ",
+        "value": 3
+      },
+      {
+        "name": "大豆",
+        "value": 4
+      }
+    ]
   },
   {
     "ID": 99,
     "No": 225,
     "Name": "デリバード",
-    "FoodDropRate": 0.188,
-    "SkillRate": 0.015,
+    "FoodDropRate": 0.00188,
+    "SkillRate": 0.00015,
     "MainSkill": "食材ゲットS",
     "Type": "食材",
     "SpeedOfHelp": 2500,
     "Berries": "ひこう",
-    "IngredientsA": {
-      "name": "タマゴ",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "リンゴ",
-      "values": [
-        6,
-        9
-      ]
-    },
-    "IngredientsC": {
-      "name": "カカオ",
-      "values": [
-        5
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "タマゴ",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "タマゴ",
+        "value": 5
+      },
+      {
+        "name": "リンゴ",
+        "value": 6
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "タマゴ",
+        "value": 7
+      },
+      {
+        "name": "リンゴ",
+        "value": 9
+      },
+      {
+        "name": "カカオ",
+        "value": 5
+      }
+    ]
   },
   {
     "ID": 100,
     "No": 228,
     "Name": "デルビル",
-    "FoodDropRate": 0.201,
-    "SkillRate": 0.037,
+    "FoodDropRate": 0.00201,
+    "SkillRate": 0.00037,
     "MainSkill": "エナジーチャージM",
     "Type": "きのみ",
     "SpeedOfHelp": 4900,
     "Berries": "あく",
-    "IngredientsA": {
-      "name": "ハーブ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ジンジャー",
-      "values": [
-        3,
-        4
-      ]
-    },
-    "IngredientsC": {
-      "name": "ネギ",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ハーブ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ハーブ",
+        "value": 2
+      },
+      {
+        "name": "ジンジャー",
+        "value": 3
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ハーブ",
+        "value": 4
+      },
+      {
+        "name": "ジンジャー",
+        "value": 4
+      },
+      {
+        "name": "ネギ",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 101,
     "No": 229,
     "Name": "ヘルガー",
-    "FoodDropRate": 0.203,
-    "SkillRate": 0.04,
+    "FoodDropRate": 0.00203,
+    "SkillRate": 0.0004,
     "MainSkill": "エナジーチャージM",
     "Type": "きのみ",
     "SpeedOfHelp": 3300,
     "Berries": "あく",
-    "IngredientsA": {
-      "name": "ハーブ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ジンジャー",
-      "values": [
-        3,
-        4
-      ]
-    },
-    "IngredientsC": {
-      "name": "ネギ",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ハーブ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ハーブ",
+        "value": 2
+      },
+      {
+        "name": "ジンジャー",
+        "value": 3
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ハーブ",
+        "value": 4
+      },
+      {
+        "name": "ジンジャー",
+        "value": 4
+      },
+      {
+        "name": "ネギ",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 102,
     "No": 242,
     "Name": "ハピナス",
-    "FoodDropRate": 0.238,
-    "SkillRate": 0.023,
+    "FoodDropRate": 0.0023799999999999997,
+    "SkillRate": 0.00023,
     "MainSkill": "げんきオールS",
     "Type": "食材",
     "SpeedOfHelp": 3100,
     "Berries": "ノーマル",
-    "IngredientsA": {
-      "name": "タマゴ",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "ポテト",
-      "values": [
-        4,
-        7
-      ]
-    },
-    "IngredientsC": {
-      "name": "ミツ",
-      "values": [
-        8
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "タマゴ",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "タマゴ",
+        "value": 5
+      },
+      {
+        "name": "ポテト",
+        "value": 4
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "タマゴ",
+        "value": 7
+      },
+      {
+        "name": "ポテト",
+        "value": 7
+      },
+      {
+        "name": "ミツ",
+        "value": 8
+      }
+    ]
   },
   {
     "ID": 103,
     "No": 243,
     "Name": "ライコウ",
-    "FoodDropRate": 0.192,
-    "SkillRate": 0.019,
+    "FoodDropRate": 0.00192,
+    "SkillRate": 0.00018999999999999998,
     "MainSkill": "おてつだいブースト\n(でんき)",
     "Type": "スキル",
     "SpeedOfHelp": 2100,
     "Berries": "でんき",
-    "IngredientsA": {
-      "name": "ミート",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ハーブ",
-      "values": [
-        2,
-        3
-      ]
-    },
-    "IngredientsC": {
-      "name": "ネギ",
-      "values": [
-        2
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミート",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミート",
+        "value": 2
+      },
+      {
+        "name": "ハーブ",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミート",
+        "value": 4
+      },
+      {
+        "name": "ハーブ",
+        "value": 3
+      },
+      {
+        "name": "ネギ",
+        "value": 2
+      }
+    ]
   },
   {
     "ID": 104,
     "No": 244,
     "Name": "エンテイ",
-    "FoodDropRate": 0.187,
-    "SkillRate": 0.023,
+    "FoodDropRate": 0.00187,
+    "SkillRate": 0.00023,
     "MainSkill": "おてつだいブースト\n(ほのお)",
     "Type": "スキル",
     "SpeedOfHelp": 2400,
     "Berries": "ほのお",
-    "IngredientsA": {
-      "name": "オイル",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "トマト",
-      "values": [
-        2,
-        4
-      ]
-    },
-    "IngredientsC": {
-      "name": "キノコ",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "オイル",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "オイル",
+        "value": 2
+      },
+      {
+        "name": "トマト",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "オイル",
+        "value": 4
+      },
+      {
+        "name": "トマト",
+        "value": 4
+      },
+      {
+        "name": "キノコ",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 105,
     "No": 245,
     "Name": "スイクン",
-    "FoodDropRate": 0.277,
-    "SkillRate": 0.026,
+    "FoodDropRate": 0.0027700000000000003,
+    "SkillRate": 0.00026,
     "MainSkill": "おてつだいブースト\n(みず)",
     "Type": "スキル",
     "SpeedOfHelp": 2700,
     "Berries": "みず",
-    "IngredientsA": {
-      "name": "リンゴ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "オイル",
-      "values": [
-        2,
-        3
-      ]
-    },
-    "IngredientsC": {
-      "name": "コーン",
-      "values": [
-        2
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "リンゴ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "リンゴ",
+        "value": 2
+      },
+      {
+        "name": "オイル",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "リンゴ",
+        "value": 4
+      },
+      {
+        "name": "オイル",
+        "value": 3
+      },
+      {
+        "name": "コーン",
+        "value": 2
+      }
+    ]
   },
   {
     "ID": 106,
     "No": 246,
     "Name": "ヨーギラス",
-    "FoodDropRate": 0.238,
-    "SkillRate": 0.041,
+    "FoodDropRate": 0.0023799999999999997,
+    "SkillRate": 0.00041,
     "MainSkill": "げんきチャージS",
     "Type": "食材",
     "SpeedOfHelp": 4800,
     "Berries": "いわ",
-    "IngredientsA": {
-      "name": "ジンジャー",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "大豆",
-      "values": [
-        5,
-        8
-      ]
-    },
-    "IngredientsC": {
-      "name": "ミート",
-      "values": [
-        8
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ジンジャー",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ジンジャー",
+        "value": 5
+      },
+      {
+        "name": "大豆",
+        "value": 5
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ジンジャー",
+        "value": 7
+      },
+      {
+        "name": "大豆",
+        "value": 8
+      },
+      {
+        "name": "ミート",
+        "value": 8
+      }
+    ]
   },
   {
     "ID": 107,
     "No": 247,
     "Name": "サナギラス",
-    "FoodDropRate": 0.247,
-    "SkillRate": 0.045,
+    "FoodDropRate": 0.00247,
+    "SkillRate": 0.00045,
     "MainSkill": "げんきチャージS",
     "Type": "食材",
     "SpeedOfHelp": 3600,
     "Berries": "いわ",
-    "IngredientsA": {
-      "name": "ジンジャー",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "大豆",
-      "values": [
-        5,
-        8
-      ]
-    },
-    "IngredientsC": {
-      "name": "ミート",
-      "values": [
-        8
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ジンジャー",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ジンジャー",
+        "value": 5
+      },
+      {
+        "name": "大豆",
+        "value": 5
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ジンジャー",
+        "value": 7
+      },
+      {
+        "name": "大豆",
+        "value": 8
+      },
+      {
+        "name": "ミート",
+        "value": 8
+      }
+    ]
   },
   {
     "ID": 108,
     "No": 248,
     "Name": "バンギラス",
-    "FoodDropRate": 0.266,
-    "SkillRate": 0.052,
+    "FoodDropRate": 0.00266,
+    "SkillRate": 0.00052,
     "MainSkill": "げんきチャージS",
     "Type": "食材",
     "SpeedOfHelp": 2700,
     "Berries": "あく",
-    "IngredientsA": {
-      "name": "ジンジャー",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "大豆",
-      "values": [
-        5,
-        8
-      ]
-    },
-    "IngredientsC": {
-      "name": "ミート",
-      "values": [
-        8
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ジンジャー",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ジンジャー",
+        "value": 5
+      },
+      {
+        "name": "大豆",
+        "value": 5
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ジンジャー",
+        "value": 7
+      },
+      {
+        "name": "大豆",
+        "value": 8
+      },
+      {
+        "name": "ミート",
+        "value": 8
+      }
+    ]
   },
   {
     "ID": 109,
     "No": 280,
     "Name": "ラルトス",
-    "FoodDropRate": 0.145,
-    "SkillRate": 0.043,
+    "FoodDropRate": 0.00145,
+    "SkillRate": 0.00043,
     "MainSkill": "げんきオールS",
     "Type": "スキル",
     "SpeedOfHelp": 4800,
     "Berries": "エスパー",
-    "IngredientsA": {
-      "name": "リンゴ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "コーン",
-      "values": [
-        1,
-        2
-      ]
-    },
-    "IngredientsC": {
-      "name": "ネギ",
-      "values": [
-        2
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "リンゴ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "リンゴ",
+        "value": 2
+      },
+      {
+        "name": "コーン",
+        "value": 1
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "リンゴ",
+        "value": 4
+      },
+      {
+        "name": "コーン",
+        "value": 2
+      },
+      {
+        "name": "ネギ",
+        "value": 2
+      }
+    ]
   },
   {
     "ID": 110,
     "No": 281,
     "Name": "キルリア",
-    "FoodDropRate": 0.146,
-    "SkillRate": 0.043,
+    "FoodDropRate": 0.00146,
+    "SkillRate": 0.00043,
     "MainSkill": "げんきオールS",
     "Type": "スキル",
     "SpeedOfHelp": 3500,
     "Berries": "エスパー",
-    "IngredientsA": {
-      "name": "リンゴ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "コーン",
-      "values": [
-        1,
-        2
-      ]
-    },
-    "IngredientsC": {
-      "name": "ネギ",
-      "values": [
-        2
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "リンゴ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "リンゴ",
+        "value": 2
+      },
+      {
+        "name": "コーン",
+        "value": 1
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "リンゴ",
+        "value": 4
+      },
+      {
+        "name": "コーン",
+        "value": 2
+      },
+      {
+        "name": "ネギ",
+        "value": 2
+      }
+    ]
   },
   {
     "ID": 111,
     "No": 282,
     "Name": "サーナイト",
-    "FoodDropRate": 0.144,
-    "SkillRate": 0.042,
+    "FoodDropRate": 0.0014399999999999999,
+    "SkillRate": 0.00042,
     "MainSkill": "げんきオールS",
     "Type": "スキル",
     "SpeedOfHelp": 2400,
     "Berries": "エスパー",
-    "IngredientsA": {
-      "name": "リンゴ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "コーン",
-      "values": [
-        1,
-        2
-      ]
-    },
-    "IngredientsC": {
-      "name": "ネギ",
-      "values": [
-        2
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "リンゴ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "リンゴ",
+        "value": 2
+      },
+      {
+        "name": "コーン",
+        "value": 1
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "リンゴ",
+        "value": 4
+      },
+      {
+        "name": "コーン",
+        "value": 2
+      },
+      {
+        "name": "ネギ",
+        "value": 2
+      }
+    ]
   },
   {
     "ID": 112,
     "No": 287,
     "Name": "ナマケロ",
-    "FoodDropRate": 0.216,
-    "SkillRate": 0.019,
+    "FoodDropRate": 0.00216,
+    "SkillRate": 0.00018999999999999998,
     "MainSkill": "食材ゲットS",
     "Type": "きのみ",
     "SpeedOfHelp": 4900,
     "Berries": "ノーマル",
-    "IngredientsA": {
-      "name": "トマト",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ミツ",
-      "values": [
-        2,
-        4
-      ]
-    },
-    "IngredientsC": {
-      "name": "リンゴ",
-      "values": [
-        4
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "トマト",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "トマト",
+        "value": 2
+      },
+      {
+        "name": "ミツ",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "トマト",
+        "value": 4
+      },
+      {
+        "name": "ミツ",
+        "value": 4
+      },
+      {
+        "name": "リンゴ",
+        "value": 4
+      }
+    ]
   },
   {
     "ID": 113,
     "No": 288,
     "Name": "ヤルキモノ",
-    "FoodDropRate": 0.204,
-    "SkillRate": 0.015,
+    "FoodDropRate": 0.0020399999999999997,
+    "SkillRate": 0.00015,
     "MainSkill": "食材ゲットS",
     "Type": "きのみ",
     "SpeedOfHelp": 3200,
     "Berries": "ノーマル",
-    "IngredientsA": {
-      "name": "トマト",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ミツ",
-      "values": [
-        2,
-        4
-      ]
-    },
-    "IngredientsC": {
-      "name": "リンゴ",
-      "values": [
-        4
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "トマト",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "トマト",
+        "value": 2
+      },
+      {
+        "name": "ミツ",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "トマト",
+        "value": 4
+      },
+      {
+        "name": "ミツ",
+        "value": 4
+      },
+      {
+        "name": "リンゴ",
+        "value": 4
+      }
+    ]
   },
   {
     "ID": 114,
     "No": 289,
     "Name": "ケッキング",
-    "FoodDropRate": 0.339,
-    "SkillRate": 0.067,
+    "FoodDropRate": 0.0033900000000000002,
+    "SkillRate": 0.00067,
     "MainSkill": "食材ゲットS",
     "Type": "きのみ",
     "SpeedOfHelp": 3600,
     "Berries": "ノーマル",
-    "IngredientsA": {
-      "name": "トマト",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ミツ",
-      "values": [
-        2,
-        4
-      ]
-    },
-    "IngredientsC": {
-      "name": "リンゴ",
-      "values": [
-        4
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "トマト",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "トマト",
+        "value": 2
+      },
+      {
+        "name": "ミツ",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "トマト",
+        "value": 4
+      },
+      {
+        "name": "ミツ",
+        "value": 4
+      },
+      {
+        "name": "リンゴ",
+        "value": 4
+      }
+    ]
   },
   {
     "ID": 115,
     "No": 302,
     "Name": "ヤミラミ",
-    "FoodDropRate": 0.188,
-    "SkillRate": 0.068,
+    "FoodDropRate": 0.00188,
+    "SkillRate": 0.00068,
     "MainSkill": "ゆめのかけらゲットS\n(ランダム)",
     "Type": "スキル",
     "SpeedOfHelp": 3600,
     "Berries": "あく",
-    "IngredientsA": {
-      "name": "オイル",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "キノコ",
-      "values": [
-        2,
-        3
-      ]
-    },
-    "IngredientsC": {
-      "name": "カカオ",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "オイル",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "オイル",
+        "value": 2
+      },
+      {
+        "name": "キノコ",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "オイル",
+        "value": 4
+      },
+      {
+        "name": "キノコ",
+        "value": 3
+      },
+      {
+        "name": "カカオ",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 116,
     "No": 303,
     "Name": "クチート",
-    "FoodDropRate": 0.204,
-    "SkillRate": 0.038,
+    "FoodDropRate": 0.0020399999999999997,
+    "SkillRate": 0.00037999999999999997,
     "MainSkill": "かいりきバサミ\n(食材セレクトS)",
     "Type": "食材",
     "SpeedOfHelp": 3200,
     "Berries": "はがね",
-    "IngredientsA": {
-      "name": "オイル",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "コーン",
-      "values": [
-        4,
-        6
-      ]
-    },
-    "IngredientsC": {
-      "name": "トマト",
-      "values": [
-        8
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "オイル",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "オイル",
+        "value": 5
+      },
+      {
+        "name": "コーン",
+        "value": 4
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "オイル",
+        "value": 7
+      },
+      {
+        "name": "コーン",
+        "value": 6
+      },
+      {
+        "name": "トマト",
+        "value": 8
+      }
+    ]
   },
   {
     "ID": 117,
     "No": 304,
     "Name": "ココドラ",
-    "FoodDropRate": 0.273,
-    "SkillRate": 0.046,
+    "FoodDropRate": 0.0027300000000000002,
+    "SkillRate": 0.00046,
     "MainSkill": "げんきチャージS",
     "Type": "食材",
     "SpeedOfHelp": 5700,
     "Berries": "はがね",
-    "IngredientsA": {
-      "name": "ミート",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "コーヒー",
-      "values": [
-        3,
-        5
-      ]
-    },
-    "IngredientsC": {
-      "name": "大豆",
-      "values": [
-        7
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミート",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミート",
+        "value": 5
+      },
+      {
+        "name": "コーヒー",
+        "value": 3
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミート",
+        "value": 7
+      },
+      {
+        "name": "コーヒー",
+        "value": 5
+      },
+      {
+        "name": "大豆",
+        "value": 7
+      }
+    ]
   },
   {
     "ID": 118,
     "No": 305,
     "Name": "コドラ",
-    "FoodDropRate": 0.277,
-    "SkillRate": 0.048,
+    "FoodDropRate": 0.0027700000000000003,
+    "SkillRate": 0.00048,
     "MainSkill": "げんきチャージS",
     "Type": "食材",
     "SpeedOfHelp": 4200,
     "Berries": "はがね",
-    "IngredientsA": {
-      "name": "ミート",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "コーヒー",
-      "values": [
-        3,
-        5
-      ]
-    },
-    "IngredientsC": {
-      "name": "大豆",
-      "values": [
-        7
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミート",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミート",
+        "value": 5
+      },
+      {
+        "name": "コーヒー",
+        "value": 3
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミート",
+        "value": 7
+      },
+      {
+        "name": "コーヒー",
+        "value": 5
+      },
+      {
+        "name": "大豆",
+        "value": 7
+      }
+    ]
   },
   {
     "ID": 119,
     "No": 306,
     "Name": "ボスゴドラ",
-    "FoodDropRate": 0.285,
-    "SkillRate": 0.052,
+    "FoodDropRate": 0.0028499999999999997,
+    "SkillRate": 0.00052,
     "MainSkill": "げんきチャージS",
     "Type": "食材",
     "SpeedOfHelp": 3000,
     "Berries": "はがね",
-    "IngredientsA": {
-      "name": "ミート",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "コーヒー",
-      "values": [
-        3,
-        5
-      ]
-    },
-    "IngredientsC": {
-      "name": "大豆",
-      "values": [
-        7
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミート",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミート",
+        "value": 5
+      },
+      {
+        "name": "コーヒー",
+        "value": 3
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミート",
+        "value": 7
+      },
+      {
+        "name": "コーヒー",
+        "value": 5
+      },
+      {
+        "name": "大豆",
+        "value": 7
+      }
+    ]
   },
   {
     "ID": 120,
     "No": 316,
     "Name": "ゴクリン",
-    "FoodDropRate": 0.214,
-    "SkillRate": 0.063,
+    "FoodDropRate": 0.00214,
+    "SkillRate": 0.00063,
     "MainSkill": "ゆめのかけらゲットS\n(ランダム)",
     "Type": "スキル",
     "SpeedOfHelp": 5900,
     "Berries": "どく",
-    "IngredientsA": {
-      "name": "大豆",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "キノコ",
-      "values": [
-        1,
-        2
-      ]
-    },
-    "IngredientsC": {
-      "name": "ミツ",
-      "values": [
-        4
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "大豆",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "大豆",
+        "value": 2
+      },
+      {
+        "name": "キノコ",
+        "value": 1
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "大豆",
+        "value": 4
+      },
+      {
+        "name": "キノコ",
+        "value": 2
+      },
+      {
+        "name": "ミツ",
+        "value": 4
+      }
+    ]
   },
   {
     "ID": 121,
     "No": 317,
     "Name": "マルノーム",
-    "FoodDropRate": 0.21,
-    "SkillRate": 0.07,
+    "FoodDropRate": 0.0021,
+    "SkillRate": 0.0007000000000000001,
     "MainSkill": "ゆめのかけらゲットS\n(ランダム)",
     "Type": "スキル",
     "SpeedOfHelp": 3500,
     "Berries": "どく",
-    "IngredientsA": {
-      "name": "大豆",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "キノコ",
-      "values": [
-        1,
-        2
-      ]
-    },
-    "IngredientsC": {
-      "name": "ミツ",
-      "values": [
-        4
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "大豆",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "大豆",
+        "value": 2
+      },
+      {
+        "name": "キノコ",
+        "value": 1
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "大豆",
+        "value": 4
+      },
+      {
+        "name": "キノコ",
+        "value": 2
+      },
+      {
+        "name": "ミツ",
+        "value": 4
+      }
+    ]
   },
   {
     "ID": 122,
     "No": 333,
     "Name": "チルット",
-    "FoodDropRate": 0.177,
-    "SkillRate": 0.032,
+    "FoodDropRate": 0.0017699999999999999,
+    "SkillRate": 0.00032,
     "MainSkill": "げんきチャージS",
     "Type": "きのみ",
     "SpeedOfHelp": 4200,
     "Berries": "ひこう",
-    "IngredientsA": {
-      "name": "タマゴ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "大豆",
-      "values": [
-        3,
-        4
-      ]
-    },
-    "IngredientsC": {
-      "name": "リンゴ",
-      "values": [
-        5
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "タマゴ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "タマゴ",
+        "value": 2
+      },
+      {
+        "name": "大豆",
+        "value": 3
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "タマゴ",
+        "value": 4
+      },
+      {
+        "name": "大豆",
+        "value": 4
+      },
+      {
+        "name": "リンゴ",
+        "value": 5
+      }
+    ]
   },
   {
     "ID": 123,
     "No": 334,
     "Name": "チルタリス",
-    "FoodDropRate": 0.258,
-    "SkillRate": 0.061,
+    "FoodDropRate": 0.0025800000000000003,
+    "SkillRate": 0.00061,
     "MainSkill": "げんきチャージS",
     "Type": "きのみ",
     "SpeedOfHelp": 3500,
     "Berries": "ひこう",
-    "IngredientsA": {
-      "name": "タマゴ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "大豆",
-      "values": [
-        3,
-        4
-      ]
-    },
-    "IngredientsC": {
-      "name": "リンゴ",
-      "values": [
-        5
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "タマゴ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "タマゴ",
+        "value": 2
+      },
+      {
+        "name": "大豆",
+        "value": 3
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "タマゴ",
+        "value": 4
+      },
+      {
+        "name": "大豆",
+        "value": 4
+      },
+      {
+        "name": "リンゴ",
+        "value": 5
+      }
+    ]
   },
   {
     "ID": 124,
     "No": 353,
     "Name": "カゲボウズ",
-    "FoodDropRate": 0.171,
-    "SkillRate": 0.026,
+    "FoodDropRate": 0.0017100000000000001,
+    "SkillRate": 0.00026,
     "MainSkill": "エナジーチャージS\n(ランダム)",
     "Type": "きのみ",
     "SpeedOfHelp": 3900,
     "Berries": "ゴースト",
-    "IngredientsA": {
-      "name": "オイル",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ジンジャー",
-      "values": [
-        2,
-        4
-      ]
-    },
-    "IngredientsC": {
-      "name": "キノコ",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "オイル",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "オイル",
+        "value": 2
+      },
+      {
+        "name": "ジンジャー",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "オイル",
+        "value": 4
+      },
+      {
+        "name": "ジンジャー",
+        "value": 4
+      },
+      {
+        "name": "キノコ",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 125,
     "No": 354,
     "Name": "ジュペッタ",
-    "FoodDropRate": 0.179,
-    "SkillRate": 0.033,
+    "FoodDropRate": 0.00179,
+    "SkillRate": 0.00033,
     "MainSkill": "エナジーチャージS\n(ランダム)",
     "Type": "きのみ",
     "SpeedOfHelp": 2600,
     "Berries": "ゴースト",
-    "IngredientsA": {
-      "name": "オイル",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ジンジャー",
-      "values": [
-        2,
-        4
-      ]
-    },
-    "IngredientsC": {
-      "name": "キノコ",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "オイル",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "オイル",
+        "value": 2
+      },
+      {
+        "name": "ジンジャー",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "オイル",
+        "value": 4
+      },
+      {
+        "name": "ジンジャー",
+        "value": 4
+      },
+      {
+        "name": "キノコ",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 126,
     "No": 359,
     "Name": "アブソル",
-    "FoodDropRate": 0.178,
-    "SkillRate": 0.038,
+    "FoodDropRate": 0.00178,
+    "SkillRate": 0.00037999999999999997,
     "MainSkill": "エナジーチャージS",
     "Type": "食材",
     "SpeedOfHelp": 3100,
     "Berries": "あく",
-    "IngredientsA": {
-      "name": "カカオ",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "リンゴ",
-      "values": [
-        8,
-        12
-      ]
-    },
-    "IngredientsC": {
-      "name": "キノコ",
-      "values": [
-        7
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "カカオ",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "カカオ",
+        "value": 5
+      },
+      {
+        "name": "リンゴ",
+        "value": 8
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "カカオ",
+        "value": 7
+      },
+      {
+        "name": "リンゴ",
+        "value": 12
+      },
+      {
+        "name": "キノコ",
+        "value": 7
+      }
+    ]
   },
   {
     "ID": 127,
     "No": 360,
     "Name": "ソーナノ",
-    "FoodDropRate": 0.213,
-    "SkillRate": 0.059,
+    "FoodDropRate": 0.00213,
+    "SkillRate": 0.0005899999999999999,
     "MainSkill": "げんきエールS",
     "Type": "スキル",
     "SpeedOfHelp": 5800,
     "Berries": "エスパー",
-    "IngredientsA": {
-      "name": "リンゴ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "キノコ",
-      "values": [
-        1,
-        2
-      ]
-    },
-    "IngredientsC": {
-      "name": "オイル",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "リンゴ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "リンゴ",
+        "value": 2
+      },
+      {
+        "name": "キノコ",
+        "value": 1
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "リンゴ",
+        "value": 4
+      },
+      {
+        "name": "キノコ",
+        "value": 2
+      },
+      {
+        "name": "オイル",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 128,
     "No": 363,
     "Name": "タマザラシ",
-    "FoodDropRate": 0.224,
-    "SkillRate": 0.023,
+    "FoodDropRate": 0.0022400000000000002,
+    "SkillRate": 0.00023,
     "MainSkill": "食材ゲットS",
     "Type": "きのみ",
     "SpeedOfHelp": 5600,
     "Berries": "こおり",
-    "IngredientsA": {
-      "name": "オイル",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ミート",
-      "values": [
-        3,
-        4
-      ]
-    },
-    "IngredientsC": {
-      "name": "ジンジャー",
-      "values": [
-        4
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "オイル",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "オイル",
+        "value": 2
+      },
+      {
+        "name": "ミート",
+        "value": 3
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "オイル",
+        "value": 4
+      },
+      {
+        "name": "ミート",
+        "value": 4
+      },
+      {
+        "name": "ジンジャー",
+        "value": 4
+      }
+    ]
   },
   {
     "ID": 129,
     "No": 364,
     "Name": "トドグラー",
-    "FoodDropRate": 0.221,
-    "SkillRate": 0.021,
+    "FoodDropRate": 0.00221,
+    "SkillRate": 0.00021,
     "MainSkill": "食材ゲットS",
     "Type": "きのみ",
     "SpeedOfHelp": 4000,
     "Berries": "こおり",
-    "IngredientsA": {
-      "name": "オイル",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ミート",
-      "values": [
-        3,
-        4
-      ]
-    },
-    "IngredientsC": {
-      "name": "ジンジャー",
-      "values": [
-        4
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "オイル",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "オイル",
+        "value": 2
+      },
+      {
+        "name": "ミート",
+        "value": 3
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "オイル",
+        "value": 4
+      },
+      {
+        "name": "ミート",
+        "value": 4
+      },
+      {
+        "name": "ジンジャー",
+        "value": 4
+      }
+    ]
   },
   {
     "ID": 130,
     "No": 365,
     "Name": "トドゼルガ",
-    "FoodDropRate": 0.223,
-    "SkillRate": 0.022,
+    "FoodDropRate": 0.00223,
+    "SkillRate": 0.00021999999999999998,
     "MainSkill": "食材ゲットS",
     "Type": "きのみ",
     "SpeedOfHelp": 3000,
     "Berries": "こおり",
-    "IngredientsA": {
-      "name": "オイル",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ミート",
-      "values": [
-        3,
-        4
-      ]
-    },
-    "IngredientsC": {
-      "name": "ジンジャー",
-      "values": [
-        4
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "オイル",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "オイル",
+        "value": 2
+      },
+      {
+        "name": "ミート",
+        "value": 3
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "オイル",
+        "value": 4
+      },
+      {
+        "name": "ミート",
+        "value": 4
+      },
+      {
+        "name": "ジンジャー",
+        "value": 4
+      }
+    ]
   },
   {
     "ID": 131,
     "No": 403,
     "Name": "コリンク",
-    "FoodDropRate": 0.181,
-    "SkillRate": 0.018,
+    "FoodDropRate": 0.00181,
+    "SkillRate": 0.00017999999999999998,
     "MainSkill": "料理パワーアップS",
     "Type": "食材",
     "SpeedOfHelp": 4400,
     "Berries": "でんき",
-    "IngredientsA": {
-      "name": "トマト",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "オイル",
-      "values": [
-        4,
-        7
-      ]
-    },
-    "IngredientsC": {
-      "name": "コーヒー",
-      "values": [
-        5
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "トマト",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "トマト",
+        "value": 5
+      },
+      {
+        "name": "オイル",
+        "value": 4
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "トマト",
+        "value": 7
+      },
+      {
+        "name": "オイル",
+        "value": 7
+      },
+      {
+        "name": "コーヒー",
+        "value": 5
+      }
+    ]
   },
   {
     "ID": 132,
     "No": 404,
     "Name": "ルクシオ",
-    "FoodDropRate": 0.182,
-    "SkillRate": 0.018,
+    "FoodDropRate": 0.00182,
+    "SkillRate": 0.00017999999999999998,
     "MainSkill": "料理パワーアップS",
     "Type": "食材",
     "SpeedOfHelp": 3200,
     "Berries": "でんき",
-    "IngredientsA": {
-      "name": "トマト",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "オイル",
-      "values": [
-        4,
-        7
-      ]
-    },
-    "IngredientsC": {
-      "name": "コーヒー",
-      "values": [
-        5
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "トマト",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "トマト",
+        "value": 5
+      },
+      {
+        "name": "オイル",
+        "value": 4
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "トマト",
+        "value": 7
+      },
+      {
+        "name": "オイル",
+        "value": 7
+      },
+      {
+        "name": "コーヒー",
+        "value": 5
+      }
+    ]
   },
   {
     "ID": 133,
     "No": 405,
     "Name": "レントラー",
-    "FoodDropRate": 0.2,
-    "SkillRate": 0.023,
+    "FoodDropRate": 0.002,
+    "SkillRate": 0.00023,
     "MainSkill": "料理パワーアップS",
     "Type": "食材",
     "SpeedOfHelp": 2400,
     "Berries": "でんき",
-    "IngredientsA": {
-      "name": "トマト",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "オイル",
-      "values": [
-        4,
-        7
-      ]
-    },
-    "IngredientsC": {
-      "name": "コーヒー",
-      "values": [
-        5
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "トマト",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "トマト",
+        "value": 5
+      },
+      {
+        "name": "オイル",
+        "value": 4
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "トマト",
+        "value": 7
+      },
+      {
+        "name": "オイル",
+        "value": 7
+      },
+      {
+        "name": "コーヒー",
+        "value": 5
+      }
+    ]
   },
   {
     "ID": 134,
     "No": 425,
     "Name": "フワンテ",
-    "FoodDropRate": 0.137,
-    "SkillRate": 0.069,
+    "FoodDropRate": 0.0013700000000000001,
+    "SkillRate": 0.0006900000000000001,
     "MainSkill": "たくわえる\n(エナジーチャージS)",
     "Type": "スキル",
     "SpeedOfHelp": 4800,
     "Berries": "ゴースト",
-    "IngredientsA": {
-      "name": "コーン",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "オイル",
-      "values": [
-        3,
-        4
-      ]
-    },
-    "IngredientsC": {
-      "name": "トマト",
-      "values": [
-        4
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "コーン",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "コーン",
+        "value": 2
+      },
+      {
+        "name": "オイル",
+        "value": 3
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "コーン",
+        "value": 4
+      },
+      {
+        "name": "オイル",
+        "value": 4
+      },
+      {
+        "name": "トマト",
+        "value": 4
+      }
+    ]
   },
   {
     "ID": 135,
     "No": 426,
     "Name": "フワライド",
-    "FoodDropRate": 0.128,
-    "SkillRate": 0.061,
+    "FoodDropRate": 0.00128,
+    "SkillRate": 0.00061,
     "MainSkill": "たくわえる\n(エナジーチャージS)",
     "Type": "スキル",
     "SpeedOfHelp": 2500,
     "Berries": "ゴースト",
-    "IngredientsA": {
-      "name": "コーン",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "オイル",
-      "values": [
-        3,
-        4
-      ]
-    },
-    "IngredientsC": {
-      "name": "トマト",
-      "values": [
-        4
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "コーン",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "コーン",
+        "value": 2
+      },
+      {
+        "name": "オイル",
+        "value": 3
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "コーン",
+        "value": 4
+      },
+      {
+        "name": "オイル",
+        "value": 4
+      },
+      {
+        "name": "トマト",
+        "value": 4
+      }
+    ]
   },
   {
     "ID": 136,
     "No": 430,
     "Name": "ドンカラス",
-    "FoodDropRate": 0.143,
-    "SkillRate": 0.067,
+    "FoodDropRate": 0.0014299999999999998,
+    "SkillRate": 0.00067,
     "MainSkill": "きょううん\n(食材セレクトS)",
     "Type": "スキル",
     "SpeedOfHelp": 3200,
     "Berries": "あく",
-    "IngredientsA": {
-      "name": "コーヒー",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "大豆",
-      "values": [
-        3,
-        6
-      ]
-    },
-    "IngredientsC": {
-      "name": "ハーブ",
-      "values": [
-        4
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "コーヒー",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "コーヒー",
+        "value": 2
+      },
+      {
+        "name": "大豆",
+        "value": 3
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "コーヒー",
+        "value": 4
+      },
+      {
+        "name": "大豆",
+        "value": 6
+      },
+      {
+        "name": "ハーブ",
+        "value": 4
+      }
+    ]
   },
   {
     "ID": 137,
     "No": 438,
     "Name": "ウソハチ",
-    "FoodDropRate": 0.189,
-    "SkillRate": 0.061,
+    "FoodDropRate": 0.00189,
+    "SkillRate": 0.00061,
     "MainSkill": "エナジーチャージM",
     "Type": "スキル",
     "SpeedOfHelp": 6300,
     "Berries": "いわ",
-    "IngredientsA": {
-      "name": "トマト",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "大豆",
-      "values": [
-        2,
-        4
-      ]
-    },
-    "IngredientsC": {
-      "name": "キノコ",
-      "values": [
-        2
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "トマト",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "トマト",
+        "value": 2
+      },
+      {
+        "name": "大豆",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "トマト",
+        "value": 4
+      },
+      {
+        "name": "大豆",
+        "value": 4
+      },
+      {
+        "name": "キノコ",
+        "value": 2
+      }
+    ]
   },
   {
     "ID": 138,
     "No": 439,
     "Name": "マネネ",
-    "FoodDropRate": 0.201,
-    "SkillRate": 0.032,
+    "FoodDropRate": 0.00201,
+    "SkillRate": 0.00032,
     "MainSkill": "ものまね\n(スキルコピー)",
     "Type": "食材",
     "SpeedOfHelp": 4300,
     "Berries": "エスパー",
-    "IngredientsA": {
-      "name": "トマト",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "ポテト",
-      "values": [
-        4,
-        6
-      ]
-    },
-    "IngredientsC": {
-      "name": "ネギ",
-      "values": [
-        4
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "トマト",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "トマト",
+        "value": 5
+      },
+      {
+        "name": "ポテト",
+        "value": 4
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "トマト",
+        "value": 7
+      },
+      {
+        "name": "ポテト",
+        "value": 6
+      },
+      {
+        "name": "ネギ",
+        "value": 4
+      }
+    ]
   },
   {
     "ID": 139,
     "No": 440,
     "Name": "ピンプク",
-    "FoodDropRate": 0.21,
-    "SkillRate": 0.013,
+    "FoodDropRate": 0.0021,
+    "SkillRate": 0.00013,
     "MainSkill": "げんきオールS",
     "Type": "食材",
     "SpeedOfHelp": 4500,
     "Berries": "ノーマル",
-    "IngredientsA": {
-      "name": "タマゴ",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "ポテト",
-      "values": [
-        4,
-        7
-      ]
-    },
-    "IngredientsC": {
-      "name": "ミツ",
-      "values": [
-        8
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "タマゴ",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "タマゴ",
+        "value": 5
+      },
+      {
+        "name": "ポテト",
+        "value": 4
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "タマゴ",
+        "value": 7
+      },
+      {
+        "name": "ポテト",
+        "value": 7
+      },
+      {
+        "name": "ミツ",
+        "value": 8
+      }
+    ]
   },
   {
     "ID": 140,
     "No": 447,
     "Name": "リオル",
-    "FoodDropRate": 0.126,
-    "SkillRate": 0.038,
+    "FoodDropRate": 0.00126,
+    "SkillRate": 0.00037999999999999997,
     "MainSkill": "ゆめのかけらゲットS",
     "Type": "スキル",
     "SpeedOfHelp": 4200,
     "Berries": "かくとう",
-    "IngredientsA": {
-      "name": "オイル",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ポテト",
-      "values": [
-        2,
-        4
-      ]
-    },
-    "IngredientsC": {
-      "name": "タマゴ",
-      "values": [
-        4
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "オイル",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "オイル",
+        "value": 2
+      },
+      {
+        "name": "ポテト",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "オイル",
+        "value": 4
+      },
+      {
+        "name": "ポテト",
+        "value": 4
+      },
+      {
+        "name": "タマゴ",
+        "value": 4
+      }
+    ]
   },
   {
     "ID": 141,
     "No": 448,
     "Name": "ルカリオ",
-    "FoodDropRate": 0.15,
-    "SkillRate": 0.051,
+    "FoodDropRate": 0.0015,
+    "SkillRate": 0.0005099999999999999,
     "MainSkill": "ゆめのかけらゲットS",
     "Type": "スキル",
     "SpeedOfHelp": 2600,
     "Berries": "かくとう",
-    "IngredientsA": {
-      "name": "オイル",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ポテト",
-      "values": [
-        2,
-        4
-      ]
-    },
-    "IngredientsC": {
-      "name": "タマゴ",
-      "values": [
-        4
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "オイル",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "オイル",
+        "value": 2
+      },
+      {
+        "name": "ポテト",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "オイル",
+        "value": 4
+      },
+      {
+        "name": "ポテト",
+        "value": 4
+      },
+      {
+        "name": "タマゴ",
+        "value": 4
+      }
+    ]
   },
   {
     "ID": 142,
     "No": 453,
     "Name": "グレッグル",
-    "FoodDropRate": 0.228,
-    "SkillRate": 0.042,
+    "FoodDropRate": 0.00228,
+    "SkillRate": 0.00042,
     "MainSkill": "エナジーチャージS",
     "Type": "食材",
     "SpeedOfHelp": 5600,
     "Berries": "どく",
-    "IngredientsA": {
-      "name": "オイル",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "ミート",
-      "values": [
-        5,
-        8
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "オイル",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "オイル",
+        "value": 5
+      },
+      {
+        "name": "ミート",
+        "value": 5
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "オイル",
+        "value": 7
+      },
+      {
+        "name": "ミート",
+        "value": 8
+      },
+      {
+        "name": "",
+        "value": 0
+      }
+    ]
   },
   {
     "ID": 143,
     "No": 454,
     "Name": "ドクロッグ",
-    "FoodDropRate": 0.229,
-    "SkillRate": 0.043,
+    "FoodDropRate": 0.00229,
+    "SkillRate": 0.00043,
     "MainSkill": "エナジーチャージS",
     "Type": "食材",
     "SpeedOfHelp": 3400,
     "Berries": "どく",
-    "IngredientsA": {
-      "name": "オイル",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "ミート",
-      "values": [
-        5,
-        8
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "オイル",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "オイル",
+        "value": 5
+      },
+      {
+        "name": "ミート",
+        "value": 5
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "オイル",
+        "value": 7
+      },
+      {
+        "name": "ミート",
+        "value": 8
+      },
+      {
+        "name": "",
+        "value": 0
+      }
+    ]
   },
   {
     "ID": 144,
     "No": 459,
     "Name": "ユキカブリ",
-    "FoodDropRate": 0.251,
-    "SkillRate": 0.044,
+    "FoodDropRate": 0.00251,
+    "SkillRate": 0.00043999999999999996,
     "MainSkill": "エナジーチャージS\n(ランダム)",
     "Type": "食材",
     "SpeedOfHelp": 5600,
     "Berries": "こおり",
-    "IngredientsA": {
-      "name": "トマト",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "タマゴ",
-      "values": [
-        4,
-        7
-      ]
-    },
-    "IngredientsC": {
-      "name": "キノコ",
-      "values": [
-        5
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "トマト",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "トマト",
+        "value": 5
+      },
+      {
+        "name": "タマゴ",
+        "value": 4
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "トマト",
+        "value": 7
+      },
+      {
+        "name": "タマゴ",
+        "value": 7
+      },
+      {
+        "name": "キノコ",
+        "value": 5
+      }
+    ]
   },
   {
     "ID": 145,
     "No": 460,
     "Name": "ユキノオー",
-    "FoodDropRate": 0.25,
-    "SkillRate": 0.044,
+    "FoodDropRate": 0.0025,
+    "SkillRate": 0.00043999999999999996,
     "MainSkill": "エナジーチャージS\n(ランダム)",
     "Type": "食材",
     "SpeedOfHelp": 3000,
     "Berries": "こおり",
-    "IngredientsA": {
-      "name": "トマト",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "タマゴ",
-      "values": [
-        4,
-        7
-      ]
-    },
-    "IngredientsC": {
-      "name": "キノコ",
-      "values": [
-        5
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "トマト",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "トマト",
+        "value": 5
+      },
+      {
+        "name": "タマゴ",
+        "value": 4
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "トマト",
+        "value": 7
+      },
+      {
+        "name": "タマゴ",
+        "value": 7
+      },
+      {
+        "name": "キノコ",
+        "value": 5
+      }
+    ]
   },
   {
     "ID": 146,
     "No": 461,
     "Name": "マニューラ",
-    "FoodDropRate": 0.251,
-    "SkillRate": 0.018,
+    "FoodDropRate": 0.00251,
+    "SkillRate": 0.00017999999999999998,
     "MainSkill": "料理チャンスS",
     "Type": "きのみ",
     "SpeedOfHelp": 2700,
     "Berries": "あく",
-    "IngredientsA": {
-      "name": "ミート",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "タマゴ",
-      "values": [
-        2,
-        3
-      ]
-    },
-    "IngredientsC": {
-      "name": "大豆",
-      "values": [
-        4
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミート",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミート",
+        "value": 2
+      },
+      {
+        "name": "タマゴ",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミート",
+        "value": 4
+      },
+      {
+        "name": "タマゴ",
+        "value": 3
+      },
+      {
+        "name": "大豆",
+        "value": 4
+      }
+    ]
   },
   {
     "ID": 147,
     "No": 462,
     "Name": "ジバコイル",
-    "FoodDropRate": 0.179,
-    "SkillRate": 0.062,
+    "FoodDropRate": 0.00179,
+    "SkillRate": 0.00062,
     "MainSkill": "料理パワーアップS",
     "Type": "スキル",
     "SpeedOfHelp": 3100,
     "Berries": "はがね",
-    "IngredientsA": {
-      "name": "オイル",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ハーブ",
-      "values": [
-        2,
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "オイル",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "オイル",
+        "value": 2
+      },
+      {
+        "name": "ハーブ",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "オイル",
+        "value": 4
+      },
+      {
+        "name": "ハーブ",
+        "value": 3
+      },
+      {
+        "name": "",
+        "value": 0
+      }
+    ]
   },
   {
     "ID": 148,
     "No": 468,
     "Name": "トゲキッス",
-    "FoodDropRate": 0.158,
-    "SkillRate": 0.053,
+    "FoodDropRate": 0.00158,
+    "SkillRate": 0.00053,
     "MainSkill": "ゆびをふる",
     "Type": "スキル",
     "SpeedOfHelp": 2600,
     "Berries": "フェアリー",
-    "IngredientsA": {
-      "name": "タマゴ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ジンジャー",
-      "values": [
-        2,
-        4
-      ]
-    },
-    "IngredientsC": {
-      "name": "カカオ",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "タマゴ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "タマゴ",
+        "value": 2
+      },
+      {
+        "name": "ジンジャー",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "タマゴ",
+        "value": 4
+      },
+      {
+        "name": "ジンジャー",
+        "value": 4
+      },
+      {
+        "name": "カカオ",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 149,
     "No": 470,
     "Name": "リーフィア",
-    "FoodDropRate": 0.205,
-    "SkillRate": 0.059,
+    "FoodDropRate": 0.0020499999999999997,
+    "SkillRate": 0.0005899999999999999,
     "MainSkill": "げんきエールS",
     "Type": "スキル",
     "SpeedOfHelp": 3000,
     "Berries": "くさ",
-    "IngredientsA": {
-      "name": "ミルク",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "カカオ",
-      "values": [
-        1,
-        2
-      ]
-    },
-    "IngredientsC": {
-      "name": "ミート",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミルク",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミルク",
+        "value": 2
+      },
+      {
+        "name": "カカオ",
+        "value": 1
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミルク",
+        "value": 4
+      },
+      {
+        "name": "カカオ",
+        "value": 2
+      },
+      {
+        "name": "ミート",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 150,
     "No": 471,
     "Name": "グレイシア",
-    "FoodDropRate": 0.219,
-    "SkillRate": 0.063,
+    "FoodDropRate": 0.00219,
+    "SkillRate": 0.00063,
     "MainSkill": "料理パワーアップS",
     "Type": "スキル",
     "SpeedOfHelp": 3200,
     "Berries": "こおり",
-    "IngredientsA": {
-      "name": "ミルク",
-      "values": []
-    },
-    "IngredientsB": {
-      "name": "カカオ",
-      "values": []
-    },
-    "IngredientsC": {
-      "name": "ミート",
-      "values": []
-    }
+    "IngredientsA": [
+      {
+        "name": "ミルク",
+        "value": 0
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミルク",
+        "value": 0
+      },
+      {
+        "name": "カカオ",
+        "value": 0
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミルク",
+        "value": 0
+      },
+      {
+        "name": "カカオ",
+        "value": 0
+      },
+      {
+        "name": "ミート",
+        "value": 0
+      }
+    ]
   },
   {
     "ID": 151,
     "No": 475,
     "Name": "エルレイド",
-    "FoodDropRate": 0.147,
-    "SkillRate": 0.054,
+    "FoodDropRate": 0.00147,
+    "SkillRate": 0.00054,
     "MainSkill": "おてつだいサポートS",
     "Type": "スキル",
     "SpeedOfHelp": 2400,
     "Berries": "かくとう",
-    "IngredientsA": {
-      "name": "リンゴ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "コーン",
-      "values": [
-        1,
-        2
-      ]
-    },
-    "IngredientsC": {
-      "name": "ネギ",
-      "values": [
-        2
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "リンゴ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "リンゴ",
+        "value": 2
+      },
+      {
+        "name": "コーン",
+        "value": 1
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "リンゴ",
+        "value": 4
+      },
+      {
+        "name": "コーン",
+        "value": 2
+      },
+      {
+        "name": "ネギ",
+        "value": 2
+      }
+    ]
   },
   {
     "ID": 152,
     "No": 488,
     "Name": "クレセリア",
-    "FoodDropRate": 0.239,
-    "SkillRate": 0.041,
+    "FoodDropRate": 0.0023899999999999998,
+    "SkillRate": 0.00041,
     "MainSkill": "みかづきのいのり\n(げんきオールS)",
     "Type": "スキル",
     "SpeedOfHelp": 2300,
     "Berries": "エスパー",
-    "IngredientsA": {
-      "name": "ジンジャー",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "カカオ",
-      "values": [
-        2,
-        3
-      ]
-    },
-    "IngredientsC": {
-      "name": "トマト",
-      "values": [
-        4
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ジンジャー",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ジンジャー",
+        "value": 2
+      },
+      {
+        "name": "カカオ",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ジンジャー",
+        "value": 4
+      },
+      {
+        "name": "カカオ",
+        "value": 3
+      },
+      {
+        "name": "トマト",
+        "value": 4
+      }
+    ]
   },
   {
     "ID": 153,
     "No": 491,
     "Name": "ダークライ",
-    "FoodDropRate": 0.192,
-    "SkillRate": 0.023,
+    "FoodDropRate": 0.00192,
+    "SkillRate": 0.00023,
     "MainSkill": "ナイトメア\n(エナジーチャージM)",
     "Type": "オール",
     "SpeedOfHelp": 2900,
     "Berries": "あく",
-    "IngredientsA": {
-      "name": "-",
-      "values": []
-    },
-    "IngredientsB": {
-      "name": "-",
-      "values": []
-    },
-    "IngredientsC": {
-      "name": "-",
-      "values": []
-    }
+    "IngredientsA": [
+      {
+        "name": "-",
+        "value": 0
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "-",
+        "value": 0
+      },
+      {
+        "name": "-",
+        "value": 0
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "-",
+        "value": 0
+      },
+      {
+        "name": "-",
+        "value": 0
+      },
+      {
+        "name": "-",
+        "value": 0
+      }
+    ]
   },
   {
     "ID": 154,
     "No": 517,
     "Name": "ムンナ",
-    "FoodDropRate": 0.197,
-    "SkillRate": 0.043,
+    "FoodDropRate": 0.00197,
+    "SkillRate": 0.00043,
     "MainSkill": "ゆめのかけらゲットS\n(ランダム)",
     "Type": "きのみ",
     "SpeedOfHelp": 5700,
     "Berries": "エスパー",
-    "IngredientsA": {
-      "name": "ミルク",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ミツ",
-      "values": [
-        2,
-        3
-      ]
-    },
-    "IngredientsC": {
-      "name": "コーヒー",
-      "values": [
-        2
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミルク",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミルク",
+        "value": 2
+      },
+      {
+        "name": "ミツ",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミルク",
+        "value": 4
+      },
+      {
+        "name": "ミツ",
+        "value": 3
+      },
+      {
+        "name": "コーヒー",
+        "value": 2
+      }
+    ]
   },
   {
     "ID": 155,
     "No": 518,
     "Name": "ムシャーナ",
-    "FoodDropRate": 0.188,
-    "SkillRate": 0.041,
+    "FoodDropRate": 0.00188,
+    "SkillRate": 0.00041,
     "MainSkill": "ゆめのかけらゲットS\n(ランダム)",
     "Type": "きのみ",
     "SpeedOfHelp": 2800,
     "Berries": "エスパー",
-    "IngredientsA": {
-      "name": "ミルク",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ミツ",
-      "values": [
-        2,
-        3
-      ]
-    },
-    "IngredientsC": {
-      "name": "コーヒー",
-      "values": [
-        2
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミルク",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミルク",
+        "value": 2
+      },
+      {
+        "name": "ミツ",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミルク",
+        "value": 4
+      },
+      {
+        "name": "ミツ",
+        "value": 3
+      },
+      {
+        "name": "コーヒー",
+        "value": 2
+      }
+    ]
   },
   {
     "ID": 156,
     "No": 627,
     "Name": "ワシボン",
-    "FoodDropRate": 0.125,
-    "SkillRate": 0.031,
+    "FoodDropRate": 0.00125,
+    "SkillRate": 0.00031,
     "MainSkill": "きのみバースト",
     "Type": "スキル",
     "SpeedOfHelp": 3800,
     "Berries": "ひこう",
-    "IngredientsA": {
-      "name": "ミート",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "コーン",
-      "values": [
-        2,
-        3
-      ]
-    },
-    "IngredientsC": {
-      "name": "コーヒー",
-      "values": [
-        2
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミート",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミート",
+        "value": 2
+      },
+      {
+        "name": "コーン",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミート",
+        "value": 4
+      },
+      {
+        "name": "コーン",
+        "value": 3
+      },
+      {
+        "name": "コーヒー",
+        "value": 2
+      }
+    ]
   },
   {
     "ID": 157,
     "No": 628,
     "Name": "ウォーグル",
-    "FoodDropRate": 0.121,
-    "SkillRate": 0.032,
+    "FoodDropRate": 0.00121,
+    "SkillRate": 0.00032,
     "MainSkill": "きのみバースト",
     "Type": "スキル",
     "SpeedOfHelp": 2400,
     "Berries": "ひこう",
-    "IngredientsA": {
-      "name": "ミート",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "コーン",
-      "values": [
-        2,
-        3
-      ]
-    },
-    "IngredientsC": {
-      "name": "コーヒー",
-      "values": [
-        2
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミート",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミート",
+        "value": 2
+      },
+      {
+        "name": "コーン",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミート",
+        "value": 4
+      },
+      {
+        "name": "コーン",
+        "value": 3
+      },
+      {
+        "name": "コーヒー",
+        "value": 2
+      }
+    ]
   },
   {
     "ID": 158,
     "No": 700,
     "Name": "ニンフィア",
-    "FoodDropRate": 0.178,
-    "SkillRate": 0.04,
+    "FoodDropRate": 0.00178,
+    "SkillRate": 0.0004,
     "MainSkill": "げんきオールS",
     "Type": "スキル",
     "SpeedOfHelp": 2600,
     "Berries": "フェアリー",
-    "IngredientsA": {
-      "name": "ミルク",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "カカオ",
-      "values": [
-        1,
-        2
-      ]
-    },
-    "IngredientsC": {
-      "name": "ミート",
-      "values": [
-        3
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ミルク",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ミルク",
+        "value": 2
+      },
+      {
+        "name": "カカオ",
+        "value": 1
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ミルク",
+        "value": 4
+      },
+      {
+        "name": "カカオ",
+        "value": 2
+      },
+      {
+        "name": "ミート",
+        "value": 3
+      }
+    ]
   },
   {
     "ID": 159,
     "No": 702,
     "Name": "デデンネ",
-    "FoodDropRate": 0.177,
-    "SkillRate": 0.045,
+    "FoodDropRate": 0.0017699999999999999,
+    "SkillRate": 0.00045,
     "MainSkill": "料理チャンスS",
     "Type": "スキル",
     "SpeedOfHelp": 2500,
     "Berries": "でんき",
-    "IngredientsA": {
-      "name": "リンゴ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "カカオ",
-      "values": [
-        1,
-        2
-      ]
-    },
-    "IngredientsC": {
-      "name": "コーン",
-      "values": [
-        2
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "リンゴ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "リンゴ",
+        "value": 2
+      },
+      {
+        "name": "カカオ",
+        "value": 1
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "リンゴ",
+        "value": 4
+      },
+      {
+        "name": "カカオ",
+        "value": 2
+      },
+      {
+        "name": "コーン",
+        "value": 2
+      }
+    ]
   },
   {
     "ID": 160,
     "No": 736,
     "Name": "アゴジムシ",
-    "FoodDropRate": 0.155,
-    "SkillRate": 0.029,
+    "FoodDropRate": 0.00155,
+    "SkillRate": 0.00029,
     "MainSkill": "エナジーチャージS",
     "Type": "食材",
     "SpeedOfHelp": 4600,
     "Berries": "むし",
-    "IngredientsA": {
-      "name": "コーヒー",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "キノコ",
-      "values": [
-        4,
-        7
-      ]
-    },
-    "IngredientsC": {
-      "name": "ミツ",
-      "values": [
-        11
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "コーヒー",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "コーヒー",
+        "value": 5
+      },
+      {
+        "name": "キノコ",
+        "value": 4
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "コーヒー",
+        "value": 7
+      },
+      {
+        "name": "キノコ",
+        "value": 7
+      },
+      {
+        "name": "ミツ",
+        "value": 11
+      }
+    ]
   },
   {
     "ID": 161,
     "No": 737,
     "Name": "デンヂムシ",
-    "FoodDropRate": 0.154,
-    "SkillRate": 0.028,
+    "FoodDropRate": 0.00154,
+    "SkillRate": 0.00028000000000000003,
     "MainSkill": "エナジーチャージS",
     "Type": "食材",
     "SpeedOfHelp": 3300,
     "Berries": "むし",
-    "IngredientsA": {
-      "name": "コーヒー",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "キノコ",
-      "values": [
-        4,
-        7
-      ]
-    },
-    "IngredientsC": {
-      "name": "ミツ",
-      "values": [
-        11
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "コーヒー",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "コーヒー",
+        "value": 5
+      },
+      {
+        "name": "キノコ",
+        "value": 4
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "コーヒー",
+        "value": 7
+      },
+      {
+        "name": "キノコ",
+        "value": 7
+      },
+      {
+        "name": "ミツ",
+        "value": 11
+      }
+    ]
   },
   {
     "ID": 162,
     "No": 738,
     "Name": "クワガノン",
-    "FoodDropRate": 0.194,
-    "SkillRate": 0.051,
+    "FoodDropRate": 0.00194,
+    "SkillRate": 0.0005099999999999999,
     "MainSkill": "エナジーチャージS",
     "Type": "食材",
     "SpeedOfHelp": 2800,
     "Berries": "むし",
-    "IngredientsA": {
-      "name": "コーヒー",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "キノコ",
-      "values": [
-        4,
-        7
-      ]
-    },
-    "IngredientsC": {
-      "name": "ミツ",
-      "values": [
-        11
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "コーヒー",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "コーヒー",
+        "value": 5
+      },
+      {
+        "name": "キノコ",
+        "value": 4
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "コーヒー",
+        "value": 7
+      },
+      {
+        "name": "キノコ",
+        "value": 7
+      },
+      {
+        "name": "ミツ",
+        "value": 11
+      }
+    ]
   },
   {
     "ID": 163,
     "No": 759,
     "Name": "ヌイコグマ",
-    "FoodDropRate": 0.225,
-    "SkillRate": 0.011,
+    "FoodDropRate": 0.0022500000000000003,
+    "SkillRate": 0.00010999999999999999,
     "MainSkill": "エナジーチャージS\n(ランダム)",
     "Type": "食材",
     "SpeedOfHelp": 4100,
     "Berries": "かくとう",
-    "IngredientsA": {
-      "name": "コーン",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "ミート",
-      "values": [
-        6,
-        10
-      ]
-    },
-    "IngredientsC": {
-      "name": "タマゴ",
-      "values": [
-        9
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "コーン",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "コーン",
+        "value": 5
+      },
+      {
+        "name": "ミート",
+        "value": 6
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "コーン",
+        "value": 7
+      },
+      {
+        "name": "ミート",
+        "value": 10
+      },
+      {
+        "name": "タマゴ",
+        "value": 9
+      }
+    ]
   },
   {
     "ID": 164,
     "No": 760,
     "Name": "キテルグマ",
-    "FoodDropRate": 0.229,
-    "SkillRate": 0.013,
+    "FoodDropRate": 0.00229,
+    "SkillRate": 0.00013,
     "MainSkill": "エナジーチャージS\n(ランダム)",
     "Type": "食材",
     "SpeedOfHelp": 2800,
     "Berries": "かくとう",
-    "IngredientsA": {
-      "name": "コーン",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "ミート",
-      "values": [
-        6,
-        10
-      ]
-    },
-    "IngredientsC": {
-      "name": "タマゴ",
-      "values": [
-        9
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "コーン",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "コーン",
+        "value": 5
+      },
+      {
+        "name": "ミート",
+        "value": 6
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "コーン",
+        "value": 7
+      },
+      {
+        "name": "ミート",
+        "value": 10
+      },
+      {
+        "name": "タマゴ",
+        "value": 9
+      }
+    ]
   },
   {
     "ID": 165,
     "No": 764,
     "Name": "キュワワー",
-    "FoodDropRate": 0.167,
-    "SkillRate": 0.03,
+    "FoodDropRate": 0.00167,
+    "SkillRate": 0.0003,
     "MainSkill": "げんきエールS",
     "Type": "食材",
     "SpeedOfHelp": 2500,
     "Berries": "フェアリー",
-    "IngredientsA": {
-      "name": "コーン",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "ジンジャー",
-      "values": [
-        6,
-        9
-      ]
-    },
-    "IngredientsC": {
-      "name": "カカオ",
-      "values": [
-        7
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "コーン",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "コーン",
+        "value": 5
+      },
+      {
+        "name": "ジンジャー",
+        "value": 6
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "コーン",
+        "value": 7
+      },
+      {
+        "name": "ジンジャー",
+        "value": 9
+      },
+      {
+        "name": "カカオ",
+        "value": 7
+      }
+    ]
   },
   {
     "ID": 166,
     "No": 778,
     "Name": "ミミッキュ",
-    "FoodDropRate": 0.153,
-    "SkillRate": 0.033,
+    "FoodDropRate": 0.00153,
+    "SkillRate": 0.00033,
     "MainSkill": "ばけのかわ\n(きのみバースト)",
     "Type": "スキル",
     "SpeedOfHelp": 2500,
     "Berries": "ゴースト",
-    "IngredientsA": {
-      "name": "リンゴ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "コーヒー",
-      "values": [
-        1,
-        2
-      ]
-    },
-    "IngredientsC": {
-      "name": "キノコ",
-      "values": [
-        2
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "リンゴ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "リンゴ",
+        "value": 2
+      },
+      {
+        "name": "コーヒー",
+        "value": 1
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "リンゴ",
+        "value": 4
+      },
+      {
+        "name": "コーヒー",
+        "value": 2
+      },
+      {
+        "name": "キノコ",
+        "value": 2
+      }
+    ]
   },
   {
     "ID": 167,
     "No": 845,
     "Name": "ウッウ",
-    "FoodDropRate": 0.165,
-    "SkillRate": 0.039,
+    "FoodDropRate": 0.00165,
+    "SkillRate": 0.00039,
     "MainSkill": "料理チャンスS",
     "Type": "食材",
     "SpeedOfHelp": 2700,
     "Berries": "ひこう",
-    "IngredientsA": {
-      "name": "オイル",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "ポテト",
-      "values": [
-        4,
-        7
-      ]
-    },
-    "IngredientsC": {
-      "name": "タマゴ",
-      "values": [
-        8
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "オイル",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "オイル",
+        "value": 5
+      },
+      {
+        "name": "ポテト",
+        "value": 4
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "オイル",
+        "value": 7
+      },
+      {
+        "name": "ポテト",
+        "value": 7
+      },
+      {
+        "name": "タマゴ",
+        "value": 8
+      }
+    ]
   },
   {
     "ID": 168,
     "No": 906,
     "Name": "ニャオハ",
-    "FoodDropRate": 0.208,
-    "SkillRate": 0.023,
+    "FoodDropRate": 0.00208,
+    "SkillRate": 0.00023,
     "MainSkill": "料理パワーアップS",
     "Type": "食材",
     "SpeedOfHelp": 4600,
     "Berries": "くさ",
-    "IngredientsA": {
-      "name": "ポテト",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "ミルク",
-      "values": [
-        6,
-        9
-      ]
-    },
-    "IngredientsC": {
-      "name": "ジンジャー",
-      "values": [
-        8
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ポテト",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ポテト",
+        "value": 5
+      },
+      {
+        "name": "ミルク",
+        "value": 6
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ポテト",
+        "value": 7
+      },
+      {
+        "name": "ミルク",
+        "value": 9
+      },
+      {
+        "name": "ジンジャー",
+        "value": 8
+      }
+    ]
   },
   {
     "ID": 169,
     "No": 907,
     "Name": "ニャローテ",
-    "FoodDropRate": 0.209,
-    "SkillRate": 0.023,
+    "FoodDropRate": 0.00209,
+    "SkillRate": 0.00023,
     "MainSkill": "料理パワーアップS",
     "Type": "食材",
     "SpeedOfHelp": 3500,
     "Berries": "くさ",
-    "IngredientsA": {
-      "name": "ポテト",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "ミルク",
-      "values": [
-        6,
-        9
-      ]
-    },
-    "IngredientsC": {
-      "name": "ジンジャー",
-      "values": [
-        8
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ポテト",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ポテト",
+        "value": 5
+      },
+      {
+        "name": "ミルク",
+        "value": 6
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ポテト",
+        "value": 7
+      },
+      {
+        "name": "ミルク",
+        "value": 9
+      },
+      {
+        "name": "ジンジャー",
+        "value": 8
+      }
+    ]
   },
   {
     "ID": 170,
     "No": 908,
     "Name": "マスカーニャ",
-    "FoodDropRate": 0.19,
-    "SkillRate": 0.022,
+    "FoodDropRate": 0.0019,
+    "SkillRate": 0.00021999999999999998,
     "MainSkill": "料理パワーアップS",
     "Type": "食材",
     "SpeedOfHelp": 2600,
     "Berries": "あく",
-    "IngredientsA": {
-      "name": "ポテト",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "ミルク",
-      "values": [
-        6,
-        9
-      ]
-    },
-    "IngredientsC": {
-      "name": "ジンジャー",
-      "values": [
-        8
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "ポテト",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "ポテト",
+        "value": 5
+      },
+      {
+        "name": "ミルク",
+        "value": 6
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "ポテト",
+        "value": 7
+      },
+      {
+        "name": "ミルク",
+        "value": 9
+      },
+      {
+        "name": "ジンジャー",
+        "value": 8
+      }
+    ]
   },
   {
     "ID": 171,
     "No": 909,
     "Name": "ホゲータ",
-    "FoodDropRate": 0.254,
-    "SkillRate": 0.053,
+    "FoodDropRate": 0.00254,
+    "SkillRate": 0.00053,
     "MainSkill": "げんきチャージS",
     "Type": "食材",
     "SpeedOfHelp": 4200,
     "Berries": "ほのお",
-    "IngredientsA": {
-      "name": "リンゴ",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "ミート",
-      "values": [
-        4,
-        6
-      ]
-    },
-    "IngredientsC": {
-      "name": "ハーブ",
-      "values": [
-        5
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "リンゴ",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "リンゴ",
+        "value": 5
+      },
+      {
+        "name": "ミート",
+        "value": 4
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "リンゴ",
+        "value": 7
+      },
+      {
+        "name": "ミート",
+        "value": 6
+      },
+      {
+        "name": "ハーブ",
+        "value": 5
+      }
+    ]
   },
   {
     "ID": 172,
     "No": 910,
     "Name": "アチゲータ",
-    "FoodDropRate": 0.247,
-    "SkillRate": 0.05,
+    "FoodDropRate": 0.00247,
+    "SkillRate": 0.0005,
     "MainSkill": "げんきチャージS",
     "Type": "食材",
     "SpeedOfHelp": 3100,
     "Berries": "ほのお",
-    "IngredientsA": {
-      "name": "リンゴ",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "ミート",
-      "values": [
-        4,
-        6
-      ]
-    },
-    "IngredientsC": {
-      "name": "ハーブ",
-      "values": [
-        5
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "リンゴ",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "リンゴ",
+        "value": 5
+      },
+      {
+        "name": "ミート",
+        "value": 4
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "リンゴ",
+        "value": 7
+      },
+      {
+        "name": "ミート",
+        "value": 6
+      },
+      {
+        "name": "ハーブ",
+        "value": 5
+      }
+    ]
   },
   {
     "ID": 173,
     "No": 911,
     "Name": "ラウドボーン",
-    "FoodDropRate": 0.268,
-    "SkillRate": 0.062,
+    "FoodDropRate": 0.00268,
+    "SkillRate": 0.00062,
     "MainSkill": "げんきチャージS",
     "Type": "食材",
     "SpeedOfHelp": 2700,
     "Berries": "ゴースト",
-    "IngredientsA": {
-      "name": "リンゴ",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "ミート",
-      "values": [
-        4,
-        6
-      ]
-    },
-    "IngredientsC": {
-      "name": "ハーブ",
-      "values": [
-        5
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "リンゴ",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "リンゴ",
+        "value": 5
+      },
+      {
+        "name": "ミート",
+        "value": 4
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "リンゴ",
+        "value": 7
+      },
+      {
+        "name": "ミート",
+        "value": 6
+      },
+      {
+        "name": "ハーブ",
+        "value": 5
+      }
+    ]
   },
   {
     "ID": 174,
     "No": 912,
     "Name": "クワッス",
-    "FoodDropRate": 0.261,
-    "SkillRate": 0.028,
+    "FoodDropRate": 0.00261,
+    "SkillRate": 0.00028000000000000003,
     "MainSkill": "エナジーチャージM",
     "Type": "食材",
     "SpeedOfHelp": 4800,
     "Berries": "みず",
-    "IngredientsA": {
-      "name": "大豆",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "ネギ",
-      "values": [
-        2,
-        4
-      ]
-    },
-    "IngredientsC": {
-      "name": "オイル",
-      "values": [
-        6
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "大豆",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "大豆",
+        "value": 5
+      },
+      {
+        "name": "ネギ",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "大豆",
+        "value": 7
+      },
+      {
+        "name": "ネギ",
+        "value": 4
+      },
+      {
+        "name": "オイル",
+        "value": 6
+      }
+    ]
   },
   {
     "ID": 175,
     "No": 913,
     "Name": "ウェルカモ",
-    "FoodDropRate": 0.259,
-    "SkillRate": 0.027,
+    "FoodDropRate": 0.0025900000000000003,
+    "SkillRate": 0.00027,
     "MainSkill": "エナジーチャージM",
     "Type": "食材",
     "SpeedOfHelp": 3600,
     "Berries": "みず",
-    "IngredientsA": {
-      "name": "大豆",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "ネギ",
-      "values": [
-        2,
-        4
-      ]
-    },
-    "IngredientsC": {
-      "name": "オイル",
-      "values": [
-        6
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "大豆",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "大豆",
+        "value": 5
+      },
+      {
+        "name": "ネギ",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "大豆",
+        "value": 7
+      },
+      {
+        "name": "ネギ",
+        "value": 4
+      },
+      {
+        "name": "オイル",
+        "value": 6
+      }
+    ]
   },
   {
     "ID": 176,
     "No": 914,
     "Name": "ウェーニバル",
-    "FoodDropRate": 0.232,
-    "SkillRate": 0.024,
+    "FoodDropRate": 0.00232,
+    "SkillRate": 0.00024,
     "MainSkill": "エナジーチャージM",
     "Type": "食材",
     "SpeedOfHelp": 2600,
     "Berries": "かくとう",
-    "IngredientsA": {
-      "name": "大豆",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "ネギ",
-      "values": [
-        2,
-        4
-      ]
-    },
-    "IngredientsC": {
-      "name": "オイル",
-      "values": [
-        6
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "大豆",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "大豆",
+        "value": 5
+      },
+      {
+        "name": "ネギ",
+        "value": 2
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "大豆",
+        "value": 7
+      },
+      {
+        "name": "ネギ",
+        "value": 4
+      },
+      {
+        "name": "オイル",
+        "value": 6
+      }
+    ]
   },
   {
     "ID": 177,
     "No": 921,
     "Name": "パモ",
-    "FoodDropRate": 0.111,
-    "SkillRate": 0.036,
+    "FoodDropRate": 0.00111,
+    "SkillRate": 0.00035999999999999997,
     "MainSkill": "げんきオールS",
     "Type": "スキル",
     "SpeedOfHelp": 4600,
     "Berries": "でんき",
-    "IngredientsA": {
-      "name": "カカオ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ミルク",
-      "values": [
-        3,
-        6
-      ]
-    },
-    "IngredientsC": {
-      "name": "タマゴ",
-      "values": [
-        5
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "カカオ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "カカオ",
+        "value": 2
+      },
+      {
+        "name": "ミルク",
+        "value": 3
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "カカオ",
+        "value": 4
+      },
+      {
+        "name": "ミルク",
+        "value": 6
+      },
+      {
+        "name": "タマゴ",
+        "value": 5
+      }
+    ]
   },
   {
     "ID": 178,
     "No": 922,
     "Name": "パモット",
-    "FoodDropRate": 0.109,
-    "SkillRate": 0.036,
+    "FoodDropRate": 0.00109,
+    "SkillRate": 0.00035999999999999997,
     "MainSkill": "げんきオールS",
     "Type": "スキル",
     "SpeedOfHelp": 3300,
     "Berries": "でんき",
-    "IngredientsA": {
-      "name": "カカオ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ミルク",
-      "values": [
-        3,
-        6
-      ]
-    },
-    "IngredientsC": {
-      "name": "タマゴ",
-      "values": [
-        5
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "カカオ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "カカオ",
+        "value": 2
+      },
+      {
+        "name": "ミルク",
+        "value": 3
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "カカオ",
+        "value": 4
+      },
+      {
+        "name": "ミルク",
+        "value": 6
+      },
+      {
+        "name": "タマゴ",
+        "value": 5
+      }
+    ]
   },
   {
     "ID": 179,
     "No": 923,
     "Name": "パーモット",
-    "FoodDropRate": 0.141,
-    "SkillRate": 0.039,
+    "FoodDropRate": 0.0014099999999999998,
+    "SkillRate": 0.00039,
     "MainSkill": "げんきオールS",
     "Type": "スキル",
     "SpeedOfHelp": 2400,
     "Berries": "でんき",
-    "IngredientsA": {
-      "name": "カカオ",
-      "values": [
-        1,
-        2,
-        4
-      ]
-    },
-    "IngredientsB": {
-      "name": "ミルク",
-      "values": [
-        3,
-        6
-      ]
-    },
-    "IngredientsC": {
-      "name": "タマゴ",
-      "values": [
-        5
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "カカオ",
+        "value": 1
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "カカオ",
+        "value": 2
+      },
+      {
+        "name": "ミルク",
+        "value": 3
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "カカオ",
+        "value": 4
+      },
+      {
+        "name": "ミルク",
+        "value": 6
+      },
+      {
+        "name": "タマゴ",
+        "value": 5
+      }
+    ]
   },
   {
     "ID": 180,
     "No": 980,
     "Name": "ドオー",
-    "FoodDropRate": 0.208,
-    "SkillRate": 0.055,
+    "FoodDropRate": 0.00208,
+    "SkillRate": 0.00055,
     "MainSkill": "げんきチャージS",
     "Type": "食材",
     "SpeedOfHelp": 3500,
     "Berries": "どく",
-    "IngredientsA": {
-      "name": "カカオ",
-      "values": [
-        2,
-        5,
-        7
-      ]
-    },
-    "IngredientsB": {
-      "name": "コーヒー",
-      "values": [
-        4,
-        7
-      ]
-    },
-    "IngredientsC": {
-      "name": "ポテト",
-      "values": [
-        9
-      ]
-    }
+    "IngredientsA": [
+      {
+        "name": "カカオ",
+        "value": 2
+      }
+    ],
+    "IngredientsB": [
+      {
+        "name": "カカオ",
+        "value": 5
+      },
+      {
+        "name": "コーヒー",
+        "value": 4
+      }
+    ],
+    "IngredientsC": [
+      {
+        "name": "カカオ",
+        "value": 7
+      },
+      {
+        "name": "コーヒー",
+        "value": 7
+      },
+      {
+        "name": "ポテト",
+        "value": 9
+      }
+    ]
   }
 ]

@@ -10,7 +10,14 @@ document.addEventListener("DOMContentLoaded", async function () {
     const openModalButton = document.getElementById("btnSubSkill");
     const closeModalButton = document.getElementById("closeSubSkillModal");
     const selectedSubSkilllabel = document.getElementById("selectedSubSkilllabel");
+    const selectIngredientA = document.getElementById("selectIngredientA");
+    const selectIngredientB = document.getElementById("selectIngredientB");
+    const selectIngredientC = document.getElementById("selectIngredientC");
+    const selectIngredientAValue = document.getElementById("selectIngredientAValue");
+    const selectIngredientBValue = document.getElementById("selectIngredientBValue");
+    const selectIngredientCValue = document.getElementById("selectIngredientCValue");
     const resultHelpingCount = document.getElementById("resultHelpingCount");
+    const resultNumberOfIngredients = document.getElementById("resultNumberOfIngredients");
     const badgeNumbers = [10, 25, 50, 75, 100];
     const MAX_SUB_SUBSKILLS = 5;
     let selectedSubSkills = [];
@@ -23,6 +30,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     personality?.addEventListener("change", loadCalc);
     level?.addEventListener("change", loadCalc);
     subSkillButtons?.addEventListener("click", loadCalc);
+    selectIngredientA?.addEventListener("change", loadCalc);
     // 初期化時にポケモンのデータを取得
     async function setPokemonData() {
         let Pokemon;
@@ -54,20 +62,23 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
     // --- 計算・表示 ---
     async function loadCalc() {
-        if (!resultSpeedOfHelp || !resultHelpingCount)
+        if (!resultSpeedOfHelp || !resultHelpingCount || !resultNumberOfIngredients)
             return;
         const pokemonNo = parseInt(selectPokemonName.value);
         const pokemonData = await getSelectedPokemonData(pokemonNo);
         console.log("計算を開始します...");
+        setIngredient(pokemonData);
         const personalityValue = personality.value;
         // おてつだい時間を表示する
         const speedOfHelping = await getSpeedOfHelp(pokemonData, personalityValue);
         const minutes = Math.floor(speedOfHelping / 60);
         const seconds = speedOfHelping % 60;
         const helpingCount = await getHelpingCount(100, speedOfHelping);
+        const numberOfIngredients = getNumberOfIngredients(helpingCount, pokemonData);
         // 結果を表示
         resultSpeedOfHelp.textContent = `${speedOfHelping} : ${minutes}分${seconds}秒`;
         resultHelpingCount.textContent = helpingCount.toString();
+        resultNumberOfIngredients.textContent = numberOfIngredients.toString();
     }
     // おてつだいスピードを計算する関数
     async function getSpeedOfHelp(pokemonData, personality) {
@@ -105,6 +116,24 @@ document.addEventListener("DOMContentLoaded", async function () {
             console.error('ポケモンスピード取得エラー:', error);
             return {};
         }
+    }
+    function getNumberOfIngredients(helpingCount, pokemonData) {
+        const foodRating = pokemonData.FoodDropRate;
+        let ingredientsA = pokemonData.IngredientsA;
+        let ingredientsB = pokemonData.IngredientsB;
+        let ingredientsC = pokemonData.IngredientsC;
+        if (!helpingCount || !foodRating)
+            return 0;
+        if (helpingCount < 0 || foodRating < 0)
+            return 0;
+        console.log("ingredientsA:", ingredientsA);
+        console.log("ingredientsB:", ingredientsB);
+        console.log("ingredientsC:", ingredientsC);
+        console.log("selectIngredientAValue:", selectIngredientAValue?.textContent);
+        console.log("selectIngredientBValue:", selectIngredientBValue?.textContent);
+        console.log("selectIngredientCValue:", selectIngredientCValue?.textContent);
+        const foodDropCount = helpingCount * foodRating;
+        return 0;
     }
     // 性格の補正値を取得
     function getPersonalityModifier(personality) {
@@ -285,5 +314,39 @@ document.addEventListener("DOMContentLoaded", async function () {
             div.appendChild(p);
             selectedSubSkilllabel.appendChild(div);
         });
+    }
+    function setIngredient(pokemonData) {
+        if (!selectIngredientA || !selectIngredientB || !selectIngredientC)
+            return;
+        if (!selectIngredientAValue || !selectIngredientBValue || !selectIngredientCValue)
+            return;
+        const ingredientsA = pokemonData.IngredientsA;
+        const ingredientsB = pokemonData.IngredientsB;
+        const ingredientsC = pokemonData.IngredientsC;
+        const composition = ["A", "B", "C"];
+        selectIngredientA.innerHTML = "";
+        if (ingredientsA) {
+            ingredientsA.forEach((ingredient, i) => {
+                const option = document.createElement("option");
+                option.textContent = composition[i] + " : " + ingredient.name;
+                selectIngredientA.appendChild(option);
+            });
+        }
+        selectIngredientB.innerHTML = "";
+        if (ingredientsB) {
+            ingredientsB.forEach((ingredient, i) => {
+                const option = document.createElement("option");
+                option.textContent = composition[i] + " : " + ingredient.name;
+                selectIngredientB.appendChild(option);
+            });
+        }
+        selectIngredientC.innerHTML = "";
+        if (ingredientsC) {
+            ingredientsC.forEach((ingredient, i) => {
+                const option = document.createElement("option");
+                option.textContent = composition[i] + " : " + ingredient.name;
+                selectIngredientC.appendChild(option);
+            });
+        }
     }
 });

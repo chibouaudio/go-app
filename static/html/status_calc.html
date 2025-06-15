@@ -56,6 +56,24 @@
                 <div id="selectedSubSkilllabel" class="row">
                 </div>
             </div>
+            <div class="row col-md-12 mb-3">
+                <label for="selectIngredient" class="form-label mb-2">食材構成を選択</label>
+                <div class="col-4 mb-3">
+                    <p class="desc mb-2">第一食材A</p>
+                    <select id="selectIngredientA" class="form-select" aria-readonly="true"></select>
+                    <p id="selectIngredientAValue"></p>
+                </div>
+                <div class="col-4 mb-3">
+                    <p class="desc mb-2">第二食材B</p>
+                    <select id="selectIngredientB" class="form-select" aria-readonly="true"></select>
+                    <p id="selectIngredientBValue"></p>
+                </div>
+                <div class="col-4 mb-3">
+                    <p class="desc mb-2">第三食材C</p>
+                    <select id="selectIngredientC" class="form-select" aria-readonly="true"></select>
+                    <p id="selectIngredientCValue"></p>
+                </div>
+            </div>
         </div>
         <div class="row mb-3">
             <div class="col-md-6 mb-3">
@@ -65,6 +83,10 @@
             <div class="col-md-6 mb-3">
                 <p>おてつだい回数</p>
                 <p id="resultHelpingCount"></p>
+            </div>
+            <div class="col-md-6 mb-3">
+                <p>食材獲得数</p>
+                <p id="resultNumberOfIngredients"></p>
             </div>
         </div>
     </div>

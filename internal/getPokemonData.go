@@ -7,23 +7,23 @@ import (
 )
 
 type Ingredient struct {
-	Name   string `json:"name"`
-	Values []int  `json:"values"`
+	Name  string `json:"name"`
+	Value int    `json:"value"`
 }
 
 type Pokemon struct {
-	ID           int        `json:"ID"`
-	No           int        `json:"No"`
-	Name         string     `json:"Name"`
-	FoodDropRate float64    `json:"FoodDropRate"`
-	SkillRate    float64    `json:"SkillRate"`
-	MainSkill    string     `json:"MainSkill"`
-	Type         string     `json:"Type"`
-	SpeedOfHelp  int        `json:"SpeedOfHelp"`
-	Berries      string     `json:"Berries"`
-	IngredientsA Ingredient `json:"IngredientsA"`
-	IngredientsB Ingredient `json:"IngredientsB"`
-	IngredientsC Ingredient `json:"IngredientsC"`
+	ID           int          `json:"ID"`
+	No           int          `json:"No"`
+	Name         string       `json:"Name"`
+	FoodDropRate float64      `json:"FoodDropRate"`
+	SkillRate    float64      `json:"SkillRate"`
+	MainSkill    string       `json:"MainSkill"`
+	Type         string       `json:"Type"`
+	SpeedOfHelp  int          `json:"SpeedOfHelp"`
+	Berries      string       `json:"Berries"`
+	IngredientsA []Ingredient `json:"IngredientsA"`
+	IngredientsB []Ingredient `json:"IngredientsB"`
+	IngredientsC []Ingredient `json:"IngredientsC"`
 }
 
 // LoadPokemonData は関数としてポケモンデータを返す
