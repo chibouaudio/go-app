@@ -77,6 +77,10 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 	// --- イベントリスナー登録 ---
 	selectPokemonName?.addEventListener("change", async () => {
+		// 選択されたポケモンのIDからNoを取得
+		pokemonStatus.selectedPokemonNo = parseInt((selectPokemonName as HTMLSelectElement).value);
+		// ポケモンのデータを取得
+		pokemonStatus.pokemonData = await getSelectedPokemonData();
 		// 選択されたポケモンの食材構成を設定
 		setIngredientOptions();
 		loadStatus();
@@ -143,9 +147,9 @@ document.addEventListener("DOMContentLoaded", async function () {
 		// 食材獲得量を計算
 		const numberOfIngredients = getNumberOfIngredients();
 		// 食材獲得回数を計算
-		const ingredientCount = pokemonStatus.pokemonData.FoodDropRate * pokemonStatus.helpingCount;
-
-		const skillCount = Math.round(pokemonStatus.pokemonData.SkillRate * pokemonStatus.helpingCount * 100) / 100;
+		const ingredientCount = Math.round(pokemonStatus.pokemonData.FoodDropRate * pokemonStatus.helpingCount * 100) / 100;
+		// スキル発生回数を計算
+		const skillCount = getSkillCount();
 
 		// 表示する時間をフォーマット
 		const minutes = Math.floor(pokemonStatus.speedOfHelping / 60);
@@ -221,6 +225,18 @@ document.addEventListener("DOMContentLoaded", async function () {
 		}
 	}
 
+	function getSkillCount(): number {
+		let skillRate = pokemonStatus.pokemonData.SkillRate;
+		const helpingCount = pokemonStatus.helpingCount;
+		if (!skillRate || !helpingCount) return 0;
+		const skillUpM = pokemonStatus.selectedSubSkills.some(s => s.subskill === "スキル確率アップM");
+		const skillUpS = pokemonStatus.selectedSubSkills.some(s => s.subskill === "スキル確率アップS");
+		if (skillUpM) skillRate *= 1.36;
+		if (skillUpS) skillRate *= 1.18;
+
+		return Math.round(skillRate * helpingCount * 100) / 100;
+	}
+
 	/**
 	 * 選択された食材の個数を取得
 	 */
@@ -252,7 +268,12 @@ document.addEventListener("DOMContentLoaded", async function () {
 	function getNumberOfIngredients(): [string, number][] {
 		const ingredientValues: { [name: string]: number[] } = {};
 		let selectedIngredients: { name: string, value: number }[] = [];
-
+		let foodRate = pokemonStatus.pokemonData.FoodDropRate;
+		const ingredientFinderM = pokemonStatus.selectedSubSkills.some(s => s.subskill === "食材確率アップM");
+		const ingredientFinderS = pokemonStatus.selectedSubSkills.some(s => s.subskill === "食材確率アップS");
+		if (ingredientFinderM) foodRate *= 1.36;
+		if (ingredientFinderS) foodRate *= 1.18;
+		console.log("食材獲得率:", foodRate);
 		if (pokemonStatus.level < 30) {
 			selectedIngredients = [
 				{ name: pokemonStatus.selectedIngredientA, value: pokemonStatus.ingredientAValue }
@@ -280,8 +301,8 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 		// nameごとにvalueの平均を計算し、2次元配列で返す
 		const resultArr: [string, number][] = Object.entries(ingredientValues).map(([name, values]) => {
-			const dividedValues = values.map(v => v / 3);
-			const resultAmounts = dividedValues.map(v => pokemonStatus.helpingCount * pokemonStatus.pokemonData.FoodDropRate * v);
+			const dividedValues = values.map(v => v / selectedIngredients.length);
+			const resultAmounts = dividedValues.map(v => pokemonStatus.helpingCount * foodRate * v);
 			const resultAmount = resultAmounts.reduce((sum, val) => sum + val, 0);
 			return [name, Math.round(resultAmount * 10) / 10];
 		});
