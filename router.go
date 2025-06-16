@@ -71,6 +71,7 @@ func RouterSettings() *http.ServeMux {
 	mux.HandleFunc("/api/calcHelpingCount", internal.CalcHelpingCount)
 	mux.HandleFunc("/api/getPokemonNames", internal.GetPokemonNames)
 	mux.HandleFunc("/api/getPokemonData", internal.GetPokemonData)
+	mux.HandleFunc("/api/getPersonality", internal.GetPersonality)
 
 	return mux
 }

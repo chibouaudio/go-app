@@ -21,12 +21,10 @@
                 <select id="selectPokemonName" class="form-select"></select>
             </div>
             <div class="col-md-6 mb-3">
-                <label for="personality" class="form-label mb-2">性格を選択</label>
-                <select id="personality" class="form-select">
-                    <option value="up">上昇補正</option>
-                    <option value="normal" selected>無補正</option>
-                    <option value="down">下降補正</option>
-                </select>
+                <label for="selectPersonality" class="form-label mb-2">性格を選択</label>
+                <div id="selectPersonality">
+                    <button id="openPersonalityModal" class="btn btn-secondary form-control">性格を選択</button>
+                </div>
             </div>
             <div class="col-md-6 mb-3">
                 <label for="level" class="form-label mb-2">レベル</label>
@@ -37,19 +35,6 @@
             <div class="col-md-6 mb-3">
                 <label for="subSkill" class="form-label mb-2">サブスキル</label>
                 <button id="btnSubSkill" class="btn btn-secondary form-control">サブスキルを選択</button>
-            </div>
-            <div class="modal" tabindex="-1" id="subSkillModal">
-                <div class="modal-dialog modal-dialog-centered modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">サブスキル選択</h5>
-                            <button type="button" class="btn-close" id="closeSubSkillModal"></button>
-                        </div>
-                        <div class="modal-body row" id="subSkillButtons">
-                            <!-- ボタンがここに追加されます -->
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="col-md-12 mb-3">
                 <label class="form-label mb-2">選択したサブスキル</label>
@@ -78,6 +63,10 @@
                 <p id="resultSpeedOfHelp"></p>
             </div>
             <div class="col-md-6 mb-3">
+                <p>性格補正</p>
+                <p id="resultPersonality"></p>
+            </div>
+            <div class="col-md-6 mb-3">
                 <p>おてつだい回数</p>
                 <p id="resultHelpingCount"></p>
             </div>
@@ -92,6 +81,42 @@
             <div class="col-md-6 mb-3">
                 <p>スキル回数</p>
                 <p id="resultSkillCount"></p>
+            </div>
+        </div>
+    </div>
+    <div class="modal" tabindex="-1" id="subSkillModal">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">サブスキル選択</h5>
+                    <button type="button" class="btn-close" id="closeSubSkillModal"></button>
+                </div>
+                <div class="modal-body row" id="subSkillButtons">
+                    <!-- ボタンがここに追加されます -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" tabindex="-1" id="personalityModal" style="display:none;">
+        <div class="modal-dialog">
+            <div class="modal-content p-3">
+                <h5>性格を選択</h5>
+                <div class="row">
+                    <div class="col">
+                        <p>上がるステータス</p>
+                        <div id="personality-up-group" class="btn-group-vertical w-100"></div>
+                    </div>
+                    <div class="col">
+                        <p>下がるステータス</p>
+                        <div id="personality-down-group" class="btn-group-vertical w-100"></div>
+                    </div>
+                </div>
+                <div class="mt-3 position-relative" style="min-height: 38px;">
+                    <button class="btn btn-secondary" id="personalityNeutralBtn">無補正</button>
+                    <span class="position-absolute top-50 start-50 translate-middle" id="resultPersonalityName"></span>
+                    <button id="personalityModalClose"
+                        class="btn btn-secondary position-absolute top-50 end-0 translate-middle-y">閉じる</button>
+                </div>
             </div>
         </div>
     </div>

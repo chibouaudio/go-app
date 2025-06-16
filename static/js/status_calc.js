@@ -6,7 +6,6 @@
 document.addEventListener("DOMContentLoaded", async function () {
     // --- DOM要素取得 ---
     const selectPokemonName = document.getElementById("selectPokemonName");
-    const personality = document.getElementById("personality");
     const resultSpeedOfHelp = document.getElementById("resultSpeedOfHelp");
     const level = document.getElementById("level");
     const subSkillButtons = document.getElementById("subSkillButtons");
@@ -17,10 +16,12 @@ document.addEventListener("DOMContentLoaded", async function () {
     const selectIngredientA = document.getElementById("selectIngredientA");
     const selectIngredientB = document.getElementById("selectIngredientB");
     const selectIngredientC = document.getElementById("selectIngredientC");
+    const selectPersonality = document.getElementById("selectPersonality");
     const resultHelpingCount = document.getElementById("resultHelpingCount");
     const resultIngredientsCount = document.getElementById("resultIngredientsCount");
     const resultNumberOfIngredients = document.getElementById("resultNumberOfIngredients");
     const resultSkillCount = document.getElementById("resultSkillCount");
+    const resultPersonality = document.getElementById("resultPersonality");
     // --- 定数 ---
     const badgeNumbers = [10, 25, 50, 75, 100]; // サブスキル選択時のバッジ番号
     const MAX_SUB_SUBSKILLS = 5; // サブスキル最大数
@@ -30,7 +31,8 @@ document.addEventListener("DOMContentLoaded", async function () {
             this.selectedPokemonName = "";
             this.pokemonData = {};
             this.level = 1;
-            this.personality = "normal";
+            this.personalityUp = "無補正";
+            this.personalityDown = "無補正";
             this.selectedIngredientA = "";
             this.ingredientAValue = 0;
             this.selectedIngredientB = "";
@@ -46,7 +48,8 @@ document.addEventListener("DOMContentLoaded", async function () {
             this.selectedPokemonName = "";
             this.pokemonData = {};
             this.level = 1;
-            this.personality = "normal";
+            this.personalityUp = "無補正";
+            this.personalityDown = "無補正";
             this.selectedIngredientA = "";
             this.ingredientAValue = 0;
             this.selectedIngredientB = "";
@@ -72,6 +75,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     setSubSkillModal();
     // 選択されたポケモンの情報を取得
     await loadStatus();
+    // 性格の選択肢を設定
+    await setPersonalityOptions();
     // --- イベントリスナー登録 ---
     selectPokemonName?.addEventListener("change", async () => {
         // 選択されたポケモンのIDからNoを取得
@@ -82,7 +87,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         setIngredientOptions();
         loadStatus();
     });
-    personality?.addEventListener("change", loadStatus);
     level?.addEventListener("change", loadStatus);
     subSkillButtons?.addEventListener("click", loadStatus);
     selectIngredientA?.addEventListener("change", loadStatus);
@@ -118,7 +122,7 @@ document.addEventListener("DOMContentLoaded", async function () {
      * ステータス計算＆画面表示
      */
     async function loadStatus() {
-        if (!resultSpeedOfHelp || !resultHelpingCount || !resultNumberOfIngredients || !resultIngredientsCount || !resultSkillCount)
+        if (!resultSpeedOfHelp || !resultHelpingCount || !resultNumberOfIngredients || !resultIngredientsCount || !resultSkillCount || !resultPersonality)
             return;
         // 選択されたポケモンのIDからNoを取得
         pokemonStatus.selectedPokemonNo = parseInt(selectPokemonName.value);
@@ -131,7 +135,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         // ポケモンのレベルを取得
         pokemonStatus.level = parseInt(level.value, 10) || 1;
         // ポケモンの性格を取得
-        pokemonStatus.personality = personality.value;
+        // pokemonStatus.personality = (personality as HTMLSelectElement).value;
         // 選択された食材を取得
         pokemonStatus.selectedIngredientA = selectIngredientA.value;
         pokemonStatus.selectedIngredientB = selectIngredientB.value;
@@ -156,6 +160,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         resultNumberOfIngredients.textContent = numberOfIngredients.toString();
         resultIngredientsCount.textContent = ingredientCount.toString();
         resultSkillCount.textContent = skillCount.toString();
+        resultPersonality.textContent = `${pokemonStatus.personalityUp} / ${pokemonStatus.personalityDown}`;
     }
     /**
      * 選択中ポケモンの詳細データをAPIから取得
@@ -187,7 +192,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         const helpingBonus = countHelpingBonus();
         const goodNightRibbon = { goodNightRibbonTime: 0, evolveCount: 2 };
         const levelModifier = 1 - (pokemonLevel - 1) * 0.002;
-        const personalityModifier = getPersonalityModifier(pokemonStatus.personality);
+        const personalityModifier = getPersonalityModifier();
         const subSkillModifier = 1 - getSubSkillModifier(helpingSpeedM, helpingSpeedS, helpingBonus);
         const goodNightRibbonModifier = 1 - getGoodNightRibbon(goodNightRibbon);
         return Math.floor(baseSpeedOfHelp * levelModifier * personalityModifier * subSkillModifier * goodNightRibbonModifier);
@@ -269,7 +274,6 @@ document.addEventListener("DOMContentLoaded", async function () {
             foodRate *= 1.36;
         if (ingredientFinderS)
             foodRate *= 1.18;
-        console.log("食材獲得率:", foodRate);
         if (pokemonStatus.level < 30) {
             selectedIngredients = [
                 { name: pokemonStatus.selectedIngredientA, value: pokemonStatus.ingredientAValue }
@@ -307,7 +311,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     /**
      * 性格による補正値を取得
      */
-    function getPersonalityModifier(personality) {
+    function getPersonalityModifier() {
+        const personality = pokemonStatus.personalityUp || "normal";
         switch (personality) {
             case "normal": return 1;
             case "down": return 1.075;
@@ -504,5 +509,137 @@ document.addEventListener("DOMContentLoaded", async function () {
             div.appendChild(p);
             selectedSubSkilllabel.appendChild(div);
         });
+    }
+    /**
+     * 性格の選択肢を生成
+     */
+    async function setPersonalityOptions() {
+        const modal = document.getElementById("personalityModal");
+        const openBtn = document.getElementById("openPersonalityModal");
+        const closeBtn = document.getElementById("personalityModalClose");
+        const upGroup = document.getElementById("personality-up-group");
+        const downGroup = document.getElementById("personality-down-group");
+        const resultName = document.getElementById("resultPersonalityName");
+        if (!selectPersonality)
+            return;
+        const statusList = [
+            { key: "おてつだいスピード", label: "おてつだいスピード" },
+            { key: "げんき回復量", label: "げんき回復量" },
+            { key: "食材おてつだい確率", label: "食材おてつだい確率" },
+            { key: "メインスキル発生確率", label: "メインスキル発生確率" },
+            { key: "EXP獲得量", label: "EXP獲得量" }
+        ];
+        // デフォルトは無補正
+        let upStatus = null;
+        let downStatus = null;
+        async function updatePersonalityName() {
+            if (upStatus && downStatus) {
+                const result = await getPersonality(upStatus, downStatus);
+                resultName.textContent = result?.name ?? "該当なし";
+            }
+            else {
+                // 無補正
+                const result = await getPersonality("", "");
+                resultName.textContent = result?.name ?? "無補正";
+            }
+        }
+        async function renderButtons() {
+            upGroup.innerHTML = "";
+            downGroup.innerHTML = "";
+            // 上がるステータス
+            statusList.forEach(status => {
+                const upBtn = document.createElement("button");
+                upBtn.type = "button";
+                upBtn.className = "btn btn-outline-danger mb-1";
+                upBtn.textContent = status.label;
+                upBtn.disabled = (status.key === downStatus);
+                if (status.key === upStatus)
+                    upBtn.classList.add("active");
+                upBtn.onclick = async () => {
+                    upStatus = status.key;
+                    if (upStatus === downStatus) {
+                        downStatus = null;
+                    }
+                    renderButtons();
+                    await updatePersonalityName();
+                    updateNeutralBtn();
+                };
+                upGroup.appendChild(upBtn);
+                // 下がるステータス
+                const downBtn = document.createElement("button");
+                downBtn.type = "button";
+                downBtn.className = "btn btn-outline-primary mb-1";
+                downBtn.textContent = status.label;
+                downBtn.disabled = (status.key === upStatus);
+                if (status.key === downStatus)
+                    downBtn.classList.add("active");
+                downBtn.onclick = async () => {
+                    downStatus = status.key;
+                    if (downStatus === upStatus) {
+                        upStatus = null;
+                    }
+                    renderButtons();
+                    await updatePersonalityName();
+                    updateNeutralBtn();
+                };
+                downGroup.appendChild(downBtn);
+            });
+            updateNeutralBtn();
+        }
+        function updateNeutralBtn() {
+            const neutralBtn = document.getElementById("personalityNeutralBtn");
+            if (!neutralBtn)
+                return;
+            if (!upStatus && !downStatus) {
+                neutralBtn.classList.add("selected");
+            }
+            else {
+                neutralBtn.classList.remove("selected");
+            }
+        }
+        // 無補正ボタンイベント
+        document.getElementById("personalityNeutralBtn")?.addEventListener("click", async () => {
+            upStatus = null;
+            downStatus = null;
+            await renderButtons();
+            await updatePersonalityName();
+        });
+        await renderButtons();
+        await updatePersonalityName();
+        openBtn.onclick = async () => {
+            modal.style.display = "block";
+        };
+        closeBtn.onclick = () => {
+            modal.style.display = "none";
+            pokemonStatus.personalityUp = upStatus || "無補正";
+            pokemonStatus.personalityDown = downStatus || "無補正";
+            loadStatus();
+        };
+        modal.onclick = (e) => {
+            if (e.target === modal)
+                closeBtn.onclick?.(e);
+        };
+    }
+    /**
+     * 性格のデータをAPIから取得
+     * @returns {Promise<any>} 性格データ
+     */
+    async function getPersonality(upStatus, downStatus) {
+        try {
+            const response = await fetch('/api/getPersonality', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    upStatus: upStatus,
+                    downStatus: downStatus
+                })
+            });
+            const data = await response.json();
+            return data;
+        }
+        catch (err) {
+            console.error('性格取得エラー:', err);
+            return;
+        }
     }
 });

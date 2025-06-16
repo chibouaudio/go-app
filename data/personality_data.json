@@ -1,0 +1,330 @@
+{
+    "title": "性格と能力補正の一覧",
+    "personalities": [
+        {
+            "name": "さみしがり",
+            "effect": {
+                "up_status": {
+                    "ability": "おてつだいスピード",
+                    "value": 1.11
+                },
+                "down_status": {
+                    "ability": "げんき回復量",
+                    "value": 0.88
+                }
+            }
+        },
+        {
+            "name": "いじっぱり",
+            "effect": {
+                "up_status": {
+                    "ability": "おてつだいスピード",
+                    "value": 1.11
+                },
+                "down_status": {
+                    "ability": "食材おてつだい確率",
+                    "value": 0.8
+                }
+            }
+        },
+        {
+            "name": "やんちゃ",
+            "effect": {
+                "up_status": {
+                    "ability": "おてつだいスピード",
+                    "value": 1.11
+                },
+                "down_status": {
+                    "ability": "メインスキル発生確率",
+                    "value": 0.8
+                }
+            }
+        },
+        {
+            "name": "ゆうかん",
+            "effect": {
+                "up_status": {
+                    "ability": "おてつだいスピード",
+                    "value": 1.11
+                },
+                "down_status": {
+                    "ability": "EXP獲得量",
+                    "value": 0.82
+                }
+            }
+        },
+        {
+            "name": "ずぶとい",
+            "effect": {
+                "up_status": {
+                    "ability": "げんき回復量",
+                    "value": 1.2
+                },
+                "down_status": {
+                    "ability": "おてつだいスピード",
+                    "value": 0.93
+                }
+            }
+        },
+        {
+            "name": "わんぱく",
+            "effect": {
+                "up_status": {
+                    "ability": "げんき回復量",
+                    "value": 1.2
+                },
+                "down_status": {
+                    "ability": "食材おてつだい確率",
+                    "value": 0.8
+                }
+            }
+        },
+        {
+            "name": "のうてんき",
+            "effect": {
+                "up_status": {
+                    "ability": "げんき回復量",
+                    "value": 1.2
+                },
+                "down_status": {
+                    "ability": "メインスキル発生確率",
+                    "value": 0.8
+                }
+            }
+        },
+        {
+            "name": "のんき",
+            "effect": {
+                "up_status": {
+                    "ability": "げんき回復量",
+                    "value": 1.2
+                },
+                "down_status": {
+                    "ability": "EXP獲得量",
+                    "value": 0.82
+                }
+            }
+        },
+        {
+            "name": "ひかえめ",
+            "effect": {
+                "up_status": {
+                    "ability": "食材おてつだい確率",
+                    "value": 1.2
+                },
+                "down_status": {
+                    "ability": "おてつだいスピード",
+                    "value": 0.93
+                }
+            }
+        },
+        {
+            "name": "おっとり",
+            "effect": {
+                "up_status": {
+                    "ability": "食材おてつだい確率",
+                    "value": 1.2
+                },
+                "down_status": {
+                    "ability": "げんき回復量",
+                    "value": 0.88
+                }
+            }
+        },
+        {
+            "name": "うっかりや",
+            "effect": {
+                "up_status": {
+                    "ability": "食材おてつだい確率",
+                    "value": 1.2
+                },
+                "down_status": {
+                    "ability": "メインスキル発生確率",
+                    "value": 0.8
+                }
+            }
+        },
+        {
+            "name": "れいせい",
+            "effect": {
+                "up_status": {
+                    "ability": "食材おてつだい確率",
+                    "value": 1.2
+                },
+                "down_status": {
+                    "ability": "EXP獲得量",
+                    "value": 0.82
+                }
+            }
+        },
+        {
+            "name": "おだやか",
+            "effect": {
+                "up_status": {
+                    "ability": "メインスキル発生確率",
+                    "value": 1.2
+                },
+                "down_status": {
+                    "ability": "おてつだいスピード",
+                    "value": 0.93
+                }
+            }
+        },
+        {
+            "name": "おとなしい",
+            "effect": {
+                "up_status": {
+                    "ability": "メインスキル発生確率",
+                    "value": 1.2
+                },
+                "down_status": {
+                    "ability": "げんき回復量",
+                    "value": 0.88
+                }
+            }
+        },
+        {
+            "name": "しんちょう",
+            "effect": {
+                "up_status": {
+                    "ability": "メインスキル発生確率",
+                    "value": 1.2
+                },
+                "down_status": {
+                    "ability": "食材おてつだい確率",
+                    "value": 0.8
+                }
+            }
+        },
+        {
+            "name": "なまいき",
+            "effect": {
+                "up_status": {
+                    "ability": "メインスキル発生確率",
+                    "value": 1.2
+                },
+                "down_status": {
+                    "ability": "EXP獲得量",
+                    "value": 0.82
+                }
+            }
+        },
+        {
+            "name": "おくびょう",
+            "effect": {
+                "up_status": {
+                    "ability": "EXP獲得量",
+                    "value": 1.18
+                },
+                "down_status": {
+                    "ability": "おてつだいスピード",
+                    "value": 0.93
+                }
+            }
+        },
+        {
+            "name": "せっかち",
+            "effect": {
+                "up_status": {
+                    "ability": "EXP獲得量",
+                    "value": 1.18
+                },
+                "down_status": {
+                    "ability": "げんき回復量",
+                    "value": 0.88
+                }
+            }
+        },
+        {
+            "name": "ようき",
+            "effect": {
+                "up_status": {
+                    "ability": "EXP獲得量",
+                    "value": 1.18
+                },
+                "down_status": {
+                    "ability": "食材おてつだい確率",
+                    "value": 0.8
+                }
+            }
+        },
+        {
+            "name": "むじゃき",
+            "effect": {
+                "up_status": {
+                    "ability": "EXP獲得量",
+                    "value": 1.18
+                },
+                "down_status": {
+                    "ability": "メインスキル発生確率",
+                    "value": 0.8
+                }
+            }
+        },
+        {
+            "name": "がんばりや",
+            "effect": {
+                "up_status": {
+                    "ability": "無補正",
+                    "value": 1
+                },
+                "down_status": {
+                    "ability": "無補正",
+                    "value": 1
+                }
+            }
+        },
+        {
+            "name": "すなお",
+            "effect": {
+                "up_status": {
+                    "ability": "無補正",
+                    "value": 1
+                },
+                "down_status": {
+                    "ability": "無補正",
+                    "value": 1
+                }
+            }
+        },
+        {
+            "name": "てれや",
+            "effect": {
+                "up_status": {
+                    "ability": "無補正",
+                    "value": 1
+                },
+                "down_status": {
+                    "ability": "無補正",
+                    "value": 1
+                }
+            }
+        },
+        {
+            "name": "きまぐれ",
+            "effect": {
+                "up_status": {
+                    "ability": "無補正",
+                    "value": 1
+                },
+                "down_status": {
+                    "ability": "無補正",
+                    "value": 1
+                }
+            }
+        },
+        {
+            "name": "まじめ",
+            "effect": {
+                "up_status": {
+                    "ability": "無補正",
+                    "value": 1
+                },
+                "down_status": {
+                    "ability": "無補正",
+                    "value": 1
+                }
+            }
+        }
+    ]
+}

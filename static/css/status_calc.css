@@ -44,6 +44,26 @@
     border: 2px solid #fff;
 }
 
+/* 無補正ボタンの基本色 */
+#personalityNeutralBtn {
+    background: #ffffff !important;
+    color: #333 !important;
+    border: 1px solid #ccc !important;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+}
+
+/* 無補正ボタンのホバー時 */
+#personalityNeutralBtn:hover {
+    background: #e9ecef !important;
+    color: #000 !important;
+}
+
+/* 無補正ボタンの選択状態 */
+#personalityNeutralBtn.selected {
+    background: #a7a7a7 !important;
+    box-shadow: 0 4px 16px rgba(0,123,255,0.15);
+}
+
 .Gold-skill {
     background-color: #ffc70dbd;
 }
