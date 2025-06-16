@@ -511,7 +511,6 @@ document.addEventListener("DOMContentLoaded", async function () {
             // 各グループごとにoptionを作成
             groups.forEach((group, idx) => {
                 const label = group.map(([name, value]) => `${name} ( ${value} ) `).join("  /  ");
-                console.log(label);
                 const option = document.createElement("option");
                 option.value = idx.toString() + "-" + list[idx];
                 option.textContent = label;
@@ -822,6 +821,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             // ポケモンが変更されたら、新しいポケモンデータでUIと計算を更新
             pokemonStatus.selectedPokemonNo = parseInt(DOM.selectPokemonName.value);
             await pokemonStatus.fetchSelectedPokemonData();
+            DOM.selectIngredient.innerHTML = ""; // 既存の選択肢をクリア
             setIngredientOptions();
             await loadStatus();
         });
