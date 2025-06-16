@@ -73,3 +73,29 @@
 .White-skill {
     background-color: #d3d3d3;
 }
+
+/* つまみ（サム）を大きく */
+input[type="range"].form-range::-webkit-slider-thumb {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background: #0d6efd;
+    cursor: pointer;
+    margin-top: -0.55rem;
+}
+/* Firefox用のスタイル */
+input[type="range"].form-range::-moz-range-thumb {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background: #0d6efd;
+    cursor: pointer;
+}
+/* Internet Explorer用のスタイル */
+input[type="range"].form-range::-ms-thumb {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background: #0d6efd;
+    cursor: pointer;
+}

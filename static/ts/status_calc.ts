@@ -727,6 +727,10 @@ document.addEventListener("DOMContentLoaded", async function () {
 		};
 		closePersonalityModalButton.onclick = () => {
 			personalityModal.style.display = "none";
+			// 性格名をボタンのラベルに設定
+			if (resultPersonalityName && openPersonalityModalButton) {
+				openPersonalityModalButton.textContent = resultPersonalityName.textContent ?? "性格選択";
+			}
 			loadStatus();
 		};
 		personalityModal.onclick = (e) => {

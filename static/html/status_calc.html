@@ -16,21 +16,21 @@
         <h1 class="text-center mb-4">個体値計算</h1>
         <p class="desc text-center mb-4">個体値を計算します。</p>
         <div class="row mb-3">
-            <div class="col-md-6 mb-3">
+            <div class="col-md-3 mb-3">
                 <label for="selectPokemonName" class="form-label mb-2">ポケモンを選択</label>
                 <select id="selectPokemonName" class="form-select"></select>
             </div>
-            <div class="col-md-6 mb-3">
-                <label for="selectPersonality" class="form-label mb-2">性格を選択</label>
-                <div id="selectPersonality">
-                    <button id="openPersonalityModal" class="btn btn-secondary form-control">性格を選択</button>
+            <div class="col-md-9 mb-3">
+                <label for="level" class="form-label mb-2">レベル</label>
+                <div class="d-flex align-items-center">
+                    <input type="range" id="level" class="form-range flex-grow-1" value="60" min="1" max="65" step="1"
+                        oninput="levelValue.textContent = this.value">
+                    <span id="levelValue" class="ms-4">60</span>
                 </div>
             </div>
-            <div class="col-md-6 mb-3">
-                <label for="level" class="form-label mb-2">レベル</label>
-                <input type="range" id="level" class="form-range" value="60" min="1" max="65" step="1"
-                    oninput="levelValue.textContent = this.value">
-                <span id="levelValue" class="ms-2">60</span>
+            <div class="row col-md-6 mb-3">
+                <label for="selectIngredient" class="form-label mb-2">食材構成を選択</label>
+                <select id="selectIngredient" class="form-select" aria-readonly="true"></select>
             </div>
             <div class="col-md-6 mb-3">
                 <label for="subSkill" class="form-label mb-2">サブスキル</label>
@@ -41,9 +41,11 @@
                 <div id="selectedSubSkilllabel" class="row">
                 </div>
             </div>
-            <div class="row col-md-6 mb-3">
-                <label for="selectIngredient" class="form-label mb-2">食材構成を選択</label>
-                <select id="selectIngredient" class="form-select" aria-readonly="true"></select>
+            <div class="col-md-6 mb-3">
+                <label for="selectPersonality" class="form-label mb-2">性格を選択</label>
+                <div id="selectPersonality">
+                    <button id="openPersonalityModal" class="btn btn-secondary form-control">性格を選択</button>
+                </div>
             </div>
         </div>
         <div class="row mb-3">
