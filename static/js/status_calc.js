@@ -17,10 +17,8 @@ document.addEventListener("DOMContentLoaded", async function () {
         selectIngredientC: document.getElementById("selectIngredientC"),
         resultHelpingCount: document.getElementById("resultHelpingCount"),
         resultSpeedOfHelp: document.getElementById("resultSpeedOfHelp"),
-        resultIngredientsCount: document.getElementById("resultIngredientsCount"),
         resultNumberOfIngredients: document.getElementById("resultNumberOfIngredients"),
         resultSkillCount: document.getElementById("resultSkillCount"),
-        resultPersonality: document.getElementById("resultPersonality"),
         personalityModal: document.getElementById("personalityModal"),
         openPersonalityModalButton: document.getElementById("openPersonalityModal"),
         closePersonalityModalButton: document.getElementById("personalityModalClose"),
@@ -677,15 +675,8 @@ document.addEventListener("DOMContentLoaded", async function () {
         if (!DOM.resultSpeedOfHelp ||
             !DOM.resultHelpingCount ||
             !DOM.resultNumberOfIngredients ||
-            !DOM.resultIngredientsCount ||
-            !DOM.resultSkillCount ||
-            !DOM.resultPersonality)
+            !DOM.resultSkillCount)
             return;
-        // 必要なDOM要素が全て存在するか確認
-        if (!Object.values(DOM).every(el => el !== null)) {
-            console.error("必要なDOM要素が一つ以上見つかりません。IDを確認してください。");
-            return;
-        }
         // UIから現在の選択値を取得し、PokemonStatusManagerインスタンスに反映
         pokemonStatus.selectedPokemonNo = parseInt(DOM.selectPokemonName.value);
         pokemonStatus.level = parseInt(DOM.level.value, 10) || 1;
@@ -715,12 +706,35 @@ document.addEventListener("DOMContentLoaded", async function () {
         else {
             DOM.resultNumberOfIngredients.textContent = "N/A";
         }
-        DOM.resultIngredientsCount.textContent = ingredientCount.toString();
         DOM.resultSkillCount.textContent = skillCount.toString();
-        DOM.resultPersonality.textContent = pokemonStatus.personality.name;
+        console.log("------計算結果------");
+        console.log("ポケモンNo:", pokemonStatus.selectedPokemonNo);
+        console.log("ポケモン名:", pokemonStatus.selectedPokemonName);
+        console.log("レベル:", pokemonStatus.level);
+        console.log("選択された食材A:", pokemonStatus.selectedIngredientA, "値:", pokemonStatus.ingredientAValue);
+        console.log("選択された食材B:", pokemonStatus.selectedIngredientB, "値:", pokemonStatus.ingredientBValue);
+        console.log("選択された食材C:", pokemonStatus.selectedIngredientC, "値:", pokemonStatus.ingredientCValue);
+        console.log("おてつだい時間:", pokemonStatus.speedOfHelping, "秒");
+        console.log("おてつだい時間（分:秒）:", `${Math.floor(pokemonStatus.speedOfHelping / 60)}分:${pokemonStatus.speedOfHelping % 60}秒`);
+        console.log("おてつだいスピード:", pokemonStatus.speedOfHelping);
+        console.log("おてつだい回数:", pokemonStatus.helpingCount);
+        numberOfIngredientsResult.forEach(([name, amount]) => {
+            console.log(`食材: ${name}, 獲得量: ${amount}`);
+        });
+        console.log("食材獲得量:", ingredientCount);
+        console.log("スキル発生回数:", skillCount);
+        console.log("性格:", pokemonStatus.personality.name ?? "無補正");
+        console.log("-------------------");
     }
     // --- アプリケーションの初期化処理 ---
     async function initializeApp() {
+        // DOM要素が全て存在するかチェック
+        const missingDomKeys = Object.entries(DOM)
+            .filter(([_, el]) => el === null)
+            .map(([key]) => key);
+        if (missingDomKeys.length > 0) {
+            throw new Error(`必要なDOM要素が見つかりません: ${missingDomKeys.join(", ")}`);
+        }
         // 1. ポケモン名を取得し、選択ボックスに設定
         await fetchAndSetPokemonNames();
         // 2. 初期選択されているポケモンNoを取得（通常はリストの最初のポケモン）
