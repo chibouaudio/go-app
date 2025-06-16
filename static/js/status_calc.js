@@ -12,9 +12,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         openSubSkillModalButton: document.getElementById("btnSubSkill"),
         closeSubSkillModalButton: document.getElementById("closeSubSkillModal"),
         selectedSubSkillLabel: document.getElementById("selectedSubSkilllabel"),
-        selectIngredientA: document.getElementById("selectIngredientA"),
-        selectIngredientB: document.getElementById("selectIngredientB"),
-        selectIngredientC: document.getElementById("selectIngredientC"),
+        selectIngredient: document.getElementById("selectIngredient"),
         resultHelpingCount: document.getElementById("resultHelpingCount"),
         resultSpeedOfHelp: document.getElementById("resultSpeedOfHelp"),
         resultNumberOfIngredients: document.getElementById("resultNumberOfIngredients"),
@@ -127,6 +125,49 @@ document.addEventListener("DOMContentLoaded", async function () {
             catch (error) {
                 console.error('ポケモンデータ取得エラー:', error);
                 return {};
+            }
+        }
+        /**
+         * 選択されたポケモンの食材データを保存する
+         */
+        setIngredientData() {
+            const value = DOM.selectIngredient.value;
+            switch (value) {
+                case "0-AAA":
+                    pokemonStatus.selectedIngredientA = pokemonStatus.pokemonData.IngredientsA[0].name;
+                    pokemonStatus.selectedIngredientB = pokemonStatus.pokemonData.IngredientsB[0].name;
+                    pokemonStatus.selectedIngredientC = pokemonStatus.pokemonData.IngredientsC[0].name;
+                    break;
+                case "1-AAB":
+                    pokemonStatus.selectedIngredientA = pokemonStatus.pokemonData.IngredientsA[0].name;
+                    pokemonStatus.selectedIngredientB = pokemonStatus.pokemonData.IngredientsB[0].name;
+                    pokemonStatus.selectedIngredientC = pokemonStatus.pokemonData.IngredientsC[1].name;
+                    break;
+                case "2-AAC":
+                    pokemonStatus.selectedIngredientA = pokemonStatus.pokemonData.IngredientsA[0].name;
+                    pokemonStatus.selectedIngredientB = pokemonStatus.pokemonData.IngredientsB[0].name;
+                    pokemonStatus.selectedIngredientC = pokemonStatus.pokemonData.IngredientsC[2].name;
+                    break;
+                case "3-ABA":
+                    pokemonStatus.selectedIngredientA = pokemonStatus.pokemonData.IngredientsA[0].name;
+                    pokemonStatus.selectedIngredientB = pokemonStatus.pokemonData.IngredientsB[1].name;
+                    pokemonStatus.selectedIngredientC = pokemonStatus.pokemonData.IngredientsC[0].name;
+                    break;
+                case "4-ABB":
+                    pokemonStatus.selectedIngredientA = pokemonStatus.pokemonData.IngredientsA[0].name;
+                    pokemonStatus.selectedIngredientB = pokemonStatus.pokemonData.IngredientsB[1].name;
+                    pokemonStatus.selectedIngredientC = pokemonStatus.pokemonData.IngredientsC[1].name;
+                    break;
+                case "5-ABC":
+                    pokemonStatus.selectedIngredientA = pokemonStatus.pokemonData.IngredientsA[0].name;
+                    pokemonStatus.selectedIngredientB = pokemonStatus.pokemonData.IngredientsB[1].name;
+                    pokemonStatus.selectedIngredientC = pokemonStatus.pokemonData.IngredientsC[2].name;
+                    break;
+                default:
+                    pokemonStatus.selectedIngredientA = pokemonStatus.pokemonData.IngredientsA[0].name;
+                    pokemonStatus.selectedIngredientB = pokemonStatus.pokemonData.IngredientsB[0].name;
+                    pokemonStatus.selectedIngredientC = pokemonStatus.pokemonData.IngredientsC[0].name;
+                    break;
             }
         }
         /**
@@ -444,24 +485,43 @@ document.addEventListener("DOMContentLoaded", async function () {
      * 食材セレクトボックスをポケモンデータに基づいて生成・更新する
      */
     function setIngredientOptions() {
-        if (!DOM.selectIngredientA || !DOM.selectIngredientB || !DOM.selectIngredientC)
-            return;
         const { IngredientsA, IngredientsB, IngredientsC } = pokemonStatus.pokemonData;
-        const compositionLabels = ["A", "B", "C"];
-        function createIngredientOptions(selectElement, ingredients) {
-            selectElement.innerHTML = "";
-            if (ingredients) {
-                ingredients.forEach((ingredient, i) => {
-                    const option = document.createElement("option");
-                    option.value = ingredient.name.toString();
-                    option.textContent = `${compositionLabels[i]} : ${ingredient.name} ( ${ingredient.value} )`;
-                    selectElement.appendChild(option);
+        // IngredientsA, IngredientsB, IngredientsCの中身を使って組み合わせを作成
+        if (IngredientsA && IngredientsB && IngredientsC) {
+            const ingredientCombinations = [];
+            IngredientsA.forEach((a) => {
+                IngredientsB.forEach((b) => {
+                    IngredientsC.forEach((c) => {
+                        ingredientCombinations.push([a.name, a.value], [b.name, b.value], [c.name, c.value]);
+                    });
                 });
+            });
+            ;
+            const groups = [];
+            for (let i = 0; i < ingredientCombinations.length; i += 3) {
+                if (groups.length >= 6)
+                    break;
+                groups.push([
+                    ingredientCombinations[i],
+                    ingredientCombinations[i + 1],
+                    ingredientCombinations[i + 2]
+                ]);
             }
+            const list = ["AAA", "AAB", "AAC", "ABA", "ABB", "ABC"];
+            // 各グループごとにoptionを作成
+            groups.forEach((group, idx) => {
+                const label = group.map(([name, value]) => `${name} ( ${value} ) `).join("  /  ");
+                console.log(label);
+                const option = document.createElement("option");
+                option.value = idx.toString() + "-" + list[idx];
+                option.textContent = label;
+                if (!DOM.selectIngredient)
+                    return;
+                DOM.selectIngredient.appendChild(option);
+            });
+            // デフォルト選択
+            DOM.selectIngredient.value = "0-" + list[0];
         }
-        createIngredientOptions(DOM.selectIngredientA, IngredientsA);
-        createIngredientOptions(DOM.selectIngredientB, IngredientsB);
-        createIngredientOptions(DOM.selectIngredientC, IngredientsC);
     }
     /**
      * サブスキルボタンの状態（選択中を示すクラスとバッジ）を更新する
@@ -680,9 +740,8 @@ document.addEventListener("DOMContentLoaded", async function () {
         // UIから現在の選択値を取得し、PokemonStatusManagerインスタンスに反映
         pokemonStatus.selectedPokemonNo = parseInt(DOM.selectPokemonName.value);
         pokemonStatus.level = parseInt(DOM.level.value, 10) || 1;
-        pokemonStatus.selectedIngredientA = DOM.selectIngredientA.value;
-        pokemonStatus.selectedIngredientB = DOM.selectIngredientB.value;
-        pokemonStatus.selectedIngredientC = DOM.selectIngredientC.value;
+        // 食材の選択値を取得
+        pokemonStatus.setIngredientData();
         // 選択されたポケモンの詳細データを取得・更新
         await pokemonStatus.fetchSelectedPokemonData();
         pokemonStatus.selectedPokemonName = pokemonStatus.pokemonData.Name;
@@ -763,9 +822,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             await loadStatus();
         });
         DOM.level?.addEventListener("change", loadStatus);
-        DOM.selectIngredientA?.addEventListener("change", loadStatus);
-        DOM.selectIngredientB?.addEventListener("change", loadStatus);
-        DOM.selectIngredientC?.addEventListener("change", loadStatus);
+        DOM.selectIngredient?.addEventListener("change", loadStatus);
     }
     // --- アプリケーションの実行 ---
     // DOMContentLoadedイベント内で、アプリケーションの初期化とイベントリスナー登録を実行
