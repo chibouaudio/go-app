@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     // --- 定数 ---
     const badgeNumbers = [10, 25, 50, 75, 100]; // サブスキル選択時のバッジ番号
     const MAX_SUB_SUBSKILLS = 5; // サブスキル最大数
+    const BASE_GENKI = 100; // 基本げんき量
     class PokemonStatusClass {
         constructor() {
             this.selectedPokemonNo = 1;
@@ -33,6 +34,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             this.level = 1;
             this.personalityUp = "無補正";
             this.personalityDown = "無補正";
+            this.personality = {};
             this.selectedIngredientA = "";
             this.ingredientAValue = 0;
             this.selectedIngredientB = "";
@@ -50,6 +52,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             this.level = 1;
             this.personalityUp = "無補正";
             this.personalityDown = "無補正";
+            this.personality = {};
             this.selectedIngredientA = "";
             this.ingredientAValue = 0;
             this.selectedIngredientB = "";
@@ -73,10 +76,12 @@ document.addEventListener("DOMContentLoaded", async function () {
     setIngredientOptions();
     // サブスキル選択モーダルを初期化
     setSubSkillModal();
-    // 選択されたポケモンの情報を取得
-    await loadStatus();
     // 性格の選択肢を設定
     await setPersonalityOptions();
+    // 選択されたポケモンの性格を初期化
+    await getPersonality("無補正", "無補正");
+    // 選択されたポケモンの情報を取得
+    await loadStatus();
     // --- イベントリスナー登録 ---
     selectPokemonName?.addEventListener("change", async () => {
         // 選択されたポケモンのIDからNoを取得
@@ -145,7 +150,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         // おてつだいスピードを取得
         pokemonStatus.speedOfHelping = await getSpeedOfHelp();
         // おてつだい回数を取得
-        pokemonStatus.helpingCount = await getHelpingCount(100);
+        pokemonStatus.helpingCount = await getHelpingCount();
         // 食材獲得量を計算
         const numberOfIngredients = getNumberOfIngredients();
         // 食材獲得回数を計算
@@ -160,7 +165,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         resultNumberOfIngredients.textContent = numberOfIngredients.toString();
         resultIngredientsCount.textContent = ingredientCount.toString();
         resultSkillCount.textContent = skillCount.toString();
-        resultPersonality.textContent = `${pokemonStatus.personalityUp} / ${pokemonStatus.personalityDown}`;
+        resultPersonality.textContent = `${pokemonStatus.personality.name}`;
     }
     /**
      * 選択中ポケモンの詳細データをAPIから取得
@@ -200,9 +205,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     /**
      * おてつだい回数をAPIで計算
      */
-    async function getHelpingCount(genki) {
-        if (!genki)
-            return 0;
+    async function getHelpingCount() {
+        const genki = Math.min(BASE_GENKI * getPersonalityGenki(), 100);
         try {
             const response = await fetch('/api/calcHelpingCount', {
                 method: 'POST',
@@ -223,6 +227,9 @@ document.addEventListener("DOMContentLoaded", async function () {
             return 0;
         }
     }
+    /**
+     * スキル発生回数を計算
+     */
     function getSkillCount() {
         let skillRate = pokemonStatus.pokemonData.SkillRate;
         const helpingCount = pokemonStatus.helpingCount;
@@ -234,6 +241,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             skillRate *= 1.36;
         if (skillUpS)
             skillRate *= 1.18;
+        skillRate *= getPersonalitySkill();
         return Math.round(skillRate * helpingCount * 100) / 100;
     }
     /**
@@ -274,6 +282,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             foodRate *= 1.36;
         if (ingredientFinderS)
             foodRate *= 1.18;
+        foodRate *= getPersonalityIngredient();
         if (pokemonStatus.level < 30) {
             selectedIngredients = [
                 { name: pokemonStatus.selectedIngredientA, value: pokemonStatus.ingredientAValue }
@@ -312,13 +321,73 @@ document.addEventListener("DOMContentLoaded", async function () {
      * 性格による補正値を取得
      */
     function getPersonalityModifier() {
-        const personality = pokemonStatus.personalityUp || "normal";
-        switch (personality) {
-            case "normal": return 1;
-            case "down": return 1.075;
-            case "up": return 0.9;
-            default: return 1;
+        const personality = pokemonStatus.personality;
+        const personalityUp = personality.effect.up_status;
+        const personalityDown = personality.effect.down_status;
+        if (personalityUp === "無補正" && personalityDown === "無補正") {
+            return 1;
         }
+        if (personalityUp.ability === "おてつだいスピード") {
+            return 0.9;
+        }
+        else if (personalityDown.ability === "おてつだいスピード") {
+            return 1.075;
+        }
+        return 1;
+    }
+    /**
+     * 性格の補正値を取得
+     */
+    function getPersonalityIngredient() {
+        const personality = pokemonStatus.personality;
+        const personalityUp = personality.effect.up_status;
+        const personalityDown = personality.effect.down_status;
+        if (personalityUp === "無補正" && personalityDown === "無補正") {
+            return 1;
+        }
+        if (personalityUp.ability === "食材おてつだい確率") {
+            return 1.2;
+        }
+        else if (personalityDown.ability === "食材おてつだい確率") {
+            return 0.8;
+        }
+        return 1;
+    }
+    /**
+     * 性格のメインスキル発生確率を取得
+     */
+    function getPersonalitySkill() {
+        const personality = pokemonStatus.personality;
+        const personalityUp = personality.effect.up_status;
+        const personalityDown = personality.effect.down_status;
+        if (personalityUp === "無補正" && personalityDown === "無補正") {
+            return 1;
+        }
+        if (personalityUp.ability === "メインスキル発生確率") {
+            return 1.2;
+        }
+        else if (personalityDown.ability === "メインスキル発生確率") {
+            return 0.8;
+        }
+        return 1;
+    }
+    /**
+     * げんき回復量の補正値を取得
+     */
+    function getPersonalityGenki() {
+        const personality = pokemonStatus.personality;
+        const personalityUp = personality.effect.up_status;
+        const personalityDown = personality.effect.down_status;
+        if (personalityUp === "無補正" && personalityDown === "無補正") {
+            return 1;
+        }
+        if (personalityUp.ability === "げんき回復量") {
+            return 1.2;
+        }
+        else if (personalityDown.ability === "げんき回復量") {
+            return 0.88;
+        }
+        return 1;
     }
     /**
      * サブスキルによる補正値を取得
@@ -539,7 +608,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             }
             else {
                 // 無補正
-                const result = await getPersonality("", "");
+                const result = await getPersonality("無補正", "無補正");
                 resultName.textContent = result?.name ?? "無補正";
             }
         }
@@ -611,8 +680,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         };
         closeBtn.onclick = () => {
             modal.style.display = "none";
-            pokemonStatus.personalityUp = upStatus || "無補正";
-            pokemonStatus.personalityDown = downStatus || "無補正";
             loadStatus();
         };
         modal.onclick = (e) => {
@@ -635,6 +702,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 })
             });
             const data = await response.json();
+            pokemonStatus.personality = data;
             return data;
         }
         catch (err) {
