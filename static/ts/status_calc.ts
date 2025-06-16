@@ -3,37 +3,83 @@
  * 各関数・変数には説明コメントを付与
  */
 document.addEventListener("DOMContentLoaded", async function () {
-	// --- DOM要素取得 ---
-	const selectPokemonName = document.getElementById("selectPokemonName");
-	const resultSpeedOfHelp = document.getElementById("resultSpeedOfHelp");
-	const level = document.getElementById("level");
-	const subSkillButtons = document.getElementById("subSkillButtons");
-	const modal = document.getElementById("subSkillModal");
-	const openModalButton = document.getElementById("btnSubSkill");
-	const closeModalButton = document.getElementById("closeSubSkillModal");
-	const selectedSubSkilllabel = document.getElementById("selectedSubSkilllabel");
-	const selectIngredientA = document.getElementById("selectIngredientA");
-	const selectIngredientB = document.getElementById("selectIngredientB");
-	const selectIngredientC = document.getElementById("selectIngredientC");
-	const selectPersonality = document.getElementById("selectPersonality");
-	const resultHelpingCount = document.getElementById("resultHelpingCount");
-	const resultIngredientsCount = document.getElementById("resultIngredientsCount");
-	const resultNumberOfIngredients = document.getElementById("resultNumberOfIngredients");
-	const resultSkillCount = document.getElementById("resultSkillCount");
-	const resultPersonality = document.getElementById("resultPersonality");
+	const DOM = {
+		selectPokemonName: document.getElementById("selectPokemonName"),
+		level: document.getElementById("level"),
+		subSkillButtons: document.getElementById("subSkillButtons"),
+		subSkillModal: document.getElementById("subSkillModal"),
+		openSubSkillModalButton: document.getElementById("btnSubSkill"),
+		closeSubSkillModalButton: document.getElementById("closeSubSkillModal"),
+		selectedSubSkillLabel: document.getElementById("selectedSubSkilllabel"),
+		selectIngredientA: document.getElementById("selectIngredientA"),
+		selectIngredientB: document.getElementById("selectIngredientB"),
+		selectIngredientC: document.getElementById("selectIngredientC"),
+		resultHelpingCount: document.getElementById("resultHelpingCount"),
+		resultSpeedOfHelp: document.getElementById("resultSpeedOfHelp"),
+		resultIngredientsCount: document.getElementById("resultIngredientsCount"),
+		resultNumberOfIngredients: document.getElementById("resultNumberOfIngredients"),
+		resultSkillCount: document.getElementById("resultSkillCount"),
+		resultPersonality: document.getElementById("resultPersonality"),
+		personalityModal: document.getElementById("personalityModal"),
+		openPersonalityModalButton: document.getElementById("openPersonalityModal"),
+		closePersonalityModalButton: document.getElementById("personalityModalClose"),
+		personalityUpGroup: document.getElementById("personality-up-group"),
+		personalityDownGroup: document.getElementById("personality-down-group"),
+		resultPersonalityName: document.getElementById("resultPersonalityName"),
+		personalityNeutralBtn: document.getElementById("personalityNeutralBtn")
+	};
 
 	// --- 定数 ---
-	const badgeNumbers = [10, 25, 50, 75, 100]; // サブスキル選択時のバッジ番号
-	const MAX_SUB_SUBSKILLS = 5; // サブスキル最大数
-	const BASE_GENKI = 100; // 基本げんき量
+	const CONSTANTS = {
+		BADGE_NUMBERS: [10, 25, 50, 75, 100], // サブスキル選択時のバッジ番号
+		MAX_SUB_SKILLS: 5, // サブスキル最大数
+		MAX_HELPING_SPEED_BONUS: 0.35, // サブスキルによる最大おてつだいスピード補正率
+		BASE_GENKI: 100, // 基本げんき量
+		LEVEL_MODIFIER_PER_LEVEL: 0.002, // レベルによる補正値
+		PERSONALITY_MODIFIERS: { // 性格による各種補正値
+			SPEED_UP: 0.9,
+			SPEED_DOWN: 1.075,
+			INGREDIENT_UP: 1.2,
+			INGREDIENT_DOWN: 0.8,
+			SKILL_UP: 1.2,
+			SKILL_DOWN: 0.8,
+			GENKI_UP: 1.2,
+			GENKI_DOWN: 0.88
+		},
+		SUB_SKILL_MODIFIERS: { // サブスキルによる各種補正値
+			HELPING_SPEED_M: 0.14,
+			HELPING_SPEED_S: 0.07,
+			HELPING_BONUS: 0.05,
+			INGREDIENT_CHANCE_M: 1.36,
+			INGREDIENT_CHANCE_S: 1.18,
+			SKILL_CHANCE_M: 1.36,
+			SKILL_CHANCE_S: 1.18
+		},
+		GOOD_NIGHT_RIBBON_MODIFIERS: { // おやすみリボンによる補正値
+			EVOLVE_1_2000: 0.12,
+			EVOLVE_1_500: 0.05,
+			EVOLVE_0_2000: 0.25,
+			EVOLVE_0_500: 0.11
+		},
+		MEAL_TIMES: { // 食事時間
+			BREAKFAST: 9.0,
+			LUNCH: 13.0,
+			DINNER: 19.0
+		},
+		INGREDIENT_LEVEL_THRESHOLDS: { // 食材が解放されるレベルの閾値
+			LEVEL_30: 30,
+			LEVEL_60: 60
+		}
+	};
 
-	class PokemonStatusClass {
+	/**
+	 * ポケモンの現在のステータスと選択状態、および計算ロジックを管理するクラス
+	 */
+	class PokemonStatusManager {
 		selectedPokemonNo: number = 1;
 		selectedPokemonName: string = "";
 		pokemonData: any = {};
 		level: number = 1;
-		personalityUp: string = "無補正";
-		personalityDown: string = "無補正";
 		personality: any = {};
 		selectedIngredientA: string = "";
 		ingredientAValue: number = 0;
@@ -45,13 +91,14 @@ document.addEventListener("DOMContentLoaded", async function () {
 		speedOfHelping: number = 0;
 		helpingCount: number = 0;
 
+		/**
+		 * ステータスを初期状態にリセットする
+		 */
 		reset() {
 			this.selectedPokemonNo = 1;
 			this.selectedPokemonName = "";
 			this.pokemonData = {};
 			this.level = 1;
-			this.personalityUp = "無補正";
-			this.personalityDown = "無補正";
 			this.personality = {};
 			this.selectedIngredientA = "";
 			this.ingredientAValue = 0;
@@ -63,48 +110,296 @@ document.addEventListener("DOMContentLoaded", async function () {
 			this.speedOfHelping = 0;
 			this.helpingCount = 0;
 		}
+
+		/**
+		 * 選択中ポケモンの詳細データをAPIから取得し、インスタンスに設定する
+		 * @returns {Promise<any>} 取得したポケモンデータ
+		 */
+		async fetchSelectedPokemonData() {
+			try {
+				const response = await fetch('/api/getPokemonData', {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify({ No: this.selectedPokemonNo })
+				});
+				if (!response.ok) throw new Error("ポケモンデータ取得失敗");
+				this.pokemonData = await response.json();
+				return this.pokemonData;
+			} catch (error) {
+				console.error('ポケモンデータ取得エラー:', error);
+				return {};
+			}
+		}
+
+		/**
+		 * おてつだいスピード（秒）を計算する
+		 * @returns {number} 計算されたおてつだいスピード（秒）
+		 */
+		calculateSpeedOfHelp() {
+			const baseSpeedOfHelp = this.pokemonData.SpeedOfHelp;
+			const pokemonLevel = this.level;
+			const helpingSpeedM = this.selectedSubSkills.some(s => s.subskill === "おてつだいスピードM");
+			const helpingSpeedS = this.selectedSubSkills.some(s => s.subskill === "おてつだいスピードS");
+			const helpingBonus = this.countHelpingBonus();
+			// TODO: goodNightRibbonTimeとevolveCountがどこから来るか明確にする必要あり
+			const goodNightRibbon = { goodNightRibbonTime: 0, evolveCount: 2 };
+
+			const levelModifier = 1 - (pokemonLevel - 1) * CONSTANTS.LEVEL_MODIFIER_PER_LEVEL;
+			const personalityModifier = this.getPersonalitySpeedModifier();
+			const subSkillModifier = 1 - this.getSubSkillSpeedModifier(helpingSpeedM, helpingSpeedS, helpingBonus);
+			const goodNightRibbonModifier = 1 - this.getGoodNightRibbonModifier(goodNightRibbon);
+
+			return Math.floor(
+				baseSpeedOfHelp * levelModifier * personalityModifier * subSkillModifier * goodNightRibbonModifier
+			);
+		}
+
+		/**
+		 * おてつだい回数をAPIで計算し、インスタンスに設定する
+		 * @returns {Promise<number>} 計算されたおてつだい回数
+		 */
+		async calculateHelpingCount() {
+			const genki = Math.min(CONSTANTS.BASE_GENKI * this.getPersonalityGenkiModifier(), 100);
+			try {
+				const response = await fetch('/api/calcHelpingCount', {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify({
+						maxGenki: genki,
+						helpingSpeed: this.speedOfHelping,
+						breakfast: CONSTANTS.MEAL_TIMES.BREAKFAST,
+						lunch: CONSTANTS.MEAL_TIMES.LUNCH,
+						dinner: CONSTANTS.MEAL_TIMES.DINNER,
+					})
+				});
+				const data = await response.json();
+				this.helpingCount = Math.round(data.helpingCount * 100) / 100;
+				return this.helpingCount;
+			} catch (error) {
+				console.error('おてつだい回数取得エラー:', error);
+				return 0;
+			}
+		}
+
+		/**
+		 * スキル発生回数を計算する
+		 * @returns {number} 計算されたスキル発生回数
+		 */
+		calculateSkillCount() {
+			let skillRate = this.pokemonData.SkillRate;
+			if (!skillRate || !this.helpingCount) return 0;
+
+			const skillUpM = this.selectedSubSkills.some(s => s.subskill === "スキル確率アップM");
+			const skillUpS = this.selectedSubSkills.some(s => s.subskill === "スキル確率アップS");
+
+			if (skillUpM) skillRate *= CONSTANTS.SUB_SKILL_MODIFIERS.SKILL_CHANCE_M;
+			if (skillUpS) skillRate *= CONSTANTS.SUB_SKILL_MODIFIERS.SKILL_CHANCE_S;
+			skillRate *= this.getPersonalitySkillModifier();
+
+			return Math.round(skillRate * this.helpingCount * 100) / 100;
+		}
+
+		/**
+		 * 獲得食材数を計算する
+		 * @returns {[string, number][]} 食材名と獲得量の配列
+		 */
+		calculateNumberOfIngredients() {
+			const ingredientValues: any = {};
+			let selectedIngredients = [];
+			let foodRate = this.pokemonData.FoodDropRate;
+
+			const ingredientFinderM = this.selectedSubSkills.some(s => s.subskill === "食材確率アップM");
+			const ingredientFinderS = this.selectedSubSkills.some(s => s.subskill === "食材確率アップS");
+
+			if (ingredientFinderM) foodRate *= CONSTANTS.SUB_SKILL_MODIFIERS.INGREDIENT_CHANCE_M;
+			if (ingredientFinderS) foodRate *= CONSTANTS.SUB_SKILL_MODIFIERS.INGREDIENT_CHANCE_S;
+			foodRate *= this.getPersonalityIngredientModifier();
+
+			if (this.level < CONSTANTS.INGREDIENT_LEVEL_THRESHOLDS.LEVEL_30) {
+				selectedIngredients = [
+					{ name: this.selectedIngredientA, value: this.ingredientAValue }
+				];
+			} else if (this.level < CONSTANTS.INGREDIENT_LEVEL_THRESHOLDS.LEVEL_60) {
+				selectedIngredients = [
+					{ name: this.selectedIngredientA, value: this.ingredientAValue },
+					{ name: this.selectedIngredientB, value: this.ingredientBValue }
+				];
+			} else {
+				selectedIngredients = [
+					{ name: this.selectedIngredientA, value: this.ingredientAValue },
+					{ name: this.selectedIngredientB, value: this.ingredientBValue },
+					{ name: this.selectedIngredientC, value: this.ingredientCValue }
+				];
+			}
+
+			selectedIngredients.forEach(({ name, value }) => {
+				if (!ingredientValues[name]) {
+					ingredientValues[name] = [];
+				}
+				ingredientValues[name].push(value);
+			});
+
+			const resultArr = Object.entries(ingredientValues).map(([name, values]) => {
+				const numValues = values as number[];
+				const totalValueForName = numValues.reduce((sum, val) => sum + val, 0);
+				const averageValue = totalValueForName / selectedIngredients.length;
+				const resultAmount = this.helpingCount * foodRate * averageValue;
+				return [name, Math.round(resultAmount * 10) / 10];
+			});
+
+			return resultArr;
+		}
+
+		/**
+		 * 性格によるおてつだいスピード補正値を取得する
+		 * @returns {number} 補正値 (例: 0.9, 1.075, または 1)
+		 */
+		getPersonalitySpeedModifier() {
+			const { up_status, down_status } = this.personality.effect || {};
+			if (up_status === "無補正" && down_status === "無補正") return 1;
+			if (up_status?.ability === "おてつだいスピード") return CONSTANTS.PERSONALITY_MODIFIERS.SPEED_UP;
+			if (down_status?.ability === "おてつだいスピード") return CONSTANTS.PERSONALITY_MODIFIERS.SPEED_DOWN;
+			return 1;
+		}
+
+		/**
+		 * 性格による食材おてつだい確率補正値を取得する
+		 * @returns {number} 補正値 (例: 1.2, 0.8, または 1)
+		 */
+		getPersonalityIngredientModifier() {
+			const { up_status, down_status } = this.personality.effect || {};
+			if (up_status === "無補正" && down_status === "無補正") return 1;
+			if (up_status?.ability === "食材おてつだい確率") return CONSTANTS.PERSONALITY_MODIFIERS.INGREDIENT_UP;
+			if (down_status?.ability === "食材おてつだい確率") return CONSTANTS.PERSONALITY_MODIFIERS.INGREDIENT_DOWN;
+			return 1;
+		}
+
+		/**
+		 * 性格によるメインスキル発生確率補正値を取得する
+		 * @returns {number} 補正値 (例: 1.2, 0.8, または 1)
+		 */
+		getPersonalitySkillModifier() {
+			const { up_status, down_status } = this.personality.effect || {};
+			if (up_status === "無補正" && down_status === "無補正") return 1;
+			if (up_status?.ability === "メインスキル発生確率") return CONSTANTS.PERSONALITY_MODIFIERS.SKILL_UP;
+			if (down_status?.ability === "メインスキル発生確率") return CONSTANTS.PERSONALITY_MODIFIERS.SKILL_DOWN;
+			return 1;
+		}
+
+		/**
+		 * 性格によるげんき回復量補正値を取得する
+		 * @returns {number} 補正値 (例: 1.2, 0.88, または 1)
+		 */
+		getPersonalityGenkiModifier() {
+			const { up_status, down_status } = this.personality.effect || {};
+			if (up_status === "無補正" && down_status === "無補正") return 1;
+			if (up_status?.ability === "げんき回復量") return CONSTANTS.PERSONALITY_MODIFIERS.GENKI_UP;
+			if (down_status?.ability === "げんき回復量") return CONSTANTS.PERSONALITY_MODIFIERS.GENKI_DOWN;
+			return 1;
+		}
+
+		/**
+		 * サブスキルによるおてつだいスピード合計補正値を取得する
+		 * @param {boolean} helpingSpeedM - おてつだいスピードMサブスキルがあるか
+		 * @param {boolean} helpingSpeedS - おてつだいスピードSサブスキルがあるか
+		 * @param {number} helpingBonus - おてつだいボーナスサブスキルの数
+		 * @returns {number} 合計補正値
+		 */
+		getSubSkillSpeedModifier(helpingSpeedM: boolean, helpingSpeedS: boolean, helpingBonus: number) {
+			let totalModifier = 0;
+			if (helpingSpeedM) totalModifier += CONSTANTS.SUB_SKILL_MODIFIERS.HELPING_SPEED_M;
+			if (helpingSpeedS) totalModifier += CONSTANTS.SUB_SKILL_MODIFIERS.HELPING_SPEED_S;
+			for (let i = 0; i < helpingBonus; i++) totalModifier += CONSTANTS.SUB_SKILL_MODIFIERS.HELPING_BONUS;
+			return Math.min(totalModifier, CONSTANTS.MAX_HELPING_SPEED_BONUS);
+		}
+
+		/**
+		 * おやすみリボンによる補正値を取得する
+		 * @param {{ goodNightRibbonTime: number, evolveCount: number }} goodNightRibbon - おやすみリボンの情報
+		 * @returns {number} 補正値
+		 */
+		getGoodNightRibbonModifier(goodNightRibbon: { goodNightRibbonTime: any; evolveCount: any; }) {
+			const { goodNightRibbonTime: sleepTime, evolveCount } = goodNightRibbon;
+			if (evolveCount === 2) return 0;
+			if (evolveCount === 1) {
+				if (sleepTime === 2000) return CONSTANTS.GOOD_NIGHT_RIBBON_MODIFIERS.EVOLVE_1_2000;
+				if (sleepTime === 500) return CONSTANTS.GOOD_NIGHT_RIBBON_MODIFIERS.EVOLVE_1_500;
+			}
+			if (evolveCount === 0) {
+				if (sleepTime === 2000) return CONSTANTS.GOOD_NIGHT_RIBBON_MODIFIERS.EVOLVE_0_2000;
+				if (sleepTime === 500) return CONSTANTS.GOOD_NIGHT_RIBBON_MODIFIERS.EVOLVE_0_500;
+			}
+			return 0;
+		}
+
+		/**
+		 * 選択されているおてつだいボーナスサブスキルの数をカウントする
+		 * @returns {number} おてつだいボーナスサブスキルの数
+		 */
+		countHelpingBonus() {
+			const count = this.selectedSubSkills.filter(s => s.subskill.startsWith("おてつだいボーナス")).length;
+			return Math.min(count, CONSTANTS.MAX_SUB_SKILLS);
+		}
+
+		/**
+		 * 選択された食材の個数（値）をポケモンデータから取得し、インスタンスに更新する
+		 */
+		updateIngredientAmounts() {
+			const { IngredientsA, IngredientsB, IngredientsC } = this.pokemonData;
+
+			if (!IngredientsA || !IngredientsB || !IngredientsC) {
+				console.warn("ポケモンデータに食材情報が不足しています。");
+				return;
+			}
+
+			this.ingredientAValue = IngredientsA.find((ingredient: { name: string; }) => ingredient.name === this.selectedIngredientA)?.value || 0;
+			this.ingredientBValue = IngredientsB.find((ingredient: { name: string; }) => ingredient.name === this.selectedIngredientB)?.value || 0;
+			this.ingredientCValue = IngredientsC.find((ingredient: { name: string; }) => ingredient.name === this.selectedIngredientC)?.value || 0;
+		}
+
+		/**
+		 * 性格のデータをAPIから取得し、インスタンスに設定する
+		 * @param {string} upStatus - 上がるステータス名
+		 * @param {string} downStatus - 下がるステータス名
+		 * @returns {Promise<any>} 取得した性格データ
+		 */
+		async fetchPersonality(upStatus: string, downStatus: string) {
+			const isUpNeutral = upStatus === "無補正";
+			const isDownNeutral = downStatus === "無補正";
+			// どちらか片方が無補正の場合は、性格を取得しない
+			if ((isUpNeutral && !isDownNeutral) || (!isUpNeutral && isDownNeutral)) {
+				return;
+			}
+
+			if (upStatus === "無補正" || downStatus === "無補正") return;
+			try {
+				const response = await fetch('/api/getPersonality', {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify({
+						upStatus: upStatus,
+						downStatus: downStatus
+					})
+				});
+				if (!response.ok) throw new Error("性格取得失敗");
+				const data = await response.json();
+				this.personality = data;
+				return data;
+			} catch (err) {
+				console.error('性格取得エラー:', err);
+				return null;
+			}
+		}
 	}
 
+	// PokemonStatusManagerのインスタンスを作成
+	const pokemonStatus = new PokemonStatusManager();
 
-	// --- 初期化処理 ---
-	const pokemonStatus = new PokemonStatusClass();
-	// ポケモンのデータ一覧を設定
-	await setPokemonData();
-	// 選択されたポケモンのIDからNoを取得
-	pokemonStatus.selectedPokemonNo = parseInt((selectPokemonName as HTMLSelectElement).value);
-	// ポケモンのデータを取得
-	pokemonStatus.pokemonData = await getSelectedPokemonData();
-	// 食材構成を設定
-	setIngredientOptions();
-	// サブスキル選択モーダルを初期化
-	setSubSkillModal();
-	// 性格の選択肢を設定
-	await setPersonalityOptions();
-	// 選択されたポケモンの性格を初期化
-	await getPersonality("無補正", "無補正");
-	// 選択されたポケモンの情報を取得
-	await loadStatus();
-
-	// --- イベントリスナー登録 ---
-	selectPokemonName?.addEventListener("change", async () => {
-		// 選択されたポケモンのIDからNoを取得
-		pokemonStatus.selectedPokemonNo = parseInt((selectPokemonName as HTMLSelectElement).value);
-		// ポケモンのデータを取得
-		pokemonStatus.pokemonData = await getSelectedPokemonData();
-		// 選択されたポケモンの食材構成を設定
-		setIngredientOptions();
-		loadStatus();
-	});
-	level?.addEventListener("change", loadStatus);
-	subSkillButtons?.addEventListener("click", loadStatus);
-	selectIngredientA?.addEventListener("change", loadStatus);
-	selectIngredientB?.addEventListener("change", loadStatus);
-	selectIngredientC?.addEventListener("change", loadStatus);
-
+	// --- APIヘルパー関数 ---
 	/**
-	 * ポケモン名取得APIをAPIから取得し、セレクトボックスに反映
+	 * ポケモン名取得APIを呼び出し、セレクトボックスに結果を反映する
 	 */
-	async function setPokemonData() {
+	async function fetchAndSetPokemonNames() {
 		try {
 			const response = await fetch('/api/getPokemonNames', {
 				method: 'GET',
@@ -112,13 +407,14 @@ document.addEventListener("DOMContentLoaded", async function () {
 			});
 			if (!response.ok) throw new Error("ポケモン名取得失敗");
 			const pokemonList = await response.json();
-			if (selectPokemonName) {
-				selectPokemonName.innerHTML = "";
-				pokemonList.forEach((pokemon: { ID: number; No: number; Name: string }) => {
+			if (DOM.selectPokemonName) {
+				DOM.selectPokemonName.innerHTML = "";
+				pokemonList.forEach((pokemon: { No: { toString: () => string; }; Name: string | null; }) => {
 					const option = document.createElement("option");
 					option.value = pokemon.No.toString();
 					option.textContent = pokemon.Name;
-					selectPokemonName.appendChild(option);
+					if (!DOM.selectPokemonName) return;
+					DOM.selectPokemonName.appendChild(option);
 				});
 			}
 		} catch (error) {
@@ -127,367 +423,106 @@ document.addEventListener("DOMContentLoaded", async function () {
 	}
 
 	/**
-	 * ステータス計算＆画面表示
+	 * サブスキル一覧をAPIから取得する
+	 * @returns {Promise<any[] | undefined>} 取得したサブスキルデータ
 	 */
-	async function loadStatus() {
-		if (!resultSpeedOfHelp || !resultHelpingCount || !resultNumberOfIngredients || !resultIngredientsCount || !resultSkillCount || !resultPersonality) return;
-		// 選択されたポケモンのIDからNoを取得
-		pokemonStatus.selectedPokemonNo = parseInt((selectPokemonName as HTMLSelectElement).value);
-		// ポケモンのデータを取得
-		pokemonStatus.pokemonData = await getSelectedPokemonData();
-		// 選択されたポケモンの食材構成を設定
-		// setIngredientOptions();
-		// 選択されたポケモン名を保存
-		pokemonStatus.selectedPokemonName = pokemonStatus.pokemonData.Name;
-		// ポケモンのレベルを取得
-		pokemonStatus.level = parseInt((level as HTMLInputElement).value, 10) || 1;
-		// ポケモンの性格を取得
-		// pokemonStatus.personality = (personality as HTMLSelectElement).value;
-		// 選択された食材を取得
-		pokemonStatus.selectedIngredientA = (selectIngredientA as HTMLSelectElement).value;
-		pokemonStatus.selectedIngredientB = (selectIngredientB as HTMLSelectElement).value;
-		pokemonStatus.selectedIngredientC = (selectIngredientC as HTMLSelectElement).value;
-		// 食材の個数を取得
-		getIngredientAmount();
-		// おてつだいスピードを取得
-		pokemonStatus.speedOfHelping = await getSpeedOfHelp();
-		// おてつだい回数を取得
-		pokemonStatus.helpingCount = await getHelpingCount();
-		// 食材獲得量を計算
-		const numberOfIngredients = getNumberOfIngredients();
-		// 食材獲得回数を計算
-		const ingredientCount = Math.round(pokemonStatus.pokemonData.FoodDropRate * pokemonStatus.helpingCount * 100) / 100;
-		// スキル発生回数を計算
-		const skillCount = getSkillCount();
-
-		// 表示する時間をフォーマット
-		const minutes = Math.floor(pokemonStatus.speedOfHelping / 60);
-		const seconds = pokemonStatus.speedOfHelping % 60;
-		resultSpeedOfHelp.textContent = `${pokemonStatus.speedOfHelping} : ${minutes}分${seconds}秒`;
-		resultHelpingCount.textContent = pokemonStatus.helpingCount.toString();
-		resultNumberOfIngredients.textContent = numberOfIngredients.toString();
-		resultIngredientsCount.textContent = ingredientCount.toString();
-		resultSkillCount.textContent = skillCount.toString();
-		resultPersonality.textContent = `${pokemonStatus.personality.name}`;
-	}
-
-	/**
-	 * 選択中ポケモンの詳細データをAPIから取得
-	 */
-	async function getSelectedPokemonData(): Promise<any> {
+	async function fetchSubSkills() {
 		try {
-			const response = await fetch('/api/getPokemonData', {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({ No: pokemonStatus.selectedPokemonNo })
-			});
-			if (!response.ok) throw new Error("ポケモンスピード取得失敗");
+			const response = await fetch('/api/getSubSkills');
+			if (!response.ok) throw new Error("サブスキル取得失敗");
 			return await response.json();
 		} catch (error) {
-			console.error('ポケモンスピード取得エラー:', error);
-			return {};
+			console.error('サブスキル取得エラー:', error);
+			return undefined;
 		}
 	}
 
-	/**
-	 * おてつだいスピード（秒）を計算
-	 */
-	async function getSpeedOfHelp(): Promise<number> {
-		const baseSpeedOfHelp = pokemonStatus.pokemonData.SpeedOfHelp;
-		const pokemonLevel = pokemonStatus.level;
-		const helpingSpeedM = pokemonStatus.selectedSubSkills.some(s => s.subskill === "おてつだいスピードM");
-		const helpingSpeedS = pokemonStatus.selectedSubSkills.some(s => s.subskill === "おてつだいスピードS");
-		const helpingBonus = countHelpingBonus();
-		const goodNightRibbon = { goodNightRibbonTime: 0, evolveCount: 2 };
-
-		const levelModifier = 1 - (pokemonLevel - 1) * 0.002;
-		const personalityModifier = getPersonalityModifier();
-		const subSkillModifier = 1 - getSubSkillModifier(helpingSpeedM, helpingSpeedS, helpingBonus);
-		const goodNightRibbonModifier = 1 - getGoodNightRibbon(goodNightRibbon);
-
-		return Math.floor(
-			baseSpeedOfHelp * levelModifier * personalityModifier * subSkillModifier * goodNightRibbonModifier
-		);
-	}
+	// --- UI更新関数 ---
 
 	/**
-	 * おてつだい回数をAPIで計算
-	 */
-	async function getHelpingCount(): Promise<number> {
-		const genki = Math.min(BASE_GENKI * getPersonalityGenki(), 100);
-		try {
-			const response = await fetch('/api/calcHelpingCount', {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({
-					maxGenki: genki,
-					helpingSpeed: pokemonStatus.speedOfHelping,
-					breakfast: 9.0,
-					lunch: 13.0,
-					dinner: 19.0,
-				})
-			});
-			const data = await response.json();
-			return Math.round(data.helpingCount * 100) / 100;
-		} catch (error) {
-			console.error('おてつだい回数取得エラー:', error);
-			return 0;
-		}
-	}
-
-	/**
-	 * スキル発生回数を計算
-	 */
-	function getSkillCount(): number {
-		let skillRate = pokemonStatus.pokemonData.SkillRate;
-		const helpingCount = pokemonStatus.helpingCount;
-		if (!skillRate || !helpingCount) return 0;
-		const skillUpM = pokemonStatus.selectedSubSkills.some(s => s.subskill === "スキル確率アップM");
-		const skillUpS = pokemonStatus.selectedSubSkills.some(s => s.subskill === "スキル確率アップS");
-		if (skillUpM) skillRate *= 1.36;
-		if (skillUpS) skillRate *= 1.18;
-		skillRate *= getPersonalitySkill();
-
-		return Math.round(skillRate * helpingCount * 100) / 100;
-	}
-
-	/**
-	 * 選択された食材の個数を取得
-	 */
-	function getIngredientAmount() {
-		const ingredientsA = pokemonStatus.pokemonData.IngredientsA;
-		const ingredientsB = pokemonStatus.pokemonData.IngredientsB;
-		const ingredientsC = pokemonStatus.pokemonData.IngredientsC;
-		if (!ingredientsA || !ingredientsB || !ingredientsC) return [];
-		ingredientsA.forEach((ingredient: any) => {
-			if (ingredient.name === pokemonStatus.selectedIngredientA) {
-				pokemonStatus.ingredientAValue = ingredient.value;
-			}
-		});
-		ingredientsB.forEach((ingredient: any) => {
-			if (ingredient.name === pokemonStatus.selectedIngredientB) {
-				pokemonStatus.ingredientBValue = ingredient.value;
-			}
-		});
-		ingredientsC.forEach((ingredient: any) => {
-			if (ingredient.name === pokemonStatus.selectedIngredientC) {
-				pokemonStatus.ingredientCValue = ingredient.value;
-			}
-		});
-	}
-
-	/**
-	 * 獲得食材数を計算
-	 */
-	function getNumberOfIngredients(): [string, number][] {
-		const ingredientValues: { [name: string]: number[] } = {};
-		let selectedIngredients: { name: string, value: number }[] = [];
-		let foodRate = pokemonStatus.pokemonData.FoodDropRate;
-		const ingredientFinderM = pokemonStatus.selectedSubSkills.some(s => s.subskill === "食材確率アップM");
-		const ingredientFinderS = pokemonStatus.selectedSubSkills.some(s => s.subskill === "食材確率アップS");
-		if (ingredientFinderM) foodRate *= 1.36;
-		if (ingredientFinderS) foodRate *= 1.18;
-		foodRate *= getPersonalityIngredient();
-		if (pokemonStatus.level < 30) {
-			selectedIngredients = [
-				{ name: pokemonStatus.selectedIngredientA, value: pokemonStatus.ingredientAValue }
-			];
-		} else if (pokemonStatus.level < 60) {
-			selectedIngredients = [
-				{ name: pokemonStatus.selectedIngredientA, value: pokemonStatus.ingredientAValue },
-				{ name: pokemonStatus.selectedIngredientB, value: pokemonStatus.ingredientBValue }
-			];
-		} else {
-			selectedIngredients = [
-				{ name: pokemonStatus.selectedIngredientA, value: pokemonStatus.ingredientAValue },
-				{ name: pokemonStatus.selectedIngredientB, value: pokemonStatus.ingredientBValue },
-				{ name: pokemonStatus.selectedIngredientC, value: pokemonStatus.ingredientCValue }
-			];
-		}
-
-		// 選択した食材のnameとvalueを配列でまとめる
-		selectedIngredients.forEach(({ name, value }) => {
-			if (!ingredientValues[name]) {
-				ingredientValues[name] = [];
-			}
-			ingredientValues[name].push(value);
-		});
-
-		// nameごとにvalueの平均を計算し、2次元配列で返す
-		const resultArr: [string, number][] = Object.entries(ingredientValues).map(([name, values]) => {
-			const dividedValues = values.map(v => v / selectedIngredients.length);
-			const resultAmounts = dividedValues.map(v => pokemonStatus.helpingCount * foodRate * v);
-			const resultAmount = resultAmounts.reduce((sum, val) => sum + val, 0);
-			return [name, Math.round(resultAmount * 10) / 10];
-		});
-
-		return resultArr;
-	}
-
-	/**
-	 * 性格による補正値を取得
-	 */
-	function getPersonalityModifier(): number {
-		const personality = pokemonStatus.personality;
-		const personalityUp = personality.effect.up_status;
-		const personalityDown = personality.effect.down_status;
-
-		if (personalityUp === "無補正" && personalityDown === "無補正") {
-			return 1;
-		}
-		if (personalityUp.ability === "おてつだいスピード") {
-			return 0.9;
-		} else if (personalityDown.ability === "おてつだいスピード") {
-			return 1.075;
-		}
-		return 1;
-	}
-
-	/**
-	 * 性格の補正値を取得
-	 */
-	function getPersonalityIngredient(): number {
-		const personality = pokemonStatus.personality;
-		const personalityUp = personality.effect.up_status;
-		const personalityDown = personality.effect.down_status;
-
-		if (personalityUp === "無補正" && personalityDown === "無補正") {
-			return 1;
-		}
-		if (personalityUp.ability === "食材おてつだい確率") {
-			return 1.2;
-		} else if (personalityDown.ability === "食材おてつだい確率") {
-			return 0.8;
-		}
-		return 1;
-	}
-
-	/**
-	 * 性格のメインスキル発生確率を取得
-	 */
-	function getPersonalitySkill(): number {
-		const personality = pokemonStatus.personality;
-		const personalityUp = personality.effect.up_status;
-		const personalityDown = personality.effect.down_status;
-
-		if (personalityUp === "無補正" && personalityDown === "無補正") {
-			return 1;
-		}
-		if (personalityUp.ability === "メインスキル発生確率") {
-			return 1.2;
-		} else if (personalityDown.ability === "メインスキル発生確率") {
-			return 0.8;
-		}
-		return 1;
-	}
-
-	/**
-	 * げんき回復量の補正値を取得
-	 */
-	function getPersonalityGenki(): number {
-		const personality = pokemonStatus.personality;
-		const personalityUp = personality.effect.up_status;
-		const personalityDown = personality.effect.down_status;
-		if (personalityUp === "無補正" && personalityDown === "無補正") {
-			return 1;
-		}
-		if (personalityUp.ability === "げんき回復量") {
-			return 1.2;
-		} else if (personalityDown.ability === "げんき回復量") {
-			return 0.88;
-		}
-		return 1;
-	}
-
-	/**
-	 * サブスキルによる補正値を取得
-	 */
-	function getSubSkillModifier(helpingSpeedM: boolean, helpingSpeedS: boolean, helpingBonus: number): number {
-		let totalModifier = 0;
-		if (helpingSpeedM) totalModifier += 0.14;
-		if (helpingSpeedS) totalModifier += 0.07;
-		for (let i = 0; i < helpingBonus; i++) totalModifier += 0.05;
-		return Math.min(totalModifier, 0.35);
-	}
-
-	/**
-	 * おやすみリボンによる補正値を取得
-	 */
-	function getGoodNightRibbon(goodNightRibbon: { goodNightRibbonTime: number, evolveCount: number }): number {
-		const { goodNightRibbonTime: sleepTime, evolveCount } = goodNightRibbon;
-		if (evolveCount === 2) return 0;
-		if (evolveCount === 1) {
-			if (sleepTime === 2000) return 0.12;
-			if (sleepTime === 500) return 0.05;
-		}
-		if (evolveCount === 0) {
-			if (sleepTime === 2000) return 0.25;
-			if (sleepTime === 500) return 0.11;
-		}
-		return 0;
-	}
-
-	/**
-	 * おてつだいボーナスサブスキル数をカウント
-	 */
-	function countHelpingBonus(): number {
-		const count = pokemonStatus.selectedSubSkills.filter(s => s.subskill.startsWith("おてつだいボーナス")).length;
-		return Math.min(count, 5);
-	}
-
-	/**
-	 * 食材セレクトボックスをポケモンデータから生成
+	 * 食材セレクトボックスをポケモンデータに基づいて生成・更新する
 	 */
 	function setIngredientOptions() {
-		if (!selectIngredientA || !selectIngredientB || !selectIngredientC) return;
-		const ingredientsA = pokemonStatus.pokemonData.IngredientsA;
-		const ingredientsB = pokemonStatus.pokemonData.IngredientsB;
-		const ingredientsC = pokemonStatus.pokemonData.IngredientsC;
-		const composition = ["A", "B", "C"];
+		if (!DOM.selectIngredientA || !DOM.selectIngredientB || !DOM.selectIngredientC) return;
+		const { IngredientsA, IngredientsB, IngredientsC } = pokemonStatus.pokemonData;
+		const compositionLabels = ["A", "B", "C"];
 
-		selectIngredientA.innerHTML = "";
-		if (ingredientsA) {
-			ingredientsA.forEach((ingredient: any, i: number) => {
-				const option = document.createElement("option");
-				option.value = ingredient.name.toString();
-				option.textContent = composition[i] + " : " + ingredient.name + " ( " + ingredient.value + " )";
-				selectIngredientA.appendChild(option);
-			});
+		function createIngredientOptions(selectElement: HTMLElement, ingredients: any[]) {
+			selectElement.innerHTML = "";
+			if (ingredients) {
+				ingredients.forEach((ingredient, i) => {
+					const option = document.createElement("option");
+					option.value = ingredient.name.toString();
+					option.textContent = `${compositionLabels[i]} : ${ingredient.name} ( ${ingredient.value} )`;
+					selectElement.appendChild(option);
+				});
+			}
 		}
-		selectIngredientB.innerHTML = "";
-		if (ingredientsB) {
-			ingredientsB.forEach((ingredient: any, i: number) => {
-				const option = document.createElement("option");
-				option.value = ingredient.name.toString();
-				option.textContent = composition[i] + " : " + ingredient.name + " ( " + ingredient.value + " )";
-				selectIngredientB.appendChild(option);
-			});
-		}
-		selectIngredientC.innerHTML = "";
-		if (ingredientsC) {
-			ingredientsC.forEach((ingredient: any, i: number) => {
-				const option = document.createElement("option");
-				option.value = ingredient.name.toString();
-				option.textContent = composition[i] + " : " + ingredient.name + " ( " + ingredient.value + " )";
-				selectIngredientC.appendChild(option);
-			});
-		}
+
+		createIngredientOptions(DOM.selectIngredientA, IngredientsA);
+		createIngredientOptions(DOM.selectIngredientB, IngredientsB);
+		createIngredientOptions(DOM.selectIngredientC, IngredientsC);
 	}
 
 	/**
-	 * サブスキル選択モーダルの初期化
+	 * サブスキルボタンの状態（選択中を示すクラスとバッジ）を更新する
 	 */
-	async function setSubSkillModal() {
-		if (!subSkillButtons || !modal || !openModalButton || !closeModalButton) return;
-		const data = await getSubSkills();
-		if (!data) return;
+	function updateSubSkillButtonStates() {
+		if (!DOM.subSkillButtons) return;
+		const buttons = DOM.subSkillButtons.querySelectorAll("button");
+		buttons.forEach(btn => {
+			const subskill = btn.getAttribute("data-subskill");
+			const idx = pokemonStatus.selectedSubSkills.findIndex(s => s.subskill === subskill);
+
+			const oldBadge = btn.querySelector('.subskill-badge');
+			if (oldBadge) oldBadge.remove();
+
+			if (idx >= 0) {
+				btn.classList.add("selected");
+				const badge = document.createElement("span");
+				badge.className = "subskill-badge";
+				badge.textContent = CONSTANTS.BADGE_NUMBERS[idx]?.toString() ?? "";
+				btn.prepend(badge);
+			} else {
+				btn.classList.remove("selected");
+			}
+		});
+	}
+
+	/**
+	 * 選択中のサブスキル表示を更新する
+	 */
+	function updateSelectedSubSkillDisplay() {
+		if (!DOM.selectedSubSkillLabel) return;
+		DOM.selectedSubSkillLabel.innerHTML = "";
+		pokemonStatus.selectedSubSkills.forEach((s) => {
+			const div = document.createElement("div");
+			div.className = "col-12 col-md-6 mb-2 selected-subskill-item";
+			const p = document.createElement("p");
+			p.className = s.color + "-skill mb-0 py-2 px-3 rounded";
+			p.textContent = s.subskill;
+			div.appendChild(p);
+			if (!DOM.selectedSubSkillLabel) return;
+			DOM.selectedSubSkillLabel.appendChild(div);
+		});
+	}
+
+	/**
+	 * サブスキル選択モーダルと関連ボタンの初期設定を行う
+	 */
+	async function setupSubSkillModal() {
+		const { subSkillButtons, subSkillModal, openSubSkillModalButton, closeSubSkillModalButton } = DOM;
+		if (!subSkillButtons || !subSkillModal || !openSubSkillModalButton || !closeSubSkillModalButton) return;
+
+		const allSubSkills = await fetchSubSkills();
+		if (!allSubSkills) return;
 
 		subSkillButtons.innerHTML = "";
 		const buttonRow = document.createElement("div");
 		buttonRow.className = "row";
 		subSkillButtons.appendChild(buttonRow);
 
-		data.forEach((element: any) => {
+		allSubSkills.forEach((element: any) => {
 			const colDiv = document.createElement("div");
 			colDiv.className = "col-12 col-md-6 mb-2";
 			const button = document.createElement("button");
@@ -500,103 +535,39 @@ document.addEventListener("DOMContentLoaded", async function () {
 				const idx = pokemonStatus.selectedSubSkills.findIndex(s => s.subskill === element.subskill);
 				if (idx >= 0) {
 					pokemonStatus.selectedSubSkills.splice(idx, 1);
-				} else if (pokemonStatus.selectedSubSkills.length < MAX_SUB_SUBSKILLS) {
+				} else if (pokemonStatus.selectedSubSkills.length < CONSTANTS.MAX_SUB_SKILLS) {
 					pokemonStatus.selectedSubSkills.push(element);
 				}
-				updateButtonStates();
-				updateSelectedDisplay();
+				updateSubSkillButtonStates();
+				updateSelectedSubSkillDisplay();
 			};
 			colDiv.appendChild(button);
 			buttonRow.appendChild(colDiv);
 		});
 
-		openModalButton.onclick = () => {
-			modal.style.display = "block";
-			modal.classList.add("show");
+		// モーダル開閉のイベントリスナー設定
+		openSubSkillModalButton.onclick = () => {
+			subSkillModal.style.display = "block";
+			subSkillModal.classList.add("show");
 		};
-		closeModalButton.onclick = () => {
-			modal.style.display = "none";
-			modal.classList.remove("show");
+		closeSubSkillModalButton.onclick = () => {
+			subSkillModal.style.display = "none";
+			subSkillModal.classList.remove("show");
 			loadStatus();
 		};
-		modal.onclick = (e) => {
-			if (e.target === modal) {
-				modal.style.display = "none";
-				modal.classList.remove("show");
-				loadStatus();
+		subSkillModal.onclick = (e) => {
+			if (e.target === subSkillModal) {
+				closeSubSkillModalButton.onclick?.(e);
 			}
 		};
 	}
 
 	/**
-	 * サブスキル一覧をAPIから取得
+	 * 性格選択のUI（ボタン、モーダル）を初期設定する
 	 */
-	async function getSubSkills(): Promise<any[] | undefined> {
-		try {
-			const response = await fetch('/api/getSubSkills');
-			if (!response.ok) throw new Error("サブスキル取得失敗");
-			return await response.json();
-		} catch (error) {
-			console.error('サブスキル取得エラー:', error);
-			return undefined;
-		}
-	}
-
-	/**
-	 * サブスキルボタンの状態を更新
-	 */
-	function updateButtonStates() {
-		if (!subSkillButtons) return;
-		const buttons = subSkillButtons.querySelectorAll("button");
-		buttons.forEach(btn => {
-			const subskill = btn.getAttribute("data-subskill");
-			const idx = pokemonStatus.selectedSubSkills.findIndex(s => s.subskill === subskill);
-
-			// 既存バッジを削除
-			const oldBadge = btn.querySelector('.subskill-badge');
-			if (oldBadge) oldBadge.remove();
-
-			if (idx >= 0) {
-				btn.classList.add("selected");
-				const badge = document.createElement("span");
-				badge.className = "subskill-badge";
-				badge.textContent = badgeNumbers[idx]?.toString() ?? "";
-				btn.prepend(badge);
-			} else {
-				btn.classList.remove("selected");
-			}
-		});
-	}
-
-	/**
-	 * 選択中サブスキルの表示を更新
-	 */
-	function updateSelectedDisplay() {
-		if (!selectedSubSkilllabel) return;
-		selectedSubSkilllabel.innerHTML = "";
-		pokemonStatus.selectedSubSkills.forEach((s) => {
-			const div = document.createElement("div");
-			div.className = "col-12 col-md-6 mb-2 selected-subskill-item";
-			const p = document.createElement("p");
-			p.className = s.color + "-skill mb-0 py-2 px-3 rounded";
-			p.textContent = s.subskill;
-			div.appendChild(p);
-			selectedSubSkilllabel.appendChild(div);
-		});
-	}
-
-	/**
-	 * 性格の選択肢を生成
-	 */
-	async function setPersonalityOptions() {
-		const modal = document.getElementById("personalityModal") as HTMLElement;
-		const openBtn = document.getElementById("openPersonalityModal") as HTMLElement;
-		const closeBtn = document.getElementById("personalityModalClose") as HTMLElement;
-		const upGroup = document.getElementById("personality-up-group") as HTMLElement;
-		const downGroup = document.getElementById("personality-down-group") as HTMLElement;
-		const resultName = document.getElementById("resultPersonalityName") as HTMLElement;
-
-		if (!selectPersonality) return;
+	async function setupPersonalityOptions() {
+		const { personalityModal, openPersonalityModalButton, closePersonalityModalButton, personalityUpGroup, personalityDownGroup, resultPersonalityName, personalityNeutralBtn } = DOM;
+		if (!personalityModal || !openPersonalityModalButton || !closePersonalityModalButton || !personalityUpGroup || !personalityDownGroup || !resultPersonalityName || !personalityNeutralBtn) return;
 
 		const statusList = [
 			{ key: "おてつだいスピード", label: "おてつだいスピード" },
@@ -606,119 +577,208 @@ document.addEventListener("DOMContentLoaded", async function () {
 			{ key: "EXP獲得量", label: "EXP獲得量" }
 		];
 
-		// デフォルトは無補正
-		let upStatus: string | null = null;
-		let downStatus: string | null = null;
+		let currentUpStatus = "無補正";
+		let currentDownStatus = "無補正";
 
-		async function updatePersonalityName() {
-			if (upStatus && downStatus) {
-				const result = await getPersonality(upStatus, downStatus);
-				resultName.textContent = result?.name ?? "該当なし";
+		/**
+		 * 選択された性格名を表示に反映する
+		 */
+		async function updatePersonalityNameDisplay() {
+			const result = await pokemonStatus.fetchPersonality(currentUpStatus, currentDownStatus);
+			if (!resultPersonalityName) return;
+			resultPersonalityName.textContent = result?.name ?? "該当なし";
+		}
+
+		/**
+		 * 「無補正」ボタンのアクティブ状態を更新する
+		 */
+		function updateNeutralButtonState() {
+			if (!personalityNeutralBtn) return;
+			if (currentUpStatus === "無補正" && currentDownStatus === "無補正") {
+				personalityNeutralBtn.classList.add("active");
 			} else {
-				// 無補正
-				const result = await getPersonality("無補正", "無補正");
-				resultName.textContent = result?.name ?? "無補正";
+				personalityNeutralBtn.classList.remove("active");
 			}
 		}
 
-		async function renderButtons() {
-			upGroup.innerHTML = "";
-			downGroup.innerHTML = "";
+		/**
+		 * 性格選択ボタンをレンダリング（生成・更新）する
+		 */
+		async function renderPersonalityButtons() {
+			if (!personalityUpGroup || !personalityDownGroup) return;
+			personalityUpGroup.innerHTML = "";
+			personalityDownGroup.innerHTML = "";
 
-			// 上がるステータス
 			statusList.forEach(status => {
 				const upBtn = document.createElement("button");
 				upBtn.type = "button";
 				upBtn.className = "btn btn-outline-danger mb-1";
 				upBtn.textContent = status.label;
-				upBtn.disabled = (status.key === downStatus);
-				if (status.key === upStatus) upBtn.classList.add("active");
+				upBtn.disabled = (status.key === currentDownStatus);
+				if (status.key === currentUpStatus) upBtn.classList.add("active");
 				upBtn.onclick = async () => {
-					upStatus = status.key;
-					if (upStatus === downStatus) {
-						downStatus = null;
+					currentUpStatus = status.key;
+					if (currentUpStatus === currentDownStatus) {
+						currentDownStatus = "無補正";
 					}
-					renderButtons();
-					await updatePersonalityName();
-					updateNeutralBtn();
+					await renderPersonalityButtons();
+					await updatePersonalityNameDisplay();
+					updateNeutralButtonState();
 				};
-				upGroup.appendChild(upBtn);
+				personalityUpGroup.appendChild(upBtn);
 
-				// 下がるステータス
 				const downBtn = document.createElement("button");
 				downBtn.type = "button";
 				downBtn.className = "btn btn-outline-primary mb-1";
 				downBtn.textContent = status.label;
-				downBtn.disabled = (status.key === upStatus);
-				if (status.key === downStatus) downBtn.classList.add("active");
+				downBtn.disabled = (status.key === currentUpStatus);
+				if (status.key === currentDownStatus) downBtn.classList.add("active");
 				downBtn.onclick = async () => {
-					downStatus = status.key;
-					if (downStatus === upStatus) {
-						upStatus = null;
+					currentDownStatus = status.key;
+					if (currentDownStatus === currentUpStatus) {
+						currentUpStatus = "無補正";
 					}
-					renderButtons();
-					await updatePersonalityName();
-					updateNeutralBtn();
+					await renderPersonalityButtons();
+					await updatePersonalityNameDisplay();
+					updateNeutralButtonState();
 				};
-				downGroup.appendChild(downBtn);
+				personalityDownGroup.appendChild(downBtn);
 			});
 
-			updateNeutralBtn();
+			updateNeutralButtonState();
 		}
 
-		function updateNeutralBtn() {
-			const neutralBtn = document.getElementById("personalityNeutralBtn");
-			if (!neutralBtn) return;
-			if (!upStatus && !downStatus) {
-				neutralBtn.classList.add("selected");
-			} else {
-				neutralBtn.classList.remove("selected");
-			}
-		}
-
-		// 無補正ボタンイベント
-		document.getElementById("personalityNeutralBtn")?.addEventListener("click", async () => {
-			upStatus = null;
-			downStatus = null;
-			await renderButtons();
-			await updatePersonalityName();
+		// 「無補正」ボタンのイベントリスナー
+		personalityNeutralBtn.addEventListener("click", async () => {
+			currentUpStatus = "無補正";
+			currentDownStatus = "無補正";
+			await renderPersonalityButtons();
+			await updatePersonalityNameDisplay();
 		});
 
-		await renderButtons();
-		await updatePersonalityName();
+		// モーダル初期表示時の設定
+		await renderPersonalityButtons();
+		await updatePersonalityNameDisplay();
 
-		openBtn.onclick = async () => {
-			modal.style.display = "block";
+		// モーダル開閉のイベントリスナー設定
+		openPersonalityModalButton.onclick = async () => {
+			personalityModal.style.display = "block";
+			await renderPersonalityButtons();
 		};
-		closeBtn.onclick = () => {
-			modal.style.display = "none";
+		closePersonalityModalButton.onclick = () => {
+			personalityModal.style.display = "none";
 			loadStatus();
 		};
-		modal.onclick = (e) => {
-			if (e.target === modal) closeBtn.onclick?.(e as any);
+		personalityModal.onclick = (e) => {
+			if (e.target === personalityModal) closePersonalityModalButton.onclick?.(e);
 		};
 	}
 
+
 	/**
-	 * 性格のデータをAPIから取得
-	 * @returns {Promise<any>} 性格データ
+	 * 全てのステータスを計算し、画面に表示するメインロジック
 	 */
-	async function getPersonality(upStatus: string, downStatus: string): Promise<any> {
-		try {
-			const response = await fetch('/api/getPersonality', {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({
-					upStatus: upStatus,
-					downStatus: downStatus
-				})
-			});
-			const data = await response.json();
-			pokemonStatus.personality = data;
-			return data;
-		} catch (err) {
-			console.error('性格取得エラー:', err);
+	async function loadStatus() {
+		if (
+			!DOM.resultSpeedOfHelp ||
+			!DOM.resultHelpingCount ||
+			!DOM.resultNumberOfIngredients ||
+			!DOM.resultIngredientsCount ||
+			!DOM.resultSkillCount ||
+			!DOM.resultPersonality
+		) return;
+
+		// 必要なDOM要素が全て存在するか確認
+		if (!Object.values(DOM).every(el => el !== null)) {
+			console.error("必要なDOM要素が一つ以上見つかりません。IDを確認してください。");
 			return;
 		}
+
+		// UIから現在の選択値を取得し、PokemonStatusManagerインスタンスに反映
+		pokemonStatus.selectedPokemonNo = parseInt((DOM.selectPokemonName as HTMLSelectElement).value);
+		pokemonStatus.level = parseInt((DOM.level as HTMLInputElement).value, 10) || 1;
+		pokemonStatus.selectedIngredientA = (DOM.selectIngredientA as HTMLSelectElement).value;
+		pokemonStatus.selectedIngredientB = (DOM.selectIngredientB as HTMLSelectElement).value;
+		pokemonStatus.selectedIngredientC = (DOM.selectIngredientC as HTMLSelectElement).value;
+
+		// 選択されたポケモンの詳細データを取得・更新
+		await pokemonStatus.fetchSelectedPokemonData();
+		pokemonStatus.selectedPokemonName = pokemonStatus.pokemonData.Name;
+
+		// 選択された食材の個数を更新
+		pokemonStatus.updateIngredientAmounts();
+
+		// 各種ステータスの計算
+		pokemonStatus.speedOfHelping = pokemonStatus.calculateSpeedOfHelp();
+		await pokemonStatus.calculateHelpingCount();
+		const numberOfIngredientsResult = pokemonStatus.calculateNumberOfIngredients();
+		const ingredientCount = Math.round(pokemonStatus.pokemonData.FoodDropRate * pokemonStatus.helpingCount * 100) / 100;
+		const skillCount = pokemonStatus.calculateSkillCount();
+
+		// 結果を画面に表示
+		const minutes = Math.floor(pokemonStatus.speedOfHelping / 60);
+		const seconds = pokemonStatus.speedOfHelping % 60;
+		DOM.resultSpeedOfHelp.textContent = `${pokemonStatus.speedOfHelping} : ${minutes}分${seconds}秒`;
+		DOM.resultHelpingCount.textContent = pokemonStatus.helpingCount.toString();
+
+		// 食材獲得量は、複数の食材がある可能性があるので、フォーマットして表示
+		if (numberOfIngredientsResult.length > 0) {
+			DOM.resultNumberOfIngredients.textContent = numberOfIngredientsResult.map(([name, amount]) => `${name} (${amount})`).join(', ');
+		} else {
+			DOM.resultNumberOfIngredients.textContent = "N/A";
+		}
+
+		DOM.resultIngredientsCount.textContent = ingredientCount.toString();
+		DOM.resultSkillCount.textContent = skillCount.toString();
+		DOM.resultPersonality.textContent = pokemonStatus.personality.name;
 	}
+
+
+	// --- アプリケーションの初期化処理 ---
+	async function initializeApp() {
+		// 1. ポケモン名を取得し、選択ボックスに設定
+		await fetchAndSetPokemonNames();
+
+		// 2. 初期選択されているポケモンNoを取得（通常はリストの最初のポケモン）
+		pokemonStatus.selectedPokemonNo = parseInt((DOM.selectPokemonName as HTMLSelectElement).value);
+
+		// 3. 初回選択されているポケモンの詳細データを取得
+		await pokemonStatus.fetchSelectedPokemonData();
+		pokemonStatus.selectedPokemonName = pokemonStatus.pokemonData.Name;
+
+		// 4. 食材選択オプションを、取得したポケモンデータに基づいて設定
+		setIngredientOptions();
+
+		// 5. サブスキル選択モーダルとボタンをセットアップ
+		await setupSubSkillModal();
+		updateSubSkillButtonStates();
+		updateSelectedSubSkillDisplay();
+
+		// 6. 性格選択UIをセットアップ（初期の「無補正」性格もここで設定される）
+		await setupPersonalityOptions();
+
+		// 7. 全ての初期設定が完了したら、ステータスを計算して表示
+		await loadStatus();
+	}
+
+	// --- イベントリスナー登録 ---
+	function registerEventListeners() {
+		DOM.selectPokemonName?.addEventListener("change", async () => {
+			// ポケモンが変更されたら、新しいポケモンデータでUIと計算を更新
+			pokemonStatus.selectedPokemonNo = parseInt((DOM.selectPokemonName as HTMLSelectElement).value);
+			await pokemonStatus.fetchSelectedPokemonData();
+			setIngredientOptions();
+			await loadStatus();
+		});
+
+		DOM.level?.addEventListener("change", loadStatus);
+		DOM.selectIngredientA?.addEventListener("change", loadStatus);
+		DOM.selectIngredientB?.addEventListener("change", loadStatus);
+		DOM.selectIngredientC?.addEventListener("change", loadStatus);
+	}
+
+	// --- アプリケーションの実行 ---
+	// DOMContentLoadedイベント内で、アプリケーションの初期化とイベントリスナー登録を実行
+	await initializeApp();
+	registerEventListeners();
 });
